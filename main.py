@@ -18,7 +18,7 @@ import webapp2
 
 class MainHandler(webapp2.RequestHandler):
     def get(self):
-        self.response.write('GitHub Hosted Repo !')
+        self.response.write('GitHub Hosted Repo GREAT !')
 
 app = webapp2.WSGIApplication([
     ('/', MainHandler)
