@@ -16,6 +16,7 @@
 #
 import webapp2
 
+
 class MainHandler(webapp2.RequestHandler):
     def get(self):
         self.response.write('GitHub Hosted seems not to be free after all !')
