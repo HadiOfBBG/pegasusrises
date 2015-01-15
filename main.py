@@ -15,11 +15,33 @@
 # limitations under the License.
 #
 import webapp2
+import os
+import sys
+import webapp2_extras.auth
+#from libs from simpleauth import handler
+#from simpleauth import handler
 
 class MainHandler(webapp2.RequestHandler):
+	
+
     def get(self):
         self.response.write('Pushing from a Github development !')
+
+	def add_libraries_folder_to_systems_path():
+		sys.path.append(os.path.join(os.path.dirname(__file__), 'libs'))
+
+
+
+#class AuthenticationHandler(webapp2.RequestHandler,handler):
+
+
+
+
+    
+
 
 app = webapp2.WSGIApplication([
     ('/', MainHandler)
 ], debug=True)
+
+
