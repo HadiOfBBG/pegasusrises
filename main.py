@@ -23,12 +23,12 @@ from google.appengine.ext import db
 from google.appengine.api import memcache
 
 
-
 template_dir = os.path.join(os.path.dirname(__file__),'templates')
+os.path.join(os.path.dirname(__file__),'models')
 jinja_env = jinja2.Environment(loader = jinja2.FileSystemLoader(template_dir),autoescape = True)
 
 
-"""Main class i.e entry to the APP. Loading the handler class"""
+"""Main class i.e entry to the APP"""
 class MainHandler(webapp2.RequestHandler):
 	"""Handler for template"""
 	def write(self, *a, **kw):
