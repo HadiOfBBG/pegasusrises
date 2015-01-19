@@ -20,6 +20,26 @@ class MainHandler(webapp2.RequestHandler):
     def get(self):
         self.response.write('GitHub Hosted seems not to be free after all !')
 
+class GplusHandler(webapp2.RequestHandler):
+	html = ""
+	
+	 <div id="signup-form" >
+    
+    <div id="gSignInWrapper">
+                    <div id="customBtn" class="customGPlusSignIn">
+                      <span class="icon"></span>
+                      <span class="buttonText">Sign in with Google</span>
+                    </div>
+                  </div>
+      </div>
+
+	""
+    def get(self):
+        self.response.write(html)
+
+
+
 app = webapp2.WSGIApplication([
-    ('/', MainHandler)
+    ('/', MainHandler),
+    
 ], debug=True)
