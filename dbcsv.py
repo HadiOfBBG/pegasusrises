@@ -30,7 +30,7 @@ class TestClass(JinjaTemplating):
 		csv_title = self.request.get('csv_title')
 		csv_file = self.request.get('csv_file')
 		self.render(csv_file)
-		# self.write(csv_title)
+		#self.write(csv_title)
 
 
 	def processCSV():

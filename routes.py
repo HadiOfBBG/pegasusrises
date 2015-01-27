@@ -11,6 +11,7 @@ routes = [
     (r'/testbyaliu', TestClass),
     (r'/postcsv', DbFromCsv),
      (r'/admin', DashboardHandler),
+     (r'/upload', CSVUploadHandler),
 
 ]
 
