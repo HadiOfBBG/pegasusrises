@@ -12,6 +12,6 @@ class DashboardHandler(JinjaTemplating):
                 'logout_url': users.create_logout_url('/'),
                 'username': user.nickname()
             }
-            JinjaTemplating.render_template_with_values(self, 'test.html', template_values)
+            JinjaTemplating.render_template_with_values(self, 'upload_csv.html', template_values)
         else:
             self.redirect('/')  
