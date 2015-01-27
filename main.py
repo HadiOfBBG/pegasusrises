@@ -42,8 +42,3 @@ class MainHandler(webapp2.RequestHandler):
 		self.write(self.render_str(template,**kw))
 	def get(self):
 		self.render('test.html')
-
-
-app = webapp2.WSGIApplication([
-	('/', MainHandler)
-], debug=True)
