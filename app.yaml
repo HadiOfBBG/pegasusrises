@@ -9,6 +9,12 @@ handlers:
   static_files: favicon.ico
   upload: favicon\.ico
 
+- url: /vendors
+  static_dir: vendors
+
+- url: /images
+  static_dir: images
+
 - url: .*
   script: routes.app
 

@@ -1,9 +1,9 @@
 import csv
 from google.appengine.ext import blobstore
 from google.appengine.ext.webapp import blobstore_handlers
-from main import *
+from jinja_template import JinjaTemplating
 
-class DbFromCsv(MainHandler):
+class DbFromCsv(JinjaTemplating):
 
 	def get(self):
 		pass
@@ -21,10 +21,9 @@ class DbFromCsv(MainHandler):
 			entry.put()
 
 
-class TestClass(MainHandler):
-	"""This is a test class to use for csv development by Aliu"""
+class TestClass(JinjaTemplating):
 	def get(self):
-		self.render('aliu_test.html')
+		JinjaTemplating.render_template_only(self,'aliu_test.html')
 
 
 	def post(self):
