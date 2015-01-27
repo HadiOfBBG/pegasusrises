@@ -68,13 +68,17 @@ class DashboardHandler(webapp2.RequestHandler):
                 'logout_url': users.create_logout_url('/'),
                 'username': user.nickname()
             }
-            render_template_with_values(self, 'dashboard.html', template_values)
+            render_template_with_values(self, 'upload_csv.html', template_values)
         else:
             self.redirect('/')
 
+    def post(self):
+        contents = self.request.get('file')
+        self.response.write(contents)
 
 
 app = webapp2.WSGIApplication([
     ('/', MainHandler),
-    ('/admin', DashboardHandler)
+    ('/admin', DashboardHandler),
+    ('/upload', DashboardHandler)
 ], debug=True)
