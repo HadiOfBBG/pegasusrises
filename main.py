@@ -26,12 +26,12 @@ from google.appengine.ext import db
 from google.appengine.api import memcache
 
 
-
 template_dir = os.path.join(os.path.dirname(__file__),'templates')
+os.path.join(os.path.dirname(__file__),'models')
 jinja_env = jinja2.Environment(loader = jinja2.FileSystemLoader(template_dir),autoescape = True)
 
 
-"""Main class i.e entry to the APP. Loading the handler class"""
+"""Main class i.e entry to the APP"""
 class MainHandler(webapp2.RequestHandler):
 	def add_libraries_folder_to_systems_path():
 		sys.path.append(os.path.join(os.path.dirname(__file__), 'libs'))
@@ -54,8 +54,17 @@ class MainHandler(webapp2.RequestHandler):
 
 
 
+class GplusHandler(MainHandler):	
+    def get(self):
+        self.render('test.html')
+
+
+
 
 app = webapp2.WSGIApplication([
-	('/', MainHandler)
+
+	('/', MainHandler),
+	('/signin', GplusHandler)
+
 ], debug=True)
 
