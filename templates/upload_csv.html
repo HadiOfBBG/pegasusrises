@@ -1,0 +1,53 @@
+<!DOCTYPE html>
+<html>
+<head lang="en">
+    <meta charset="UTF-8">
+    <title></title>
+    <link rel="stylesheet" href="/vendors/bootstrap/css/bootstrap.min.css">
+</head>
+<body>
+<form class="form-horizontal" action="/upload" method="post">
+<fieldset>
+
+<!-- Form Name -->
+<legend>CSV UPLOAD FORM</legend>
+
+<!-- Text input-->
+<div class="form-group">
+  <label class="col-md-4 control-label" for="textinput">Form ID</label>
+  <div class="col-md-4">
+  <input id="textinput" name="textinput" placeholder="form id" class="form-control input-md" type="text">
+  <span class="help-block">Form Id goes here</span>
+  </div>
+</div>
+
+<!-- Textarea -->
+<div class="form-group">
+  <label class="col-md-4 control-label" for="textarea">Description</label>
+  <div class="col-md-4">
+    <textarea class="form-control" id="textarea" name="textarea">Description  of survey</textarea>
+  </div>
+</div>
+
+<!-- File Button -->
+<div class="form-group">
+  <label class="col-md-4 control-label" for="file">Upload CSV</label>
+  <div class="col-md-4">
+    <input id="file" name="file" class="input-file" type="file">
+  </div>
+</div>
+
+<!-- Button (Double) -->
+<div class="form-group">
+  <label class="col-md-4 control-label" for="upload_file">Upload</label>
+  <div class="col-md-8">
+    <button id="upload_file" name="upload_file" class="btn btn-success">Upload</button>
+    <button id="cancel" name="cancel" class="btn btn-danger">Cancel</button>
+  </div>
+</div>
+
+</fieldset>
+</form>
+
+</body>
+</html>

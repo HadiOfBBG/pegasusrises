@@ -20,51 +20,30 @@ import sys
 import webapp2_extras.auth
 import webapp2
 import jinja2
+
 import urllib2
 from xml.dom import minidom
 from google.appengine.ext import db
 from google.appengine.api import memcache
 
-
-template_dir = os.path.join(os.path.dirname(__file__),'templates')
-os.path.join(os.path.dirname(__file__),'models')
-jinja_env = jinja2.Environment(loader = jinja2.FileSystemLoader(template_dir),autoescape = True)
-
-
-"""Main class i.e entry to the APP"""
-class MainHandler(webapp2.RequestHandler):
-	def add_libraries_folder_to_systems_path():
-		sys.path.append(os.path.join(os.path.dirname(__file__), 'libs'))
+from google.appengine.api import users
+from jinja_template import JinjaTemplating
 
 
 
-	"""Handler for template"""
-	def write(self, *a, **kw):
-		self.response.out.write(*a,**kw)
-
-	def render_str(self,template,**params):
-		t = jinja_env.get_template(template)
-		return t.render(params)
-
-	def render(self,template,**kw):
-		self.write(self.render_str(template,**kw))
-		
-	def get(self):
-		self.render('test.html')
-
-
-
-class GplusHandler(MainHandler):	
-    def get(self):
-        self.render('test.html')
-
-
-
-
-app = webapp2.WSGIApplication([
-
-	('/', MainHandler),
-	('/signin', GplusHandler)
-
-], debug=True)
+class MainHandler(JinjaTemplating):
+		def get(self):
+			user = users.get_current_user()
+			if user:
+				url = users.create_login_url('/admin')
+				# users.create_logout_url('/')
+				url_linktext = 'Login'
+			else:
+				url = users.create_login_url('/admin')
+				url_linktext = 'Login'
+			template_values = {
+			'url': url,
+			'url_linktext': url_linktext
+			}
+			JinjaTemplating.render_template_with_values(self, 'index.html', template_values) 
 
