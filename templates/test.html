@@ -5,10 +5,34 @@
 	<meta http-equiv="X-UA-Compatible" content="IE=edge">
 	<title>A Test HTML File By ALiu</title>
 	<link rel="stylesheet" href="">
+  <script type="text/javascript" src= "assets/js/signinController.js">
+  </script>
+  <script type="text/javascript" src= "assets/js/jquery.js">
+  </script>
 </head>
 <body>
 
 	<h3>A Test HTML File By GBEILA ALIU WAHAB</h3>
+	<div id="signup-form" >
+    
+    <div id="gSignInWrapper">
+                    <div id="customBtn" class="customGPlusSignIn">
+                      <span class="icon"></span>
+                      <span class="buttonText">Sign in with Google</span>
+                    </div>
+                  </div>
+      </div>
 	
 </body>
+<script>
+    (function() {
+      console.log('script called');
+      var po = document.createElement('script');
+      po.type = 'text/javascript'; po.async = true;
+      po.src = 'https://apis.google.com/js/client:plusone.js?onload=renderSignin';
+      var s = document.getElementsByTagName('script')[0];
+      s.parentNode.insertBefore(po, s);
+      console.log('check render function', renderSignin);
+    })();
+  </script>
 </html>

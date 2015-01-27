@@ -73,6 +73,7 @@ class DashboardHandler(webapp2.RequestHandler):
             self.redirect('/')
 
 
+
 app = webapp2.WSGIApplication([
     ('/', MainHandler),
     ('/admin', DashboardHandler)
