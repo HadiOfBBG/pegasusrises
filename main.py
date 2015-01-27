@@ -23,62 +23,22 @@ from xml.dom import minidom
 from google.appengine.ext import db
 from google.appengine.api import memcache
 from google.appengine.api import users
+from jinja_template import JinjaTemplating
 
 
-template_dir = os.path.join(os.path.dirname(__file__), 'templates')
-os.path.join(os.path.dirname(__file__), 'models')
-jinja_env = jinja2.Environment(loader=jinja2.FileSystemLoader(template_dir), autoescape=True)
 
-
-"""Main class i.e entry to the APP"""
-
-
-def render_template_with_values(self, html_file, values):
-        t = jinja_env.get_template(html_file)
-        self.response.write(t.render(values))
-
-
-def render_template_only(self, html_file):
-        t = jinja_env.get_template(html_file)
-        self.response.write(t.render())
-
-
-class MainHandler(webapp2.RequestHandler):
-        def get(self):
-            user = users.get_current_user()
-            if user:
-                url = users.create_login_url('/admin')
-                # users.create_logout_url('/')
-                url_linktext = 'Login'
-            else:
-                url = users.create_login_url('/admin')
-                url_linktext = 'Login'
-            template_values = {
-            'url': url,
-            'url_linktext': url_linktext
-            }
-            render_template_with_values(self, 'index.html', template_values)
-
-
-class DashboardHandler(webapp2.RequestHandler):
-    def get(self):
-        user = users.get_current_user()
-        if user:
-            template_values = {
-                'logout_url': users.create_logout_url('/'),
-                'username': user.nickname()
-            }
-            render_template_with_values(self, 'upload_csv.html', template_values)
-        else:
-            self.redirect('/')
-
-    def post(self):
-        contents = self.request.get('file')
-        self.response.write(contents)
-
-
-app = webapp2.WSGIApplication([
-    ('/', MainHandler),
-    ('/admin', DashboardHandler),
-    ('/upload', DashboardHandler)
-], debug=True)
+class MainHandler(JinjaTemplating):
+		def get(self):
+			user = users.get_current_user()
+			if user:
+				url = users.create_login_url('/admin')
+				# users.create_logout_url('/')
+				url_linktext = 'Login'
+			else:
+				url = users.create_login_url('/admin')
+				url_linktext = 'Login'
+			template_values = {
+			'url': url,
+			'url_linktext': url_linktext
+			}
+			JinjaTemplating.render_template_with_values(self, 'index.html', template_values) 
