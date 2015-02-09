@@ -14,7 +14,10 @@
 # See the License for the specific language governing permissions and
 # limitations under the License.
 #
+
 import os
+import sys
+import webapp2_extras.auth
 import webapp2
 import jinja2
 
@@ -22,6 +25,7 @@ import urllib2
 from xml.dom import minidom
 from google.appengine.ext import db
 from google.appengine.api import memcache
+
 from google.appengine.api import users
 from jinja_template import JinjaTemplating
 
@@ -42,3 +46,4 @@ class MainHandler(JinjaTemplating):
 			'url_linktext': url_linktext
 			}
 			JinjaTemplating.render_template_with_values(self, 'index.html', template_values) 
+
