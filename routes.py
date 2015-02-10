@@ -1,6 +1,6 @@
 import webapp2
 from main import MainHandler
-from dbcsv import DbFromCsv,TestClass
+from dbcsv import DbFromCsv
 from dashboard import DashboardHandler
 from csvploader import CSVUploadHandler
 
@@ -9,7 +9,7 @@ from csvploader import CSVUploadHandler
 # will use in the routes
 routes = [
     (r'/', MainHandler),
-    (r'/testbyaliu', TestClass),
+    (r'/testbyaliu', DbFromCsv),
     (r'/postcsv', DbFromCsv),
      (r'/admin', DashboardHandler),
      (r'/upload', CSVUploadHandler),
@@ -21,7 +21,7 @@ config['webapp2_extras.sessions'] = {
     'secret_key': 'something-very-very-secret',
 }
 
-app = webapp2.WSGIApplication(routes=routes, debug=True, config=config) 
+app = webapp2.WSGIApplication(routes=routes, debug=True, config=config)
 
 # app = webapp2.WSGIApplication([
 # 	('/', MainHandler)
