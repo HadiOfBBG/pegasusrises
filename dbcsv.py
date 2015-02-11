@@ -51,19 +51,8 @@ class DbFromCsv(JinjaTemplating,db.Model):
 		# self.response.out.write(db_columns_dictionary)
 		# return
 
-
+		#this class extends the Expando Model so that am able to create database fields dynamically
 		class BbgDemoModel(db.Expando):
-
-		# 	created_date = db.DateTimeProperty(auto_now_add = True)
-		# 	sex = db.TextProperty()
-
-			
-		# 	setattr(self, "kaygee", db.TextProperty())
-		# save_into_created_db = BbgDemoModel(sex = 'Male', kaygee= 'aliu is not working')
-		# save_into_created_db.put()
-
-			
-
 
 			"""docstring for ModelName"""
 			print("You just created a dynamic model class")
