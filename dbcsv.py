@@ -32,56 +32,90 @@ class DbFromCsv(JinjaTemplating,db.Model):
 			#spliting row which is an array with one value so always row[0] on commas
 				inner = row[0].split(",")
 				name = inner[0]
-				type = inner[1]
+				data_type = inner[1]
 				label = inner[2]
 
 				# putting the columns of the db into a list with the column name the key
-				#db_columns[name].append(('name', name))
-				db_columns[name].append(('type', type))
+				db_columns[name].append(('type', data_type))
 				db_columns[name].append(('label', label))
 				count += 1
 
 		#self.response.out.write(dict(db_columns))
-		self.create_db_model(ModelName,db_columns)
+		modelName = 'DynamicModel'
+		self.create_db_model(modelName,db_columns)
 
 	def create_db_model(self,ModelName,db_columns):
 
-		#self.response.out.write(dict(db_columns))
-		#return
 		db_columns_dictionary = dict(db_columns)
 
-		class ModelName(db.Model):
+		# self.response.out.write(db_columns_dictionary)
+		# return
+
+
+		class BbgDemoModel(db.Expando):
+
+		# 	created_date = db.DateTimeProperty(auto_now_add = True)
+		# 	sex = db.TextProperty()
+
+			
+		# 	setattr(self, "kaygee", db.TextProperty())
+		# save_into_created_db = BbgDemoModel(sex = 'Male', kaygee= 'aliu is not working')
+		# save_into_created_db.put()
+
+			
+
+
 			"""docstring for ModelName"""
 			print("You just created a dynamic model class")
-			# get tuples of term, courses
+			# get tuples of field, labels
 			for field, type_labels in db_columns_dictionary.iteritems():
-				# getting the type of data with its value in a list
+
+				# column_name = field
+				# self.response.out.write(column_name)
+				# return
+				
+				# geting the first array that contains the word type for type of data with its associated value as loop through the various keys in the dictionary
 				type_of_data_with_values = type_labels[0]
-				# the data type
+				
+				# getting the the data type which is the value for the key 'type'
 				type_of_data = type_of_data_with_values[1]
-				# getting the labels with their value in a list
+
+				# getting the second array which is the label for the current field with the key 'label' with the assocaited value
 				data_label_with_values = type_labels[1]
-				# the label for the field
+
+				# getting the label which is the value for the key 'label'
 				labels = data_label_with_values[1]
 
 				if type_of_data == 'string':
 					print field
-					field = db.TextProperty(required = True)
+					setattr(self, field, db.TextProperty())
 					print("Data type is a text.\n")
 					print field
 				elif type_of_data == 'number':
-					field = db.IntegerProperty(required = True)
+					print field
+					setattr(self, field, db.IntegerProperty())
 					print("Data type is an integer\n")
+					print field
 				elif type_of_data == 'date':
-					field = db.DateTimeProperty()
+					print field
+					setattr(self, field, db.DateTimeProperty())
 					print("Data type is a date\n")
+					print field
 				else:
+					print field
+					setattr(self, field, db.TextProperty())
 					print("This is a default data type\n")
-		# self.response.out.write("Database created")
-		name = "Gbeila Aliu Wahab"
-		age = 25
+					print field
+
+		self.response.out.write("Database created\n\n")
+
+		age = 26
+
 		birth_date = "16-04-1989"
-		save_into_created_db = ModelName(age = age, birth_date = birth_date,name = name)
+
+		name = "Kanton Latifa"
+
+		save_into_created_db = BbgDemoModel(age = age, birth_date = birth_date, name = name)
 		save_into_created_db.put()
 		self.response.out.write("Saved into database")
 		return
