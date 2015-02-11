@@ -75,26 +75,15 @@ class DbFromCsv(JinjaTemplating,db.Model):
 				# getting the label which is the value for the key 'label'
 				labels = data_label_with_values[1]
 
+				#if else condtion to deterine data type
 				if type_of_data == 'string':
-					print field
 					setattr(self, field, db.TextProperty())
-					print("Data type is a text.\n")
-					print field
 				elif type_of_data == 'number':
-					print field
 					setattr(self, field, db.IntegerProperty())
-					print("Data type is an integer\n")
-					print field
 				elif type_of_data == 'date':
-					print field
 					setattr(self, field, db.DateTimeProperty())
-					print("Data type is a date\n")
-					print field
 				else:
-					print field
 					setattr(self, field, db.TextProperty())
-					print("This is a default data type\n")
-					print field
 
 		self.response.out.write("Database created\n\n")
 
