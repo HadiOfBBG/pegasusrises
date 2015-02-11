@@ -2,6 +2,7 @@ import webapp2
 from main import MainHandler
 from dbcsv import DbFromCsv
 from dashboard import DashboardHandler
+from csvploader import CSVUploadHandler
 
 # define all routes here with their appropriate handlers
 #Note: remember to import your module and the appropriate objects in the model or that you
@@ -11,7 +12,7 @@ routes = [
     (r'/testbyaliu', DbFromCsv),
     (r'/postcsv', DbFromCsv),
      (r'/admin', DashboardHandler),
-     # (r'/upload', CSVUploadHandler),
+     (r'/upload', CSVUploadHandler),
 
 ]
 
