@@ -1,14 +1,14 @@
 {
-  "author": "Pawel Kozlowski & Peter Bacon Darwin",
-  "name": "angular-app",
-  "homepage": "https://github.com/angular-app/angular-app",
-  "version": "0.0.1-SNAPSHOT",
+  "author": "BBG Digital Innovation Lab",
+  "name": "pegasusrises",
+  "homepage": "pegasusrises.com",
+  "version": "0.0.1-A",
   "repository": {
     "type": "git",
-    "url": "git@github.com:angular-app/angular-app.git"
+    "url": "git@github.com:PegasusRises/Pegasus.git"
   },
   "bugs": {
-    "url": "https://github.com/angular-app/angular-app/issues"
+    "url": "https://github.com/PegasusRises/Pegasus/issues"
   },
   "licenses": [
     {
@@ -22,7 +22,6 @@
   "dependencies": {},
   "devDependencies": {
     "grunt": "~0.4.0",
-    "grunt-recess": "~0.3",
     "grunt-contrib-clean": "~0.4.0",
     "grunt-contrib-copy": "~0.4.0",
     "grunt-contrib-jshint": "~0.2.0",

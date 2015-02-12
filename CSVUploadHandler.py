@@ -18,5 +18,5 @@ class CSVUploadHandler(JinjaTemplating):
 
     def post(self):
         content = self.request.get('file')
-        console.log(content)
+
 

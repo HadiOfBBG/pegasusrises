@@ -13,7 +13,7 @@ template_dir = os.path.join(os.path.dirname(__file__), 'templates')
 jinja_env = jinja2.Environment(loader=jinja2.FileSystemLoader(template_dir), autoescape=True)
 
 # Jinja template directory for dashboard
-angular_build_dir = os.path.join(os.path.dirname(__file__), 'client/dist')
+angular_build_dir = os.path.join(os.path.dirname(__file__), 'client/dist/html')
 jinja_angular_env = jinja2.Environment(loader=jinja2.FileSystemLoader(angular_build_dir), autoescape=True)
 
 os.path.join(os.path.dirname(__file__), 'models')
