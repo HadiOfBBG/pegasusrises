@@ -1,27 +1,31 @@
 <!DOCTYPE html>
 <html>
 <head>
-	<meta charset="utf-8">
-	<meta http-equiv="X-UA-Compatible" content="IE=edge">
-	<title>A Test HTML File By ALiu</title>
-	<link rel="stylesheet" href="">
-  <script type="text/javascript" src= "assets/js/signinController.js">
-  </script>
-  <script type="text/javascript" src= "assets/js/jquery.js">
-  </script>
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <title>A Test HTML File By ALiu</title>
+    <link rel="stylesheet" href="">
+    <script type="text/javascript" src= "assets/js/signinController.js">
+    </script>
+    <script type="text/javascript" src= "assets/js/jquery.js">
+    </script>
+
+    <!-- Bootstrap Core CSS -->
+    <link href="/vendors/bootstrap/css/bootstrap.min.css" rel="stylesheet" type="text/css"/>
+              <!-- Fonts -->
+    <link href="/vendors/font-awesome/css/font-awesome.min.css" rel="stylesheet" type="text/css">
 </head>
 <body>
+<div class="container">
+<div class="jumbotron">
+    <h2 class="text-center" style="line-height: 50px">{{ username }}, <br> Welcome to the Pegasusrises Dashboard</h2>
+    <p style="margin: 100px 0" class="text-center">
+    <h4 class="text-center">Work in progress...</h4>
+    </p>
+    <p style="margin: 100px 0" class="text-center"><a class="btn btn-danger btn-lg" href="{{ logout_url }}" role="button"><i class="fa fa-sign-in"></i>  Sign Out</a></p>
+</div>
+</div>
 
-	<h3>A Test HTML File By GBEILA ALIU WAHAB</h3>
-	<div id="signup-form" >
-    
-    <div id="gSignInWrapper">
-                    <div id="customBtn" class="customGPlusSignIn">
-                      <span class="icon"></span>
-                      <span class="buttonText">Sign in with Google</span>
-                    </div>
-                  </div>
-      </div>
 
 </body>
 
