@@ -1,4 +1,4 @@
-/*! pegasusrises - v0.0.1-A - 2015-02-12
+/*! pegasusrises - v0.0.1-A - 2015-02-13
  * pegasusrises.com
  * Copyright (c) 2015 BBG Digital Innovation Lab;
  * Licensed MIT
@@ -134,16 +134,58 @@ angular.module('pegasusrises').controller('prBreadCrumbCtrl', ['$scope', '$state
 
 angular.module('home', [])
     .config(['$stateProvider', function($stateProvider){
-   $stateProvider
-       .state('home', {
-           url : '/',
-           templateUrl : 'home/home.tpl.html',
-           controller : 'prHomeCtrl'
-       })
-}])
-    .controller('prHomeCtrl', ['$rootScope', '$scope', function($rootScope, $scope){
+        $stateProvider
+            .state('home', {
+                url : '/',
+                templateUrl : 'home/home.tpl.html',
+                controller : 'prHomeCtrl'
+            })
+    }])
+    .controller('prHomeCtrl', ['$rootScope', '$scope', 'homeService', function($rootScope, $scope, homeService){
         $scope.test = 'Kaygee';
         $scope.files = [];
+
+        $scope.uploadSheet = function(){
+            homeService.uploadGoogleSheet($scope.files[0]).
+                success(function(data, status, headers, config) {
+                    console.log("success");
+                    console.log(data);
+                    console.log(status);
+                    console.log(headers);
+                    console.log(config);
+                }).
+                error(function(data, status, headers, config) {
+                    console.log("error");
+                    console.log(data);
+                    console.log(status);
+                    console.log(headers);
+                    console.log(config);
+                });
+        }
+    }]);
+/**
+ * Created by kaygee on 2/13/15.
+ */
+
+
+angular.module('home')
+    .factory('homeService', ['$http', function($http){
+        var homeService = {};
+
+        homeService.uploadGoogleSheet = function(fileObject){
+            // Simple POST request example (passing data) :
+            return $http.post('/post/google/sheet', fileObject);
+//                success(function(data, status, headers, config) {
+//                    // this callback will be called asynchronously
+//                    // when the response is available
+//                }).
+//                error(function(data, status, headers, config) {
+//                    // called asynchronously if an error occurs
+//                    // or server returns response with an error status.
+//                });
+        };
+
+        return homeService;
     }]);
 angular.module('directives.crud', ['directives.crud.buttons', 'directives.crud.edit']);
 
