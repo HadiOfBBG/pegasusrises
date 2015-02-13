@@ -12,7 +12,10 @@ handlers:
 - url: /vendors
   static_dir: vendors
 
-- url: /images
+- url: /pictures
+  static_dir: /pictures
+
+  - url: /images
   static_dir: client/dist/static/images
 
 - url: /frontend

@@ -5,36 +5,27 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="7c55b412-7925-4368-9ccc-d922ed595688" name="Default" comment="">
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/csvploader.py" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/templates/hadi_test.html" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/._app.yaml" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/._favicon.ico" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/._index.yaml" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/._main.py" afterPath="" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/favicon.ico" afterPath="$PROJECT_DIR$/favicon.ico" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/CSVUploadHandler.py" afterPath="$PROJECT_DIR$/CSVUploadHandler.py" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/.idea/libraries/Google_App_Engine_SDK.xml" afterPath="$PROJECT_DIR$/.idea/libraries/Google_App_Engine_SDK.xml" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/.idea/libraries/Google_App_Engine_SDK2.xml" afterPath="$PROJECT_DIR$/.idea/libraries/Google_App_Engine_SDK2.xml" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/aggregate_db_read.py" afterPath="$PROJECT_DIR$/aggregate_db_read.py" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/templates/aliu_test.html" afterPath="$PROJECT_DIR$/templates/aliu_test.html" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/dashboard.py" afterPath="$PROJECT_DIR$/dashboard.py" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/db_fields_object.py" afterPath="$PROJECT_DIR$/db_fields_object.py" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/dbcsv.py" afterPath="$PROJECT_DIR$/dbcsv.py" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/.idea/encodings.xml" afterPath="$PROJECT_DIR$/.idea/encodings.xml" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/index.yaml" afterPath="$PROJECT_DIR$/index.yaml" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/jinja_template.py" afterPath="$PROJECT_DIR$/jinja_template.py" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/assets/js/jquery.js" afterPath="$PROJECT_DIR$/assets/js/jquery.js" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/main.py" afterPath="$PROJECT_DIR$/main.py" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/.idea/misc.xml" afterPath="$PROJECT_DIR$/.idea/misc.xml" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/.idea/modules.xml" afterPath="$PROJECT_DIR$/.idea/modules.xml" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/.idea/pegasusrises.iml" afterPath="$PROJECT_DIR$/.idea/pegasusrises.iml" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/routes.py" afterPath="$PROJECT_DIR$/routes.py" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/.idea/scopes/scope_settings.xml" afterPath="$PROJECT_DIR$/.idea/scopes/scope_settings.xml" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/assets/js/signinController.js" afterPath="$PROJECT_DIR$/assets/js/signinController.js" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/templates/test.html" afterPath="$PROJECT_DIR$/templates/test.html" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/templates/upload_csv.html" afterPath="$PROJECT_DIR$/templates/upload_csv.html" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/models/users.py" afterPath="$PROJECT_DIR$/models/users.py" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/.idea/vcs.xml" afterPath="$PROJECT_DIR$/.idea/vcs.xml" />
+      <change type="MOVED" beforePath="$PROJECT_DIR$/images/img/bullet.png" afterPath="$PROJECT_DIR$/pictures/img/bullet.png" />
+      <change type="MOVED" beforePath="$PROJECT_DIR$/images/img/grabbing.png" afterPath="$PROJECT_DIR$/pictures/img/grabbing.png" />
+      <change type="MOVED" beforePath="$PROJECT_DIR$/images/img/img-bg.jpg" afterPath="$PROJECT_DIR$/pictures/img/img-bg.jpg" />
+      <change type="MOVED" beforePath="$PROJECT_DIR$/images/img/loader.gif" afterPath="$PROJECT_DIR$/pictures/img/loader.gif" />
+      <change type="MOVED" beforePath="$PROJECT_DIR$/images/img/spinner.gif" afterPath="$PROJECT_DIR$/pictures/img/spinner.gif" />
+      <change type="MOVED" beforePath="$PROJECT_DIR$/images/img/team/1.jpg" afterPath="$PROJECT_DIR$/pictures/img/team/1.jpg" />
+      <change type="MOVED" beforePath="$PROJECT_DIR$/images/img/team/2.jpg" afterPath="$PROJECT_DIR$/pictures/img/team/2.jpg" />
+      <change type="MOVED" beforePath="$PROJECT_DIR$/images/img/team/3.jpg" afterPath="$PROJECT_DIR$/pictures/img/team/3.jpg" />
+      <change type="MOVED" beforePath="$PROJECT_DIR$/images/img/team/4.jpg" afterPath="$PROJECT_DIR$/pictures/img/team/4.jpg" />
+      <change type="MOVED" beforePath="$PROJECT_DIR$/images/img/timer.png" afterPath="$PROJECT_DIR$/pictures/img/timer.png" />
+      <change type="MOVED" beforePath="$PROJECT_DIR$/images/img/works/1.jpg" afterPath="$PROJECT_DIR$/pictures/img/works/1.jpg" />
+      <change type="MOVED" beforePath="$PROJECT_DIR$/images/img/works/2.jpg" afterPath="$PROJECT_DIR$/pictures/img/works/2.jpg" />
+      <change type="MOVED" beforePath="$PROJECT_DIR$/images/img/works/3.jpg" afterPath="$PROJECT_DIR$/pictures/img/works/3.jpg" />
+      <change type="MOVED" beforePath="$PROJECT_DIR$/images/img/works/4.jpg" afterPath="$PROJECT_DIR$/pictures/img/works/4.jpg" />
+      <change type="MOVED" beforePath="$PROJECT_DIR$/images/img/works/5.jpg" afterPath="$PROJECT_DIR$/pictures/img/works/5.jpg" />
+      <change type="MOVED" beforePath="$PROJECT_DIR$/images/img/works/6.jpg" afterPath="$PROJECT_DIR$/pictures/img/works/6.jpg" />
+      <change type="MOVED" beforePath="$PROJECT_DIR$/images/img/works/7.jpg" afterPath="$PROJECT_DIR$/pictures/img/works/7.jpg" />
+      <change type="MOVED" beforePath="$PROJECT_DIR$/images/img/works/8.jpg" afterPath="$PROJECT_DIR$/pictures/img/works/8.jpg" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/app.yaml" afterPath="$PROJECT_DIR$/app.yaml" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/templates/index.html" afterPath="$PROJECT_DIR$/templates/index.html" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/vendors/custom_stylesheets/style.css" afterPath="$PROJECT_DIR$/vendors/custom_stylesheets/style.css" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/.idea/workspace.xml" afterPath="$PROJECT_DIR$/.idea/workspace.xml" />
     </list>
     <ignored path="pegasusrises.iws" />
@@ -61,11 +52,11 @@
   </component>
   <component name="FileEditorManager">
     <leaf>
-      <file leaf-file-name="index.html" pinned="false" current-in-tab="true">
+      <file leaf-file-name="index.html" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/client/src/index.html">
           <provider selected="true" editor-type-id="text-editor">
-            <state vertical-scroll-proportion="0.37214887" vertical-offset="682" max-vertical-offset="12679">
-              <caret line="32" column="66" selection-start-line="32" selection-start-column="66" selection-end-line="32" selection-end-column="66" />
+            <state vertical-scroll-proportion="-4.0" vertical-offset="1778" max-vertical-offset="12679">
+              <caret line="66" column="126" selection-start-line="66" selection-start-column="122" selection-end-line="66" selection-end-column="126" />
               <folding>
                 <element signature="n#style#0;n#div#0;n#div#0;n#div#0;n#div#0;n#body#0;n#html#0;n#!!top" expanded="true" />
                 <element signature="n#style#0;n#div#1;n#div#0;n#div#0;n#div#0;n#body#0;n#html#0;n#!!top" expanded="true" />
@@ -103,8 +94,28 @@
       <file leaf-file-name="app.yaml" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/app.yaml">
           <provider selected="true" editor-type-id="text-editor">
-            <state vertical-scroll-proportion="0.0" vertical-offset="0" max-vertical-offset="1240">
-              <caret line="3" column="14" selection-start-line="3" selection-start-column="14" selection-end-line="3" selection-end-column="14" />
+            <state vertical-scroll-proportion="0.0" vertical-offset="0" max-vertical-offset="1333">
+              <caret line="15" column="23" selection-start-line="15" selection-start-column="23" selection-end-line="15" selection-end-column="23" />
+              <folding />
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="header.tpl.html" pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/client/src/common/header.tpl.html">
+          <provider selected="true" editor-type-id="text-editor">
+            <state vertical-scroll-proportion="-5.425" vertical-offset="0" max-vertical-offset="527">
+              <caret line="7" column="27" selection-start-line="7" selection-start-column="27" selection-end-line="7" selection-end-column="27" />
+              <folding />
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="index.html" pinned="false" current-in-tab="true">
+        <entry file="file://$PROJECT_DIR$/templates/index.html">
+          <provider selected="true" editor-type-id="text-editor">
+            <state vertical-scroll-proportion="10.192307" vertical-offset="1643" max-vertical-offset="14043">
+              <caret line="318" column="87" selection-start-line="318" selection-start-column="82" selection-end-line="318" selection-end-column="87" />
               <folding />
             </state>
           </provider>
@@ -126,8 +137,8 @@
             <state vertical-scroll-proportion="0.0" vertical-offset="0" max-vertical-offset="651">
               <caret line="0" column="0" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
               <folding>
-                <marker date="1423772451000" expanded="true" signature="344:364" placeholder="..." />
-                <marker date="1423772451000" expanded="true" signature="558:572" placeholder="..." />
+                <marker date="1423778109000" expanded="true" signature="344:364" placeholder="..." />
+                <marker date="1423778109000" expanded="true" signature="558:572" placeholder="..." />
               </folding>
             </state>
           </provider>
@@ -150,7 +161,6 @@
         <option value="$PROJECT_DIR$/vendors/custom_stylesheets/color.css" />
         <option value="$PROJECT_DIR$/vendors/custom_stylesheets/style.css" />
         <option value="$PROJECT_DIR$/._main.py" />
-        <option value="$PROJECT_DIR$/templates/index.html" />
         <option value="$PROJECT_DIR$/templates/upload csv.html" />
         <option value="$PROJECT_DIR$/templates/upload_csv.html" />
         <option value="$PROJECT_DIR$/main.py" />
@@ -176,9 +186,10 @@
         <option value="$PROJECT_DIR$/client/src/common/header.tpl.html" />
         <option value="$PROJECT_DIR$/client/src/stylesheets/admin.css" />
         <option value="$PROJECT_DIR$/dashboard.py" />
-        <option value="$PROJECT_DIR$/app.yaml" />
         <option value="$PROJECT_DIR$/client/src/app/app.js" />
         <option value="$PROJECT_DIR$/client/src/index.html" />
+        <option value="$PROJECT_DIR$/templates/index.html" />
+        <option value="$PROJECT_DIR$/app.yaml" />
       </list>
     </option>
   </component>
@@ -259,12 +270,8 @@
               <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
             </PATH_ELEMENT>
             <PATH_ELEMENT>
-              <option name="myItemId" value="models" />
+              <option name="myItemId" value="templates" />
               <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="users.py" />
-              <option name="myItemType" value="com.jetbrains.python.projectView.PyFileNode" />
             </PATH_ELEMENT>
           </PATH>
           <PATH>
@@ -277,8 +284,26 @@
               <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
             </PATH_ELEMENT>
             <PATH_ELEMENT>
-              <option name="myItemId" value="images" />
+              <option name="myItemId" value="pictures" />
               <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+          </PATH>
+          <PATH>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="pegasusrises" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.ProjectViewProjectNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="pegasusrises" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="models" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="users.py" />
+              <option name="myItemType" value="com.jetbrains.python.projectView.PyFileNode" />
             </PATH_ELEMENT>
           </PATH>
           <PATH>
@@ -534,6 +559,24 @@
             </PATH_ELEMENT>
             <PATH_ELEMENT>
               <option name="myItemId" value="dist" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+          </PATH>
+          <PATH>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="pegasusrises" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.ProjectViewProjectNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="pegasusrises" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="assets" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="js" />
               <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
             </PATH_ELEMENT>
           </PATH>
@@ -830,7 +873,7 @@
       <window_info id="Database" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="3" side_tool="false" content_ui="tabs" />
       <window_info id="Structure" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.25" sideWeight="0.5" order="1" side_tool="false" content_ui="tabs" />
       <window_info id="Application Servers" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="7" side_tool="false" content_ui="tabs" />
-      <window_info id="Project" active="true" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" weight="0.21392722" sideWeight="0.5" order="0" side_tool="false" content_ui="combo" />
+      <window_info id="Project" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" weight="0.21392722" sideWeight="0.5" order="0" side_tool="false" content_ui="combo" />
       <window_info id="Python Console" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="7" side_tool="false" content_ui="tabs" />
       <window_info id="Favorites" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="2" side_tool="true" content_ui="tabs" />
       <window_info id="Event Log" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="7" side_tool="true" content_ui="tabs" />
@@ -974,13 +1017,6 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/templates/index.html">
-      <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="-3.875" vertical-offset="2883" max-vertical-offset="14043">
-          <caret line="98" column="61" selection-start-line="98" selection-start-column="61" selection-end-line="98" selection-end-column="61" />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/client/dist/html/index.html">
       <provider selected="true" editor-type-id="text-editor">
         <state vertical-scroll-proportion="0.48635235" vertical-offset="3917" max-vertical-offset="24831">
@@ -988,7 +1024,7 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/images/img/team/1.jpg">
+    <entry file="file://$PROJECT_DIR$/pictures/img/team/1.jpg">
       <provider selected="true" editor-type-id="images">
         <state />
       </provider>
@@ -1011,6 +1047,7 @@
       <provider selected="true" editor-type-id="text-editor">
         <state vertical-scroll-proportion="0.28407788" vertical-offset="0" max-vertical-offset="166222">
           <caret line="8" column="13" selection-start-line="8" selection-start-column="13" selection-end-line="8" selection-end-column="13" />
+          <folding />
         </state>
       </provider>
     </entry>
@@ -1175,19 +1212,11 @@
         <state vertical-scroll-proportion="0.0" vertical-offset="248" max-vertical-offset="4557">
           <caret line="28" column="7" selection-start-line="28" selection-start-column="7" selection-end-line="28" selection-end-column="7" />
           <folding>
-            <marker date="1423772451000" expanded="true" signature="-1:-1" placeholder="[...]" />
-            <marker date="1423772451000" expanded="true" signature="-1:-1" placeholder="{...}" />
-            <marker date="1423772451000" expanded="true" signature="-1:-1" placeholder="{&quot;apiKey&quot;: 'AIzaSyD3JPNqoJTlaXdW_FNQ6pcimmy6b0i1Bhc'...}" />
-            <marker date="1423772451000" expanded="true" signature="-1:-1" placeholder="[...]" />
+            <marker date="1423778109000" expanded="true" signature="-1:-1" placeholder="[...]" />
+            <marker date="1423778109000" expanded="true" signature="-1:-1" placeholder="{...}" />
+            <marker date="1423778109000" expanded="true" signature="-1:-1" placeholder="{&quot;apiKey&quot;: 'AIzaSyD3JPNqoJTlaXdW_FNQ6pcimmy6b0i1Bhc'...}" />
+            <marker date="1423778109000" expanded="true" signature="-1:-1" placeholder="[...]" />
           </folding>
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/client/src/common/header.tpl.html">
-      <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="-5.425" vertical-offset="0" max-vertical-offset="527">
-          <caret line="7" column="27" selection-start-line="7" selection-start-column="27" selection-end-line="7" selection-end-column="27" />
-          <folding />
         </state>
       </provider>
     </entry>
@@ -1214,8 +1243,8 @@
         <state vertical-scroll-proportion="0.0" vertical-offset="0" max-vertical-offset="651">
           <caret line="0" column="0" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
           <folding>
-            <marker date="1423772451000" expanded="true" signature="344:364" placeholder="..." />
-            <marker date="1423772451000" expanded="true" signature="558:572" placeholder="..." />
+            <marker date="1423778109000" expanded="true" signature="344:364" placeholder="..." />
+            <marker date="1423778109000" expanded="true" signature="558:572" placeholder="..." />
           </folding>
         </state>
       </provider>
@@ -1230,14 +1259,6 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/app.yaml">
-      <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="0.0" vertical-offset="0" max-vertical-offset="1240">
-          <caret line="3" column="14" selection-start-line="3" selection-start-column="14" selection-end-line="3" selection-end-column="14" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/client/src/app/app.js">
       <provider selected="true" editor-type-id="text-editor">
         <state vertical-scroll-proportion="0.0" vertical-offset="0" max-vertical-offset="3968">
@@ -1246,10 +1267,26 @@
         </state>
       </provider>
     </entry>
+    <entry file="file://$PROJECT_DIR$/client/src/common/header.tpl.html">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="-5.425" vertical-offset="0" max-vertical-offset="527">
+          <caret line="7" column="27" selection-start-line="7" selection-start-column="27" selection-end-line="7" selection-end-column="27" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/app.yaml">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="0.0" vertical-offset="0" max-vertical-offset="1333">
+          <caret line="15" column="23" selection-start-line="15" selection-start-column="23" selection-end-line="15" selection-end-column="23" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
     <entry file="file://$PROJECT_DIR$/client/src/index.html">
       <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="0.37214887" vertical-offset="682" max-vertical-offset="12679">
-          <caret line="32" column="66" selection-start-line="32" selection-start-column="66" selection-end-line="32" selection-end-column="66" />
+        <state vertical-scroll-proportion="-4.0" vertical-offset="1778" max-vertical-offset="12679">
+          <caret line="66" column="126" selection-start-line="66" selection-start-column="122" selection-end-line="66" selection-end-column="126" />
           <folding>
             <element signature="n#style#0;n#div#0;n#div#0;n#div#0;n#div#0;n#body#0;n#html#0;n#!!top" expanded="true" />
             <element signature="n#style#0;n#div#1;n#div#0;n#div#0;n#div#0;n#body#0;n#html#0;n#!!top" expanded="true" />
@@ -1268,6 +1305,14 @@
             <element signature="n#style#0;n#a#4;n#section#1;n#form#0;n#div#2;n#body#0;n#html#0;n#!!top" expanded="true" />
             <element signature="n#style#0;n#a#5;n#section#1;n#form#0;n#div#2;n#body#0;n#html#0;n#!!top" expanded="true" />
           </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/templates/index.html">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="10.192307" vertical-offset="1643" max-vertical-offset="14043">
+          <caret line="318" column="87" selection-start-line="318" selection-start-column="82" selection-end-line="318" selection-end-column="87" />
+          <folding />
         </state>
       </provider>
     </entry>
