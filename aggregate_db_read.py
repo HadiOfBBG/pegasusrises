@@ -25,8 +25,6 @@ class ReadDataFromPegasus(JinjaTemplating):
 		#For Pegasus A, it is moslty likely going to be one form
 		# self.response.out.write('You are here to read data right?')
 		# return
-
-
 		form_id = 'build_Software-Engagement-Test_1420717947'
 		num_of_form_ids = '1000'
 
