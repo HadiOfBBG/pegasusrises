@@ -1,3 +1,89 @@
+/**
+ * Created by kaygee on 2/16/15.
+ */
+angular.module('admin', [])
+    .config(['$stateProvider', function($stateProvider){
+        $stateProvider
+            .state('settings', {
+                url : '/settings',
+                templateUrl : 'admin/settings.tpl.html',
+                controller : 'prAdminSettingsCtrl'
+            })
+            .state('profile', {
+                url : '/profile',
+                templateUrl : 'admin/profile.tpl.html',
+                controller : 'prAdminProfileCtrl'
+            })
+    }])
+    .controller('prAdminSettingsCtrl', ['$rootScope', '$scope', function($rootScope, $scope){
+        $scope.status = {
+            isopen: false
+        };
+
+        $scope.themes = [
+            {name : 'White (Default)', key : 'light_theme'},
+            {name : 'Red' , key : 'red_thm'},
+            {name : 'Green', key : 'green_thm'},
+            {name : 'Blue', key : 'blue_thm'},
+            {name : 'Magento', key : 'magento_thm'}
+        ];
+
+        $scope.themeChoice = $scope.themes[0];
+
+        $scope.changeTheme = function(choice){
+            $scope.themeChoice = choice;
+             var body = $('body');
+                body.removeClass('blue_thm');
+                body.removeClass('red_thm');
+                body.removeClass('magento_thm');
+                body.removeClass('green_thm');
+                body.addClass(themeclass);
+        };
+
+          $scope.headerOptions = [
+            {name : 'Fixed header', key : 'fixed_header', description : 'The header will be fixed to the top whiles scrolling up and down.'},
+            {name : 'Scroll with body (Unfixed)', key : 'unfixed', description: 'The header will scroll together with the body.'}
+        ];
+
+        $scope.headerChoice = $scope.headerOptions[0];
+
+        $scope.changeHeaderType = function(choice){
+            $scope.headerChoice = choice;
+            var body = $('body');
+            if(body.hasClass('fixed_header') && $scope.headerChoice.key == 'unfixed'){
+                body.removeClass('fixed_header');
+            }else if(!(body.hasClass('fixed_header')) && $scope.headerChoice.key != 'unfixed'){
+                body.addClass('fixed_header');
+            }
+        };
+
+          $scope.navOptions = [
+            {name : 'Fixed Side Navigation', key : 'left_nav_fixed', description : 'The side navigation will be fixed in position whiles scrolling up and down.'},
+            {name : 'Scroll Side Navigation', key : 'unfixed', description: 'The side navigation will scroll together with the body.'}
+        ];
+
+        $scope.navChoice = $scope.navOptions[0];
+
+        $scope.changeNavType = function(choice){
+            $scope.headerChoice = choice;
+            var body = $('body');
+            if(body.hasClass('left_nav_fixed') && $scope.headerChoice.key == 'unfixed'){
+                body.removeClass('left_nav_fixed');
+            }else if(!(body.hasClass('left_nav_fixed')) && $scope.headerChoice.key != 'unfixed'){
+                body.addClass('left_nav_fixed');
+            }
+        };
+
+
+
+    }])
+    .controller('prAdminProfileCtrl', ['$rootScope', '$scope', function($rootScope, $scope){
+
+    }]);
+/**
+ * Created by kaygee on 2/16/15.
+ */
+
 //var ngPegasusApp =
 angular.module('pegasusrises', [
     'ui.router',
@@ -5,7 +91,10 @@ angular.module('pegasusrises', [
     'templates.app',
     'templates.common',
     'home',
-    'lk-google-picker'
+    'admin',
+    'lk-google-picker',
+    'ngToast',
+    'angular-loading-bar'
 ])
     .config(['$stateProvider','$urlRouterProvider','lkGoogleSettingsProvider', function($stateProvider, $urlRouterProvider, lkGoogleSettingsProvider){
         //for any unmatched url, redirect to the state '/home'
@@ -136,8 +225,7 @@ angular.module('home', [])
                 controller : 'prHomeCtrl'
             })
     }])
-    .controller('prHomeCtrl', ['$rootScope', '$scope', 'homeService', function($rootScope, $scope, homeService){
-        $scope.test = 'Kaygee';
+    .controller('prHomeCtrl', ['$rootScope', '$scope', 'homeService','ngToast', function($rootScope, $scope, homeService, ngToast){
         $scope.files = [];
 
         $scope.uploadSheet = function(){
@@ -156,6 +244,22 @@ angular.module('home', [])
                     console.log(headers);
                     console.log(config);
                 });
+        };
+
+        $scope.testToast = function(){
+            console.log("test");
+
+            // create a toast:
+            ngToast.create('A toast message...');
+
+            // clear specific toast:
+//            var msg = ngToast.create({
+//                content: 'Another message as <a href="#" class="">HTML</a>'
+//            });
+//            ngToast.dismiss(msg);
+
+            // clear all toasts:
+//            ngToast.dismiss();
         }
     }]);
 /**

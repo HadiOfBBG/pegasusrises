@@ -13,8 +13,7 @@ angular.module('home', [])
                 controller : 'prHomeCtrl'
             })
     }])
-    .controller('prHomeCtrl', ['$rootScope', '$scope', 'homeService', function($rootScope, $scope, homeService){
-        $scope.test = 'Kaygee';
+    .controller('prHomeCtrl', ['$rootScope', '$scope', 'homeService','ngToast', function($rootScope, $scope, homeService, ngToast){
         $scope.files = [];
 
         $scope.uploadSheet = function(){
@@ -33,5 +32,21 @@ angular.module('home', [])
                     console.log(headers);
                     console.log(config);
                 });
+        };
+
+        $scope.testToast = function(){
+            console.log("test");
+
+            // create a toast:
+            ngToast.create('A toast message...');
+
+            // clear specific toast:
+//            var msg = ngToast.create({
+//                content: 'Another message as <a href="#" class="">HTML</a>'
+//            });
+//            ngToast.dismiss(msg);
+
+            // clear all toasts:
+//            ngToast.dismiss();
         }
     }]);
