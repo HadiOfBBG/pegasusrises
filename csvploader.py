@@ -33,7 +33,7 @@ class CSVUploadHandler(JinjaTemplating):
 
     def uploadFiles(self):
         file = pegasusFiles.PegasusFiles()
-        file.file = db.Blob(self.request.get('csv_import'))
+        file.file = db.Blob(self.request.get('url'))
         file.put()
         # self.response.out.write('http://pegasusrisesapp.appspot.com/' + str(file.key()))
         self.getFile(file.key())
