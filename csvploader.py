@@ -17,7 +17,9 @@ class CSVUploadHandler(JinjaTemplating):
 
 
     def post(self):
-        self.uploadFiles()
+        google_sheet = self.request.get('url')
+ 
+        self.uploadFiles(google_sheet)
         # file = self.request.get('csv_import')
         # file  = '\n'.join(file.splitlines())
         # lines = csv.reader(StringIO.StringIO(file),dialect=csv.excel_tab)
@@ -31,17 +33,22 @@ class CSVUploadHandler(JinjaTemplating):
         #         visibility = false
                 
 
-    def uploadFiles(self):
+    def uploadFiles(self, google_sheet):
         file = pegasusFiles.PegasusFiles()
-        file.file = db.Blob(self.request.get('csv_import'))
+        file.file = db.Blob(google_sheet)
         file.put()
-        # self.response.out.write('http://pegasusrisesapp.appspot.com/' + str(file.key()))
-        self.getFile(file.key())
+        self.response.out.write('http://pegasusrisesapp.appspot.com/' + str(file.key()))
+        # self.getFile(file.key())
 
     def getFile(self, key):
         file = db.get(key)
         if file is not None:
             self.response.headers['Content-Type'] = 'application/x-bittorrent'
             self.response.out.write(file.file)
+            #return file
         else:
             self.response.set_status(404)
+
+    def submitFile(self,key):
+        file = self.getFile(key)
+        
