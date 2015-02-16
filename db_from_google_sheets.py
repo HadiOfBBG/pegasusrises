@@ -17,7 +17,7 @@ class DbFromGoogleSheet(JinjaTemplating,db.Model):
 	def post(self):
 		ModelName = "UserDefinedModel"
 		google_sheet = self.request.get('google_sheet')
-		self.response.out.write(file)
+		self.response.out.write(google_sheet)
 
 		return
 		#file  = '\n'.join(file.splitlines())
