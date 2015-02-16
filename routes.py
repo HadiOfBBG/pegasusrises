@@ -1,10 +1,14 @@
 import webapp2
 from main import MainHandler
-from dbcsv import DbFromCsv
+from db_from_csv import DbFromCsv
 from dashboard import DashboardHandler
 from csvploader import CSVUploadHandler
 from aggregate_db_read import ReadDataFromPegasus
+<<<<<<< HEAD
 from models import pegasusFiles
+=======
+from db_from_google_sheets import DbFromGoogleSheet
+>>>>>>> 44c2ddcff1535af375e3ab08a710b814c6b79ba4
 
 # define all routes here with their appropriate handlers
 #Note: remember to import your module and the appropriate objects in the model or that you
@@ -12,7 +16,8 @@ from models import pegasusFiles
 routes = [
     (r'/', MainHandler),
     (r'/testbyaliu', DbFromCsv),
-    (r'/postcsv', DbFromCsv),
+    (r'/post/csv', DbFromCsv),
+    (r'/post/google/sheet', DbFromGoogleSheet),
     (r'/admin', DashboardHandler),
     (r'/upload', CSVUploadHandler),
     (r'/read/data/from/aggregate', ReadDataFromPegasus),

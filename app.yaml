@@ -12,8 +12,17 @@ handlers:
 - url: /vendors
   static_dir: vendors
 
+- url: /pictures
+  static_dir: /pictures
+
 - url: /images
-  static_dir: images
+  static_dir: client/dist/static/images
+
+- url: /frontend
+  static_dir: client/dist/static
+
+- url: /templates
+  static_dir: client/dist/templates
 
 - url: .*
   script: routes.app

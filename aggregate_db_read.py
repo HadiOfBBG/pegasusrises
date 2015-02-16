@@ -23,9 +23,8 @@ class ReadDataFromPegasus(JinjaTemplating):
 	def getFormIdsGeneratedByAggregate(self):
 		#Here am suppose to query and get all form IDs so a query(Loop through) to make request to get IDS of data submitted on that form
 		#For Pegasus A, it is moslty likely going to be one form
-		self.response.out.write('You are here to read data right?')
-
-
+		# self.response.out.write('You are here to read data right?')
+		# return
 		form_id = 'build_Software-Engagement-Test_1420717947'
 		num_of_form_ids = '1000'
 
@@ -38,10 +37,30 @@ class ReadDataFromPegasus(JinjaTemplating):
 		try:
 			response = urlopen(request)
 			data_submissions = response.read()
-			#print kittens[559:1000]
+			#data_submissions_id = data_submissions[' uuid']
+
+			# Looping through to get data of each submission using submission_id
+			# for submission_id in data_submissions_id:
+			# 	getDataSubmittedUsingSubmissionID(form_id,submission_id)
+
 			self.response.out.write(data_submissions)
 
 		except URLError, e:
-			self.response.out.write('No kittez. Got an error code:', e)
-		
+			self.response.out.write('No submissions retrived. Got an error code:', e)
+
+
+	def getDataSubmittedUsingSubmissionID(self,form_id,submission_id):
+
+
+		request = Request('https://pegasusodk.appspot.com/formid[@version=null and @uiVersion=null]/topElement[@key=idvalue]')
+
+		try:
+			response = urlopen(request)
+			data_assocuated_with_submission_id = response.read()
+
+			self.response.out.write(data_submissions)
+
+		except URLError, e:
+			self.response.out.write('No submissions retrived. Got an error code:', e)
+
 
