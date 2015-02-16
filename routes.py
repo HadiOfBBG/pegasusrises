@@ -4,6 +4,7 @@ from dbcsv import DbFromCsv
 from dashboard import DashboardHandler
 from csvploader import CSVUploadHandler
 from aggregate_db_read import ReadDataFromPegasus
+from models import pegasusFiles
 
 # define all routes here with their appropriate handlers
 #Note: remember to import your module and the appropriate objects in the model or that you
