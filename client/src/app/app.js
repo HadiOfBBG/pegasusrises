@@ -5,7 +5,10 @@ angular.module('pegasusrises', [
     'templates.app',
     'templates.common',
     'home',
-    'lk-google-picker'
+    'admin',
+    'lk-google-picker',
+    'ngToast',
+    'angular-loading-bar'
 ])
     .config(['$stateProvider','$urlRouterProvider','lkGoogleSettingsProvider', function($stateProvider, $urlRouterProvider, lkGoogleSettingsProvider){
         //for any unmatched url, redirect to the state '/home'

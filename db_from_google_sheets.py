@@ -9,19 +9,20 @@ from google.appengine.api import memcache
 from xml.dom import minidom
 from google_spreadsheet import api
 from google_spreadsheet.api import SpreadsheetAPI
+import json
+
 
 class DbFromGoogleSheet(JinjaTemplating,db.Model):
 
-	def get(self):
-		JinjaTemplating.render_template_only(self,'aliu_test.html')
+    def get(self):
+        JinjaTemplating.render_template_only(self,'aliu_test.html')
 
+	def post(self):
+		ModelName = "UserDefinedModel"
+		google_sheet = self.request.get('google_sheet')
+		self.response.out.write(google_sheet)
+		return
 
-	# def post(self):
-	# 	ModelName = "UserDefinedModel"
-	# 	google_sheet = self.request.get('google_sheet')
-	# 	self.response.out.write(google_sheet)
-
-	# 	return
 		#file  = '\n'.join(file.splitlines())
 		#lines = csv.reader(StringIO.StringIO(file),dialect=csv.excel_tab)
 		# self.response.out.write(lines)
@@ -48,8 +49,6 @@ class DbFromGoogleSheet(JinjaTemplating,db.Model):
 		# #self.response.out.write(dict(db_columns))
 		# modelName = 'DynamicModel'
 		# self.create_db_model(modelName,db_columns)
-
-
 
 	def read_google_sheet(self, google_sheet):
 

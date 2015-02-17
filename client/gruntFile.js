@@ -48,7 +48,7 @@ module.exports = function (grunt) {
                 app: ['src/app/**/*.tpl.html'],
                 common: ['src/common/**/*.tpl.html']
             },
-            css : ['src/stylesheets/font*.css', 'src/stylesheets/boot*.css', 'src/stylesheets/animate.css','src/stylesheets/admin.css', 'src/stylesheets/*.css']
+            css : ['src/stylesheets/font*.css', 'src/stylesheets/boot*.css', 'src/stylesheets/animate.css','src/stylesheets/admin.css', 'src/stylesheets/*.css', 'src/vendor/ngToast/*.css']
         },
         clean: ['<%= distdir %>/*'],
         copy: {
@@ -110,7 +110,7 @@ module.exports = function (grunt) {
                 dest: '<%= distdirStatic %>/bootstrap.js'
             },
             angular: {
-                src:['src/vendor/angular/angular.js', 'src/vendor/angular/*.js'],
+                src:['src/vendor/angular/angular.js', 'src/vendor/angular/*.js', 'src/vendor/angular-loading-bar/*.js'],
                 dest: '<%= distdirStatic %>/angular_files.js'
             },
             angular_application: {
@@ -118,7 +118,7 @@ module.exports = function (grunt) {
                 dest: '<%= distdirStatic %>/<%= pkg.name %>_angular.js'
             },
             vendors: {
-                src:['src/scripts/common-script.js', 'src/vendor/google/*.js'],
+                src:['src/scripts/common-script.js', 'src/vendor/google/*.js', 'src/vendor/ngToast/*.js', 'src/vendor/tabletop/*.js'],
                 dest: '<%= distdirStatic %>/scripts.js'
             }
         },
