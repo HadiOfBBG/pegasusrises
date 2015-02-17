@@ -273,7 +273,7 @@ angular.module('home', [])
                         console.log(data);
                         console.log(tabletop);
                         if (data) {
-                            homeService.uploadGoogleSheetContentsAsJson(data)
+                            homeService.uploadGoogleSheetContentsAsJson({"google_sheet_contents" : data})
                         }else{
                             alert("The file has not been shared to the public")
                         }
