@@ -7,6 +7,8 @@ from jinja_template import JinjaTemplating
 from google.appengine.ext import db
 from google.appengine.api import memcache
 from xml.dom import minidom
+from google_spreadsheet import api
+from google_spreadsheet.api import SpreadsheetAPI
 
 class DbFromGoogleSheet(JinjaTemplating,db.Model):
 
@@ -49,16 +51,27 @@ class DbFromGoogleSheet(JinjaTemplating,db.Model):
 
 
 
-	def read_google_sheet(self, file):
+	def read_google_sheet(self, google_sheet):
 
+		# api = SpreadsheetAPI(GOOGLE_SPREADSHEET_USER, GOOGLE_SPREADSHEET_PASSWORD, GOOGLE_SPREADSHEET_SOURCE)
+		api = SpreadsheetAPI()
 		self.response.out.write("Writing A File")
 
-		self.response.out.write(file)
+		spreadsheets = api.list_spreadsheets()
+		# sheet = spreadsheet.get_worksheet('tkZQWzwHEjKTWFFCAgw', 'od7')
+		sheet = spreadsheet.get_worksheet(google_sheet)
+		# sheet = file
+
+		rows = sheet.get_rows()
+
+		number_of_rows_in_sheet = len(rows)
+
+		self.response.out.write("The number of rows in the file are: " +number_of_rows_in_sheet )
 
 		return
-		
 
-		
+
+
 
 	def create_db_model(self,ModelName,db_columns):
 
