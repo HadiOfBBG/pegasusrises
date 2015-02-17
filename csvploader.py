@@ -21,8 +21,7 @@ class CSVUploadHandler(DbFromGoogleSheet):
         google_sheet = self.request.get('url')
 
         self.read_google_sheet(google_sheet)
-        return
-
+        # return
         self.uploadFiles(google_sheet)
         # file = self.request.get('csv_import')
         # file  = '\n'.join(file.splitlines())

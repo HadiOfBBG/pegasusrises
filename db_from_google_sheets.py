@@ -19,8 +19,10 @@ class DbFromGoogleSheet(JinjaTemplating,db.Model):
 
 	def post(self):
 		ModelName = "UserDefinedModel"
-		google_sheet = self.request.get('google_sheet')
-		self.response.out.write(google_sheet)
+
+		json_google_sheet = self.request.body()
+
+		self.response.out.write(json_google_sheet)
 		return
 
 		#file  = '\n'.join(file.splitlines())

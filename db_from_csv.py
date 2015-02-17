@@ -11,8 +11,8 @@ from xml.dom import minidom
 class DbFromCsv(JinjaTemplating,db.Model):
 
 	def get(self):
-		JinjaTemplating.render_template_only(self,'aliu_test.html')
 
+		JinjaTemplating.render_template_only(self,'aliu_test.html')
 
 	def post(self):
 		ModelName = "UserDefinedModel"
@@ -62,10 +62,10 @@ class DbFromCsv(JinjaTemplating,db.Model):
 				# column_name = field
 				# self.response.out.write(column_name)
 				# return
-				
+
 				# geting the first array that contains the word type for type of data with its associated value as loop through the various keys in the dictionary
 				type_of_data_with_values = type_labels[0]
-				
+
 				# getting the the data type which is the value for the key 'type'
 				type_of_data = type_of_data_with_values[1]
 
