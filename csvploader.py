@@ -8,12 +8,16 @@ from google.appengine.ext import db
 from google.appengine.api import memcache
 from xml.dom import minidom
 from models import pegasusFiles
+<<<<<<< HEAD
 from google.appengine.api import urlfetch
 from poster.encode import multipart_encode, MultipartParam
 import logging
 from google.appengine.api import users
+=======
+from db_from_google_sheets import DbFromGoogleSheet
+>>>>>>> 6b634a01f45445e55a83f7a47e8acdc980c88c3d
 
-class CSVUploadHandler(JinjaTemplating):
+class CSVUploadHandler(DbFromGoogleSheet):
 
     def get(self):
         # self.response.out.write(pegasusFiles.PegasusFiles)
@@ -57,16 +61,22 @@ class CSVUploadHandler(JinjaTemplating):
         file.name = sheet_name
         file.file = db.Blob(google_sheet)
         file.put()
+<<<<<<< HEAD
         self.response.out.write('http://pegasusrisesapp.appspot.com/' + str(file.key()))
         better = db.get(str(file.key))
         self.response.out.write(better.name)
         # # self.getFile(file.key())
         # self.submitFile(file.key())
+=======
+        # self.response.out.write('http://pegasusrisesapp.appspot.com/' + str(file.key()))
+        self.getFile(file.key())
+>>>>>>> 6b634a01f45445e55a83f7a47e8acdc980c88c3d
 
     def getFile(self, key):
         file = db.get(key)
         if file is not None:
             self.response.headers['Content-Type'] = 'application/x-bittorrent'
+<<<<<<< HEAD
             self.response.out.write(file.file)
             return file
         else:
@@ -79,8 +89,15 @@ class CSVUploadHandler(JinjaTemplating):
             self.response.headers['Content-Type'] = 'application/x-bittorrent'
             self.response.out.write(file.file)
             return file
+=======
+            # self.response.out.write(file.file)
+            # return file
+            self.read_google_sheet(file)
+>>>>>>> 6b634a01f45445e55a83f7a47e8acdc980c88c3d
         else:
             self.response.set_status(404)
+
+            
 
     def submitFile(self,key):
         payload = {}

@@ -34,6 +34,7 @@ class ReadDataFromPegasus(JinjaTemplating):
 	def getIdsOfDataSubmissions(self, form_id,num_of_form_ids):
 
 		request = Request('https://pegasusodk.appspot.com/view/submissionList?formId=' + form_id + '&numEntries=' + num_of_form_ids)
+		
 		try:
 			response = urlopen(request)
 			data_submissions = response.read()
