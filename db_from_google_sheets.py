@@ -7,17 +7,19 @@ from jinja_template import JinjaTemplating
 from google.appengine.ext import db
 from google.appengine.api import memcache
 from xml.dom import minidom
+import json
+
 
 class DbFromGoogleSheet(JinjaTemplating,db.Model):
 
-	def get(self):
-		JinjaTemplating.render_template_only(self,'aliu_test.html')
+    def get(self):
+        JinjaTemplating.render_template_only(self,'aliu_test.html')
 
-
-	def post(self):
-		ModelName = "UserDefinedModel"
-		file = self.request.get('google_sheet')
-		return
+    def post(self):
+        ModelName = "UserDefinedModel"
+        postBody = json.loads(self.request.body)
+        self.response.out.write(postBody['url'])
+        return
 		#file  = '\n'.join(file.splitlines())
 		#lines = csv.reader(StringIO.StringIO(file),dialect=csv.excel_tab)
 		# self.response.out.write(lines)

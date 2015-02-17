@@ -118,7 +118,7 @@ module.exports = function (grunt) {
                 dest: '<%= distdirStatic %>/<%= pkg.name %>_angular.js'
             },
             vendors: {
-                src:['src/scripts/common-script.js', 'src/vendor/google/*.js', 'src/vendor/ngToast/*.js'],
+                src:['src/scripts/common-script.js', 'src/vendor/google/*.js', 'src/vendor/ngToast/*.js', 'src/vendor/tabletop/*.js'],
                 dest: '<%= distdirStatic %>/scripts.js'
             }
         },

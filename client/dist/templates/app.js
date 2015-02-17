@@ -346,14 +346,20 @@ angular.module("home/home.tpl.html", []).run(["$templateCache", function($templa
     "    </div>\n" +
     "\n" +
     "    <div ng-show=\"files.length\" class=\"row\">\n" +
+    "        <p class=\"text-center col-lg-offset-4 col-lg-4 green_text\"><em><i class=\"fa fa-file\"></i>  Selected filename : {{ files[files.length-1].name }}</em></p>\n" +
     "        <div  class=\"text-center\" style=\"padding-bottom: 30px\">\n" +
-    "            <button class=\"col-lg-offset-4 col-lg-4 btn-lg btn btn-success\" ng-click=\"uploadSheet()\"><i class=\"fa fa-upload\"></i>&nbsp;&nbsp;&nbsp;Upload selected file</button>\n" +
+    "            <button class=\"col-lg-offset-4 col-lg-4 btn-lg btn btn-success\" ng-click=\"uploadSheet()\"><i class=\"fa fa-upload\"></i>&nbsp;&nbsp;&nbsp;Send selected file's details</button>\n" +
     "        </div>\n" +
-    "        <p class=\"text-center col-lg-offset-4 col-lg-4 green_text\"><em><i class=\"fa fa-file\"></i>  Selected filename : {{ files[0].name }}</em></p>\n" +
+    "    </div>\n" +
+    "    <div ng-show=\"files.length\" class=\"row\">\n" +
+    "        <div  class=\"text-center\" style=\"padding-bottom: 30px\">\n" +
+    "            <button class=\"col-lg-offset-4 col-lg-4 btn-lg btn btn-success\" ng-click=\"tabletop()\"><i class=\"fa fa-upload\"></i>&nbsp;&nbsp;&nbsp;Send selected file contents as JSON</button>\n" +
+    "        </div>\n" +
     "    </div>\n" +
     "</div>\n" +
     "\n" +
-    "<button class=\"btn btn-warning\" ng-click=\"testToast()\">Test Toast</button>\n" +
+    "<!--<button class=\"btn btn-warning\" ng-click=\"testToast()\">Test Toast</button>-->\n" +
+    "<!--<button class=\"btn btn-success\" ng-click=\"tabletop()\">tabletop</button>-->\n" +
     "\n" +
     "<div>\n" +
     "    <toast></toast>\n" +
