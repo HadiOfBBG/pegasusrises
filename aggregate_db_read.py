@@ -25,8 +25,6 @@ class ReadDataFromPegasus(JinjaTemplating):
 		#For Pegasus A, it is moslty likely going to be one form
 		# self.response.out.write('You are here to read data right?')
 		# return
-
-
 		form_id = 'build_Software-Engagement-Test_1420717947'
 		num_of_form_ids = '1000'
 
@@ -36,6 +34,7 @@ class ReadDataFromPegasus(JinjaTemplating):
 	def getIdsOfDataSubmissions(self, form_id,num_of_form_ids):
 
 		request = Request('https://pegasusodk.appspot.com/view/submissionList?formId=' + form_id + '&numEntries=' + num_of_form_ids)
+		
 		try:
 			response = urlopen(request)
 			data_submissions = response.read()

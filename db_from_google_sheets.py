@@ -14,12 +14,12 @@ class DbFromGoogleSheet(JinjaTemplating,db.Model):
 
     def get(self):
         JinjaTemplating.render_template_only(self,'aliu_test.html')
+	# def post(self):
+	# 	ModelName = "UserDefinedModel"
+	# 	google_sheet = self.request.get('google_sheet')
+	# 	self.response.out.write(google_sheet)
 
-    def post(self):
-        ModelName = "UserDefinedModel"
-        postBody = json.loads(self.request.body)
-        self.response.out.write(postBody['url'])
-        return
+	# 	return
 		#file  = '\n'.join(file.splitlines())
 		#lines = csv.reader(StringIO.StringIO(file),dialect=csv.excel_tab)
 		# self.response.out.write(lines)
@@ -49,6 +49,16 @@ class DbFromGoogleSheet(JinjaTemplating,db.Model):
 
 
 
+	def read_google_sheet(self, file):
+
+		self.response.out.write("Writing A File")
+
+		self.response.out.write(file)
+
+		return
+		
+
+		
 
 	def create_db_model(self,ModelName,db_columns):
 
