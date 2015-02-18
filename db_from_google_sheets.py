@@ -18,10 +18,8 @@ class DbFromGoogleSheet(JinjaTemplating,db.Model):
         JinjaTemplating.render_template_only(self,'aliu_test.html')
 
 	def post(self):
-		ModelName = "UserDefinedModel"
-
-		json_google_sheet = self.request.body()
-
+		# ModelName = "UserDefinedModel"
+		json_google_sheet = self.request.body
 		self.response.out.write(json_google_sheet)
 		return
 
