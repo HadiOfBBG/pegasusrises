@@ -2,255 +2,300 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="7c55b412-7925-4368-9ccc-d922ed595688" name="Default" comment="">
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/gdata/Crypto/Cipher/AES.pyd" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/gdata/Crypto/Cipher/ARC2.pyd" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/gdata/Crypto/Cipher/ARC4.pyd" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/gdata/Crypto/Cipher/Blowfish.pyd" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/gdata/Crypto/Cipher/CAST.pyd" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/gdata/Crypto/Cipher/DES.pyd" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/gdata/Crypto/Cipher/DES3.pyd" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/gdata/Crypto/Cipher/IDEA.pyd" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/gdata/Crypto/Hash/MD2.pyd" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/gdata/Crypto/Hash/MD4.pyd" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/gdata/Crypto/Cipher/RC5.pyd" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/gdata/Crypto/Hash/RIPEMD.pyd" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/gdata/Crypto/Hash/SHA256.pyd" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/gdata/Crypto/Cipher/XOR.pyd" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/gdata/tlslite/utils/AES.py" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/gdata/tlslite/utils/ASN1Parser.py" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/gdata/Crypto/Protocol/AllOrNothing.py" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/gdata/tlslite/integration/AsyncStateMachine.py" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/gdata/tlslite/BaseDB.py" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/gdata/oauth/CHANGES.txt" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/gdata/Crypto/Protocol/Chaffing.py" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/gdata/tlslite/Checker.py" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/gdata/tlslite/integration/ClientHelper.py" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/gdata/tlslite/utils/Cryptlib_AES.py" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/gdata/tlslite/utils/Cryptlib_RC4.py" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/gdata/tlslite/utils/Cryptlib_TripleDES.py" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/gdata/Crypto/PublicKey/DSA.py" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/gdata/Crypto/PublicKey/ElGamal.py" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/gdata/tlslite/FileObject.py" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/gdata/Crypto/Hash/HMAC.py" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/gdata/tlslite/integration/HTTPTLSConnection.py" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/gdata/tlslite/HandshakeSettings.py" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/gdata/tlslite/integration/IMAP4_TLS.py" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/gdata/tlslite/integration/IntegrationHelper.py" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/gdata/Crypto/Hash/MD5.py" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/gdata/tlslite/utils/OpenSSL_AES.py" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/gdata/tlslite/utils/OpenSSL_RC4.py" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/gdata/tlslite/utils/OpenSSL_RSAKey.py" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/gdata/tlslite/utils/OpenSSL_TripleDES.py" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/gdata/tlslite/integration/POP3_TLS.py" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/gdata/tlslite/utils/PyCrypto_AES.py" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/gdata/tlslite/utils/PyCrypto_RC4.py" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/gdata/tlslite/utils/PyCrypto_RSAKey.py" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/gdata/tlslite/utils/PyCrypto_TripleDES.py" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/gdata/tlslite/utils/Python_AES.py" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/gdata/tlslite/utils/Python_RC4.py" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/gdata/tlslite/utils/Python_RSAKey.py" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/gdata/tlslite/utils/RC4.py" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/gdata/Crypto/Util/RFC1751.py" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/gdata/Crypto/PublicKey/RSA.py" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/gdata/tlslite/utils/RSAKey.py" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/gdata/Crypto/Hash/SHA.py" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/gdata/tlslite/integration/SMTP_TLS.py" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/gdata/tlslite/Session.py" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/gdata/tlslite/SessionCache.py" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/gdata/tlslite/SharedKeyDB.py" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/gdata/tlslite/integration/TLSAsyncDispatcherMixIn.py" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/gdata/tlslite/TLSConnection.py" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/gdata/tlslite/TLSRecordLayer.py" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/gdata/tlslite/integration/TLSSocketServerMixIn.py" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/gdata/tlslite/integration/TLSTwistedProtocolWrapper.py" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/gdata/tlslite/utils/TripleDES.py" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/gdata/tlslite/VerifierDB.py" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/gdata/tlslite/X509.py" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/gdata/tlslite/X509CertChain.py" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/gdata/tlslite/integration/XMLRPCTransport.py" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/atom/__init__.py" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/gdata/__init__.py" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/gdata/Crypto/__init__.py" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/gdata/Crypto/Cipher/__init__.py" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/gdata/Crypto/Hash/__init__.py" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/gdata/Crypto/Protocol/__init__.py" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/gdata/Crypto/PublicKey/__init__.py" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/gdata/Crypto/Util/__init__.py" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/gdata/acl/__init__.py" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/gdata/alt/__init__.py" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/gdata/analytics/__init__.py" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/gdata/apps/__init__.py" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/gdata/apps/adminsettings/__init__.py" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/gdata/apps/audit/__init__.py" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/gdata/apps/emailsettings/__init__.py" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/gdata/apps/groups/__init__.py" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/gdata/apps/migration/__init__.py" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/gdata/apps/multidomain/__init__.py" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/gdata/apps/organization/__init__.py" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/gdata/blogger/__init__.py" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/gdata/books/__init__.py" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/gdata/calendar/__init__.py" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/gdata/calendar_resource/__init__.py" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/gdata/codesearch/__init__.py" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/gdata/contacts/__init__.py" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/gdata/contentforshopping/__init__.py" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/gdata/docs/__init__.py" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/gdata/dublincore/__init__.py" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/gdata/exif/__init__.py" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/gdata/finance/__init__.py" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/gdata/geo/__init__.py" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/gdata/health/__init__.py" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/gdata/marketplace/__init__.py" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/gdata/media/__init__.py" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/gdata/notebook/__init__.py" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/gdata/oauth/__init__.py" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/gdata/opensearch/__init__.py" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/gdata/photos/__init__.py" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/gdata/projecthosting/__init__.py" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/gdata/sites/__init__.py" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/gdata/spreadsheet/__init__.py" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/gdata/spreadsheets/__init__.py" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/gdata/tlslite/__init__.py" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/gdata/tlslite/integration/__init__.py" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/gdata/tlslite/utils/__init__.py" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/gdata/webmastertools/__init__.py" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/gdata/youtube/__init__.py" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/google_spreadsheet/__init__.py" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/gdata/tlslite/api.py" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/google_spreadsheet/api.py" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/gdata/alt/app_engine.py" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/gdata/alt/appengine.py" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/gdata/apps_property.py" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/gdata/apps/apps_property_entry.py" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/atom/auth.py" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/gdata/auth.py" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/gdata/tlslite/utils/cipherfactory.py" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/atom/client.py" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/gdata/client.py" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/gdata/analytics/client.py" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/gdata/apps/client.py" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/gdata/apps/emailsettings/client.py" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/gdata/apps/groups/client.py" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/gdata/apps/multidomain/client.py" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/gdata/apps/organization/client.py" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/gdata/blogger/client.py" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/gdata/calendar/client.py" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/gdata/calendar_resource/client.py" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/gdata/contacts/client.py" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/gdata/contentforshopping/client.py" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/gdata/docs/client.py" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/gdata/marketplace/client.py" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/gdata/projecthosting/client.py" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/gdata/sites/client.py" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/gdata/spreadsheets/client.py" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/gdata/youtube/client.py" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/gdata/tlslite/utils/codec.py" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/gdata/tlslite/utils/compat.py" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/gdata/tlslite/constants.py" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/atom/core.py" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/gdata/core.py" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/gdata/tlslite/utils/cryptomath.py" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/atom/data.py" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/gdata/data.py" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/gdata/acl/data.py" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/gdata/analytics/data.py" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/gdata/apps/data.py" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/gdata/apps/emailsettings/data.py" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/gdata/apps/groups/data.py" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/gdata/apps/multidomain/data.py" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/gdata/apps/organization/data.py" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/gdata/blogger/data.py" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/gdata/books/data.py" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/gdata/calendar/data.py" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/gdata/calendar_resource/data.py" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/gdata/contacts/data.py" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/gdata/contentforshopping/data.py" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/gdata/docs/data.py" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/gdata/dublincore/data.py" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/gdata/finance/data.py" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/gdata/geo/data.py" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/gdata/marketplace/data.py" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/gdata/media/data.py" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/gdata/notebook/data.py" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/gdata/opensearch/data.py" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/gdata/projecthosting/data.py" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/gdata/sites/data.py" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/gdata/spreadsheets/data.py" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/gdata/webmastertools/data.py" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/gdata/youtube/data.py" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/gdata/tlslite/utils/dateFuncs.py" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/gdata/tlslite/utils/entropy.c" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/gdata/tlslite/errors.py" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/gdata/gauth.py" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/gdata/tlslite/utils/hmac.py" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/atom/http.py" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/atom/http_core.py" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/atom/http_interface.py" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/gdata/tlslite/utils/jython_compat.py" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/gdata/tlslite/utils/keyfactory.py" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/gdata/tlslite/mathtls.py" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/gdata/tlslite/messages.py" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/atom/mock_http.py" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/atom/mock_http_core.py" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/atom/mock_service.py" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/gdata/Crypto/Util/number.py" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/gdata/Crypto/PublicKey/pubkey.py" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/gdata/Crypto/PublicKey/qNEW.py" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/gdata/Crypto/Util/randpool.py" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/gdata/tlslite/utils/rijndael.py" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/gdata/oauth/rsa.py" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/gdata/sample_util.py" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/atom/service.py" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/gdata/service.py" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/gdata/analytics/service.py" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/gdata/apps/service.py" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/gdata/apps/adminsettings/service.py" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/gdata/apps/audit/service.py" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/gdata/apps/emailsettings/service.py" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/gdata/apps/groups/service.py" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/gdata/apps/migration/service.py" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/gdata/apps/organization/service.py" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/gdata/blogger/service.py" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/gdata/books/service.py" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/gdata/calendar/service.py" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/gdata/codesearch/service.py" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/gdata/contacts/service.py" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/gdata/docs/service.py" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/gdata/finance/service.py" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/gdata/health/service.py" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/gdata/photos/service.py" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/gdata/spreadsheet/service.py" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/gdata/webmastertools/service.py" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/gdata/youtube/service.py" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/gdata/Crypto/test.py" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/gdata/Crypto/Util/test.py" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/gdata/test_config.py" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/gdata/test_data.py" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/gdata/spreadsheet/text_db.py" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/atom/token_store.py" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/atom/url.py" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/gdata/urlfetch.py" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/gdata/tlslite/utils/win32prng.c" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/gdata/tlslite/utils/xmltools.py" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/client/src/vendor/ngToast/ngToast.css" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/client/src/vendor/ngToast/ngToast.js" afterPath="" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/client/dist/static/all-pegasusrises.css" afterPath="$PROJECT_DIR$/client/dist/static/all-pegasusrises.css" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/client/dist/static/images/Thumbs.db" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/client/dist/static/images/aa.png" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/client/dist/static/images/ame.png" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/client/dist/static/images/bb.png" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/client/dist/static/images/bfdfh.png" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/client/dist/static/images/cc.png" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/client/dist/static/images/contact people/Thumbs.db" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/client/dist/static/images/contact people/aa-1.png" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/client/dist/static/images/contact people/aa-2.png" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/client/dist/static/images/contact people/aa-3.png" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/client/dist/static/images/contact people/aa-5.png" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/client/dist/static/images/contact people/aa-6.png" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/client/dist/static/images/contact people/aa-7.png" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/client/dist/static/images/contact people/aa-8.png" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/client/dist/static/images/dd.png" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/client/dist/static/images/ee.png" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/client/dist/static/images/fhu.png" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/client/dist/static/images/gfu.png" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/client/dist/static/images/gg.png" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/client/dist/static/images/ghk.png" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/client/dist/static/images/ght.png" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/client/dist/static/images/hd-a.png" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/client/dist/static/images/hd-b-07.png" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/client/dist/static/images/hd-b.png" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/client/dist/static/images/hd-c.png" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/client/dist/static/images/hd-d.png" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/client/dist/static/images/hd-e.png" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/client/dist/static/images/hd-f.png" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/client/dist/static/images/logo-skype.png" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/client/dist/static/images/m+.png" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/client/dist/static/images/media/Thumbs.db" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/client/dist/static/images/media/aa-05.png" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/client/dist/static/images/media/aa-07.png" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/client/dist/static/images/media/aa-10.png" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/client/dist/static/images/media/aa-12.png" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/client/dist/static/images/media/aa.png" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/client/dist/static/images/media/ee.png" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/client/dist/static/images/media/ff.png" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/client/dist/static/images/media/gg.png" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/client/dist/static/images/media/hh.png" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/client/dist/static/images/media/ii.png" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/client/dist/static/images/media/jj.png" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/client/dist/static/images/media/kk.png" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/client/dist/static/images/media/ll.png" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/client/dist/static/images/photos/Thumbs.db" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/client/dist/static/images/photos/user1.jpg" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/client/dist/static/images/photos/user10.jpg" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/client/dist/static/images/photos/user12.jpg" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/client/dist/static/images/photos/user2.jpg" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/client/dist/static/images/photos/user3.jpg" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/client/dist/static/images/photos/user4.jpg" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/client/dist/static/images/photos/user5.jpg" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/client/dist/static/images/photos/user6.jpg" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/client/dist/static/images/photos/user7.jpg" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/client/dist/static/images/photos/user8.jpg" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/client/dist/static/images/photos/user9.jpg" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/client/dist/static/images/s-logo.png" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/client/dist/static/images/superbox/Thumbs.db" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/client/dist/static/images/superbox/close.gif.png" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/client/dist/static/images/superbox/superbox-full-1.jpg" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/client/dist/static/images/superbox/superbox-full-10.jpg" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/client/dist/static/images/superbox/superbox-full-11.jpg" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/client/dist/static/images/superbox/superbox-full-12.jpg" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/client/dist/static/images/superbox/superbox-full-13.jpg" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/client/dist/static/images/superbox/superbox-full-14.jpg" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/client/dist/static/images/superbox/superbox-full-15.jpg" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/client/dist/static/images/superbox/superbox-full-16.jpg" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/client/dist/static/images/superbox/superbox-full-17.jpg" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/client/dist/static/images/superbox/superbox-full-18.jpg" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/client/dist/static/images/superbox/superbox-full-19.jpg" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/client/dist/static/images/superbox/superbox-full-2.jpg" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/client/dist/static/images/superbox/superbox-full-20.jpg" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/client/dist/static/images/superbox/superbox-full-21.jpg" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/client/dist/static/images/superbox/superbox-full-22.jpg" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/client/dist/static/images/superbox/superbox-full-23.jpg" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/client/dist/static/images/superbox/superbox-full-24.jpg" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/client/dist/static/images/superbox/superbox-full-3.jpg" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/client/dist/static/images/superbox/superbox-full-4.jpg" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/client/dist/static/images/superbox/superbox-full-5.jpg" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/client/dist/static/images/superbox/superbox-full-6.jpg" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/client/dist/static/images/superbox/superbox-full-7.jpg" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/client/dist/static/images/superbox/superbox-full-8.jpg" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/client/dist/static/images/superbox/superbox-full-9.jpg" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/client/dist/static/images/superbox/superbox-thumb-1.jpg" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/client/dist/static/images/superbox/superbox-thumb-10.jpg" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/client/dist/static/images/superbox/superbox-thumb-11.jpg" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/client/dist/static/images/superbox/superbox-thumb-12.jpg" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/client/dist/static/images/superbox/superbox-thumb-13.jpg" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/client/dist/static/images/superbox/superbox-thumb-14.jpg" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/client/dist/static/images/superbox/superbox-thumb-15.jpg" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/client/dist/static/images/superbox/superbox-thumb-16.jpg" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/client/dist/static/images/superbox/superbox-thumb-17.jpg" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/client/dist/static/images/superbox/superbox-thumb-18.jpg" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/client/dist/static/images/superbox/superbox-thumb-19.jpg" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/client/dist/static/images/superbox/superbox-thumb-2.jpg" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/client/dist/static/images/superbox/superbox-thumb-20.jpg" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/client/dist/static/images/superbox/superbox-thumb-21.jpg" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/client/dist/static/images/superbox/superbox-thumb-22.jpg" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/client/dist/static/images/superbox/superbox-thumb-23.jpg" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/client/dist/static/images/superbox/superbox-thumb-24.jpg" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/client/dist/static/images/superbox/superbox-thumb-3.jpg" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/client/dist/static/images/superbox/superbox-thumb-4.jpg" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/client/dist/static/images/superbox/superbox-thumb-5.jpg" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/client/dist/static/images/superbox/superbox-thumb-6.jpg" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/client/dist/static/images/superbox/superbox-thumb-7.jpg" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/client/dist/static/images/superbox/superbox-thumb-8.jpg" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/client/dist/static/images/superbox/superbox-thumb-9.jpg" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/client/dist/static/images/t.png" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/client/dist/static/images/team/Thumbs.db" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/client/dist/static/images/team/team-1.png" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/client/dist/static/images/team/team-2.png" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/client/dist/static/images/team/team-3.png" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/client/dist/static/images/team/team-4.png" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/client/dist/static/images/theme/Thumbs.db" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/client/dist/static/images/theme/blue.png" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/client/dist/static/images/theme/dark.png" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/client/dist/static/images/theme/green.png" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/client/dist/static/images/theme/light.png" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/client/dist/static/images/theme/mang.png" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/client/dist/static/images/theme/red.png" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/client/dist/static/images/typograph_03.png" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/client/dist/static/images/uploadfile.png" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/client/dist/static/images/us-name.png" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/client/dist/static/images/user.png" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/client/dist/static/images/uvvrl.jpg" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/client/dist/static/images/visa.png" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/client/src/assets/images/Thumbs.db" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/client/src/assets/images/aa.png" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/client/src/assets/images/ame.png" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/client/src/assets/images/bb.png" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/client/src/assets/images/bfdfh.png" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/client/src/assets/images/cc.png" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/client/src/assets/images/contact people/Thumbs.db" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/client/src/assets/images/contact people/aa-1.png" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/client/src/assets/images/contact people/aa-2.png" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/client/src/assets/images/contact people/aa-3.png" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/client/src/assets/images/contact people/aa-5.png" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/client/src/assets/images/contact people/aa-6.png" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/client/src/assets/images/contact people/aa-7.png" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/client/src/assets/images/contact people/aa-8.png" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/client/src/assets/images/dd.png" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/client/src/assets/images/ee.png" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/client/src/assets/images/fhu.png" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/client/src/assets/images/gfu.png" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/client/src/assets/images/gg.png" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/client/src/assets/images/ghk.png" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/client/src/assets/images/ght.png" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/client/src/assets/images/hd-a.png" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/client/src/assets/images/hd-b-07.png" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/client/src/assets/images/hd-b.png" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/client/src/assets/images/hd-c.png" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/client/src/assets/images/hd-d.png" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/client/src/assets/images/hd-e.png" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/client/src/assets/images/hd-f.png" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/client/src/assets/images/logo-skype.png" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/client/src/assets/images/m+.png" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/client/src/assets/images/media/Thumbs.db" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/client/src/assets/images/media/aa-05.png" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/client/src/assets/images/media/aa-07.png" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/client/src/assets/images/media/aa-10.png" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/client/src/assets/images/media/aa-12.png" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/client/src/assets/images/media/aa.png" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/client/src/assets/images/media/ee.png" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/client/src/assets/images/media/ff.png" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/client/src/assets/images/media/gg.png" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/client/src/assets/images/media/hh.png" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/client/src/assets/images/media/ii.png" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/client/src/assets/images/media/jj.png" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/client/src/assets/images/media/kk.png" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/client/src/assets/images/media/ll.png" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/client/src/assets/images/photos/Thumbs.db" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/client/src/assets/images/photos/user1.jpg" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/client/src/assets/images/photos/user10.jpg" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/client/src/assets/images/photos/user12.jpg" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/client/src/assets/images/photos/user2.jpg" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/client/src/assets/images/photos/user3.jpg" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/client/src/assets/images/photos/user4.jpg" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/client/src/assets/images/photos/user5.jpg" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/client/src/assets/images/photos/user6.jpg" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/client/src/assets/images/photos/user7.jpg" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/client/src/assets/images/photos/user8.jpg" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/client/src/assets/images/photos/user9.jpg" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/client/src/assets/images/s-logo.png" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/client/src/assets/images/superbox/Thumbs.db" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/client/src/assets/images/superbox/close.gif.png" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/client/src/assets/images/superbox/superbox-full-1.jpg" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/client/src/assets/images/superbox/superbox-full-10.jpg" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/client/src/assets/images/superbox/superbox-full-11.jpg" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/client/src/assets/images/superbox/superbox-full-12.jpg" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/client/src/assets/images/superbox/superbox-full-13.jpg" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/client/src/assets/images/superbox/superbox-full-14.jpg" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/client/src/assets/images/superbox/superbox-full-15.jpg" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/client/src/assets/images/superbox/superbox-full-16.jpg" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/client/src/assets/images/superbox/superbox-full-17.jpg" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/client/src/assets/images/superbox/superbox-full-18.jpg" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/client/src/assets/images/superbox/superbox-full-19.jpg" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/client/src/assets/images/superbox/superbox-full-2.jpg" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/client/src/assets/images/superbox/superbox-full-20.jpg" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/client/src/assets/images/superbox/superbox-full-21.jpg" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/client/src/assets/images/superbox/superbox-full-22.jpg" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/client/src/assets/images/superbox/superbox-full-23.jpg" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/client/src/assets/images/superbox/superbox-full-24.jpg" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/client/src/assets/images/superbox/superbox-full-3.jpg" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/client/src/assets/images/superbox/superbox-full-4.jpg" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/client/src/assets/images/superbox/superbox-full-5.jpg" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/client/src/assets/images/superbox/superbox-full-6.jpg" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/client/src/assets/images/superbox/superbox-full-7.jpg" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/client/src/assets/images/superbox/superbox-full-8.jpg" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/client/src/assets/images/superbox/superbox-full-9.jpg" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/client/src/assets/images/superbox/superbox-thumb-1.jpg" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/client/src/assets/images/superbox/superbox-thumb-10.jpg" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/client/src/assets/images/superbox/superbox-thumb-11.jpg" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/client/src/assets/images/superbox/superbox-thumb-12.jpg" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/client/src/assets/images/superbox/superbox-thumb-13.jpg" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/client/src/assets/images/superbox/superbox-thumb-14.jpg" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/client/src/assets/images/superbox/superbox-thumb-15.jpg" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/client/src/assets/images/superbox/superbox-thumb-16.jpg" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/client/src/assets/images/superbox/superbox-thumb-17.jpg" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/client/src/assets/images/superbox/superbox-thumb-18.jpg" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/client/src/assets/images/superbox/superbox-thumb-19.jpg" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/client/src/assets/images/superbox/superbox-thumb-2.jpg" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/client/src/assets/images/superbox/superbox-thumb-20.jpg" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/client/src/assets/images/superbox/superbox-thumb-21.jpg" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/client/src/assets/images/superbox/superbox-thumb-22.jpg" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/client/src/assets/images/superbox/superbox-thumb-23.jpg" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/client/src/assets/images/superbox/superbox-thumb-24.jpg" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/client/src/assets/images/superbox/superbox-thumb-3.jpg" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/client/src/assets/images/superbox/superbox-thumb-4.jpg" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/client/src/assets/images/superbox/superbox-thumb-5.jpg" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/client/src/assets/images/superbox/superbox-thumb-6.jpg" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/client/src/assets/images/superbox/superbox-thumb-7.jpg" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/client/src/assets/images/superbox/superbox-thumb-8.jpg" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/client/src/assets/images/superbox/superbox-thumb-9.jpg" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/client/src/assets/images/t.png" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/client/src/assets/images/team/Thumbs.db" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/client/src/assets/images/team/team-1.png" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/client/src/assets/images/team/team-2.png" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/client/src/assets/images/team/team-3.png" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/client/src/assets/images/team/team-4.png" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/client/src/assets/images/theme/Thumbs.db" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/client/src/assets/images/theme/blue.png" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/client/src/assets/images/theme/dark.png" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/client/src/assets/images/theme/green.png" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/client/src/assets/images/theme/light.png" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/client/src/assets/images/theme/mang.png" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/client/src/assets/images/theme/red.png" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/client/src/assets/images/typograph_03.png" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/client/src/assets/images/uploadfile.png" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/client/src/assets/images/us-name.png" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/client/src/assets/images/user.png" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/client/src/assets/images/uvvrl.jpg" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/client/src/assets/images/visa.png" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/client/src/common/directives/crud/crud.js" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/client/src/common/directives/crud/crudButtons.js" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/client/src/common/directives/crud/edit.js" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/client/src/common/directives/gravatar.js" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/client/src/common/directives/modal.js" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/client/src/common/resources/backlog.js" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/client/src/common/resources/projects.js" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/client/src/common/resources/sprints.js" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/client/src/common/resources/tasks.js" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/client/src/common/security/authorization.js" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/client/src/common/security/index.js" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/client/src/common/security/interceptor.js" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/client/src/common/security/login/LoginFormController.js" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/client/src/common/security/login/form.tpl.html" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/client/src/common/security/login/login.js" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/client/src/common/security/login/toolbar.js" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/client/src/common/security/login/toolbar.tpl.html" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/client/src/common/security/retryQueue.js" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/client/src/common/services/breadcrumbs.js" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/client/src/common/services/crud.js" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/client/src/common/services/crudRouteProvider.js" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/client/src/common/services/exceptionHandler.js" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/client/src/common/services/httpRequestTracker.js" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/client/src/common/services/i18nNotifications.js" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/client/src/common/services/localizedMessages.js" afterPath="" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/client/src/vendor/angular/angular-animate.js" afterPath="$PROJECT_DIR$/client/src/vendor/angular/angular-animate.js" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/client/src/vendor/angular/angular-cookies.js" afterPath="$PROJECT_DIR$/client/src/vendor/angular/angular-cookies.js" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/client/src/vendor/angular/angular-sanitize.js" afterPath="$PROJECT_DIR$/client/src/vendor/angular/angular-sanitize.js" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/client/src/vendor/angular/angular.js" afterPath="$PROJECT_DIR$/client/src/vendor/angular/angular.js" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/client/dist/static/angular_files.js" afterPath="$PROJECT_DIR$/client/dist/static/angular_files.js" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/client/dist/templates/app.js" afterPath="$PROJECT_DIR$/client/dist/templates/app.js" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/client/src/app/app.js" afterPath="$PROJECT_DIR$/client/src/app/app.js" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/csvploader.py" afterPath="$PROJECT_DIR$/csvploader.py" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/db_from_csv.py" afterPath="$PROJECT_DIR$/db_from_csv.py" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/db_from_google_sheets.py" afterPath="$PROJECT_DIR$/db_from_google_sheets.py" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/client/src/vendor/google/google-picker.js" afterPath="$PROJECT_DIR$/client/src/vendor/google/google-picker.js" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/app.yaml" afterPath="$PROJECT_DIR$/app.yaml" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/client/dist/templates/common.js" afterPath="$PROJECT_DIR$/client/dist/templates/common.js" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/client/gruntFile.js" afterPath="$PROJECT_DIR$/client/gruntFile.js" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/client/src/app/home/home.js" afterPath="$PROJECT_DIR$/client/src/app/home/home.js" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/client/src/app/home/home.tpl.html" afterPath="$PROJECT_DIR$/client/src/app/home/home.tpl.html" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/client/src/app/home/homeService.js" afterPath="$PROJECT_DIR$/client/src/app/home/homeService.js" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/client/dist/html/index.html" afterPath="$PROJECT_DIR$/client/dist/html/index.html" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/client/src/index.html" afterPath="$PROJECT_DIR$/client/src/index.html" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/client/dist/static/pegasusrises.js" afterPath="$PROJECT_DIR$/client/dist/static/pegasusrises.js" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/client/dist/static/pegasusrises_angular.js" afterPath="$PROJECT_DIR$/client/dist/static/pegasusrises_angular.js" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/routes.py" afterPath="$PROJECT_DIR$/routes.py" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/client/dist/static/scripts.js" afterPath="$PROJECT_DIR$/client/dist/static/scripts.js" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/vendors/custom_stylesheets/style.css" afterPath="$PROJECT_DIR$/vendors/custom_stylesheets/style.css" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/.idea/workspace.xml" afterPath="$PROJECT_DIR$/.idea/workspace.xml" />
     </list>
     <ignored path="pegasusrises.iws" />
@@ -283,28 +328,18 @@
       <file leaf-file-name="home.js" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/client/src/app/home/home.js">
           <provider selected="true" editor-type-id="text-editor">
-            <state vertical-scroll-proportion="0.0" vertical-offset="522" max-vertical-offset="2139">
-              <caret line="28" column="63" selection-start-line="28" selection-start-column="63" selection-end-line="28" selection-end-column="63" />
+            <state vertical-scroll-proportion="0.0" vertical-offset="0" max-vertical-offset="620">
+              <caret line="14" column="7" selection-start-line="14" selection-start-column="7" selection-end-line="14" selection-end-column="7" />
               <folding />
             </state>
           </provider>
         </entry>
       </file>
-      <file leaf-file-name="google-picker.js" pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/client/src/vendor/google/google-picker.js">
-          <provider selected="true" editor-type-id="text-editor">
-            <state vertical-scroll-proportion="0.0" vertical-offset="1166" max-vertical-offset="4340">
-              <caret line="55" column="10" selection-start-line="55" selection-start-column="10" selection-end-line="55" selection-end-column="10" />
-              <folding />
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file leaf-file-name="homeService.js" pinned="false" current-in-tab="false">
+      <file leaf-file-name="homeService.js" pinned="false" current-in-tab="true">
         <entry file="file://$PROJECT_DIR$/client/src/app/home/homeService.js">
           <provider selected="true" editor-type-id="text-editor">
-            <state vertical-scroll-proportion="0.0" vertical-offset="329" max-vertical-offset="1271">
-              <caret line="22" column="20" selection-start-line="22" selection-start-column="20" selection-end-line="22" selection-end-column="20" />
+            <state vertical-scroll-proportion="0.63917524" vertical-offset="0" max-vertical-offset="873">
+              <caret line="20" column="65" selection-start-line="20" selection-start-column="19" selection-end-line="20" selection-end-column="65" />
               <folding>
                 <element signature="e#0#40#0" expanded="false" />
               </folding>
@@ -315,28 +350,82 @@
       <file leaf-file-name="db_from_google_sheets.py" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/db_from_google_sheets.py">
           <provider selected="true" editor-type-id="text-editor">
-            <state vertical-scroll-proportion="0.0" vertical-offset="0" max-vertical-offset="3875">
-              <caret line="17" column="52" selection-start-line="17" selection-start-column="52" selection-end-line="17" selection-end-column="52" />
-              <folding />
+            <state vertical-scroll-proportion="0.0" vertical-offset="3" max-vertical-offset="4216">
+              <caret line="13" column="0" selection-start-line="13" selection-start-column="0" selection-end-line="13" selection-end-column="0" />
+              <folding>
+                <element signature="e#0#10#0" expanded="true" />
+              </folding>
             </state>
           </provider>
         </entry>
       </file>
-      <file leaf-file-name="routes.py" pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/routes.py">
-          <provider selected="true" editor-type-id="text-editor">
-            <state vertical-scroll-proportion="0.0" vertical-offset="31" max-vertical-offset="1054">
-              <caret line="18" column="25" selection-start-line="18" selection-start-column="25" selection-end-line="18" selection-end-column="25" />
-              <folding />
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file leaf-file-name="home.tpl.html" pinned="false" current-in-tab="true">
+      <file leaf-file-name="home.tpl.html" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/client/src/app/home/home.tpl.html">
           <provider selected="true" editor-type-id="text-editor">
-            <state vertical-scroll-proportion="0.5642257" vertical-offset="88" max-vertical-offset="961">
-              <caret line="18" column="73" selection-start-line="18" selection-start-column="73" selection-end-line="18" selection-end-column="73" />
+            <state vertical-scroll-proportion="-16.95" vertical-offset="128" max-vertical-offset="992">
+              <caret line="26" column="43" selection-start-line="26" selection-start-column="43" selection-end-line="26" selection-end-column="43" />
+              <folding />
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="index.html" pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/templates/index.html">
+          <provider selected="true" editor-type-id="text-editor">
+            <state vertical-scroll-proportion="0.0" vertical-offset="1736" max-vertical-offset="14043">
+              <caret line="64" column="21" selection-start-line="64" selection-start-column="21" selection-end-line="64" selection-end-column="21" />
+              <folding />
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="style.css" pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/vendors/custom_stylesheets/style.css">
+          <provider selected="true" editor-type-id="text-editor">
+            <state vertical-scroll-proportion="0.0" vertical-offset="13845" max-vertical-offset="28024">
+              <caret line="457" column="27" selection-start-line="457" selection-start-column="27" selection-end-line="457" selection-end-column="27" />
+              <folding />
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="app.yaml" pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/app.yaml">
+          <provider selected="true" editor-type-id="text-editor">
+            <state vertical-scroll-proportion="0.0" vertical-offset="274" max-vertical-offset="1333">
+              <caret line="15" column="14" selection-start-line="15" selection-start-column="14" selection-end-line="15" selection-end-column="14" />
+              <folding />
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="homeController.js" pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/client/src/app/home/homeController.js">
+          <provider selected="true" editor-type-id="text-editor">
+            <state vertical-scroll-proportion="0.0" vertical-offset="1352" max-vertical-offset="2573">
+              <caret line="57" column="46" selection-start-line="57" selection-start-column="46" selection-end-line="57" selection-end-column="46" />
+              <folding>
+                <element signature="e#0#40#0" expanded="false" />
+              </folding>
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="app.js" pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/client/src/app/app.js">
+          <provider selected="true" editor-type-id="text-editor">
+            <state vertical-scroll-proportion="0.0" vertical-offset="0" max-vertical-offset="2976">
+              <caret line="10" column="26" selection-start-line="10" selection-start-column="26" selection-end-line="10" selection-end-column="26" />
+              <folding />
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="gruntFile.js" pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/client/gruntFile.js">
+          <provider selected="true" editor-type-id="text-editor">
+            <state vertical-scroll-proportion="0.0" vertical-offset="2914" max-vertical-offset="5704">
+              <caret line="121" column="180" selection-start-line="121" selection-start-column="180" selection-end-line="121" selection-end-column="180" />
               <folding />
             </state>
           </provider>
@@ -357,7 +446,6 @@
         <option value="$PROJECT_DIR$/vendors/scripts/layout.js" />
         <option value="$PROJECT_DIR$/vendors/bootstrap/css/bootstrap.css" />
         <option value="$PROJECT_DIR$/vendors/custom_stylesheets/color.css" />
-        <option value="$PROJECT_DIR$/vendors/custom_stylesheets/style.css" />
         <option value="$PROJECT_DIR$/._main.py" />
         <option value="$PROJECT_DIR$/templates/upload csv.html" />
         <option value="$PROJECT_DIR$/templates/upload_csv.html" />
@@ -377,7 +465,6 @@
         <option value="$PROJECT_DIR$/client/src/stylesheets/font-awesome.css" />
         <option value="$PROJECT_DIR$/client/src/stylesheets/bootstrap.min.css" />
         <option value="$PROJECT_DIR$/templates/index.html" />
-        <option value="$PROJECT_DIR$/app.yaml" />
         <option value="$PROJECT_DIR$/client/.gitignore" />
         <option value="$PROJECT_DIR$/client/dist/static/pegasusrises.js" />
         <option value="$PROJECT_DIR$/client/dist/static/pegasusrises_angular.js" />
@@ -392,13 +479,16 @@
         <option value="$PROJECT_DIR$/db_from_google_sheets.py" />
         <option value="$PROJECT_DIR$/client/src/vendor/angular-growl-2/angular-growl.css" />
         <option value="$PROJECT_DIR$/client/src/index.html" />
+        <option value="$PROJECT_DIR$/client/src/vendor/google/google-picker.js" />
+        <option value="$PROJECT_DIR$/routes.py" />
+        <option value="$PROJECT_DIR$/vendors/custom_stylesheets/style.css" />
+        <option value="$PROJECT_DIR$/app.yaml" />
+        <option value="$PROJECT_DIR$/client/src/app/home/home.js" />
         <option value="$PROJECT_DIR$/client/gruntFile.js" />
         <option value="$PROJECT_DIR$/client/src/app/app.js" />
-        <option value="$PROJECT_DIR$/client/src/vendor/google/google-picker.js" />
         <option value="$PROJECT_DIR$/client/src/app/home/homeService.js" />
-        <option value="$PROJECT_DIR$/routes.py" />
-        <option value="$PROJECT_DIR$/client/src/app/home/home.js" />
         <option value="$PROJECT_DIR$/client/src/app/home/home.tpl.html" />
+        <option value="$PROJECT_DIR$/client/src/app/home/homeController.js" />
       </list>
     </option>
   </component>
@@ -433,6 +523,7 @@
       <sortByType />
     </navigator>
     <panes>
+      <pane id="Scope" />
       <pane id="ProjectPane">
         <subPane>
           <PATH>
@@ -467,6 +558,38 @@
             <PATH_ELEMENT>
               <option name="myItemId" value="DashboardHandler" />
               <option name="myItemType" value="com.jetbrains.python.projectView.PyElementNode" />
+            </PATH_ELEMENT>
+          </PATH>
+          <PATH>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="pegasusrises" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.ProjectViewProjectNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="pegasusrises" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="templates" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+          </PATH>
+          <PATH>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="pegasusrises" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.ProjectViewProjectNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="pegasusrises" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="pictures" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="img" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
             </PATH_ELEMENT>
           </PATH>
           <PATH>
@@ -571,7 +694,7 @@
               <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
             </PATH_ELEMENT>
             <PATH_ELEMENT>
-              <option name="myItemId" value="google" />
+              <option name="myItemId" value="angular-file-uploader" />
               <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
             </PATH_ELEMENT>
           </PATH>
@@ -619,7 +742,7 @@
               <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
             </PATH_ELEMENT>
             <PATH_ELEMENT>
-              <option name="myItemId" value="common" />
+              <option name="myItemId" value="assets" />
               <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
             </PATH_ELEMENT>
           </PATH>
@@ -739,7 +862,6 @@
           </PATH>
         </subPane>
       </pane>
-      <pane id="Scope" />
     </panes>
   </component>
   <component name="PropertiesComponent">
@@ -759,11 +881,11 @@
   </component>
   <component name="RecentsManager">
     <key name="CopyFile.RECENT_KEYS">
+      <recent name="$PROJECT_DIR$/client/src/vendor/angular" />
+      <recent name="$PROJECT_DIR$/client/src/vendor/angular-file-uploader" />
       <recent name="$PROJECT_DIR$/client/src/vendor/angular-growl-2" />
       <recent name="$PROJECT_DIR$/client/src/vendor/tabletop" />
       <recent name="$PROJECT_DIR$/client/src/app/admin" />
-      <recent name="$PROJECT_DIR$/client/src/vendor/angular-loading-bar" />
-      <recent name="$PROJECT_DIR$/client/src/vendor/angular" />
     </key>
     <key name="MoveFile.RECENT_KEYS">
       <recent name="$PROJECT_DIR$/client/src/vendor/ngToast" />
@@ -1032,21 +1154,21 @@
       <window_info id="Database" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="3" side_tool="false" content_ui="tabs" />
       <window_info id="Structure" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.25" sideWeight="0.5" order="1" side_tool="false" content_ui="tabs" />
       <window_info id="Application Servers" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="7" side_tool="false" content_ui="tabs" />
-      <window_info id="Project" active="true" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" weight="0.21354167" sideWeight="0.5" order="0" side_tool="false" content_ui="combo" />
+      <window_info id="Project" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" weight="0.21354167" sideWeight="0.5" order="0" side_tool="false" content_ui="combo" />
       <window_info id="Python Console" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="7" side_tool="false" content_ui="tabs" />
       <window_info id="Favorites" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="2" side_tool="true" content_ui="tabs" />
       <window_info id="Event Log" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="7" side_tool="true" content_ui="tabs" />
       <window_info id="Version Control" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="7" side_tool="false" content_ui="tabs" />
       <window_info id="Cvs" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.25" sideWeight="0.5" order="4" side_tool="false" content_ui="tabs" />
       <window_info id="Message" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="0" side_tool="false" content_ui="tabs" />
-      <window_info id="Find" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.32963374" sideWeight="0.5" order="1" side_tool="false" content_ui="tabs" />
       <window_info id="Ant Build" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.25" sideWeight="0.5" order="1" side_tool="false" content_ui="tabs" />
+      <window_info id="Find" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.32963374" sideWeight="0.5" order="1" side_tool="false" content_ui="tabs" />
       <window_info id="CSS Styles" active="true" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" weight="0.6437292" sideWeight="0.5" order="8" side_tool="false" content_ui="tabs" />
       <window_info id="Debug" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.39955604" sideWeight="0.5" order="3" side_tool="false" content_ui="tabs" />
       <window_info id="Commander" active="false" anchor="right" auto_hide="false" internal_type="SLIDING" type="SLIDING" visible="false" weight="0.4" sideWeight="0.5" order="0" side_tool="false" content_ui="tabs" />
-      <window_info id="Run" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="2" side_tool="false" content_ui="tabs" />
-      <window_info id="Inspection" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.39955604" sideWeight="0.5" order="5" side_tool="false" content_ui="tabs" />
       <window_info id="Hierarchy" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.25" sideWeight="0.5" order="2" side_tool="false" content_ui="combo" />
+      <window_info id="Inspection" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.39955604" sideWeight="0.5" order="5" side_tool="false" content_ui="tabs" />
+      <window_info id="Run" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="2" side_tool="false" content_ui="tabs" />
     </layout>
   </component>
   <component name="Vcs.Log.UiProperties">
@@ -1072,17 +1194,35 @@
     <watches-manager />
   </component>
   <component name="editorHistoryManager">
-    <entry file="file://$PROJECT_DIR$/client/src/common/directives/crud/crud.js">
+    <entry file="file://$PROJECT_DIR$/client/src/app/home/home.tpl.html">
       <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="0.0" vertical-offset="0" max-vertical-offset="873">
-          <caret line="0" column="0" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
+        <state vertical-scroll-proportion="0.0" vertical-offset="88" max-vertical-offset="961">
+          <caret line="18" column="73" selection-start-line="18" selection-start-column="73" selection-end-line="18" selection-end-column="73" />
+          <folding />
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/client/src/common/directives/crud/edit.js">
+    <entry file="file://$PROJECT_DIR$/templates/index.html">
       <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="-2.4089346" vertical-offset="2103" max-vertical-offset="3441">
-          <caret line="0" column="0" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
+        <state vertical-scroll-proportion="0.0" vertical-offset="1736" max-vertical-offset="14043">
+          <caret line="64" column="21" selection-start-line="64" selection-start-column="21" selection-end-line="64" selection-end-column="21" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/vendors/custom_stylesheets/style.css">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="0.0" vertical-offset="13845" max-vertical-offset="28024">
+          <caret line="457" column="27" selection-start-line="457" selection-start-column="27" selection-end-line="457" selection-end-column="27" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/app.yaml">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="0.0" vertical-offset="274" max-vertical-offset="1333">
+          <caret line="15" column="14" selection-start-line="15" selection-start-column="14" selection-end-line="15" selection-end-column="14" />
+          <folding />
         </state>
       </provider>
     </entry>
@@ -1137,7 +1277,6 @@
       <provider selected="true" editor-type-id="text-editor">
         <state vertical-scroll-proportion="0.0" vertical-offset="0" max-vertical-offset="186">
           <caret line="0" column="0" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
-          <folding />
         </state>
       </provider>
     </entry>
@@ -1148,20 +1287,10 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/templates/index.html">
-      <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="-205.375" vertical-offset="1643" max-vertical-offset="14043">
-          <caret line="318" column="87" selection-start-line="318" selection-start-column="82" selection-end-line="318" selection-end-column="87" />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/csvploader.py">
       <provider selected="true" editor-type-id="text-editor">
         <state vertical-scroll-proportion="0.0" vertical-offset="0" max-vertical-offset="1116">
           <caret line="0" column="0" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
-          <folding>
-            <element signature="e#0#10#0" expanded="false" />
-          </folding>
         </state>
       </provider>
     </entry>
@@ -1176,13 +1305,6 @@
       <provider selected="true" editor-type-id="text-editor">
         <state vertical-scroll-proportion="0.0" vertical-offset="0" max-vertical-offset="527">
           <caret line="0" column="0" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/app.yaml">
-      <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="0.0" vertical-offset="0" max-vertical-offset="1333">
-          <caret line="17" column="0" selection-start-line="17" selection-start-column="0" selection-end-line="17" selection-end-column="0" />
         </state>
       </provider>
     </entry>
@@ -1246,7 +1368,6 @@
       <provider selected="true" editor-type-id="text-editor">
         <state vertical-scroll-proportion="0.0" vertical-offset="16337" max-vertical-offset="1371843">
           <caret line="531" column="5" selection-start-line="531" selection-start-column="5" selection-end-line="531" selection-end-column="5" />
-          <folding />
         </state>
       </provider>
     </entry>
@@ -1268,7 +1389,6 @@
       <provider selected="true" editor-type-id="text-editor">
         <state vertical-scroll-proportion="0.0" vertical-offset="0" max-vertical-offset="1333">
           <caret line="31" column="0" selection-start-line="31" selection-start-column="0" selection-end-line="31" selection-end-column="0" />
-          <folding />
         </state>
       </provider>
     </entry>
@@ -1276,7 +1396,6 @@
       <provider selected="true" editor-type-id="text-editor">
         <state vertical-scroll-proportion="0.0" vertical-offset="212" max-vertical-offset="1085">
           <caret line="24" column="44" selection-start-line="24" selection-start-column="22" selection-end-line="24" selection-end-column="44" />
-          <folding />
         </state>
       </provider>
     </entry>
@@ -1323,20 +1442,6 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/client/gruntFile.js">
-      <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="0.0" vertical-offset="0" max-vertical-offset="5704">
-          <caret line="121" column="77" selection-start-line="121" selection-start-column="77" selection-end-line="121" selection-end-column="77" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/client/src/app/app.js">
-      <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="0.0" vertical-offset="1917" max-vertical-offset="2790">
-          <caret line="84" column="0" selection-start-line="84" selection-start-column="0" selection-end-line="84" selection-end-column="0" />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/client/src/app/admin/admin.js">
       <provider selected="true" editor-type-id="text-editor">
         <state vertical-scroll-proportion="0.0" vertical-offset="1582" max-vertical-offset="2697">
@@ -1351,42 +1456,10 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/client/src/vendor/angular/angular.js">
-      <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="0.0" vertical-offset="0" max-vertical-offset="593526">
-          <caret line="0" column="0" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/client/src/vendor/angular/angular-animate.js">
-      <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="0.0" vertical-offset="0" max-vertical-offset="26350">
-          <caret line="0" column="0" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/client/src/vendor/angular/angular-cookies.js">
-      <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="0.0" vertical-offset="0" max-vertical-offset="6386">
-          <caret line="0" column="0" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/client/src/vendor/angular/angular-sanitize.js">
-      <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="0.0" vertical-offset="0" max-vertical-offset="17484">
-          <caret line="0" column="0" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/client/src/vendor/angular/angular-ui-router.js">
       <provider selected="true" editor-type-id="text-editor">
         <state vertical-scroll-proportion="0.0" vertical-offset="0" max-vertical-offset="131192">
           <caret line="0" column="0" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
-          <folding>
-            <element signature="n#!!doc" expanded="false" />
-          </folding>
         </state>
       </provider>
     </entry>
@@ -1405,14 +1478,6 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/db_from_google_sheets.py">
-      <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="0.0" vertical-offset="183" max-vertical-offset="4216">
-          <caret line="17" column="52" selection-start-line="17" selection-start-column="52" selection-end-line="17" selection-end-column="52" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/routes.py">
       <provider selected="true" editor-type-id="text-editor">
         <state vertical-scroll-proportion="0.0" vertical-offset="31" max-vertical-offset="1054">
@@ -1421,29 +1486,89 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/client/src/app/home/homeService.js">
+    <entry file="file://$PROJECT_DIR$/templates/index.html">
       <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="0.0" vertical-offset="329" max-vertical-offset="1271">
-          <caret line="22" column="20" selection-start-line="22" selection-start-column="20" selection-end-line="22" selection-end-column="20" />
+        <state vertical-scroll-proportion="0.0" vertical-offset="1736" max-vertical-offset="14043">
+          <caret line="64" column="21" selection-start-line="64" selection-start-column="21" selection-end-line="64" selection-end-column="21" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/vendors/custom_stylesheets/style.css">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="0.0" vertical-offset="13845" max-vertical-offset="28024">
+          <caret line="457" column="27" selection-start-line="457" selection-start-column="27" selection-end-line="457" selection-end-column="27" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/app.yaml">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="0.0" vertical-offset="274" max-vertical-offset="1333">
+          <caret line="15" column="14" selection-start-line="15" selection-start-column="14" selection-end-line="15" selection-end-column="14" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/db_from_google_sheets.py">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="0.0" vertical-offset="3" max-vertical-offset="4216">
+          <caret line="13" column="0" selection-start-line="13" selection-start-column="0" selection-end-line="13" selection-end-column="0" />
           <folding>
-            <element signature="e#0#40#0" expanded="false" />
+            <element signature="e#0#10#0" expanded="true" />
           </folding>
         </state>
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/client/src/app/home/home.js">
       <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="0.0" vertical-offset="522" max-vertical-offset="2139">
-          <caret line="28" column="63" selection-start-line="28" selection-start-column="63" selection-end-line="28" selection-end-column="63" />
+        <state vertical-scroll-proportion="0.0" vertical-offset="0" max-vertical-offset="620">
+          <caret line="14" column="7" selection-start-line="14" selection-start-column="7" selection-end-line="14" selection-end-column="7" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/client/gruntFile.js">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="0.0" vertical-offset="2914" max-vertical-offset="5704">
+          <caret line="121" column="180" selection-start-line="121" selection-start-column="180" selection-end-line="121" selection-end-column="180" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/client/src/app/app.js">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="0.0" vertical-offset="0" max-vertical-offset="2976">
+          <caret line="10" column="26" selection-start-line="10" selection-start-column="26" selection-end-line="10" selection-end-column="26" />
           <folding />
         </state>
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/client/src/app/home/home.tpl.html">
       <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="0.5642257" vertical-offset="88" max-vertical-offset="961">
-          <caret line="18" column="73" selection-start-line="18" selection-start-column="73" selection-end-line="18" selection-end-column="73" />
+        <state vertical-scroll-proportion="-16.95" vertical-offset="128" max-vertical-offset="992">
+          <caret line="26" column="43" selection-start-line="26" selection-start-column="43" selection-end-line="26" selection-end-column="43" />
           <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/client/src/app/home/homeController.js">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="0.0" vertical-offset="1352" max-vertical-offset="2573">
+          <caret line="57" column="46" selection-start-line="57" selection-start-column="46" selection-end-line="57" selection-end-column="46" />
+          <folding>
+            <element signature="e#0#40#0" expanded="false" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/client/src/app/home/homeService.js">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="0.63917524" vertical-offset="0" max-vertical-offset="873">
+          <caret line="20" column="65" selection-start-line="20" selection-start-column="19" selection-end-line="20" selection-end-column="65" />
+          <folding>
+            <element signature="e#0#40#0" expanded="false" />
+          </folding>
         </state>
       </provider>
     </entry>

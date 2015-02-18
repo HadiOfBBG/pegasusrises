@@ -95,9 +95,11 @@ angular.module('pegasusrises', [
     'admin',
     'lk-google-picker',
     'angular-loading-bar',
-    'angular-growl'
+    'angular-growl',
+    'angularFileUpload',
+    'ngResource'
 ])
-    .config(['$stateProvider','$urlRouterProvider','lkGoogleSettingsProvider', 'growlProvider', function($stateProvider, $urlRouterProvider, lkGoogleSettingsProvider, growlProvider){
+    .config(['$stateProvider','$urlRouterProvider','lkGoogleSettingsProvider', 'growlProvider', '$httpProvider', function($stateProvider, $urlRouterProvider, lkGoogleSettingsProvider, growlProvider, $httpProvider){
         //for any unmatched url, redirect to the state '/home'
         $urlRouterProvider.otherwise('/');
 
@@ -113,8 +115,12 @@ angular.module('pegasusrises', [
                 'DocsView().setMimeTypes("application/vnd.google-apps.spreadsheet")'
             ]
         });
-
+        //globally time the growl toatser to stay visible for 5seconds
         growlProvider.globalTimeToLive(5000);
+
+        $httpProvider.defaults.useXDomain = true;
+        delete $httpProvider.defaults.headers.common['X-Requested-With'];
+
     }])
     .run(['$rootScope', '$state', '$stateParams', '$location' ,function($rootScope, $state, $stateParams, $location){
         $rootScope.$state = $state;
@@ -183,9 +189,15 @@ angular.module('home', ['angular-loading-bar'])
                 templateUrl : 'home/home.tpl.html',
                 controller : 'prHomeCtrl'
             })
-    }])
-    .controller('prHomeCtrl', ['$rootScope', '$scope', 'homeService', 'growl', function($rootScope, $scope, homeService, growl){
+    }]);
+/**
+ * Created by kaygee on 2/18/15.
+ */
+
+angular.module('home')
+ .controller('prHomeCtrl', ['$rootScope', '$scope', 'homeService', 'growl', '$upload', function($rootScope, $scope, homeService, growl, $upload){
         $scope.files = [];
+
 
         $scope.uploadSheet = function(){
             var fileToUpload = $scope.files[ $scope.files.length - 1 ];
@@ -231,6 +243,31 @@ angular.module('home', ['angular-loading-bar'])
             }
         };
 
+        $scope.$watch('files', function () {
+        $scope.upload($scope.files);
+    });
+        $scope.odkTest = function(){
+            homeService.sendFileToOdk().query()
+        };
+
+    $scope.upload = function (files) {
+        if (files && files.length) {
+            for (var i = 0; i < files.length; i++) {
+                var file = files[i];
+                $upload.upload({
+                    url: 'http://23.21.114.69/xlsform/',
+                    fields: {'username': $scope.username},
+                    file: file
+                }).progress(function (evt) {
+                    var progressPercentage = parseInt(100.0 * evt.loaded / evt.total);
+                    console.log('progress: ' + progressPercentage + '% ' + evt.config.file.name);
+                }).success(function (data, status, headers, config) {
+                    console.log('file ' + config.file.name + 'uploaded. Response: ' + data);
+                });
+            }
+        }
+    };
+
 
     }]);
 /**
@@ -239,34 +276,21 @@ angular.module('home', ['angular-loading-bar'])
 
 
 angular.module('home')
-    .factory('homeService', ['$http', function($http){
+    .factory('homeService', ['$http','$resource', function($http, $resource){
         var homeService = {};
 
         homeService.uploadGoogleSheet = function(fileObject){
-            // Simple POST request example (passing data) :
             return $http.post('/post/google/sheet', fileObject);
-//                success(function(data, status, headers, config) {
-//                    // this callback will be called asynchronously
-//                    // when the response is available
-//                }).
-//                error(function(data, status, headers, config) {
-//                    // called asynchronously if an error occurs
-//                    // or server returns response with an error status.
-//                });
         };
 
         homeService.uploadGoogleSheetContentsAsJson = function(fileObject){
-            // Simple POST request example (passing data) :
-//            return $http.post('/post/google/sheet/json', fileObject);
             return $http.post('/google/sheet/json', fileObject);
-//                success(function(data, status, headers, config) {
-//                    // this callback will be called asynchronously
-//                    // when the response is available
-//                }).
-//                error(function(data, status, headers, config) {
-//                    // called asynchronously if an error occurs
-//                    // or server returns response with an error status.
-//                });
+        };
+
+        homeService.sendFileToOdk = function(){
+//            fileObject
+//            return $http.post('http://23.21.114.69/xlsform/', fileObject);
+            return $resource('http://23.21.114.69/xlsform/', {});
         };
 
         return homeService;

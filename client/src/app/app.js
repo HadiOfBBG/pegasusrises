@@ -9,9 +9,11 @@ angular.module('pegasusrises', [
     'admin',
     'lk-google-picker',
     'angular-loading-bar',
-    'angular-growl'
+    'angular-growl',
+    'angularFileUpload',
+    'ngResource'
 ])
-    .config(['$stateProvider','$urlRouterProvider','lkGoogleSettingsProvider', 'growlProvider', function($stateProvider, $urlRouterProvider, lkGoogleSettingsProvider, growlProvider){
+    .config(['$stateProvider','$urlRouterProvider','lkGoogleSettingsProvider', 'growlProvider', '$httpProvider', function($stateProvider, $urlRouterProvider, lkGoogleSettingsProvider, growlProvider, $httpProvider){
         //for any unmatched url, redirect to the state '/home'
         $urlRouterProvider.otherwise('/');
 
@@ -27,8 +29,12 @@ angular.module('pegasusrises', [
                 'DocsView().setMimeTypes("application/vnd.google-apps.spreadsheet")'
             ]
         });
-
+        //globally time the growl toatser to stay visible for 5seconds
         growlProvider.globalTimeToLive(5000);
+
+        $httpProvider.defaults.useXDomain = true;
+        delete $httpProvider.defaults.headers.common['X-Requested-With'];
+
     }])
     .run(['$rootScope', '$state', '$stateParams', '$location' ,function($rootScope, $state, $stateParams, $location){
         $rootScope.$state = $state;
