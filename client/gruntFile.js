@@ -48,7 +48,8 @@ module.exports = function (grunt) {
                 app: ['src/app/**/*.tpl.html'],
                 common: ['src/common/**/*.tpl.html']
             },
-            css : ['src/stylesheets/font*.css', 'src/stylesheets/boot*.css', 'src/stylesheets/animate.css','src/stylesheets/admin.css', 'src/stylesheets/*.css', 'src/vendor/ngToast/*.css']
+            css : ['src/stylesheets/font*.css', 'src/stylesheets/boot*.css', 'src/stylesheets/animate.css','src/stylesheets/admin.css',
+                'src/stylesheets/*.css','src/vendor/angular-loading-bar/*.css', 'src/vendor/angular-growl-2/*.css']
         },
         clean: ['<%= distdir %>/*'],
         copy: {
@@ -118,7 +119,7 @@ module.exports = function (grunt) {
                 dest: '<%= distdirStatic %>/<%= pkg.name %>_angular.js'
             },
             vendors: {
-                src:['src/scripts/common-script.js', 'src/vendor/google/*.js', 'src/vendor/ngToast/*.js', 'src/vendor/tabletop/*.js'],
+                src:['src/scripts/common-script.js', 'src/vendor/google/*.js', 'src/vendor/tabletop/*.js', 'src/vendor/angular-growl-2/*.js'],
                 dest: '<%= distdirStatic %>/scripts.js'
             }
         },

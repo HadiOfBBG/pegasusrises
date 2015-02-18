@@ -19,7 +19,9 @@ class CSVUploadHandler(DbFromGoogleSheet):
 
     def post(self):
         google_sheet = self.request.get('url')
- 
+
+        self.read_google_sheet(google_sheet)
+        # return
         self.uploadFiles(google_sheet)
         # file = self.request.get('csv_import')
         # file  = '\n'.join(file.splitlines())
@@ -32,7 +34,7 @@ class CSVUploadHandler(DbFromGoogleSheet):
         #     else:
         #         xmlBody = ""
         #         visibility = false
-                
+
 
     def uploadFiles(self, google_sheet):
         file = pegasusFiles.PegasusFiles()
@@ -46,13 +48,12 @@ class CSVUploadHandler(DbFromGoogleSheet):
         if file is not None:
             self.response.headers['Content-Type'] = 'application/x-bittorrent'
             # self.response.out.write(file.file)
-            # return file
-            self.read_google_sheet(file)
+            return file
         else:
             self.response.set_status(404)
 
-            
+
 
     def submitFile(self,key):
         file = self.getFile(key)
-        
+
