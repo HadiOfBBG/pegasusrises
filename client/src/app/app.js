@@ -2,15 +2,16 @@
 angular.module('pegasusrises', [
     'ui.router',
     'ui.bootstrap',
+    'ngAnimate',
     'templates.app',
     'templates.common',
     'home',
     'admin',
     'lk-google-picker',
-    'ngToast',
-    'angular-loading-bar'
+    'angular-loading-bar',
+    'angular-growl'
 ])
-    .config(['$stateProvider','$urlRouterProvider','lkGoogleSettingsProvider', function($stateProvider, $urlRouterProvider, lkGoogleSettingsProvider){
+    .config(['$stateProvider','$urlRouterProvider','lkGoogleSettingsProvider', 'growlProvider', function($stateProvider, $urlRouterProvider, lkGoogleSettingsProvider, growlProvider){
         //for any unmatched url, redirect to the state '/home'
         $urlRouterProvider.otherwise('/');
 
@@ -26,6 +27,8 @@ angular.module('pegasusrises', [
                 'DocsView().setMimeTypes("application/vnd.google-apps.spreadsheet")'
             ]
         });
+
+        growlProvider.globalTimeToLive(5000);
     }])
     .run(['$rootScope', '$state', '$stateParams', '$location' ,function($rootScope, $state, $stateParams, $location){
         $rootScope.$state = $state;
@@ -78,48 +81,4 @@ angular.module('pegasusrises').controller('prBreadCrumbCtrl', ['$scope', '$state
 //angular.module('app').config(['$routeProvider', '$locationProvider', function ($routeProvider, $locationProvider) {
 //  $locationProvider.html5Mode(true);
 //  $routeProvider.otherwise({redirectTo:'/projectsinfo'});
-//}]);
-//
-//angular.module('app').run(['security', function(security) {
-//  // Get the current user when the application starts
-//  // (in case they are still logged in from a previous session)
-//  security.requestCurrentUser();
-//}]);
-//
-//angular.module('app').controller('AppCtrl', ['$scope', 'i18nNotifications', 'localizedMessages', function($scope, i18nNotifications, localizedMessages) {
-//
-//  $scope.notifications = i18nNotifications;
-//
-//  $scope.removeNotification = function (notification) {
-//    i18nNotifications.remove(notification);
-//  };
-//
-//  $scope.$on('$routeChangeError', function(event, current, previous, rejection){
-//    i18nNotifications.pushForCurrentRoute('errors.route.changeError', 'error', {}, {rejection: rejection});
-//  });
-//}]);
-//
-//angular.module('app').controller('HeaderCtrl', ['$scope', '$location', '$route', 'security', 'breadcrumbs', 'notifications', 'httpRequestTracker',
-//  function ($scope, $location, $route, security, breadcrumbs, notifications, httpRequestTracker) {
-//  $scope.location = $location;
-//  $scope.breadcrumbs = breadcrumbs;
-//
-//  $scope.isAuthenticated = security.isAuthenticated;
-//  $scope.isAdmin = security.isAdmin;
-//
-//  $scope.home = function () {
-//    if (security.isAuthenticated()) {
-//      $location.path('/dashboard');
-//    } else {
-//      $location.path('/projectsinfo');
-//    }
-//  };
-//
-//  $scope.isNavbarActive = function (navBarPath) {
-//    return navBarPath === breadcrumbs.getFirst().name;
-//  };
-//
-//  $scope.hasPendingRequests = function () {
-//    return httpRequestTracker.hasPendingRequests();
-//  };
 //}]);

@@ -88,15 +88,16 @@ angular.module('admin', [])
 angular.module('pegasusrises', [
     'ui.router',
     'ui.bootstrap',
+    'ngAnimate',
     'templates.app',
     'templates.common',
     'home',
     'admin',
     'lk-google-picker',
-    'ngToast',
-    'angular-loading-bar'
+    'angular-loading-bar',
+    'angular-growl'
 ])
-    .config(['$stateProvider','$urlRouterProvider','lkGoogleSettingsProvider', function($stateProvider, $urlRouterProvider, lkGoogleSettingsProvider){
+    .config(['$stateProvider','$urlRouterProvider','lkGoogleSettingsProvider', 'growlProvider', function($stateProvider, $urlRouterProvider, lkGoogleSettingsProvider, growlProvider){
         //for any unmatched url, redirect to the state '/home'
         $urlRouterProvider.otherwise('/');
 
@@ -112,6 +113,8 @@ angular.module('pegasusrises', [
                 'DocsView().setMimeTypes("application/vnd.google-apps.spreadsheet")'
             ]
         });
+
+        growlProvider.globalTimeToLive(5000);
     }])
     .run(['$rootScope', '$state', '$stateParams', '$location' ,function($rootScope, $state, $stateParams, $location){
         $rootScope.$state = $state;
@@ -165,50 +168,6 @@ angular.module('pegasusrises').controller('prBreadCrumbCtrl', ['$scope', '$state
 //  $locationProvider.html5Mode(true);
 //  $routeProvider.otherwise({redirectTo:'/projectsinfo'});
 //}]);
-//
-//angular.module('app').run(['security', function(security) {
-//  // Get the current user when the application starts
-//  // (in case they are still logged in from a previous session)
-//  security.requestCurrentUser();
-//}]);
-//
-//angular.module('app').controller('AppCtrl', ['$scope', 'i18nNotifications', 'localizedMessages', function($scope, i18nNotifications, localizedMessages) {
-//
-//  $scope.notifications = i18nNotifications;
-//
-//  $scope.removeNotification = function (notification) {
-//    i18nNotifications.remove(notification);
-//  };
-//
-//  $scope.$on('$routeChangeError', function(event, current, previous, rejection){
-//    i18nNotifications.pushForCurrentRoute('errors.route.changeError', 'error', {}, {rejection: rejection});
-//  });
-//}]);
-//
-//angular.module('app').controller('HeaderCtrl', ['$scope', '$location', '$route', 'security', 'breadcrumbs', 'notifications', 'httpRequestTracker',
-//  function ($scope, $location, $route, security, breadcrumbs, notifications, httpRequestTracker) {
-//  $scope.location = $location;
-//  $scope.breadcrumbs = breadcrumbs;
-//
-//  $scope.isAuthenticated = security.isAuthenticated;
-//  $scope.isAdmin = security.isAdmin;
-//
-//  $scope.home = function () {
-//    if (security.isAuthenticated()) {
-//      $location.path('/dashboard');
-//    } else {
-//      $location.path('/projectsinfo');
-//    }
-//  };
-//
-//  $scope.isNavbarActive = function (navBarPath) {
-//    return navBarPath === breadcrumbs.getFirst().name;
-//  };
-//
-//  $scope.hasPendingRequests = function () {
-//    return httpRequestTracker.hasPendingRequests();
-//  };
-//}]);
 
 /**
  * Home Template
@@ -216,7 +175,7 @@ angular.module('pegasusrises').controller('prBreadCrumbCtrl', ['$scope', '$state
  * Created by kaygee on 2/12/15.
  */
 
-angular.module('home', [])
+angular.module('home', ['angular-loading-bar'])
     .config(['$stateProvider', function($stateProvider){
         $stateProvider
             .state('home', {
@@ -225,21 +184,21 @@ angular.module('home', [])
                 controller : 'prHomeCtrl'
             })
     }])
-    .controller('prHomeCtrl', ['$rootScope', '$scope', 'homeService','ngToast', function($rootScope, $scope, homeService, ngToast){
+    .controller('prHomeCtrl', ['$rootScope', '$scope', 'homeService', 'growl', function($rootScope, $scope, homeService, growl){
         $scope.files = [];
 
         $scope.uploadSheet = function(){
             var fileToUpload = $scope.files[ $scope.files.length - 1 ];
             homeService.uploadGoogleSheet(fileToUpload).
                 success(function(data, status, headers, config) {
-                    console.log("success");
+                    growl.success("Data was posted successfully", {});
                     console.log(data);
                     console.log(status);
                     console.log(headers);
                     console.log(config);
                 }).
                 error(function(data, status, headers, config) {
-                    console.log("error");
+                    growl.error("Something went wrong on the server", {});
                     console.log(data);
                     console.log(status);
                     console.log(headers);
@@ -247,33 +206,20 @@ angular.module('home', [])
                 });
         };
 
-        $scope.testToast = function(){
-            console.log("test");
-
-            // create a toast:
-            ngToast.create('A toast message...');
-
-            // clear specific toast:
-//            var msg = ngToast.create({
-//                content: 'Another message as <a href="#" class="">HTML</a>'
-//            });
-//            ngToast.dismiss(msg);
-
-            // clear all toasts:
-//            ngToast.dismiss();
-        };
-//https://docs.google.com/spreadsheets/d/1FrJhUXPYaaKo4Y62uRHgRTwkVeDVgEIrpUmY2r0HEJw/edit?usp=sharing
-//https://docs.google.com/spreadsheets/d/1FrJhUXPYaaKo4Y62uRHgRTwkVeDVgEIrpUmY2r0HEJw/pubhtml
-
         $scope.tabletop= function(){
             if ($scope.files.length) {
                 Tabletop.init( {
                     key: $scope.files[ $scope.files.length - 1].id,
                     callback: function(data, tabletop) {
                         console.log(data);
-                        console.log(tabletop);
                         if (data) {
-                            homeService.uploadGoogleSheetContentsAsJson(data)
+                            homeService.uploadGoogleSheetContentsAsJson({"google_sheet_contents" : data})
+                                .success(function(data){
+                                    growl.success("Data was posted successfully", {});
+                                })
+                                .error(function(){
+                                    growl.error("Something went wrong on the server", {});
+                                })
                         }else{
                             alert("The file has not been shared to the public")
                         }
@@ -283,7 +229,8 @@ angular.module('home', [])
             }else{
                 alert("No file selected")
             }
-        }
+        };
+
 
     }]);
 /**
@@ -310,7 +257,8 @@ angular.module('home')
 
         homeService.uploadGoogleSheetContentsAsJson = function(fileObject){
             // Simple POST request example (passing data) :
-            return $http.post('/post/google/sheet/json', fileObject);
+//            return $http.post('/post/google/sheet/json', fileObject);
+            return $http.post('/google/sheet/json', fileObject);
 //                success(function(data, status, headers, config) {
 //                    // this callback will be called asynchronously
 //                    // when the response is available

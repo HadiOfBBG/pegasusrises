@@ -123,6 +123,7 @@ angular.module('lk-google-picker', [])
         if (data.action == google.picker.Action.PICKED) {
           gapi.client.load('drive', 'v2', function() {
             angular.forEach(data.docs, function(file, index) {
+                file.accessToken = accessToken;
               scope.pickerFiles.push(file);
             });
             scope.$apply();

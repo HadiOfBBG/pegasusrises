@@ -8,16 +8,16 @@ from google.appengine.ext import db
 from google.appengine.api import memcache
 from xml.dom import minidom
 from models import pegasusFiles
-<<<<<<< HEAD
 from google.appengine.api import urlfetch
 from poster.encode import multipart_encode, MultipartParam
 import logging
 from google.appengine.api import users
-=======
 from db_from_google_sheets import DbFromGoogleSheet
->>>>>>> 6b634a01f45445e55a83f7a47e8acdc980c88c3d
+import json
+from google.appengine.api import files
+from StringIO import StringIO
 
-class CSVUploadHandler(DbFromGoogleSheet):
+class CSVUploadHandler(JinjaTemplating,blobstore_handlers.BlobstoreUploadHandler,blobstore_handlers.BlobstoreDownloadHandler):
 
     def get(self):
         # self.response.out.write(pegasusFiles.PegasusFiles)
@@ -25,12 +25,31 @@ class CSVUploadHandler(DbFromGoogleSheet):
 
 
     def post(self):
-        self.update("","1NNuNCTzzWiE-b4gJxyigY-nZPbfpnIReDipRmk-YOr4")
+        # upload_url = blobstore.create_upload_url('/upload')
+        file = pegasusFiles.PegasusFiles()
+        file.name = 'sheet_name'
+        file.file = db.Blob(self.request.get('csv_upload'))
+        file.put()
+        # self.send_blob(file.file)
+        self.sendFileToXForms(file.file)
+        self.response.out.write(file.added)
+
+        # self.response.out.write('http://pegasusrisesapp.appspot.com/' + str(file.key()))
+        # self.redirect('/serve/%s' % str(file.key()))
+        # body = json.loads(self.request.body)
+        # token = body['accessToken']
+        # self.response.out.write(token)
+        # self.update("","1NNuNCTzzWiE-b4gJxyigY-nZPbfpnIReDipRmk-YOr4",token)
         # google_sheet = self.request.get('url')
         # logging.debug("value of my var is %s", 'okkkkkkkkkkkkkkkkkk')
         # sheet_name = self.request.get('name')
  
         # self.uploadFiles(google_sheet,sheet_name)
+        # google_sheet = self.request.get('url')
+
+        # self.read_google_sheet(google_sheet)
+        # return
+        # self.uploadFiles(google_sheet)
         # file = self.request.get('csv_import')
         # file  = '\n'.join(file.splitlines())
         # lines = csv.reader(StringIO.StringIO(file),dialect=csv.excel_tab)
@@ -42,41 +61,48 @@ class CSVUploadHandler(DbFromGoogleSheet):
         #     else:
         #         xmlBody = ""
         #         visibility = false
-    def update(self,content, file_id):
+    def update(self,content, file_id,token):
         user = users.get_current_user()
         url = 'https://www.googleapis.com/upload/drive/v2/files/%s?uploadType=media' % file_id
         headers = {
             'Content-Type': 'text/plain',
             'Content-Length': str(len(content)),
-            'Authorization': user.access_token
+            'Authorization': token
             }
         response = urlfetch.fetch(url, payload=content, method='PUT', headers=headers)
         # assert response.status_code == 200
         # return response.content 
         self.response.out.write(response.content)          
 
+    def sendFileToXForms(self,content):
+        user = users.get_current_user()
+        url = 'http://23.21.114.69/xlsform/'
+        headers = {
+            'Content-Type': 'multipart/form-data; boundary=---------------------------4082427511200',
+            'Content-Length': str(len(content)),
+            }
+        response = urlfetch.fetch(url, payload=content, method='POST', headers=headers)
+        # assert response.status_code == 200
+        # return response.content 
+        self.response.out.write(response.content)
 
     def uploadFiles(self, google_sheet,sheet_name):
         file = pegasusFiles.PegasusFiles()
         file.name = sheet_name
         file.file = db.Blob(google_sheet)
         file.put()
-<<<<<<< HEAD
         self.response.out.write('http://pegasusrisesapp.appspot.com/' + str(file.key()))
         better = db.get(str(file.key))
         self.response.out.write(better.name)
         # # self.getFile(file.key())
         # self.submitFile(file.key())
-=======
         # self.response.out.write('http://pegasusrisesapp.appspot.com/' + str(file.key()))
         self.getFile(file.key())
->>>>>>> 6b634a01f45445e55a83f7a47e8acdc980c88c3d
 
     def getFile(self, key):
         file = db.get(key)
         if file is not None:
             self.response.headers['Content-Type'] = 'application/x-bittorrent'
-<<<<<<< HEAD
             self.response.out.write(file.file)
             return file
         else:
@@ -89,15 +115,12 @@ class CSVUploadHandler(DbFromGoogleSheet):
             self.response.headers['Content-Type'] = 'application/x-bittorrent'
             self.response.out.write(file.file)
             return file
-=======
-            # self.response.out.write(file.file)
-            # return file
-            self.read_google_sheet(file)
->>>>>>> 6b634a01f45445e55a83f7a47e8acdc980c88c3d
+
+            return file
         else:
             self.response.set_status(404)
 
-            
+
 
     def submitFile(self,key):
         payload = {}
@@ -113,3 +136,11 @@ class CSVUploadHandler(DbFromGoogleSheet):
         self.response.headers['Content-Type'] = 'text/plain'
         self.response.out.write(t.content)
         
+
+        file = self.getFile(key)
+
+# class UploadHandler(blobstore_handlers.BlobstoreUploadHandler):
+#   def post(self):
+#     upload_files = self.get_uploads('file')  # 'file' is file upload field in the form
+#     blob_info = upload_files[0]
+#     self.redirect('/serve/%s' % blob_info.key())
