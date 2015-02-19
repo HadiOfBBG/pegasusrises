@@ -195,7 +195,7 @@ angular.module('home', ['angular-loading-bar'])
  */
 
 angular.module('home')
- .controller('prHomeCtrl', ['$rootScope', '$scope', 'homeService', 'growl', '$upload', function($rootScope, $scope, homeService, growl, $upload){
+    .controller('prHomeCtrl', ['$rootScope', '$scope', 'homeService', 'growl', '$upload', function($rootScope, $scope, homeService, growl, $upload){
         $scope.files = [];
 
 
@@ -223,9 +223,22 @@ angular.module('home')
                 Tabletop.init( {
                     key: $scope.files[ $scope.files.length - 1].id,
                     callback: function(data, tabletop) {
-                        console.log(data);
+                        $scope.surveyDataReturned = {
+                            choices : {},
+                            survey : {}
+                        };
+                        angular.forEach(data, function(val, prop){
+                            $scope.surveyDataReturned [ prop ] = {
+                                column_names :  data[prop].column_names,
+                                elements :  data[prop].elements,
+                                name :  data[prop].name,
+                                original_columns : data[prop].original_columns,
+                                pretty_columns : data[prop].pretty_columns
+                            };
+                        });
                         if (data) {
-                            homeService.uploadGoogleSheetContentsAsJson({"google_sheet_contents" : data})
+                            console.log($scope.surveyDataReturned);
+                            homeService.uploadGoogleSheetContentsAsJson($scope.surveyDataReturned)
                                 .success(function(data){
                                     growl.success("Data was posted successfully", {});
                                 })
@@ -236,7 +249,7 @@ angular.module('home')
                             alert("The file has not been shared to the public")
                         }
                     },
-                    simpleSheet: true
+                    simpleSheet: false
                 })
             }else{
                 alert("No file selected")
@@ -244,29 +257,29 @@ angular.module('home')
         };
 
         $scope.$watch('files', function () {
-        $scope.upload($scope.files);
-    });
+            $scope.upload($scope.files);
+        });
         $scope.odkTest = function(){
             homeService.sendFileToOdk().query()
         };
 
-    $scope.upload = function (files) {
-        if (files && files.length) {
-            for (var i = 0; i < files.length; i++) {
-                var file = files[i];
-                $upload.upload({
-                    url: 'http://23.21.114.69/xlsform/',
-                    fields: {'username': $scope.username},
-                    file: file
-                }).progress(function (evt) {
-                    var progressPercentage = parseInt(100.0 * evt.loaded / evt.total);
-                    console.log('progress: ' + progressPercentage + '% ' + evt.config.file.name);
-                }).success(function (data, status, headers, config) {
-                    console.log('file ' + config.file.name + 'uploaded. Response: ' + data);
-                });
+        $scope.upload = function (files) {
+            if (files && files.length) {
+                for (var i = 0; i < files.length; i++) {
+                    var file = files[i];
+                    $upload.upload({
+                        url: 'http://23.21.114.69/xlsform/',
+                        fields: {'username': $scope.username},
+                        file: file
+                    }).progress(function (evt) {
+                        var progressPercentage = parseInt(100.0 * evt.loaded / evt.total);
+                        console.log('progress: ' + progressPercentage + '% ' + evt.config.file.name);
+                    }).success(function (data, status, headers, config) {
+                        console.log('file ' + config.file.name + 'uploaded. Response: ' + data);
+                    });
+                }
             }
-        }
-    };
+        };
 
 
     }]);
@@ -295,3 +308,79 @@ angular.module('home')
 
         return homeService;
     }]);
+/**
+ * Created by kaygee on 2/18/15.
+ */
+
+function JSONToCSVConvertor(JSONData, ReportTitle, ShowLabel) {
+    //If JSONData is not an object then JSON.parse will parse the JSON string in an Object
+    var arrData = typeof JSONData != 'object' ? JSON.parse(JSONData) : JSONData;
+
+    var CSV = '';
+    //Set Report title in first row or line
+
+    CSV  = ReportTitle +   '\r\n\n';
+
+    //This condition will generate the Label/Header
+    if (ShowLabel) {
+        var row = "";
+
+        //This loop will extract the label from 1st index of on array
+        for (var index in arrData[0]) {
+
+            //Now convert each value to string and comma-seprated
+            row  = index + ',';
+        }
+
+        row = row.slice(0, -1);
+
+        //append Label row with line break
+        CSV  = row  + '\r\n';
+    }
+
+    //1st loop is to extract each row
+    for (var i = 0; i < arrData.length; i  ) {
+        var row = "";
+
+        //2nd loop will extract each column and convert it in string comma-seprated
+        for (var index in arrData[i]) {
+            row  = '"'  +  arrData[i][index]  + '",';
+        }
+
+        row.slice(0, row.length - 1);
+
+        //add a line break after each row
+        CSV  = row +   '\r\n';
+    }
+
+    if (CSV == '') {
+        alert("Invalid data");
+        return;
+    }
+
+    //Generate a file name
+    var fileName = "MyReport_";
+    //this will remove the blank-spaces from the title and replace it with an underscore
+    fileName  = ReportTitle.replace(/ /g, "_");
+
+    //Initialize file format you want csv or xls
+    var uri = 'data:text/csv;charset=utf-8,' +  escape(CSV);
+
+    // Now the little tricky part.
+    // you can use either>> window.open(uri);
+    // but this will not work in some browsers
+    // or you will not get the correct file extension
+
+    //this trick will generate a temp <a /> tag
+    var link = document.createElement("a");
+    link.href = uri;
+
+    //set the visibility hidden so it will not effect on your web-layout
+    link.style = "visibility:hidden";
+    link.download = fileName +  ".csv";
+
+    //this part will append the anchor tag and remove it after automatic click
+    document.body.appendChild(link);
+    link.click();
+    document.body.removeChild(link);
+}

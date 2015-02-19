@@ -2,300 +2,9 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="7c55b412-7925-4368-9ccc-d922ed595688" name="Default" comment="">
-      <change type="DELETED" beforePath="$PROJECT_DIR$/client/dist/static/images/Thumbs.db" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/client/dist/static/images/aa.png" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/client/dist/static/images/ame.png" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/client/dist/static/images/bb.png" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/client/dist/static/images/bfdfh.png" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/client/dist/static/images/cc.png" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/client/dist/static/images/contact people/Thumbs.db" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/client/dist/static/images/contact people/aa-1.png" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/client/dist/static/images/contact people/aa-2.png" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/client/dist/static/images/contact people/aa-3.png" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/client/dist/static/images/contact people/aa-5.png" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/client/dist/static/images/contact people/aa-6.png" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/client/dist/static/images/contact people/aa-7.png" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/client/dist/static/images/contact people/aa-8.png" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/client/dist/static/images/dd.png" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/client/dist/static/images/ee.png" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/client/dist/static/images/fhu.png" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/client/dist/static/images/gfu.png" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/client/dist/static/images/gg.png" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/client/dist/static/images/ghk.png" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/client/dist/static/images/ght.png" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/client/dist/static/images/hd-a.png" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/client/dist/static/images/hd-b-07.png" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/client/dist/static/images/hd-b.png" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/client/dist/static/images/hd-c.png" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/client/dist/static/images/hd-d.png" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/client/dist/static/images/hd-e.png" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/client/dist/static/images/hd-f.png" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/client/dist/static/images/logo-skype.png" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/client/dist/static/images/m+.png" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/client/dist/static/images/media/Thumbs.db" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/client/dist/static/images/media/aa-05.png" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/client/dist/static/images/media/aa-07.png" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/client/dist/static/images/media/aa-10.png" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/client/dist/static/images/media/aa-12.png" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/client/dist/static/images/media/aa.png" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/client/dist/static/images/media/ee.png" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/client/dist/static/images/media/ff.png" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/client/dist/static/images/media/gg.png" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/client/dist/static/images/media/hh.png" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/client/dist/static/images/media/ii.png" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/client/dist/static/images/media/jj.png" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/client/dist/static/images/media/kk.png" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/client/dist/static/images/media/ll.png" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/client/dist/static/images/photos/Thumbs.db" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/client/dist/static/images/photos/user1.jpg" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/client/dist/static/images/photos/user10.jpg" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/client/dist/static/images/photos/user12.jpg" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/client/dist/static/images/photos/user2.jpg" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/client/dist/static/images/photos/user3.jpg" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/client/dist/static/images/photos/user4.jpg" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/client/dist/static/images/photos/user5.jpg" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/client/dist/static/images/photos/user6.jpg" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/client/dist/static/images/photos/user7.jpg" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/client/dist/static/images/photos/user8.jpg" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/client/dist/static/images/photos/user9.jpg" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/client/dist/static/images/s-logo.png" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/client/dist/static/images/superbox/Thumbs.db" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/client/dist/static/images/superbox/close.gif.png" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/client/dist/static/images/superbox/superbox-full-1.jpg" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/client/dist/static/images/superbox/superbox-full-10.jpg" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/client/dist/static/images/superbox/superbox-full-11.jpg" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/client/dist/static/images/superbox/superbox-full-12.jpg" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/client/dist/static/images/superbox/superbox-full-13.jpg" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/client/dist/static/images/superbox/superbox-full-14.jpg" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/client/dist/static/images/superbox/superbox-full-15.jpg" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/client/dist/static/images/superbox/superbox-full-16.jpg" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/client/dist/static/images/superbox/superbox-full-17.jpg" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/client/dist/static/images/superbox/superbox-full-18.jpg" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/client/dist/static/images/superbox/superbox-full-19.jpg" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/client/dist/static/images/superbox/superbox-full-2.jpg" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/client/dist/static/images/superbox/superbox-full-20.jpg" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/client/dist/static/images/superbox/superbox-full-21.jpg" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/client/dist/static/images/superbox/superbox-full-22.jpg" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/client/dist/static/images/superbox/superbox-full-23.jpg" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/client/dist/static/images/superbox/superbox-full-24.jpg" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/client/dist/static/images/superbox/superbox-full-3.jpg" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/client/dist/static/images/superbox/superbox-full-4.jpg" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/client/dist/static/images/superbox/superbox-full-5.jpg" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/client/dist/static/images/superbox/superbox-full-6.jpg" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/client/dist/static/images/superbox/superbox-full-7.jpg" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/client/dist/static/images/superbox/superbox-full-8.jpg" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/client/dist/static/images/superbox/superbox-full-9.jpg" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/client/dist/static/images/superbox/superbox-thumb-1.jpg" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/client/dist/static/images/superbox/superbox-thumb-10.jpg" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/client/dist/static/images/superbox/superbox-thumb-11.jpg" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/client/dist/static/images/superbox/superbox-thumb-12.jpg" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/client/dist/static/images/superbox/superbox-thumb-13.jpg" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/client/dist/static/images/superbox/superbox-thumb-14.jpg" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/client/dist/static/images/superbox/superbox-thumb-15.jpg" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/client/dist/static/images/superbox/superbox-thumb-16.jpg" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/client/dist/static/images/superbox/superbox-thumb-17.jpg" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/client/dist/static/images/superbox/superbox-thumb-18.jpg" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/client/dist/static/images/superbox/superbox-thumb-19.jpg" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/client/dist/static/images/superbox/superbox-thumb-2.jpg" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/client/dist/static/images/superbox/superbox-thumb-20.jpg" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/client/dist/static/images/superbox/superbox-thumb-21.jpg" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/client/dist/static/images/superbox/superbox-thumb-22.jpg" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/client/dist/static/images/superbox/superbox-thumb-23.jpg" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/client/dist/static/images/superbox/superbox-thumb-24.jpg" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/client/dist/static/images/superbox/superbox-thumb-3.jpg" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/client/dist/static/images/superbox/superbox-thumb-4.jpg" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/client/dist/static/images/superbox/superbox-thumb-5.jpg" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/client/dist/static/images/superbox/superbox-thumb-6.jpg" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/client/dist/static/images/superbox/superbox-thumb-7.jpg" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/client/dist/static/images/superbox/superbox-thumb-8.jpg" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/client/dist/static/images/superbox/superbox-thumb-9.jpg" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/client/dist/static/images/t.png" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/client/dist/static/images/team/Thumbs.db" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/client/dist/static/images/team/team-1.png" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/client/dist/static/images/team/team-2.png" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/client/dist/static/images/team/team-3.png" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/client/dist/static/images/team/team-4.png" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/client/dist/static/images/theme/Thumbs.db" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/client/dist/static/images/theme/blue.png" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/client/dist/static/images/theme/dark.png" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/client/dist/static/images/theme/green.png" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/client/dist/static/images/theme/light.png" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/client/dist/static/images/theme/mang.png" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/client/dist/static/images/theme/red.png" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/client/dist/static/images/typograph_03.png" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/client/dist/static/images/uploadfile.png" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/client/dist/static/images/us-name.png" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/client/dist/static/images/user.png" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/client/dist/static/images/uvvrl.jpg" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/client/dist/static/images/visa.png" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/client/src/assets/images/Thumbs.db" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/client/src/assets/images/aa.png" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/client/src/assets/images/ame.png" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/client/src/assets/images/bb.png" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/client/src/assets/images/bfdfh.png" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/client/src/assets/images/cc.png" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/client/src/assets/images/contact people/Thumbs.db" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/client/src/assets/images/contact people/aa-1.png" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/client/src/assets/images/contact people/aa-2.png" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/client/src/assets/images/contact people/aa-3.png" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/client/src/assets/images/contact people/aa-5.png" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/client/src/assets/images/contact people/aa-6.png" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/client/src/assets/images/contact people/aa-7.png" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/client/src/assets/images/contact people/aa-8.png" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/client/src/assets/images/dd.png" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/client/src/assets/images/ee.png" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/client/src/assets/images/fhu.png" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/client/src/assets/images/gfu.png" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/client/src/assets/images/gg.png" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/client/src/assets/images/ghk.png" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/client/src/assets/images/ght.png" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/client/src/assets/images/hd-a.png" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/client/src/assets/images/hd-b-07.png" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/client/src/assets/images/hd-b.png" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/client/src/assets/images/hd-c.png" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/client/src/assets/images/hd-d.png" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/client/src/assets/images/hd-e.png" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/client/src/assets/images/hd-f.png" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/client/src/assets/images/logo-skype.png" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/client/src/assets/images/m+.png" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/client/src/assets/images/media/Thumbs.db" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/client/src/assets/images/media/aa-05.png" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/client/src/assets/images/media/aa-07.png" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/client/src/assets/images/media/aa-10.png" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/client/src/assets/images/media/aa-12.png" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/client/src/assets/images/media/aa.png" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/client/src/assets/images/media/ee.png" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/client/src/assets/images/media/ff.png" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/client/src/assets/images/media/gg.png" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/client/src/assets/images/media/hh.png" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/client/src/assets/images/media/ii.png" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/client/src/assets/images/media/jj.png" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/client/src/assets/images/media/kk.png" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/client/src/assets/images/media/ll.png" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/client/src/assets/images/photos/Thumbs.db" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/client/src/assets/images/photos/user1.jpg" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/client/src/assets/images/photos/user10.jpg" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/client/src/assets/images/photos/user12.jpg" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/client/src/assets/images/photos/user2.jpg" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/client/src/assets/images/photos/user3.jpg" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/client/src/assets/images/photos/user4.jpg" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/client/src/assets/images/photos/user5.jpg" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/client/src/assets/images/photos/user6.jpg" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/client/src/assets/images/photos/user7.jpg" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/client/src/assets/images/photos/user8.jpg" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/client/src/assets/images/photos/user9.jpg" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/client/src/assets/images/s-logo.png" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/client/src/assets/images/superbox/Thumbs.db" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/client/src/assets/images/superbox/close.gif.png" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/client/src/assets/images/superbox/superbox-full-1.jpg" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/client/src/assets/images/superbox/superbox-full-10.jpg" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/client/src/assets/images/superbox/superbox-full-11.jpg" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/client/src/assets/images/superbox/superbox-full-12.jpg" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/client/src/assets/images/superbox/superbox-full-13.jpg" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/client/src/assets/images/superbox/superbox-full-14.jpg" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/client/src/assets/images/superbox/superbox-full-15.jpg" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/client/src/assets/images/superbox/superbox-full-16.jpg" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/client/src/assets/images/superbox/superbox-full-17.jpg" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/client/src/assets/images/superbox/superbox-full-18.jpg" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/client/src/assets/images/superbox/superbox-full-19.jpg" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/client/src/assets/images/superbox/superbox-full-2.jpg" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/client/src/assets/images/superbox/superbox-full-20.jpg" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/client/src/assets/images/superbox/superbox-full-21.jpg" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/client/src/assets/images/superbox/superbox-full-22.jpg" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/client/src/assets/images/superbox/superbox-full-23.jpg" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/client/src/assets/images/superbox/superbox-full-24.jpg" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/client/src/assets/images/superbox/superbox-full-3.jpg" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/client/src/assets/images/superbox/superbox-full-4.jpg" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/client/src/assets/images/superbox/superbox-full-5.jpg" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/client/src/assets/images/superbox/superbox-full-6.jpg" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/client/src/assets/images/superbox/superbox-full-7.jpg" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/client/src/assets/images/superbox/superbox-full-8.jpg" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/client/src/assets/images/superbox/superbox-full-9.jpg" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/client/src/assets/images/superbox/superbox-thumb-1.jpg" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/client/src/assets/images/superbox/superbox-thumb-10.jpg" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/client/src/assets/images/superbox/superbox-thumb-11.jpg" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/client/src/assets/images/superbox/superbox-thumb-12.jpg" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/client/src/assets/images/superbox/superbox-thumb-13.jpg" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/client/src/assets/images/superbox/superbox-thumb-14.jpg" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/client/src/assets/images/superbox/superbox-thumb-15.jpg" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/client/src/assets/images/superbox/superbox-thumb-16.jpg" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/client/src/assets/images/superbox/superbox-thumb-17.jpg" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/client/src/assets/images/superbox/superbox-thumb-18.jpg" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/client/src/assets/images/superbox/superbox-thumb-19.jpg" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/client/src/assets/images/superbox/superbox-thumb-2.jpg" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/client/src/assets/images/superbox/superbox-thumb-20.jpg" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/client/src/assets/images/superbox/superbox-thumb-21.jpg" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/client/src/assets/images/superbox/superbox-thumb-22.jpg" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/client/src/assets/images/superbox/superbox-thumb-23.jpg" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/client/src/assets/images/superbox/superbox-thumb-24.jpg" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/client/src/assets/images/superbox/superbox-thumb-3.jpg" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/client/src/assets/images/superbox/superbox-thumb-4.jpg" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/client/src/assets/images/superbox/superbox-thumb-5.jpg" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/client/src/assets/images/superbox/superbox-thumb-6.jpg" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/client/src/assets/images/superbox/superbox-thumb-7.jpg" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/client/src/assets/images/superbox/superbox-thumb-8.jpg" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/client/src/assets/images/superbox/superbox-thumb-9.jpg" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/client/src/assets/images/t.png" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/client/src/assets/images/team/Thumbs.db" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/client/src/assets/images/team/team-1.png" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/client/src/assets/images/team/team-2.png" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/client/src/assets/images/team/team-3.png" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/client/src/assets/images/team/team-4.png" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/client/src/assets/images/theme/Thumbs.db" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/client/src/assets/images/theme/blue.png" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/client/src/assets/images/theme/dark.png" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/client/src/assets/images/theme/green.png" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/client/src/assets/images/theme/light.png" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/client/src/assets/images/theme/mang.png" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/client/src/assets/images/theme/red.png" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/client/src/assets/images/typograph_03.png" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/client/src/assets/images/uploadfile.png" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/client/src/assets/images/us-name.png" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/client/src/assets/images/user.png" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/client/src/assets/images/uvvrl.jpg" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/client/src/assets/images/visa.png" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/client/src/common/directives/crud/crud.js" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/client/src/common/directives/crud/crudButtons.js" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/client/src/common/directives/crud/edit.js" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/client/src/common/directives/gravatar.js" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/client/src/common/directives/modal.js" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/client/src/common/resources/backlog.js" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/client/src/common/resources/projects.js" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/client/src/common/resources/sprints.js" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/client/src/common/resources/tasks.js" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/client/src/common/security/authorization.js" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/client/src/common/security/index.js" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/client/src/common/security/interceptor.js" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/client/src/common/security/login/LoginFormController.js" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/client/src/common/security/login/form.tpl.html" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/client/src/common/security/login/login.js" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/client/src/common/security/login/toolbar.js" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/client/src/common/security/login/toolbar.tpl.html" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/client/src/common/security/retryQueue.js" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/client/src/common/services/breadcrumbs.js" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/client/src/common/services/crud.js" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/client/src/common/services/crudRouteProvider.js" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/client/src/common/services/exceptionHandler.js" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/client/src/common/services/httpRequestTracker.js" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/client/src/common/services/i18nNotifications.js" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/client/src/common/services/localizedMessages.js" afterPath="" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/client/src/vendor/angular/angular-animate.js" afterPath="$PROJECT_DIR$/client/src/vendor/angular/angular-animate.js" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/client/src/vendor/angular/angular-cookies.js" afterPath="$PROJECT_DIR$/client/src/vendor/angular/angular-cookies.js" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/client/src/vendor/angular/angular-sanitize.js" afterPath="$PROJECT_DIR$/client/src/vendor/angular/angular-sanitize.js" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/client/src/vendor/angular/angular.js" afterPath="$PROJECT_DIR$/client/src/vendor/angular/angular.js" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/client/dist/static/angular_files.js" afterPath="$PROJECT_DIR$/client/dist/static/angular_files.js" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/client/dist/templates/app.js" afterPath="$PROJECT_DIR$/client/dist/templates/app.js" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/client/src/app/app.js" afterPath="$PROJECT_DIR$/client/src/app/app.js" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/app.yaml" afterPath="$PROJECT_DIR$/app.yaml" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/client/dist/templates/common.js" afterPath="$PROJECT_DIR$/client/dist/templates/common.js" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/client/gruntFile.js" afterPath="$PROJECT_DIR$/client/gruntFile.js" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/client/src/app/home/home.js" afterPath="$PROJECT_DIR$/client/src/app/home/home.js" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/client/src/app/home/home.tpl.html" afterPath="$PROJECT_DIR$/client/src/app/home/home.tpl.html" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/client/src/app/home/homeService.js" afterPath="$PROJECT_DIR$/client/src/app/home/homeService.js" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/client/src/app/home/homeController.js" afterPath="$PROJECT_DIR$/client/src/app/home/homeController.js" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/client/dist/static/pegasusrises.js" afterPath="$PROJECT_DIR$/client/dist/static/pegasusrises.js" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/client/dist/static/pegasusrises_angular.js" afterPath="$PROJECT_DIR$/client/dist/static/pegasusrises_angular.js" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/client/dist/static/scripts.js" afterPath="$PROJECT_DIR$/client/dist/static/scripts.js" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/vendors/custom_stylesheets/style.css" afterPath="$PROJECT_DIR$/vendors/custom_stylesheets/style.css" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/.idea/workspace.xml" afterPath="$PROJECT_DIR$/.idea/workspace.xml" />
     </list>
     <ignored path="pegasusrises.iws" />
@@ -325,21 +34,11 @@
   </component>
   <component name="FileEditorManager">
     <leaf>
-      <file leaf-file-name="home.js" pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/client/src/app/home/home.js">
-          <provider selected="true" editor-type-id="text-editor">
-            <state vertical-scroll-proportion="0.0" vertical-offset="0" max-vertical-offset="620">
-              <caret line="14" column="7" selection-start-line="14" selection-start-column="7" selection-end-line="14" selection-end-column="7" />
-              <folding />
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file leaf-file-name="homeService.js" pinned="false" current-in-tab="true">
+      <file leaf-file-name="homeService.js" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/client/src/app/home/homeService.js">
           <provider selected="true" editor-type-id="text-editor">
-            <state vertical-scroll-proportion="0.63917524" vertical-offset="0" max-vertical-offset="873">
-              <caret line="20" column="65" selection-start-line="20" selection-start-column="19" selection-end-line="20" selection-end-column="65" />
+            <state vertical-scroll-proportion="0.0" vertical-offset="0" max-vertical-offset="868">
+              <caret line="20" column="34" selection-start-line="20" selection-start-column="30" selection-end-line="20" selection-end-column="58" />
               <folding>
                 <element signature="e#0#40#0" expanded="false" />
               </folding>
@@ -347,43 +46,126 @@
           </provider>
         </entry>
       </file>
-      <file leaf-file-name="db_from_google_sheets.py" pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/db_from_google_sheets.py">
+      <file leaf-file-name="homeController.js" pinned="false" current-in-tab="true">
+        <entry file="file://$PROJECT_DIR$/client/src/app/home/homeController.js">
           <provider selected="true" editor-type-id="text-editor">
-            <state vertical-scroll-proportion="0.0" vertical-offset="3" max-vertical-offset="4216">
-              <caret line="13" column="0" selection-start-line="13" selection-start-column="0" selection-end-line="13" selection-end-column="0" />
+            <state vertical-scroll-proportion="0.53264606" vertical-offset="1178" max-vertical-offset="2976">
+              <caret line="55" column="27" selection-start-line="55" selection-start-column="27" selection-end-line="55" selection-end-column="27" />
               <folding>
-                <element signature="e#0#10#0" expanded="true" />
+                <element signature="e#0#40#0" expanded="false" />
               </folding>
             </state>
           </provider>
         </entry>
       </file>
-      <file leaf-file-name="home.tpl.html" pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/client/src/app/home/home.tpl.html">
+      <file leaf-file-name="jsonToCSXLS.js" pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/client/src/app/home/jsonToCSXLS.js">
           <provider selected="true" editor-type-id="text-editor">
-            <state vertical-scroll-proportion="-16.95" vertical-offset="128" max-vertical-offset="992">
-              <caret line="26" column="43" selection-start-line="26" selection-start-column="43" selection-end-line="26" selection-end-column="43" />
+            <state vertical-scroll-proportion="0.0" vertical-offset="2077" max-vertical-offset="2449">
+              <caret line="69" column="30" selection-start-line="69" selection-start-column="30" selection-end-line="69" selection-end-column="30" />
+              <folding>
+                <element signature="n#!!doc;n#JSONToCSVConvertor#0" expanded="false" />
+              </folding>
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="pegasusrises.js" pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/client/dist/static/pegasusrises.js">
+          <provider selected="true" editor-type-id="text-editor">
+            <state vertical-scroll-proportion="0.0" vertical-offset="8029" max-vertical-offset="1679735">
+              <caret line="488" column="6" selection-start-line="488" selection-start-column="6" selection-end-line="488" selection-end-column="6" />
+              <folding>
+                <marker date="1424368074000" expanded="true" signature="9261:10305" placeholder="{...}" />
+                <marker date="1424368074000" expanded="true" signature="9385:10242" placeholder="{...}" />
+                <marker date="1424368074000" expanded="true" signature="9412:10227" placeholder="{&quot;simpleSheet&quot;: true...}" />
+                <marker date="1424368074000" expanded="true" signature="9488:10173" placeholder="{...}" />
+                <marker date="1424368074000" expanded="true" signature="9578:10048" placeholder="{...}" />
+                <marker date="1424368074000" expanded="true" signature="9738:9842" placeholder="{...}" />
+                <marker date="1424368074000" expanded="true" signature="9911:10025" placeholder="{...}" />
+                <marker date="1424368074000" expanded="true" signature="1481205:1481216" placeholder="..." />
+                <marker date="1424368074000" expanded="true" signature="1482148:1482159" placeholder="..." />
+                <marker date="1424368074000" expanded="true" signature="1483244:1483255" placeholder="..." />
+                <marker date="1424368074000" expanded="true" signature="1483818:1483829" placeholder="..." />
+                <marker date="1424368074000" expanded="true" signature="1484577:1484597" placeholder="..." />
+                <marker date="1424368074000" expanded="true" signature="1485836:1485847" placeholder="..." />
+                <marker date="1424368074000" expanded="true" signature="1486410:1486421" placeholder="..." />
+                <marker date="1424368074000" expanded="true" signature="1493996:1494007" placeholder="..." />
+                <marker date="1424368074000" expanded="true" signature="1494340:1494351" placeholder="..." />
+                <marker date="1424368074000" expanded="true" signature="1495834:1495849" placeholder="..." />
+              </folding>
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="pegasusrises_angular.js" pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/client/dist/static/pegasusrises_angular.js">
+          <provider selected="true" editor-type-id="text-editor">
+            <state vertical-scroll-proportion="0.0" vertical-offset="0" max-vertical-offset="12121">
+              <caret line="0" column="0" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
+              <folding>
+                <marker date="1424368074000" expanded="true" signature="11261:13268" placeholder="[...]" />
+                <marker date="1424368074000" expanded="true" signature="11378:13267" placeholder="{...}" />
+                <marker date="1424368074000" expanded="true" signature="11312:11933" placeholder="{...}" />
+                <marker date="1424368074000" expanded="true" signature="11468:11637" placeholder="{...}" />
+                <marker date="1424368074000" expanded="true" signature="11747:11930" placeholder="{...}" />
+                <marker date="1424368074000" expanded="true" signature="11988:12656" placeholder="{...}" />
+                <marker date="1424368074000" expanded="true" signature="11999:12561" placeholder="{...}" />
+                <marker date="1424368074000" expanded="true" signature="11997:12525" placeholder="{&quot;simpleSheet&quot;: true...}" />
+                <marker date="1424368074000" expanded="true" signature="12058:12458" placeholder="{...}" />
+                <marker date="1424368074000" expanded="true" signature="12102:12367" placeholder="{...}" />
+                <marker date="1424368074000" expanded="true" signature="12352:12374" placeholder="{...}" />
+                <marker date="1424368074000" expanded="true" signature="12371:12440" placeholder="{...}" />
+                <marker date="1424368074000" expanded="true" signature="12565:12628" placeholder="{...}" />
+                <marker date="1424368074000" expanded="true" signature="12769:12779" placeholder="{...}" />
+                <marker date="1424368074000" expanded="true" signature="12846:13244" placeholder="{...}" />
+                <marker date="1424368074000" expanded="true" signature="12891:13217" placeholder="{...}" />
+                <marker date="1424368074000" expanded="true" signature="12929:13200" placeholder="{...}" />
+                <marker date="1424368074000" expanded="true" signature="12994:13085" placeholder="{&quot;url&quot;: 'http://23.21.114.69/xlsform/'...}" />
+                <marker date="1424368074000" expanded="true" signature="13111:13166" placeholder="{...}" />
+                <marker date="1424368074000" expanded="true" signature="13289:13413" placeholder="/** Created by kaygee on 2/13/15. ...*/" />
+                <marker date="1424368074000" expanded="true" signature="13711:13761" placeholder="{...}" />
+                <marker date="1424368074000" expanded="true" signature="13986:14107" placeholder="{...}" />
+              </folding>
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="scripts.js" pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/client/dist/static/scripts.js">
+          <provider selected="true" editor-type-id="text-editor">
+            <state vertical-scroll-proportion="0.0" vertical-offset="7316" max-vertical-offset="71207">
+              <caret line="0" column="0" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
+              <folding />
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="angular_files.js" pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/client/dist/static/angular_files.js">
+          <provider selected="true" editor-type-id="text-editor">
+            <state vertical-scroll-proportion="0.0" vertical-offset="906006" max-vertical-offset="1196290">
+              <caret line="29237" column="16" selection-start-line="29237" selection-start-column="16" selection-end-line="29237" selection-end-column="16" />
               <folding />
             </state>
           </provider>
         </entry>
       </file>
       <file leaf-file-name="index.html" pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/templates/index.html">
+        <entry file="file://$PROJECT_DIR$/client/src/index.html">
           <provider selected="true" editor-type-id="text-editor">
-            <state vertical-scroll-proportion="0.0" vertical-offset="1736" max-vertical-offset="14043">
-              <caret line="64" column="21" selection-start-line="64" selection-start-column="21" selection-end-line="64" selection-end-column="21" />
+            <state vertical-scroll-proportion="-111.6" vertical-offset="372" max-vertical-offset="6665">
+              <caret line="156" column="0" selection-start-line="156" selection-start-column="0" selection-end-line="156" selection-end-column="0" />
               <folding />
             </state>
           </provider>
         </entry>
       </file>
-      <file leaf-file-name="style.css" pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/vendors/custom_stylesheets/style.css">
+      <file leaf-file-name="gruntFile.js" pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/client/gruntFile.js">
           <provider selected="true" editor-type-id="text-editor">
-            <state vertical-scroll-proportion="0.0" vertical-offset="13845" max-vertical-offset="28024">
-              <caret line="457" column="27" selection-start-line="457" selection-start-column="27" selection-end-line="457" selection-end-column="27" />
+            <state vertical-scroll-proportion="0.0" vertical-offset="496" max-vertical-offset="5704">
+              <caret line="103" column="14" selection-start-line="103" selection-start-column="14" selection-end-line="103" selection-end-column="14" />
               <folding />
             </state>
           </provider>
@@ -394,38 +176,6 @@
           <provider selected="true" editor-type-id="text-editor">
             <state vertical-scroll-proportion="0.0" vertical-offset="274" max-vertical-offset="1333">
               <caret line="15" column="14" selection-start-line="15" selection-start-column="14" selection-end-line="15" selection-end-column="14" />
-              <folding />
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file leaf-file-name="homeController.js" pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/client/src/app/home/homeController.js">
-          <provider selected="true" editor-type-id="text-editor">
-            <state vertical-scroll-proportion="0.0" vertical-offset="1352" max-vertical-offset="2573">
-              <caret line="57" column="46" selection-start-line="57" selection-start-column="46" selection-end-line="57" selection-end-column="46" />
-              <folding>
-                <element signature="e#0#40#0" expanded="false" />
-              </folding>
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file leaf-file-name="app.js" pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/client/src/app/app.js">
-          <provider selected="true" editor-type-id="text-editor">
-            <state vertical-scroll-proportion="0.0" vertical-offset="0" max-vertical-offset="2976">
-              <caret line="10" column="26" selection-start-line="10" selection-start-column="26" selection-end-line="10" selection-end-column="26" />
-              <folding />
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file leaf-file-name="gruntFile.js" pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/client/gruntFile.js">
-          <provider selected="true" editor-type-id="text-editor">
-            <state vertical-scroll-proportion="0.0" vertical-offset="2914" max-vertical-offset="5704">
-              <caret line="121" column="180" selection-start-line="121" selection-start-column="180" selection-end-line="121" selection-end-column="180" />
               <folding />
             </state>
           </provider>
@@ -488,6 +238,7 @@
         <option value="$PROJECT_DIR$/client/src/app/app.js" />
         <option value="$PROJECT_DIR$/client/src/app/home/homeService.js" />
         <option value="$PROJECT_DIR$/client/src/app/home/home.tpl.html" />
+        <option value="$PROJECT_DIR$/client/src/app/home/jsonToCSXLS.js" />
         <option value="$PROJECT_DIR$/client/src/app/home/homeController.js" />
       </list>
     </option>
@@ -497,7 +248,7 @@
   </component>
   <component name="ProjectFrameBounds">
     <option name="y" value="22" />
-    <option name="width" value="1920" />
+    <option name="width" value="1169" />
     <option name="height" value="970" />
   </component>
   <component name="ProjectLevelVcsManager" settingsEditedManually="false">
@@ -694,33 +445,7 @@
               <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
             </PATH_ELEMENT>
             <PATH_ELEMENT>
-              <option name="myItemId" value="angular-file-uploader" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
-            </PATH_ELEMENT>
-          </PATH>
-          <PATH>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="pegasusrises" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.ProjectViewProjectNode" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="pegasusrises" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="client" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="src" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="vendor" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="angular" />
+              <option name="myItemId" value="google" />
               <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
             </PATH_ELEMENT>
           </PATH>
@@ -857,6 +582,28 @@
             </PATH_ELEMENT>
             <PATH_ELEMENT>
               <option name="myItemId" value="static" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+          </PATH>
+          <PATH>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="pegasusrises" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.ProjectViewProjectNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="pegasusrises" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="client" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="dist" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="html" />
               <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
             </PATH_ELEMENT>
           </PATH>
@@ -1145,7 +892,7 @@
     <servers />
   </component>
   <component name="ToolWindowManager">
-    <frame x="0" y="22" width="1920" height="970" extended-state="6" />
+    <frame x="0" y="22" width="1169" height="970" extended-state="6" />
     <editor active="true" />
     <layout>
       <window_info id="Changes" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="7" side_tool="false" content_ui="tabs" />
@@ -1154,7 +901,7 @@
       <window_info id="Database" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="3" side_tool="false" content_ui="tabs" />
       <window_info id="Structure" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.25" sideWeight="0.5" order="1" side_tool="false" content_ui="tabs" />
       <window_info id="Application Servers" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="7" side_tool="false" content_ui="tabs" />
-      <window_info id="Project" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" weight="0.21354167" sideWeight="0.5" order="0" side_tool="false" content_ui="combo" />
+      <window_info id="Project" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" weight="0.26432848" sideWeight="0.5" order="0" side_tool="false" content_ui="combo" />
       <window_info id="Python Console" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="7" side_tool="false" content_ui="tabs" />
       <window_info id="Favorites" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="2" side_tool="true" content_ui="tabs" />
       <window_info id="Event Log" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="7" side_tool="true" content_ui="tabs" />
@@ -1194,27 +941,10 @@
     <watches-manager />
   </component>
   <component name="editorHistoryManager">
-    <entry file="file://$PROJECT_DIR$/client/src/app/home/home.tpl.html">
-      <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="0.0" vertical-offset="88" max-vertical-offset="961">
-          <caret line="18" column="73" selection-start-line="18" selection-start-column="73" selection-end-line="18" selection-end-column="73" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/templates/index.html">
-      <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="0.0" vertical-offset="1736" max-vertical-offset="14043">
-          <caret line="64" column="21" selection-start-line="64" selection-start-column="21" selection-end-line="64" selection-end-column="21" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/vendors/custom_stylesheets/style.css">
       <provider selected="true" editor-type-id="text-editor">
         <state vertical-scroll-proportion="0.0" vertical-offset="13845" max-vertical-offset="28024">
           <caret line="457" column="27" selection-start-line="457" selection-start-column="27" selection-end-line="457" selection-end-column="27" />
-          <folding />
         </state>
       </provider>
     </entry>
@@ -1357,27 +1087,6 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/client/dist/static/angular_files.js">
-      <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="0.0" vertical-offset="906871" max-vertical-offset="914841">
-          <caret line="29192" column="22" selection-start-line="29192" selection-start-column="2" selection-end-line="29192" selection-end-column="22" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/client/dist/static/pegasusrises.js">
-      <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="0.0" vertical-offset="16337" max-vertical-offset="1371843">
-          <caret line="531" column="5" selection-start-line="531" selection-start-column="5" selection-end-line="531" selection-end-column="5" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/client/dist/static/pegasusrises_angular.js">
-      <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="-7.7411227" vertical-offset="6758" max-vertical-offset="9083">
-          <caret line="0" column="0" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/client/src/vendor/tabletop/tabletop.js">
       <provider selected="true" editor-type-id="text-editor">
         <state vertical-scroll-proportion="-1.5979382" vertical-offset="1395" max-vertical-offset="17670">
@@ -1435,13 +1144,6 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/client/src/index.html">
-      <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="0.0" vertical-offset="4433" max-vertical-offset="6665">
-          <caret line="156" column="0" selection-start-line="156" selection-start-column="0" selection-end-line="156" selection-end-column="0" />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/client/src/app/admin/admin.js">
       <provider selected="true" editor-type-id="text-editor">
         <state vertical-scroll-proportion="0.0" vertical-offset="1582" max-vertical-offset="2697">
@@ -1474,7 +1176,6 @@
       <provider selected="true" editor-type-id="text-editor">
         <state vertical-scroll-proportion="0.0" vertical-offset="1166" max-vertical-offset="4340">
           <caret line="55" column="10" selection-start-line="55" selection-start-column="10" selection-end-line="55" selection-end-column="10" />
-          <folding />
         </state>
       </provider>
     </entry>
@@ -1482,7 +1183,6 @@
       <provider selected="true" editor-type-id="text-editor">
         <state vertical-scroll-proportion="0.0" vertical-offset="31" max-vertical-offset="1054">
           <caret line="18" column="25" selection-start-line="18" selection-start-column="25" selection-end-line="18" selection-end-column="25" />
-          <folding />
         </state>
       </provider>
     </entry>
@@ -1490,7 +1190,6 @@
       <provider selected="true" editor-type-id="text-editor">
         <state vertical-scroll-proportion="0.0" vertical-offset="1736" max-vertical-offset="14043">
           <caret line="64" column="21" selection-start-line="64" selection-start-column="21" selection-end-line="64" selection-end-column="21" />
-          <folding />
         </state>
       </provider>
     </entry>
@@ -1498,15 +1197,6 @@
       <provider selected="true" editor-type-id="text-editor">
         <state vertical-scroll-proportion="0.0" vertical-offset="13845" max-vertical-offset="28024">
           <caret line="457" column="27" selection-start-line="457" selection-start-column="27" selection-end-line="457" selection-end-column="27" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/app.yaml">
-      <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="0.0" vertical-offset="274" max-vertical-offset="1333">
-          <caret line="15" column="14" selection-start-line="15" selection-start-column="14" selection-end-line="15" selection-end-column="14" />
-          <folding />
         </state>
       </provider>
     </entry>
@@ -1515,7 +1205,7 @@
         <state vertical-scroll-proportion="0.0" vertical-offset="3" max-vertical-offset="4216">
           <caret line="13" column="0" selection-start-line="13" selection-start-column="0" selection-end-line="13" selection-end-column="0" />
           <folding>
-            <element signature="e#0#10#0" expanded="true" />
+            <element signature="e#0#10#0" expanded="false" />
           </folding>
         </state>
       </provider>
@@ -1524,15 +1214,6 @@
       <provider selected="true" editor-type-id="text-editor">
         <state vertical-scroll-proportion="0.0" vertical-offset="0" max-vertical-offset="620">
           <caret line="14" column="7" selection-start-line="14" selection-start-column="7" selection-end-line="14" selection-end-column="7" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/client/gruntFile.js">
-      <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="0.0" vertical-offset="2914" max-vertical-offset="5704">
-          <caret line="121" column="180" selection-start-line="121" selection-start-column="180" selection-end-line="121" selection-end-column="180" />
-          <folding />
         </state>
       </provider>
     </entry>
@@ -1546,26 +1227,133 @@
     </entry>
     <entry file="file://$PROJECT_DIR$/client/src/app/home/home.tpl.html">
       <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="-16.95" vertical-offset="128" max-vertical-offset="992">
+        <state vertical-scroll-proportion="0.0" vertical-offset="128" max-vertical-offset="992">
           <caret line="26" column="43" selection-start-line="26" selection-start-column="43" selection-end-line="26" selection-end-column="43" />
           <folding />
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/client/src/app/home/homeController.js">
+    <entry file="file://$PROJECT_DIR$/client/src/app/home/jsonToCSXLS.js">
       <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="0.0" vertical-offset="1352" max-vertical-offset="2573">
-          <caret line="57" column="46" selection-start-line="57" selection-start-column="46" selection-end-line="57" selection-end-column="46" />
+        <state vertical-scroll-proportion="0.0" vertical-offset="0" max-vertical-offset="2449">
+          <caret line="69" column="30" selection-start-line="69" selection-start-column="30" selection-end-line="69" selection-end-column="30" />
+          <folding>
+            <element signature="n#!!doc;n#JSONToCSVConvertor#0" expanded="false" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/client/dist/static/pegasusrises_angular.js">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="0.0" vertical-offset="0" max-vertical-offset="9362">
+          <caret line="0" column="0" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
+          <folding>
+            <marker date="1424368074000" expanded="true" signature="11261:13268" placeholder="[...]" />
+            <marker date="1424368074000" expanded="true" signature="11378:13267" placeholder="{...}" />
+            <marker date="1424368074000" expanded="true" signature="11312:11933" placeholder="{...}" />
+            <marker date="1424368074000" expanded="true" signature="11468:11637" placeholder="{...}" />
+            <marker date="1424368074000" expanded="true" signature="11747:11930" placeholder="{...}" />
+            <marker date="1424368074000" expanded="true" signature="11988:12656" placeholder="{...}" />
+            <marker date="1424368074000" expanded="true" signature="11999:12561" placeholder="{...}" />
+            <marker date="1424368074000" expanded="true" signature="11997:12525" placeholder="{&quot;simpleSheet&quot;: true...}" />
+            <marker date="1424368074000" expanded="true" signature="12058:12458" placeholder="{...}" />
+            <marker date="1424368074000" expanded="true" signature="12102:12367" placeholder="{...}" />
+            <marker date="1424368074000" expanded="true" signature="12352:12374" placeholder="{...}" />
+            <marker date="1424368074000" expanded="true" signature="12371:12440" placeholder="{...}" />
+            <marker date="1424368074000" expanded="true" signature="12565:12628" placeholder="{...}" />
+            <marker date="1424368074000" expanded="true" signature="12769:12779" placeholder="{...}" />
+            <marker date="1424368074000" expanded="true" signature="12846:13244" placeholder="{...}" />
+            <marker date="1424368074000" expanded="true" signature="12891:13217" placeholder="{...}" />
+            <marker date="1424368074000" expanded="true" signature="12929:13200" placeholder="{...}" />
+            <marker date="1424368074000" expanded="true" signature="12994:13085" placeholder="{&quot;url&quot;: 'http://23.21.114.69/xlsform/'...}" />
+            <marker date="1424368074000" expanded="true" signature="13111:13166" placeholder="{...}" />
+            <marker date="1424368074000" expanded="true" signature="13289:13413" placeholder="/** Created by kaygee on 2/13/15. ...*/" />
+            <marker date="1424368074000" expanded="true" signature="13711:13761" placeholder="{...}" />
+            <marker date="1424368074000" expanded="true" signature="13986:14107" placeholder="{...}" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/client/dist/static/pegasusrises.js">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="0.0" vertical-offset="8029" max-vertical-offset="1679735">
+          <caret line="488" column="6" selection-start-line="488" selection-start-column="6" selection-end-line="488" selection-end-column="6" />
+          <folding>
+            <marker date="1424368074000" expanded="true" signature="9261:10305" placeholder="{...}" />
+            <marker date="1424368074000" expanded="true" signature="9385:10242" placeholder="{...}" />
+            <marker date="1424368074000" expanded="true" signature="9412:10227" placeholder="{&quot;simpleSheet&quot;: true...}" />
+            <marker date="1424368074000" expanded="true" signature="9488:10173" placeholder="{...}" />
+            <marker date="1424368074000" expanded="true" signature="9578:10048" placeholder="{...}" />
+            <marker date="1424368074000" expanded="true" signature="9738:9842" placeholder="{...}" />
+            <marker date="1424368074000" expanded="true" signature="9911:10025" placeholder="{...}" />
+            <marker date="1424368074000" expanded="true" signature="1481205:1481216" placeholder="..." />
+            <marker date="1424368074000" expanded="true" signature="1482148:1482159" placeholder="..." />
+            <marker date="1424368074000" expanded="true" signature="1483244:1483255" placeholder="..." />
+            <marker date="1424368074000" expanded="true" signature="1483818:1483829" placeholder="..." />
+            <marker date="1424368074000" expanded="true" signature="1484577:1484597" placeholder="..." />
+            <marker date="1424368074000" expanded="true" signature="1485836:1485847" placeholder="..." />
+            <marker date="1424368074000" expanded="true" signature="1486410:1486421" placeholder="..." />
+            <marker date="1424368074000" expanded="true" signature="1493996:1494007" placeholder="..." />
+            <marker date="1424368074000" expanded="true" signature="1494340:1494351" placeholder="..." />
+            <marker date="1424368074000" expanded="true" signature="1495834:1495849" placeholder="..." />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/client/dist/static/scripts.js">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="0.0" vertical-offset="0" max-vertical-offset="71207">
+          <caret line="0" column="0" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/client/dist/static/angular_files.js">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="0.0" vertical-offset="906006" max-vertical-offset="1196290">
+          <caret line="29237" column="16" selection-start-line="29237" selection-start-column="16" selection-end-line="29237" selection-end-column="16" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/client/src/app/home/homeService.js">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="0.0" vertical-offset="0" max-vertical-offset="868">
+          <caret line="20" column="34" selection-start-line="20" selection-start-column="30" selection-end-line="20" selection-end-column="58" />
           <folding>
             <element signature="e#0#40#0" expanded="false" />
           </folding>
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/client/src/app/home/homeService.js">
+    <entry file="file://$PROJECT_DIR$/client/gruntFile.js">
       <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="0.63917524" vertical-offset="0" max-vertical-offset="873">
-          <caret line="20" column="65" selection-start-line="20" selection-start-column="19" selection-end-line="20" selection-end-column="65" />
+        <state vertical-scroll-proportion="0.0" vertical-offset="496" max-vertical-offset="5704">
+          <caret line="103" column="14" selection-start-line="103" selection-start-column="14" selection-end-line="103" selection-end-column="14" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/client/src/index.html">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="-111.6" vertical-offset="372" max-vertical-offset="6665">
+          <caret line="156" column="0" selection-start-line="156" selection-start-column="0" selection-end-line="156" selection-end-column="0" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/app.yaml">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="0.0" vertical-offset="274" max-vertical-offset="1333">
+          <caret line="15" column="14" selection-start-line="15" selection-start-column="14" selection-end-line="15" selection-end-column="14" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/client/src/app/home/homeController.js">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="0.53264606" vertical-offset="1178" max-vertical-offset="2976">
+          <caret line="55" column="27" selection-start-line="55" selection-start-column="27" selection-end-line="55" selection-end-column="27" />
           <folding>
             <element signature="e#0#40#0" expanded="false" />
           </folding>
