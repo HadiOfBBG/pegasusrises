@@ -6,7 +6,7 @@ from google.appengine.ext.webapp import blobstore_handlers
 from jinja_template import JinjaTemplating
 from google.appengine.ext import db
 from google.appengine.api import memcache
-from xml.dom import minidom
+from xml.dom import minidomg
 
 class DbFromGoogleSheet(JinjaTemplating,db.Model):
 
