@@ -6,20 +6,24 @@ from google.appengine.ext.webapp import blobstore_handlers
 from jinja_template import JinjaTemplating
 from google.appengine.ext import db
 from google.appengine.api import memcache
-from xml.dom import minidomg
-
-class DbFromGoogleSheet(JinjaTemplating,db.Model):
-
-	def get(self):
-		JinjaTemplating.render_template_only(self,'aliu_test.html')
+from xml.dom import minidom
+from google_spreadsheet import api
+from google_spreadsheet.api import SpreadsheetAPI
+import json
 
 
-	# def post(self):
-	# 	ModelName = "UserDefinedModel"
-	# 	google_sheet = self.request.get('google_sheet')
-	# 	self.response.out.write(google_sheet)
+class DbFromGoogleSheet(JinjaTemplating, db.Model):
 
-	# 	return
+    def get(self):
+        JinjaTemplating.render_template_only(self, 'aliu_test.html')
+
+
+    def post(self):
+        # ModelName = "UserDefinedModel"
+        json_google_sheet = self.request.body
+        self.response.out.write(json_google_sheet)
+        return
+
 		#file  = '\n'.join(file.splitlines())
 		#lines = csv.reader(StringIO.StringIO(file),dialect=csv.excel_tab)
 		# self.response.out.write(lines)
@@ -49,16 +53,29 @@ class DbFromGoogleSheet(JinjaTemplating,db.Model):
 
 
 
-	def read_google_sheet(self, file):
-
-		self.response.out.write("Writing A File")
-
-		self.response.out.write(file)
-
-		return
 		
 
-		
+	# def read_google_sheet(self, google_sheet):
+
+	# 	# api = SpreadsheetAPI(GOOGLE_SPREADSHEET_USER, GOOGLE_SPREADSHEET_PASSWORD, GOOGLE_SPREADSHEET_SOURCE)
+	# 	api = SpreadsheetAPI()
+	# 	self.response.out.write("Writing A File")
+
+	# 	spreadsheets = api.list_spreadsheets()
+	# 	# sheet = spreadsheet.get_worksheet('tkZQWzwHEjKTWFFCAgw', 'od7')
+	# 	# sheet = spreadsheet.get_worksheet(google_sheet)
+	# 	# sheet = file
+
+	# 	# rows = sheet.get_rows()
+
+	# 	# number_of_rows_in_sheet = len(rows)
+
+	# 	# self.response.out.write("The number of rows in the file are: " +number_of_rows_in_sheet )
+
+	# 	return
+
+
+
 
 	def create_db_model(self,ModelName,db_columns):
 

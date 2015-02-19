@@ -1,13 +1,103 @@
+/**
+ * Created by kaygee on 2/16/15.
+ */
+angular.module('admin', [])
+    .config(['$stateProvider', function($stateProvider){
+        $stateProvider
+            .state('settings', {
+                url : '/settings',
+                templateUrl : 'admin/settings.tpl.html',
+                controller : 'prAdminSettingsCtrl'
+            })
+            .state('profile', {
+                url : '/profile',
+                templateUrl : 'admin/profile.tpl.html',
+                controller : 'prAdminProfileCtrl'
+            })
+    }])
+    .controller('prAdminSettingsCtrl', ['$rootScope', '$scope', function($rootScope, $scope){
+        $scope.status = {
+            isopen: false
+        };
+
+        $scope.themes = [
+            {name : 'White (Default)', key : 'light_theme'},
+            {name : 'Red' , key : 'red_thm'},
+            {name : 'Green', key : 'green_thm'},
+            {name : 'Blue', key : 'blue_thm'},
+            {name : 'Magento', key : 'magento_thm'}
+        ];
+
+        $scope.themeChoice = $scope.themes[0];
+
+        $scope.changeTheme = function(choice){
+            $scope.themeChoice = choice;
+             var body = $('body');
+                body.removeClass('blue_thm');
+                body.removeClass('red_thm');
+                body.removeClass('magento_thm');
+                body.removeClass('green_thm');
+                body.addClass(themeclass);
+        };
+
+          $scope.headerOptions = [
+            {name : 'Fixed header', key : 'fixed_header', description : 'The header will be fixed to the top whiles scrolling up and down.'},
+            {name : 'Scroll with body (Unfixed)', key : 'unfixed', description: 'The header will scroll together with the body.'}
+        ];
+
+        $scope.headerChoice = $scope.headerOptions[0];
+
+        $scope.changeHeaderType = function(choice){
+            $scope.headerChoice = choice;
+            var body = $('body');
+            if(body.hasClass('fixed_header') && $scope.headerChoice.key == 'unfixed'){
+                body.removeClass('fixed_header');
+            }else if(!(body.hasClass('fixed_header')) && $scope.headerChoice.key != 'unfixed'){
+                body.addClass('fixed_header');
+            }
+        };
+
+          $scope.navOptions = [
+            {name : 'Fixed Side Navigation', key : 'left_nav_fixed', description : 'The side navigation will be fixed in position whiles scrolling up and down.'},
+            {name : 'Scroll Side Navigation', key : 'unfixed', description: 'The side navigation will scroll together with the body.'}
+        ];
+
+        $scope.navChoice = $scope.navOptions[0];
+
+        $scope.changeNavType = function(choice){
+            $scope.headerChoice = choice;
+            var body = $('body');
+            if(body.hasClass('left_nav_fixed') && $scope.headerChoice.key == 'unfixed'){
+                body.removeClass('left_nav_fixed');
+            }else if(!(body.hasClass('left_nav_fixed')) && $scope.headerChoice.key != 'unfixed'){
+                body.addClass('left_nav_fixed');
+            }
+        };
+
+
+
+    }])
+    .controller('prAdminProfileCtrl', ['$rootScope', '$scope', function($rootScope, $scope){
+
+    }]);
+/**
+ * Created by kaygee on 2/16/15.
+ */
+
 //var ngPegasusApp =
 angular.module('pegasusrises', [
     'ui.router',
     'ui.bootstrap',
+    'ngAnimate',
     'templates.app',
     'templates.common',
     'home',
-    'lk-google-picker'
+    'admin',
+    'lk-google-picker',
+    'angular-loading-bar',
+    'angular-growl'
 ])
-    .config(['$stateProvider','$urlRouterProvider','lkGoogleSettingsProvider', function($stateProvider, $urlRouterProvider, lkGoogleSettingsProvider){
+    .config(['$stateProvider','$urlRouterProvider','lkGoogleSettingsProvider', 'growlProvider', function($stateProvider, $urlRouterProvider, lkGoogleSettingsProvider, growlProvider){
         //for any unmatched url, redirect to the state '/home'
         $urlRouterProvider.otherwise('/');
 
@@ -23,6 +113,8 @@ angular.module('pegasusrises', [
                 'DocsView().setMimeTypes("application/vnd.google-apps.spreadsheet")'
             ]
         });
+
+        growlProvider.globalTimeToLive(5000);
     }])
     .run(['$rootScope', '$state', '$stateParams', '$location' ,function($rootScope, $state, $stateParams, $location){
         $rootScope.$state = $state;
@@ -76,50 +168,6 @@ angular.module('pegasusrises').controller('prBreadCrumbCtrl', ['$scope', '$state
 //  $locationProvider.html5Mode(true);
 //  $routeProvider.otherwise({redirectTo:'/projectsinfo'});
 //}]);
-//
-//angular.module('app').run(['security', function(security) {
-//  // Get the current user when the application starts
-//  // (in case they are still logged in from a previous session)
-//  security.requestCurrentUser();
-//}]);
-//
-//angular.module('app').controller('AppCtrl', ['$scope', 'i18nNotifications', 'localizedMessages', function($scope, i18nNotifications, localizedMessages) {
-//
-//  $scope.notifications = i18nNotifications;
-//
-//  $scope.removeNotification = function (notification) {
-//    i18nNotifications.remove(notification);
-//  };
-//
-//  $scope.$on('$routeChangeError', function(event, current, previous, rejection){
-//    i18nNotifications.pushForCurrentRoute('errors.route.changeError', 'error', {}, {rejection: rejection});
-//  });
-//}]);
-//
-//angular.module('app').controller('HeaderCtrl', ['$scope', '$location', '$route', 'security', 'breadcrumbs', 'notifications', 'httpRequestTracker',
-//  function ($scope, $location, $route, security, breadcrumbs, notifications, httpRequestTracker) {
-//  $scope.location = $location;
-//  $scope.breadcrumbs = breadcrumbs;
-//
-//  $scope.isAuthenticated = security.isAuthenticated;
-//  $scope.isAdmin = security.isAdmin;
-//
-//  $scope.home = function () {
-//    if (security.isAuthenticated()) {
-//      $location.path('/dashboard');
-//    } else {
-//      $location.path('/projectsinfo');
-//    }
-//  };
-//
-//  $scope.isNavbarActive = function (navBarPath) {
-//    return navBarPath === breadcrumbs.getFirst().name;
-//  };
-//
-//  $scope.hasPendingRequests = function () {
-//    return httpRequestTracker.hasPendingRequests();
-//  };
-//}]);
 
 /**
  * Home Template
@@ -127,7 +175,7 @@ angular.module('pegasusrises').controller('prBreadCrumbCtrl', ['$scope', '$state
  * Created by kaygee on 2/12/15.
  */
 
-angular.module('home', [])
+angular.module('home', ['angular-loading-bar'])
     .config(['$stateProvider', function($stateProvider){
         $stateProvider
             .state('home', {
@@ -136,27 +184,54 @@ angular.module('home', [])
                 controller : 'prHomeCtrl'
             })
     }])
-    .controller('prHomeCtrl', ['$rootScope', '$scope', 'homeService', function($rootScope, $scope, homeService){
-        $scope.test = 'Kaygee';
+    .controller('prHomeCtrl', ['$rootScope', '$scope', 'homeService', 'growl', function($rootScope, $scope, homeService, growl){
         $scope.files = [];
 
         $scope.uploadSheet = function(){
-            homeService.uploadGoogleSheet($scope.files[0]).
+            var fileToUpload = $scope.files[ $scope.files.length - 1 ];
+            homeService.uploadGoogleSheet(fileToUpload).
                 success(function(data, status, headers, config) {
-                    console.log("success");
+                    growl.success("Data was posted successfully", {});
                     console.log(data);
                     console.log(status);
                     console.log(headers);
                     console.log(config);
                 }).
                 error(function(data, status, headers, config) {
-                    console.log("error");
+                    growl.error("Something went wrong on the server", {});
                     console.log(data);
                     console.log(status);
                     console.log(headers);
                     console.log(config);
                 });
-        }
+        };
+
+        $scope.tabletop= function(){
+            if ($scope.files.length) {
+                Tabletop.init( {
+                    key: $scope.files[ $scope.files.length - 1].id,
+                    callback: function(data, tabletop) {
+                        console.log(data);
+                        if (data) {
+                            homeService.uploadGoogleSheetContentsAsJson({"google_sheet_contents" : data})
+                                .success(function(data){
+                                    growl.success("Data was posted successfully", {});
+                                })
+                                .error(function(){
+                                    growl.error("Something went wrong on the server", {});
+                                })
+                        }else{
+                            alert("The file has not been shared to the public")
+                        }
+                    },
+                    simpleSheet: true
+                })
+            }else{
+                alert("No file selected")
+            }
+        };
+
+
     }]);
 /**
  * Created by kaygee on 2/13/15.
@@ -170,6 +245,20 @@ angular.module('home')
         homeService.uploadGoogleSheet = function(fileObject){
             // Simple POST request example (passing data) :
             return $http.post('/post/google/sheet', fileObject);
+//                success(function(data, status, headers, config) {
+//                    // this callback will be called asynchronously
+//                    // when the response is available
+//                }).
+//                error(function(data, status, headers, config) {
+//                    // called asynchronously if an error occurs
+//                    // or server returns response with an error status.
+//                });
+        };
+
+        homeService.uploadGoogleSheetContentsAsJson = function(fileObject){
+            // Simple POST request example (passing data) :
+//            return $http.post('/post/google/sheet/json', fileObject);
+            return $http.post('/google/sheet/json', fileObject);
 //                success(function(data, status, headers, config) {
 //                    // this callback will be called asynchronously
 //                    // when the response is available
