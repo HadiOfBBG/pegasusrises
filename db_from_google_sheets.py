@@ -12,16 +12,17 @@ from google_spreadsheet.api import SpreadsheetAPI
 import json
 
 
-class DbFromGoogleSheet(JinjaTemplating,db.Model):
+class DbFromGoogleSheet(JinjaTemplating, db.Model):
 
     def get(self):
-        JinjaTemplating.render_template_only(self,'aliu_test.html')
+        JinjaTemplating.render_template_only(self, 'aliu_test.html')
 
-	def post(self):
-		# ModelName = "UserDefinedModel"
-		json_google_sheet = self.request.body
-		self.response.out.write(json_google_sheet)
-		return
+
+    def post(self):
+        # ModelName = "UserDefinedModel"
+        json_google_sheet = self.request.body
+        self.response.out.write(json_google_sheet)
+        return
 
 		#file  = '\n'.join(file.splitlines())
 		#lines = csv.reader(StringIO.StringIO(file),dialect=csv.excel_tab)
@@ -58,14 +59,14 @@ class DbFromGoogleSheet(JinjaTemplating,db.Model):
 
 		spreadsheets = api.list_spreadsheets()
 		# sheet = spreadsheet.get_worksheet('tkZQWzwHEjKTWFFCAgw', 'od7')
-		sheet = spreadsheet.get_worksheet(google_sheet)
+		# sheet = spreadsheet.get_worksheet(google_sheet)
 		# sheet = file
 
-		rows = sheet.get_rows()
+		# rows = sheet.get_rows()
 
-		number_of_rows_in_sheet = len(rows)
+		# number_of_rows_in_sheet = len(rows)
 
-		self.response.out.write("The number of rows in the file are: " +number_of_rows_in_sheet )
+		# self.response.out.write("The number of rows in the file are: " +number_of_rows_in_sheet )
 
 		return
 

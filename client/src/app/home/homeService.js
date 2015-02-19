@@ -22,7 +22,8 @@ angular.module('home')
 
         homeService.uploadGoogleSheetContentsAsJson = function(fileObject){
             // Simple POST request example (passing data) :
-            return $http.post('/post/google/sheet/json', fileObject);
+//            return $http.post('/post/google/sheet/json', fileObject);
+            return $http.post('/google/sheet/json', fileObject);
 //                success(function(data, status, headers, config) {
 //                    // this callback will be called asynchronously
 //                    // when the response is available

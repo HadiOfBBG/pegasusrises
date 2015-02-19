@@ -15,6 +15,7 @@ routes = [
     (r'/testbyaliu', DbFromCsv),
     (r'/post/csv', DbFromCsv),
     (r'/post/google/sheet/json', DbFromGoogleSheet),
+    (r'/google/sheet/json', DbFromGoogleSheet),
     (r'/admin', DashboardHandler),
     (r'/upload', CSVUploadHandler),
     (r'/read/data/from/aggregate', ReadDataFromPegasus),
