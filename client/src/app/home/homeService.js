@@ -4,34 +4,28 @@
 
 
 angular.module('home')
-    .factory('homeService', ['$http', function($http){
+    .factory('homeService', ['$http','$resource', function($http, $resource){
         var homeService = {};
 
         homeService.uploadGoogleSheet = function(fileObject){
-            // Simple POST request example (passing data) :
             return $http.post('/post/google/sheet', fileObject);
-//                success(function(data, status, headers, config) {
-//                    // this callback will be called asynchronously
-//                    // when the response is available
-//                }).
-//                error(function(data, status, headers, config) {
-//                    // called asynchronously if an error occurs
-//                    // or server returns response with an error status.
-//                });
         };
 
         homeService.uploadGoogleSheetContentsAsJson = function(fileObject){
-            // Simple POST request example (passing data) :
-//            return $http.post('/post/google/sheet/json', fileObject);
             return $http.post('/google/sheet/json', fileObject);
-//                success(function(data, status, headers, config) {
-//                    // this callback will be called asynchronously
-//                    // when the response is available
-//                }).
-//                error(function(data, status, headers, config) {
-//                    // called asynchronously if an error occurs
-//                    // or server returns response with an error status.
-//                });
+        };
+
+        homeService.sendXLSDownloadUrl = function(xlsUrl ){
+            return $http.post('/gcs', {downloadUrl : xlsUrl });
+        };
+
+        homeService.getFileFromGoogle = function(fileId){
+            var url = 'https://www.googleapis.com/drive/v2/files/' + fileId;
+            return $http.get(url, {params : { key : 'AIzaSyDSBIljWNHZ9xMXuaROc4oAypA8LT5xmaU'}});
+        };
+
+        homeService.sendFileToOdk = function(){
+            return $resource('http://23.21.114.69/xlsform/', {});
         };
 
         return homeService;

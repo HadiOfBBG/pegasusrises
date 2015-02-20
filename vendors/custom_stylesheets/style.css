@@ -455,7 +455,7 @@ input.gn-search:focus {
 }
 
 #intro{	
-	background-image: url(../../pictures/img/img-bg.jpg);
+	background-image: url(/pictures/img/img-bg.jpg);
 	background-size: cover;
 }
 

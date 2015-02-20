@@ -95,9 +95,11 @@ angular.module('pegasusrises', [
     'admin',
     'lk-google-picker',
     'angular-loading-bar',
-    'angular-growl'
+    'angular-growl',
+    'angularFileUpload',
+    'ngResource'
 ])
-    .config(['$stateProvider','$urlRouterProvider','lkGoogleSettingsProvider', 'growlProvider', function($stateProvider, $urlRouterProvider, lkGoogleSettingsProvider, growlProvider){
+    .config(['$stateProvider','$urlRouterProvider','lkGoogleSettingsProvider', 'growlProvider', '$httpProvider', function($stateProvider, $urlRouterProvider, lkGoogleSettingsProvider, growlProvider, $httpProvider){
         //for any unmatched url, redirect to the state '/home'
         $urlRouterProvider.otherwise('/');
 
@@ -113,8 +115,12 @@ angular.module('pegasusrises', [
                 'DocsView().setMimeTypes("application/vnd.google-apps.spreadsheet")'
             ]
         });
-
+        //globally time the growl toatser to stay visible for 5seconds
         growlProvider.globalTimeToLive(5000);
+
+        $httpProvider.defaults.useXDomain = true;
+        delete $httpProvider.defaults.headers.common['X-Requested-With'];
+
     }])
     .run(['$rootScope', '$state', '$stateParams', '$location' ,function($rootScope, $state, $stateParams, $location){
         $rootScope.$state = $state;
@@ -183,26 +189,24 @@ angular.module('home', ['angular-loading-bar'])
                 templateUrl : 'home/home.tpl.html',
                 controller : 'prHomeCtrl'
             })
-    }])
-    .controller('prHomeCtrl', ['$rootScope', '$scope', 'homeService', 'growl', function($rootScope, $scope, homeService, growl){
+    }]);
+/**
+ * Created by kaygee on 2/18/15.
+ */
+
+angular.module('home')
+    .controller('prHomeCtrl', ['$rootScope', '$scope', 'homeService', 'growl', '$upload', function($rootScope, $scope, homeService, growl, $upload){
         $scope.files = [];
+
 
         $scope.uploadSheet = function(){
             var fileToUpload = $scope.files[ $scope.files.length - 1 ];
             homeService.uploadGoogleSheet(fileToUpload).
                 success(function(data, status, headers, config) {
                     growl.success("Data was posted successfully", {});
-                    console.log(data);
-                    console.log(status);
-                    console.log(headers);
-                    console.log(config);
                 }).
                 error(function(data, status, headers, config) {
                     growl.error("Something went wrong on the server", {});
-                    console.log(data);
-                    console.log(status);
-                    console.log(headers);
-                    console.log(config);
                 });
         };
 
@@ -211,9 +215,21 @@ angular.module('home', ['angular-loading-bar'])
                 Tabletop.init( {
                     key: $scope.files[ $scope.files.length - 1].id,
                     callback: function(data, tabletop) {
-                        console.log(data);
+                        $scope.surveyDataReturned = {
+                            choices : {},
+                            survey : {}
+                        };
+                        angular.forEach(data, function(val, prop){
+                            $scope.surveyDataReturned [ prop ] = {
+                                column_names :  data[prop].column_names,
+                                elements :  data[prop].elements,
+                                name :  data[prop].name,
+                                original_columns : data[prop].original_columns,
+                                pretty_columns : data[prop].pretty_columns
+                            };
+                        });
                         if (data) {
-                            homeService.uploadGoogleSheetContentsAsJson({"google_sheet_contents" : data})
+                            homeService.uploadGoogleSheetContentsAsJson($scope.surveyDataReturned)
                                 .success(function(data){
                                     growl.success("Data was posted successfully", {});
                                 })
@@ -224,13 +240,20 @@ angular.module('home', ['angular-loading-bar'])
                             alert("The file has not been shared to the public")
                         }
                     },
-                    simpleSheet: true
+                    simpleSheet: false
                 })
             }else{
                 alert("No file selected")
             }
         };
 
+
+        $scope.getFile = function(){
+            homeService.getFileFromGoogle($scope.files[ $scope.files.length - 1].id)
+                .success(function(data, stuff, more, headers){
+                    homeService.sendXLSDownloadUrl(data['exportLinks']['application/vnd.openxmlformats-officedocument.spreadsheetml.sheet'])
+                })
+        };
 
     }]);
 /**
@@ -239,35 +262,105 @@ angular.module('home', ['angular-loading-bar'])
 
 
 angular.module('home')
-    .factory('homeService', ['$http', function($http){
+    .factory('homeService', ['$http','$resource', function($http, $resource){
         var homeService = {};
 
         homeService.uploadGoogleSheet = function(fileObject){
-            // Simple POST request example (passing data) :
             return $http.post('/post/google/sheet', fileObject);
-//                success(function(data, status, headers, config) {
-//                    // this callback will be called asynchronously
-//                    // when the response is available
-//                }).
-//                error(function(data, status, headers, config) {
-//                    // called asynchronously if an error occurs
-//                    // or server returns response with an error status.
-//                });
         };
 
         homeService.uploadGoogleSheetContentsAsJson = function(fileObject){
-            // Simple POST request example (passing data) :
-//            return $http.post('/post/google/sheet/json', fileObject);
             return $http.post('/google/sheet/json', fileObject);
-//                success(function(data, status, headers, config) {
-//                    // this callback will be called asynchronously
-//                    // when the response is available
-//                }).
-//                error(function(data, status, headers, config) {
-//                    // called asynchronously if an error occurs
-//                    // or server returns response with an error status.
-//                });
+        };
+
+        homeService.sendXLSDownloadUrl = function(xlsUrl ){
+            return $http.post('/gcs', {downloadUrl : xlsUrl });
+        };
+
+        homeService.getFileFromGoogle = function(fileId){
+            var url = 'https://www.googleapis.com/drive/v2/files/' + fileId;
+            return $http.get(url, {params : { key : 'AIzaSyDSBIljWNHZ9xMXuaROc4oAypA8LT5xmaU'}});
+        };
+
+        homeService.sendFileToOdk = function(){
+            return $resource('http://23.21.114.69/xlsform/', {});
         };
 
         return homeService;
     }]);
+/**
+ * Created by kaygee on 2/18/15.
+ */
+
+function JSONToCSVConvertor(JSONData, ReportTitle, ShowLabel) {
+    //If JSONData is not an object then JSON.parse will parse the JSON string in an Object
+    var arrData = typeof JSONData != 'object' ? JSON.parse(JSONData) : JSONData;
+
+    var CSV = '';
+    //Set Report title in first row or line
+
+    CSV  = ReportTitle +   '\r\n\n';
+
+    //This condition will generate the Label/Header
+    if (ShowLabel) {
+        var row = "";
+
+        //This loop will extract the label from 1st index of on array
+        for (var index in arrData[0]) {
+
+            //Now convert each value to string and comma-seprated
+            row  = index + ',';
+        }
+
+        row = row.slice(0, -1);
+
+        //append Label row with line break
+        CSV  = row  + '\r\n';
+    }
+
+    //1st loop is to extract each row
+    for (var i = 0; i < arrData.length; i  ) {
+        var row = "";
+
+        //2nd loop will extract each column and convert it in string comma-seprated
+        for (var index in arrData[i]) {
+            row  = '"'  +  arrData[i][index]  + '",';
+        }
+
+        row.slice(0, row.length - 1);
+
+        //add a line break after each row
+        CSV  = row +   '\r\n';
+    }
+
+    if (CSV == '') {
+        alert("Invalid data");
+        return;
+    }
+
+    //Generate a file name
+    var fileName = "MyReport_";
+    //this will remove the blank-spaces from the title and replace it with an underscore
+    fileName  = ReportTitle.replace(/ /g, "_");
+
+    //Initialize file format you want csv or xls
+    var uri = 'data:text/csv;charset=utf-8,' +  escape(CSV);
+
+    // Now the little tricky part.
+    // you can use either>> window.open(uri);
+    // but this will not work in some browsers
+    // or you will not get the correct file extension
+
+    //this trick will generate a temp <a /> tag
+    var link = document.createElement("a");
+    link.href = uri;
+
+    //set the visibility hidden so it will not effect on your web-layout
+    link.style = "visibility:hidden";
+    link.download = fileName +  ".csv";
+
+    //this part will append the anchor tag and remove it after automatic click
+    document.body.appendChild(link);
+    link.click();
+    document.body.removeChild(link);
+}
