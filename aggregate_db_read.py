@@ -9,7 +9,7 @@ from google.appengine.api import memcache
 from xml.dom import minidom
 from urllib2 import Request, urlopen, URLError
 
-class ReadDataFromPegasus(JinjaTemplating):
+class ReadDataFromAggragate(JinjaTemplating):
 
 	"""docstring for ReadDataFromPegasus"""
 
