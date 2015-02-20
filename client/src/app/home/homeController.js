@@ -64,30 +64,47 @@ angular.module('home')
             }
         };
 
-        $scope.$watch('files', function () {
-            $scope.upload($scope.files);
-        });
-        $scope.odkTest = function(){
-            homeService.sendFileToOdk().query()
+
+        var CLIENT_ID = '982002203062-qllsi843lackaof6acad3308p7m1j5pr.apps.googleusercontent.com';
+        var SCOPES = 'https://www.googleapis.com/auth/drive';
+
+        $scope.getFile = function(){
+            homeService.getFileFromGoogle($scope.files[ $scope.files.length - 1].id)
+                .success(function(data, stuff, more, headers){
+                    console.log(data);
+
+                    var urlToPost = data['exportLinks']['application/vnd.openxmlformats-officedocument.spreadsheetml.sheet'];
+
+                    homeService.sendXLSDownloadUrl(urlToPost)
+
+                })
         };
 
-        $scope.upload = function (files) {
-            if (files && files.length) {
-                for (var i = 0; i < files.length; i++) {
-                    var file = files[i];
-                    $upload.upload({
-                        url: 'http://23.21.114.69/xlsform/',
-                        fields: {'username': $scope.username},
-                        file: file
-                    }).progress(function (evt) {
-                        var progressPercentage = parseInt(100.0 * evt.loaded / evt.total);
-                        console.log('progress: ' + progressPercentage + '% ' + evt.config.file.name);
-                    }).success(function (data, status, headers, config) {
-                        console.log('file ' + config.file.name + 'uploaded. Response: ' + data);
-                    });
-                }
+
+        /**
+         * Download a file's content.
+         *
+         * @param {File} file Drive File instance.
+         * @param {Function} callback Function to call when the request is complete.
+         */
+        function downloadFile(file, callback) {
+            file.downloadUrl = file['exportLinks']['application/vnd.openxmlformats-officedocument.spreadsheetml.sheet'];
+
+            if (file.downloadUrl) {
+                var accessToken = gapi.auth.getToken().access_token;
+                var xhr = new XMLHttpRequest();
+                xhr.open('GET', file.downloadUrl);
+                xhr.setRequestHeader('Authorization', 'Bearer ' + accessToken);
+                xhr.onload = function() {
+                    callback(xhr.responseText);
+                };
+                xhr.onerror = function() {
+                    callback(null);
+                };
+                xhr.send();
+            } else {
+                callback(null);
             }
-        };
-
+        }
 
     }]);

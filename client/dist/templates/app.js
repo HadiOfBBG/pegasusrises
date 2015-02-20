@@ -360,6 +360,5 @@ angular.module("home/home.tpl.html", []).run(["$templateCache", function($templa
     "\n" +
     "<!--<button class=\"btn btn-warning\" ng-click=\"testToast()\">Test Toast</button>-->\n" +
     "\n" +
-    "<div class=\"btn btn-warning\" ng-file-select ng-model=\"files\">Upload</div>\n" +
-    "<div class=\"btn btn-warning\"  ng-click=\"odkTest()\"> Send to ODK </div>");
+    "<div class=\"btn btn-warning\" ng-show=\"files.length\" ng-click=\"getFile()\"> Get file from Google </div>");
 }]);

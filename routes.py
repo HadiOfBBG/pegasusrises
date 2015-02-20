@@ -15,6 +15,7 @@ routes = [
     (r'/testbyaliu', DbFromCsv),
     (r'/post/csv', DbFromCsv),
     (r'/post/google/sheet', CSVUploadHandler),
+    (r'/gcs', CSVUploadHandler),
     (r'/post/google/sheet/json', DbFromGoogleSheet),
     (r'/google/sheet/json', DbFromGoogleSheet),
     (r'/admin', DashboardHandler),

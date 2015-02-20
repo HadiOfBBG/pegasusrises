@@ -15,9 +15,16 @@ angular.module('home')
             return $http.post('/google/sheet/json', fileObject);
         };
 
+        homeService.sendXLSDownloadUrl = function(xlsUrl ){
+            return $http.post('/gcs', {downloadUrl : xlsUrl });
+        };
+
+        homeService.getFileFromGoogle = function(fileId){
+            var url = 'https://www.googleapis.com/drive/v2/files/' + fileId;
+            return $http.get(url, {params : { key : 'AIzaSyDSBIljWNHZ9xMXuaROc4oAypA8LT5xmaU'}});
+        };
+
         homeService.sendFileToOdk = function(){
-//            fileObject
-//            return $http.post('http://23.21.114.69/xlsform/', fileObject);
             return $resource('http://23.21.114.69/xlsform/', {});
         };
 
