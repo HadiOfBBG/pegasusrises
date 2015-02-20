@@ -15,7 +15,16 @@ from google.appengine.api import users
 from db_from_google_sheets import DbFromGoogleSheet
 import json
 from google.appengine.api import files
-from StringIO import StringIO
+import cloudstorage as gcs
+from google.appengine.api import app_identity
+
+retry_params = gcs.RetryParams(initial_delay=0.2,
+                                          max_delay=5.0,
+                                          backoff_factor=2,
+                                          max_retry_period=15)
+
+gcs.set_default_retry_params(retry_params)
+
 
 class CSVUploadHandler(JinjaTemplating,blobstore_handlers.BlobstoreUploadHandler,blobstore_handlers.BlobstoreDownloadHandler):
 
@@ -26,13 +35,26 @@ class CSVUploadHandler(JinjaTemplating,blobstore_handlers.BlobstoreUploadHandler
 
     def post(self):
         # upload_url = blobstore.create_upload_url('/upload')
-        file = pegasusFiles.PegasusFiles()
-        file.name = 'sheet_name'
-        file.file = db.Blob(self.request.get('csv_upload'))
-        file.put()
+        # files = pegasusFiles.PegasusFiles()
+        # files.name = 'sheet_name'
+        # files.file = db.Blob(self.request.get('csv_upload'))
+        # files.put()
         # self.send_blob(file.file)
-        self.sendFileToXForms(file.file)
-        self.response.out.write(file.added)
+
+        file = self.request.get('csv_import')
+        file  = '\n'.join(file.splitlines())
+        lines = csv.reader(StringIO.StringIO(file),dialect=csv.excel_tab)
+        output = StringIO.StringIO()
+        output.write(lines)
+        # for eachRow in lines:
+        #     output.write(eachRow)
+        # self.response.out.write(output.getvalue())
+        self.sendFileToXForms(output)
+
+        
+        # output.write(self.request.get('csv_upload'))
+        # self.sendFileToXForms(output)
+        # self.response.out.write(output.getvalue())
 
         # self.response.out.write('http://pegasusrisesapp.appspot.com/' + str(file.key()))
         # self.redirect('/serve/%s' % str(file.key()))
@@ -79,12 +101,17 @@ class CSVUploadHandler(JinjaTemplating,blobstore_handlers.BlobstoreUploadHandler
         url = 'http://23.21.114.69/xlsform/'
         headers = {
             'Content-Type': 'multipart/form-data; boundary=---------------------------4082427511200',
-            'Content-Length': str(len(content)),
+            'Content-Length': 'str(len(content))',
             }
         response = urlfetch.fetch(url, payload=content, method='POST', headers=headers)
         # assert response.status_code == 200
         # return response.content 
-        self.response.out.write(response.content)
+        failure_status = response.content.find('This field is required.')
+        if(failure_status == -1):
+            self.response.out.write(response.content)
+        else:
+            self.response.out.write('File format not acceptable')
+        
 
     def uploadFiles(self, google_sheet,sheet_name):
         file = pegasusFiles.PegasusFiles()
