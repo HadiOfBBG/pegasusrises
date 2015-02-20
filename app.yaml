@@ -13,7 +13,7 @@ handlers:
   static_dir: vendors
 
 - url: /pictures
-  static_dir: /pictures
+  static_dir: pictures
 
 - url: /images
   static_dir: client/dist/static/images
