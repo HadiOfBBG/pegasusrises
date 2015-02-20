@@ -201,7 +201,5 @@ class DbFromGoogleSheet(JinjaTemplating, db.Model):
 		self.response.out.write('Data saved Into DB \n')
 
 
-
-
 		return
 

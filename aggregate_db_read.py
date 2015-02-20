@@ -39,26 +39,21 @@ class ReadDataFromAggragate(JinjaTemplating):
 			response = urlopen(request)
 			data_submissions = response.read()
 			#data_submissions_id = data_submissions[' uuid']
-
 			# Looping through to get data of each submission using submission_id
 			# for submission_id in data_submissions_id:
 			# 	getDataSubmittedUsingSubmissionID(form_id,submission_id)
-
 			self.response.out.write(data_submissions)
-
 		except URLError, e:
 			self.response.out.write('No submissions retrived. Got an error code:', e)
 
 
 	def getDataSubmittedUsingSubmissionID(self,form_id,submission_id):
 
-
 		request = Request('https://pegasusodk.appspot.com/formid[@version=null and @uiVersion=null]/topElement[@key=idvalue]')
-
+		
 		try:
 			response = urlopen(request)
 			data_assocuated_with_submission_id = response.read()
-
 			self.response.out.write(data_submissions)
 
 		except URLError, e:
