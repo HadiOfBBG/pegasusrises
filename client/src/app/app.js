@@ -11,7 +11,8 @@ angular.module('pegasusrises', [
     'angular-loading-bar',
     'angular-growl',
     'angularFileUpload',
-    'ngResource'
+    'ngResource',
+    'ngJoyRide'
 ])
     .config(['$stateProvider','$urlRouterProvider','lkGoogleSettingsProvider', 'growlProvider', '$httpProvider', function($stateProvider, $urlRouterProvider, lkGoogleSettingsProvider, growlProvider, $httpProvider){
         //for any unmatched url, redirect to the state '/home'

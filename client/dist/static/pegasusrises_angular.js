@@ -97,7 +97,8 @@ angular.module('pegasusrises', [
     'angular-loading-bar',
     'angular-growl',
     'angularFileUpload',
-    'ngResource'
+    'ngResource',
+    'ngJoyRide'
 ])
     .config(['$stateProvider','$urlRouterProvider','lkGoogleSettingsProvider', 'growlProvider', '$httpProvider', function($stateProvider, $urlRouterProvider, lkGoogleSettingsProvider, growlProvider, $httpProvider){
         //for any unmatched url, redirect to the state '/home'
@@ -212,13 +213,10 @@ angular.module('home')
 
         $scope.tabletop= function(){
             if ($scope.files.length) {
+                $scope.surveyDataReturned = {};
                 Tabletop.init( {
                     key: $scope.files[ $scope.files.length - 1].id,
                     callback: function(data, tabletop) {
-                        $scope.surveyDataReturned = {
-                            choices : {},
-                            survey : {}
-                        };
                         angular.forEach(data, function(val, prop){
                             $scope.surveyDataReturned [ prop ] = {
                                 column_names :  data[prop].column_names,
@@ -254,6 +252,52 @@ angular.module('home')
                     homeService.sendXLSDownloadUrl(data['exportLinks']['application/vnd.openxmlformats-officedocument.spreadsheetml.sheet'])
                 })
         };
+
+        $scope.configJoyRide = [
+            {
+                type: "title",
+                heading: "Welcome to the Pegasus Tutorial",
+                text: '<div class="row">' +
+                '<div id="title-text" class=" text-center col-md-12"><br>' +
+                'This walkthrough will help you familiarize with the Pegasus Build System</div></div>',
+                scroll: true
+            },
+            {
+                type: "element",
+                selector: "#ngJoyRide_1_gdrive",
+                heading: "Create a Server",
+                text: "<span class='text-center'>This button will open your Google Drive in this interface to allow you select the XLS file that will be used to generate the server</span>",
+                placement: "right",
+                scroll: true
+            },
+            {
+                type : 'function',
+                fn : function(){
+                    $scope.startJoyRide = false;
+                    $('#ngJoyRide_1_gdrive').trigger('click');
+                }
+            },
+            {
+                type : 'element',
+                selector : '#ngJoyRide_2_upload',
+                heading : "<span class='text-center'>Upload the selected Google Sheet to begin creating your server</span>",
+                scroll : true,
+                placement : "left"
+            }
+
+        ];
+
+        //$scope.$watch('files', function(){
+        //    $scope.startJoyRide = !$scope.startJoyRide;
+        //});
+
+        $scope.startJoyRide = function(){
+            $scope.startJoyRide = !$scope.startJoyRide
+        };
+
+        $scope.onFinish = function(){
+            alert("Joy ride ends")
+        }
 
     }]);
 /**
