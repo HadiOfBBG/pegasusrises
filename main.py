@@ -33,6 +33,9 @@ from jinja_template import JinjaTemplating
 
 class MainHandler(JinjaTemplating):
 		def get(self):
+			self.response.headers.add_header("Access-Control-Allow-Origin", "*")
+			self.response.headers['Content-Type'] = 'text/html'
+			# self.response.out.write(self.dump_csv())
 			user = users.get_current_user()
 			if user:
 				url = users.create_login_url('/admin')

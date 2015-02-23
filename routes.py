@@ -24,7 +24,7 @@ routes = [
     (r'/upload', CSVUploadHandler),
     (r'/read/data/from/aggregate', ReadDataFromPegasus),
     (r'/serve/([^/]+)?', ServeHandler),
-    (r'/gcs', MainPage),
+    (r'/gcs_old', MainPage),
 
 ]
 

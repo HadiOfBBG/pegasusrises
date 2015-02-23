@@ -17,6 +17,9 @@ import json
 from google.appengine.api import files
 import cloudstorage as gcs
 from google.appengine.api import app_identity
+import webapp2, urllib
+# import gcs_client as gcs
+import time
 
 retry_params = gcs.RetryParams(initial_delay=0.2,
                                           max_delay=5.0,
@@ -24,6 +27,8 @@ retry_params = gcs.RetryParams(initial_delay=0.2,
                                           max_retry_period=15)
 
 gcs.set_default_retry_params(retry_params)
+xframe = 'http://23.21.114.69/xlsform/'
+urlfetch.set_default_fetch_deadline(60)
 
 
 class CSVUploadHandler(JinjaTemplating,blobstore_handlers.BlobstoreUploadHandler,blobstore_handlers.BlobstoreDownloadHandler):
@@ -34,6 +39,29 @@ class CSVUploadHandler(JinjaTemplating,blobstore_handlers.BlobstoreUploadHandler
 
 
     def post(self):
+        content_from_server = json.loads(self.request.body)
+        url = content_from_server['downloadUrl']
+        self.response.out.write('oooooooooooooooooooooooooooooooooooooooooo  '+url)
+        self.response.headers['Content-Type'] = 'application/vnd.openxmlformats-officedocument.spreadsheetml.sheet'
+        self.response.headers['Content-Disposition'] = 'attachment; filename="' + 'sample1.xls' + '"'
+        self.response.headers['Accept-Encoding']='gzip, deflate'
+        f = urllib.urlopen(url)
+        data = f.read()
+        # time.sleep(60)
+        self.response.out.write(data)
+        # time.sleep(5000)
+        form_field = {
+        "file":data
+        }
+        data = urllib.urlencode(form_field, doseq=True)
+        url = 'http://23.21.114.69/xlsform/'
+        if data is not None:
+            headers = {
+            'Content-Type': 'multipart/form-data; boundary=---------------------------4082427511200',
+            'Content-Length': 'str(len(content))',
+            }
+            response_file = urlfetch.fetch(url, payload=data, method='POST', headers=headers)
+            self.response.out.write(response_file.content)
         # upload_url = blobstore.create_upload_url('/upload')
         # files = pegasusFiles.PegasusFiles()
         # files.name = 'sheet_name'
@@ -41,15 +69,15 @@ class CSVUploadHandler(JinjaTemplating,blobstore_handlers.BlobstoreUploadHandler
         # files.put()
         # self.send_blob(file.file)
 
-        file = self.request.get('csv_import')
-        file  = '\n'.join(file.splitlines())
-        lines = csv.reader(StringIO.StringIO(file),dialect=csv.excel_tab)
-        output = StringIO.StringIO()
-        output.write(lines)
+        # file = self.request.get('csv_import')
+        # file  = '\n'.join(file.splitlines())
+        # lines = csv.reader(StringIO.StringIO(file),dialect=csv.excel_tab)
+        # output = StringIO.StringIO()
+        # output.write(lines)
         # for eachRow in lines:
         #     output.write(eachRow)
         # self.response.out.write(output.getvalue())
-        self.sendFileToXForms(output)
+        # self.sendFileToXForms(output)
 
         
         # output.write(self.request.get('csv_upload'))
@@ -166,8 +194,26 @@ class CSVUploadHandler(JinjaTemplating,blobstore_handlers.BlobstoreUploadHandler
 
         file = self.getFile(key)
 
-# class UploadHandler(blobstore_handlers.BlobstoreUploadHandler):
-#   def post(self):
-#     upload_files = self.get_uploads('file')  # 'file' is file upload field in the form
-#     blob_info = upload_files[0]
-#     self.redirect('/serve/%s' % blob_info.key())
+
+    def create_file(self, filename,data):
+        """Create a file.
+
+        The retry_params specified in the open call will override the default
+        retry params for this particular file handle.
+
+        Args:
+          filename: filename.
+        """
+        self.response.write('Creating file %s\n' % filename)
+
+        write_retry_params = gcs.RetryParams(backoff_factor=1.1)
+        gcs_file = gcs.open(filename,
+                            'w',
+                            content_type='application/vnd.openxmlformats-officedocument.spreadsheetml.sheet',
+                            options={'x-goog-meta-foo': 'foo',
+                                     'x-goog-meta-bar': 'bar'},
+                            retry_params=write_retry_params)
+        gcs_file.write(data)
+        gcs_file.write(data + '\n')
+        gcs_file.close()
+        return gcs_file
