@@ -3,6 +3,7 @@
   <component name="ChangeListManager">
     <list default="true" id="7c55b412-7925-4368-9ccc-d922ed595688" name="Default" comment="">
 <<<<<<< HEAD
+<<<<<<< HEAD
       <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/LICENSE" />
       <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/README.md" />
       <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/ServeBlobFile.py" />
@@ -17,6 +18,16 @@
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/client/src/app/home/homeController.js" afterPath="$PROJECT_DIR$/client/src/app/home/homeController.js" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/client/dist/static/pegasusrises.js" afterPath="$PROJECT_DIR$/client/dist/static/pegasusrises.js" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/client/dist/static/pegasusrises_angular.js" afterPath="$PROJECT_DIR$/client/dist/static/pegasusrises_angular.js" />
+=======
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/.idea/libraries/Google_App_Engine_SDK.xml" afterPath="$PROJECT_DIR$/.idea/libraries/Google_App_Engine_SDK.xml" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/.idea/libraries/Google_App_Engine_SDK2.xml" afterPath="$PROJECT_DIR$/.idea/libraries/Google_App_Engine_SDK2.xml" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/client/dist/static/all-pegasusrises.css" afterPath="$PROJECT_DIR$/client/dist/static/all-pegasusrises.css" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/client/dist/static/angular_files.js" afterPath="$PROJECT_DIR$/client/dist/static/angular_files.js" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/client/dist/html/index.html" afterPath="$PROJECT_DIR$/client/dist/html/index.html" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/client/src/index.html" afterPath="$PROJECT_DIR$/client/src/index.html" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/client/dist/static/pegasusrises.js" afterPath="$PROJECT_DIR$/client/dist/static/pegasusrises.js" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/client/dist/static/scripts.js" afterPath="$PROJECT_DIR$/client/dist/static/scripts.js" />
+>>>>>>> 414d7bae8f89379a86e1569048ee51ccdf61ebc7
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/.idea/workspace.xml" afterPath="$PROJECT_DIR$/.idea/workspace.xml" />
 >>>>>>> d403072b36f940d4df18e034555b73513f6f1562
     </list>
@@ -32,9 +43,6 @@
     <option name="LAST_RESOLUTION" value="IGNORE" />
   </component>
   <component name="ChangesViewManager" flattened_view="true" show_ignored="false" />
-  <component name="CoverageDataManager">
-    <SUITE FILE_PATH="coverage/pegasusrises$pegasusrises.coverage" NAME="pegasusrises Coverage Results" MODIFIED="1424175730441" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="" />
-  </component>
   <component name="CreatePatchCommitExecutor">
     <option name="PATCH_PATH" value="" />
   </component>
@@ -47,6 +55,7 @@
   </component>
   <component name="FileEditorManager">
     <leaf>
+<<<<<<< HEAD
       <file leaf-file-name="homeService.js" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/client/src/app/home/homeService.js">
 <<<<<<< HEAD
@@ -65,16 +74,31 @@
           <provider selected="true" editor-type-id="text-editor">
             <state vertical-scroll-proportion="-4.0" vertical-offset="259" max-vertical-offset="6727">
               <caret line="17" column="74" selection-start-line="17" selection-start-column="68" selection-end-line="17" selection-end-column="74" />
+=======
+      <file leaf-file-name="home.tpl.html" pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/client/src/app/home/home.tpl.html">
+          <provider selected="true" editor-type-id="text-editor">
+            <state vertical-scroll-proportion="0.0" vertical-offset="486" max-vertical-offset="837">
+              <caret line="18" column="73" selection-start-line="18" selection-start-column="73" selection-end-line="18" selection-end-column="73" />
+>>>>>>> 414d7bae8f89379a86e1569048ee51ccdf61ebc7
               <folding />
             </state>
           </provider>
         </entry>
       </file>
+<<<<<<< HEAD
       <file leaf-file-name="app.yaml" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/app.yaml">
           <provider selected="true" editor-type-id="text-editor">
             <state vertical-scroll-proportion="0.0" vertical-offset="274" max-vertical-offset="1333">
               <caret line="15" column="14" selection-start-line="15" selection-start-column="14" selection-end-line="15" selection-end-column="14" />
+=======
+      <file leaf-file-name="index.html" pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/templates/index.html">
+          <provider selected="true" editor-type-id="text-editor">
+            <state vertical-scroll-proportion="0.0" vertical-offset="8586" max-vertical-offset="12366">
+              <caret line="318" column="87" selection-start-line="318" selection-start-column="82" selection-end-line="318" selection-end-column="87" />
+>>>>>>> 414d7bae8f89379a86e1569048ee51ccdf61ebc7
               <folding />
 =======
           <provider selected="true" editor-type-id="text-editor">
@@ -88,6 +112,7 @@
           </provider>
         </entry>
       </file>
+<<<<<<< HEAD
       <file leaf-file-name="homeController.js" pinned="false" current-in-tab="true">
         <entry file="file://$PROJECT_DIR$/client/src/app/home/homeController.js">
           <provider selected="true" editor-type-id="text-editor">
@@ -112,11 +137,19 @@
           <provider selected="true" editor-type-id="text-editor">
             <state vertical-scroll-proportion="0.0" vertical-offset="2103" max-vertical-offset="3565">
               <caret line="85" column="10" selection-start-line="85" selection-start-column="10" selection-end-line="85" selection-end-column="10" />
+=======
+      <file leaf-file-name="gruntFile.js" pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/client/gruntFile.js">
+          <provider selected="true" editor-type-id="text-editor">
+            <state vertical-scroll-proportion="0.0" vertical-offset="3051" max-vertical-offset="4968">
+              <caret line="124" column="10" selection-start-line="124" selection-start-column="10" selection-end-line="124" selection-end-column="10" />
+>>>>>>> 414d7bae8f89379a86e1569048ee51ccdf61ebc7
               <folding />
             </state>
           </provider>
         </entry>
       </file>
+<<<<<<< HEAD
       <file leaf-file-name="jsonToCSXLS.js" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/client/src/app/home/jsonToCSXLS.js">
           <provider selected="true" editor-type-id="text-editor">
@@ -240,11 +273,19 @@
             <state vertical-scroll-proportion="-111.6" vertical-offset="372" max-vertical-offset="6665">
               <caret line="156" column="0" selection-start-line="156" selection-start-column="0" selection-end-line="156" selection-end-column="0" />
 >>>>>>> d403072b36f940d4df18e034555b73513f6f1562
+=======
+      <file leaf-file-name="app.js" pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/client/src/app/app.js">
+          <provider selected="true" editor-type-id="text-editor">
+            <state vertical-scroll-proportion="0.0" vertical-offset="0" max-vertical-offset="2592">
+              <caret line="84" column="0" selection-start-line="84" selection-start-column="0" selection-end-line="84" selection-end-column="0" />
+>>>>>>> 414d7bae8f89379a86e1569048ee51ccdf61ebc7
               <folding />
             </state>
           </provider>
         </entry>
       </file>
+<<<<<<< HEAD
 <<<<<<< HEAD
       <file leaf-file-name="pegasusrises_angular.js" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/client/dist/static/pegasusrises_angular.js">
@@ -257,6 +298,13 @@
           <provider selected="true" editor-type-id="text-editor">
             <state vertical-scroll-proportion="0.0" vertical-offset="496" max-vertical-offset="5704">
               <caret line="103" column="14" selection-start-line="103" selection-start-column="14" selection-end-line="103" selection-end-column="14" />
+=======
+      <file leaf-file-name="index.html" pinned="false" current-in-tab="true">
+        <entry file="file://$PROJECT_DIR$/client/src/index.html">
+          <provider selected="true" editor-type-id="text-editor">
+            <state vertical-scroll-proportion="0.046232875" vertical-offset="0" max-vertical-offset="5859">
+              <caret line="1" column="37" selection-start-line="1" selection-start-column="37" selection-end-line="1" selection-end-column="37" />
+>>>>>>> 414d7bae8f89379a86e1569048ee51ccdf61ebc7
               <folding />
             </state>
           </provider>
@@ -330,9 +378,13 @@
         <option value="$PROJECT_DIR$/db_from_google_sheets.py" />
         <option value="$PROJECT_DIR$/client/src/vendor/angular-growl-2/angular-growl.css" />
 <<<<<<< HEAD
+<<<<<<< HEAD
         <option value="$PROJECT_DIR$/client/src/vendor/google/google-picker.js" />
 =======
         <option value="$PROJECT_DIR$/client/src/index.html" />
+=======
+        <option value="$PROJECT_DIR$/client/src/app/app.js" />
+>>>>>>> 414d7bae8f89379a86e1569048ee51ccdf61ebc7
         <option value="$PROJECT_DIR$/client/src/vendor/google/google-picker.js" />
         <option value="$PROJECT_DIR$/routes.py" />
 >>>>>>> d403072b36f940d4df18e034555b73513f6f1562
@@ -354,9 +406,15 @@
 =======
         <option value="$PROJECT_DIR$/client/src/app/home/homeService.js" />
         <option value="$PROJECT_DIR$/client/src/app/home/home.tpl.html" />
+<<<<<<< HEAD
         <option value="$PROJECT_DIR$/client/src/app/home/jsonToCSXLS.js" />
         <option value="$PROJECT_DIR$/client/src/app/home/homeController.js" />
 >>>>>>> d403072b36f940d4df18e034555b73513f6f1562
+=======
+        <option value="$PROJECT_DIR$/client/src/vendor/angular/angular-hint.js" />
+        <option value="$PROJECT_DIR$/client/gruntFile.js" />
+        <option value="$PROJECT_DIR$/client/src/index.html" />
+>>>>>>> 414d7bae8f89379a86e1569048ee51ccdf61ebc7
       </list>
     </option>
   </component>
@@ -364,6 +422,7 @@
     <detection-done>true</detection-done>
   </component>
   <component name="ProjectFrameBounds">
+<<<<<<< HEAD
     <option name="y" value="22" />
 <<<<<<< HEAD
     <option name="width" value="1642" />
@@ -371,6 +430,12 @@
     <option name="width" value="1169" />
 >>>>>>> d403072b36f940d4df18e034555b73513f6f1562
     <option name="height" value="970" />
+=======
+    <option name="x" value="-8" />
+    <option name="y" value="-8" />
+    <option name="width" value="1382" />
+    <option name="height" value="784" />
+>>>>>>> 414d7bae8f89379a86e1569048ee51ccdf61ebc7
   </component>
   <component name="ProjectLevelVcsManager" settingsEditedManually="false">
     <OptionsSetting value="true" id="Add" />
@@ -400,25 +465,10 @@
         <subPane>
           <PATH>
             <PATH_ELEMENT>
-              <option name="myItemId" value="pegasusrises" />
+              <option name="myItemId" value="Pegasus" />
               <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.ProjectViewProjectNode" />
             </PATH_ELEMENT>
-          </PATH>
-          <PATH>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="pegasusrises" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.ProjectViewProjectNode" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="pegasusrises" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
-            </PATH_ELEMENT>
-          </PATH>
-          <PATH>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="pegasusrises" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.ProjectViewProjectNode" />
-            </PATH_ELEMENT>
+<<<<<<< HEAD
             <PATH_ELEMENT>
               <option name="myItemId" value="pegasusrises" />
               <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
@@ -445,13 +495,16 @@
               <option name="myItemId" value="templates" />
               <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
             </PATH_ELEMENT>
+=======
+>>>>>>> 414d7bae8f89379a86e1569048ee51ccdf61ebc7
           </PATH>
           <PATH>
             <PATH_ELEMENT>
-              <option name="myItemId" value="pegasusrises" />
+              <option name="myItemId" value="Pegasus" />
               <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.ProjectViewProjectNode" />
             </PATH_ELEMENT>
             <PATH_ELEMENT>
+<<<<<<< HEAD
               <option name="myItemId" value="pegasusrises" />
               <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
             </PATH_ELEMENT>
@@ -461,22 +514,26 @@
             </PATH_ELEMENT>
             <PATH_ELEMENT>
               <option name="myItemId" value="img" />
+=======
+              <option name="myItemId" value="Pegasus" />
+>>>>>>> 414d7bae8f89379a86e1569048ee51ccdf61ebc7
               <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
             </PATH_ELEMENT>
           </PATH>
           <PATH>
             <PATH_ELEMENT>
-              <option name="myItemId" value="pegasusrises" />
+              <option name="myItemId" value="Pegasus" />
               <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.ProjectViewProjectNode" />
             </PATH_ELEMENT>
             <PATH_ELEMENT>
-              <option name="myItemId" value="pegasusrises" />
+              <option name="myItemId" value="Pegasus" />
               <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
             </PATH_ELEMENT>
             <PATH_ELEMENT>
               <option name="myItemId" value="client" />
               <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
             </PATH_ELEMENT>
+<<<<<<< HEAD
           </PATH>
           <PATH>
             <PATH_ELEMENT>
@@ -495,14 +552,16 @@
               <option name="myItemId" value="src" />
               <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
             </PATH_ELEMENT>
+=======
+>>>>>>> 414d7bae8f89379a86e1569048ee51ccdf61ebc7
           </PATH>
           <PATH>
             <PATH_ELEMENT>
-              <option name="myItemId" value="pegasusrises" />
+              <option name="myItemId" value="Pegasus" />
               <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.ProjectViewProjectNode" />
             </PATH_ELEMENT>
             <PATH_ELEMENT>
-              <option name="myItemId" value="pegasusrises" />
+              <option name="myItemId" value="Pegasus" />
               <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
             </PATH_ELEMENT>
             <PATH_ELEMENT>
@@ -513,6 +572,7 @@
               <option name="myItemId" value="src" />
               <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
             </PATH_ELEMENT>
+<<<<<<< HEAD
             <PATH_ELEMENT>
               <option name="myItemId" value="vendor" />
               <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
@@ -521,14 +581,16 @@
               <option name="myItemId" value="tabletop" />
               <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
             </PATH_ELEMENT>
+=======
+>>>>>>> 414d7bae8f89379a86e1569048ee51ccdf61ebc7
           </PATH>
           <PATH>
             <PATH_ELEMENT>
-              <option name="myItemId" value="pegasusrises" />
+              <option name="myItemId" value="Pegasus" />
               <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.ProjectViewProjectNode" />
             </PATH_ELEMENT>
             <PATH_ELEMENT>
-              <option name="myItemId" value="pegasusrises" />
+              <option name="myItemId" value="Pegasus" />
               <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
             </PATH_ELEMENT>
             <PATH_ELEMENT>
@@ -546,11 +608,11 @@
           </PATH>
           <PATH>
             <PATH_ELEMENT>
-              <option name="myItemId" value="pegasusrises" />
+              <option name="myItemId" value="Pegasus" />
               <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.ProjectViewProjectNode" />
             </PATH_ELEMENT>
             <PATH_ELEMENT>
-              <option name="myItemId" value="pegasusrises" />
+              <option name="myItemId" value="Pegasus" />
               <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
             </PATH_ELEMENT>
             <PATH_ELEMENT>
@@ -572,6 +634,7 @@
           </PATH>
           <PATH>
             <PATH_ELEMENT>
+<<<<<<< HEAD
               <option name="myItemId" value="pegasusrises" />
               <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.ProjectViewProjectNode" />
             </PATH_ELEMENT>
@@ -595,10 +658,13 @@
           <PATH>
             <PATH_ELEMENT>
               <option name="myItemId" value="pegasusrises" />
+=======
+              <option name="myItemId" value="Pegasus" />
+>>>>>>> 414d7bae8f89379a86e1569048ee51ccdf61ebc7
               <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.ProjectViewProjectNode" />
             </PATH_ELEMENT>
             <PATH_ELEMENT>
-              <option name="myItemId" value="pegasusrises" />
+              <option name="myItemId" value="Pegasus" />
               <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
             </PATH_ELEMENT>
             <PATH_ELEMENT>
@@ -614,6 +680,7 @@
               <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
             </PATH_ELEMENT>
           </PATH>
+<<<<<<< HEAD
           <PATH>
             <PATH_ELEMENT>
               <option name="myItemId" value="pegasusrises" />
@@ -728,19 +795,22 @@
               <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
             </PATH_ELEMENT>
           </PATH>
+=======
+>>>>>>> 414d7bae8f89379a86e1569048ee51ccdf61ebc7
         </subPane>
       </pane>
     </panes>
   </component>
   <component name="PropertiesComponent">
     <property name="recentsLimit" value="5" />
-    <property name="last_opened_file_path" value="$PROJECT_DIR$/../../Kaygee/angular-app/client" />
+    <property name="last_opened_file_path" value="$PROJECT_DIR$" />
     <property name="WebServerToolWindowFactoryState" value="false" />
     <property name="options.lastSelected" value="JavaScript.Libraries" />
     <property name="options.splitter.main.proportions" value="0.3" />
     <property name="options.splitter.details.proportions" value="0.2" />
     <property name="FullScreen" value="false" />
     <property name="DefaultHtmlFileTemplate" value="Html5" />
+    <property name="HbShouldOpenHtmlAsHb" value="" />
   </component>
   <component name="PyConsoleOptionsProvider">
     <option name="myPythonConsoleState">
@@ -750,10 +820,17 @@
   <component name="RecentsManager">
     <key name="CopyFile.RECENT_KEYS">
       <recent name="$PROJECT_DIR$/client/src/vendor/angular" />
+<<<<<<< HEAD
       <recent name="$PROJECT_DIR$/client/src/vendor/angular-file-uploader" />
       <recent name="$PROJECT_DIR$/client/src/vendor/angular-growl-2" />
       <recent name="$PROJECT_DIR$/client/src/vendor/tabletop" />
       <recent name="$PROJECT_DIR$/client/src/app/admin" />
+=======
+      <recent name="$PROJECT_DIR$/client/src/vendor/angular-growl-2" />
+      <recent name="$PROJECT_DIR$/client/src/vendor/tabletop" />
+      <recent name="$PROJECT_DIR$/client/src/app/admin" />
+      <recent name="$PROJECT_DIR$/client/src/vendor/angular-loading-bar" />
+>>>>>>> 414d7bae8f89379a86e1569048ee51ccdf61ebc7
     </key>
     <key name="MoveFile.RECENT_KEYS">
       <recent name="$PROJECT_DIR$/client/src/vendor/ngToast" />
@@ -763,102 +840,15 @@
       <recent name="$PROJECT_DIR$/vendors/nivo_lightbox/js" />
     </key>
   </component>
-  <component name="RunManager" selected="App Engine server.pegasusrises">
-    <configuration default="true" type="DjangoTestsConfigurationType" factoryName="Django tests">
-      <option name="INTERPRETER_OPTIONS" value="" />
-      <option name="PARENT_ENVS" value="true" />
-      <envs>
-        <env name="PYTHONUNBUFFERED" value="1" />
-      </envs>
-      <option name="SDK_HOME" value="" />
-      <option name="WORKING_DIRECTORY" value="" />
-      <option name="IS_MODULE_SDK" value="false" />
-      <option name="ADD_CONTENT_ROOTS" value="true" />
-      <option name="ADD_SOURCE_ROOTS" value="true" />
-      <module name="pegasusrises" />
-      <EXTENSION ID="PythonCoverageRunConfigurationExtension" enabled="false" sample_coverage="true" runner="coverage.py" />
-      <option name="TARGET" value="" />
-      <option name="SETTINGS_FILE" value="" />
-      <option name="CUSTOM_SETTINGS" value="false" />
-      <option name="USE_OPTIONS" value="false" />
-      <option name="OPTIONS" value="" />
-      <method />
-    </configuration>
+  <component name="RunManager">
     <configuration default="true" type="JavaScriptTestRunnerKarma" factoryName="Karma" config-file="">
       <envs />
-      <method />
-    </configuration>
-    <configuration default="true" type="tests" factoryName="py.test">
-      <option name="INTERPRETER_OPTIONS" value="" />
-      <option name="PARENT_ENVS" value="true" />
-      <envs />
-      <option name="SDK_HOME" value="" />
-      <option name="WORKING_DIRECTORY" value="" />
-      <option name="IS_MODULE_SDK" value="false" />
-      <option name="ADD_CONTENT_ROOTS" value="true" />
-      <option name="ADD_SOURCE_ROOTS" value="true" />
-      <module name="pegasusrises" />
-      <EXTENSION ID="PythonCoverageRunConfigurationExtension" enabled="false" sample_coverage="true" runner="coverage.py" />
-      <option name="SCRIPT_NAME" value="" />
-      <option name="CLASS_NAME" value="" />
-      <option name="METHOD_NAME" value="" />
-      <option name="FOLDER_NAME" value="" />
-      <option name="TEST_TYPE" value="TEST_SCRIPT" />
-      <option name="PATTERN" value="" />
-      <option name="USE_PATTERN" value="false" />
-      <option name="testToRun" value="" />
-      <option name="keywords" value="" />
-      <option name="params" value="" />
-      <option name="USE_PARAM" value="false" />
-      <option name="USE_KEYWORD" value="false" />
-      <method />
-    </configuration>
-    <configuration default="true" type="tests" factoryName="Nosetests">
-      <option name="INTERPRETER_OPTIONS" value="" />
-      <option name="PARENT_ENVS" value="true" />
-      <envs />
-      <option name="SDK_HOME" value="" />
-      <option name="WORKING_DIRECTORY" value="" />
-      <option name="IS_MODULE_SDK" value="false" />
-      <option name="ADD_CONTENT_ROOTS" value="true" />
-      <option name="ADD_SOURCE_ROOTS" value="true" />
-      <module name="pegasusrises" />
-      <EXTENSION ID="PythonCoverageRunConfigurationExtension" enabled="false" sample_coverage="true" runner="coverage.py" />
-      <option name="SCRIPT_NAME" value="" />
-      <option name="CLASS_NAME" value="" />
-      <option name="METHOD_NAME" value="" />
-      <option name="FOLDER_NAME" value="" />
-      <option name="TEST_TYPE" value="TEST_SCRIPT" />
-      <option name="PATTERN" value="" />
-      <option name="USE_PATTERN" value="false" />
-      <option name="PARAMS" value="" />
-      <option name="USE_PARAM" value="false" />
       <method />
     </configuration>
     <configuration default="true" type="JavascriptDebugType" factoryName="JavaScript Debug">
       <method />
     </configuration>
     <configuration default="true" type="NodeJSConfigurationType" factoryName="Node.js" working-dir="">
-      <method />
-    </configuration>
-    <configuration default="true" type="tests" factoryName="Doctests">
-      <option name="INTERPRETER_OPTIONS" value="" />
-      <option name="PARENT_ENVS" value="true" />
-      <envs />
-      <option name="SDK_HOME" value="" />
-      <option name="WORKING_DIRECTORY" value="" />
-      <option name="IS_MODULE_SDK" value="false" />
-      <option name="ADD_CONTENT_ROOTS" value="true" />
-      <option name="ADD_SOURCE_ROOTS" value="true" />
-      <module name="pegasusrises" />
-      <EXTENSION ID="PythonCoverageRunConfigurationExtension" enabled="false" sample_coverage="true" runner="coverage.py" />
-      <option name="SCRIPT_NAME" value="" />
-      <option name="CLASS_NAME" value="" />
-      <option name="METHOD_NAME" value="" />
-      <option name="FOLDER_NAME" value="" />
-      <option name="TEST_TYPE" value="TEST_SCRIPT" />
-      <option name="PATTERN" value="" />
-      <option name="USE_PATTERN" value="false" />
       <method />
     </configuration>
     <configuration default="true" type="js.build_tools.gulp" factoryName="Gulp.js">
@@ -868,112 +858,6 @@
       <arguments />
       <pass-parent-envs>true</pass-parent-envs>
       <envs />
-      <method />
-    </configuration>
-    <configuration default="true" type="PyLettuceRunConfigurationType" factoryName="Lettuce">
-      <option name="INTERPRETER_OPTIONS" value="" />
-      <option name="PARENT_ENVS" value="true" />
-      <envs />
-      <option name="SDK_HOME" value="" />
-      <option name="WORKING_DIRECTORY" value="" />
-      <option name="IS_MODULE_SDK" value="false" />
-      <option name="ADD_CONTENT_ROOTS" value="true" />
-      <option name="ADD_SOURCE_ROOTS" value="true" />
-      <module name="pegasusrises" />
-      <EXTENSION ID="PythonCoverageRunConfigurationExtension" enabled="false" sample_coverage="true" runner="coverage.py" />
-      <option name="ADDITIONAL_ARGS" value="" />
-      <method />
-    </configuration>
-    <configuration default="true" type="Python.AppEngineServer" factoryName="App Engine server">
-      <option name="INTERPRETER_OPTIONS" value="" />
-      <option name="PARENT_ENVS" value="true" />
-      <envs />
-      <option name="SDK_HOME" value="" />
-      <option name="WORKING_DIRECTORY" value="" />
-      <option name="IS_MODULE_SDK" value="false" />
-      <option name="ADD_CONTENT_ROOTS" value="true" />
-      <option name="ADD_SOURCE_ROOTS" value="true" />
-      <module name="pegasusrises" />
-      <EXTENSION ID="PythonCoverageRunConfigurationExtension" enabled="false" sample_coverage="true" runner="coverage.py" />
-      <option name="launchJavascriptDebuger" value="false" />
-      <option name="host" value="127.0.0.1" />
-      <option name="browserUrl" value="" />
-      <option name="additionalOptions" value="" />
-      <method />
-    </configuration>
-    <configuration default="true" type="PythonConfigurationType" factoryName="Python">
-      <option name="INTERPRETER_OPTIONS" value="" />
-      <option name="PARENT_ENVS" value="true" />
-      <envs>
-        <env name="PYTHONUNBUFFERED" value="1" />
-      </envs>
-      <option name="SDK_HOME" value="" />
-      <option name="WORKING_DIRECTORY" value="" />
-      <option name="IS_MODULE_SDK" value="false" />
-      <option name="ADD_CONTENT_ROOTS" value="true" />
-      <option name="ADD_SOURCE_ROOTS" value="true" />
-      <module name="pegasusrises" />
-      <EXTENSION ID="PythonCoverageRunConfigurationExtension" enabled="false" sample_coverage="true" runner="coverage.py" />
-      <option name="SCRIPT_NAME" value="" />
-      <option name="PARAMETERS" value="" />
-      <option name="SHOW_COMMAND_LINE" value="false" />
-      <method />
-    </configuration>
-    <configuration default="true" type="tests" factoryName="Unittests">
-      <option name="INTERPRETER_OPTIONS" value="" />
-      <option name="PARENT_ENVS" value="true" />
-      <envs />
-      <option name="SDK_HOME" value="" />
-      <option name="WORKING_DIRECTORY" value="" />
-      <option name="IS_MODULE_SDK" value="false" />
-      <option name="ADD_CONTENT_ROOTS" value="true" />
-      <option name="ADD_SOURCE_ROOTS" value="true" />
-      <module name="pegasusrises" />
-      <EXTENSION ID="PythonCoverageRunConfigurationExtension" enabled="false" sample_coverage="true" runner="coverage.py" />
-      <option name="SCRIPT_NAME" value="" />
-      <option name="CLASS_NAME" value="" />
-      <option name="METHOD_NAME" value="" />
-      <option name="FOLDER_NAME" value="" />
-      <option name="TEST_TYPE" value="TEST_SCRIPT" />
-      <option name="PATTERN" value="" />
-      <option name="USE_PATTERN" value="false" />
-      <option name="PUREUNITTEST" value="true" />
-      <option name="PARAMS" value="" />
-      <option name="USE_PARAM" value="false" />
-      <method />
-    </configuration>
-    <configuration default="true" type="PyBehaveRunConfigurationType" factoryName="Behave">
-      <option name="INTERPRETER_OPTIONS" value="" />
-      <option name="PARENT_ENVS" value="true" />
-      <envs />
-      <option name="SDK_HOME" value="" />
-      <option name="WORKING_DIRECTORY" value="" />
-      <option name="IS_MODULE_SDK" value="false" />
-      <option name="ADD_CONTENT_ROOTS" value="true" />
-      <option name="ADD_SOURCE_ROOTS" value="true" />
-      <module name="pegasusrises" />
-      <EXTENSION ID="PythonCoverageRunConfigurationExtension" enabled="false" sample_coverage="true" runner="coverage.py" />
-      <option name="ADDITIONAL_ARGS" value="" />
-      <method />
-    </configuration>
-    <configuration default="true" type="tests" factoryName="Attests">
-      <option name="INTERPRETER_OPTIONS" value="" />
-      <option name="PARENT_ENVS" value="true" />
-      <envs />
-      <option name="SDK_HOME" value="" />
-      <option name="WORKING_DIRECTORY" value="" />
-      <option name="IS_MODULE_SDK" value="false" />
-      <option name="ADD_CONTENT_ROOTS" value="true" />
-      <option name="ADD_SOURCE_ROOTS" value="true" />
-      <module name="pegasusrises" />
-      <EXTENSION ID="PythonCoverageRunConfigurationExtension" enabled="false" sample_coverage="true" runner="coverage.py" />
-      <option name="SCRIPT_NAME" value="" />
-      <option name="CLASS_NAME" value="" />
-      <option name="METHOD_NAME" value="" />
-      <option name="FOLDER_NAME" value="" />
-      <option name="TEST_TYPE" value="TEST_SCRIPT" />
-      <option name="PATTERN" value="" />
-      <option name="USE_PATTERN" value="false" />
       <method />
     </configuration>
     <configuration default="false" name="pegasusrises" type="Python.AppEngineServer" factoryName="App Engine server">
@@ -995,9 +879,7 @@
       <ConfigurationWrapper RunnerId="PyDebugRunner" />
       <method />
     </configuration>
-    <list size="1">
-      <item index="0" class="java.lang.String" itemvalue="App Engine server.pegasusrises" />
-    </list>
+    <list size="0" />
   </component>
   <component name="ShelveChangesManager" show_recycled="false" />
   <component name="SvnConfiguration">
@@ -1014,34 +896,52 @@
   </component>
   <component name="ToolWindowManager">
 <<<<<<< HEAD
+<<<<<<< HEAD
     <frame x="0" y="22" width="1642" height="970" extended-state="6" />
 =======
     <frame x="0" y="22" width="1169" height="970" extended-state="6" />
 >>>>>>> d403072b36f940d4df18e034555b73513f6f1562
+=======
+    <frame x="-8" y="-8" width="1382" height="784" extended-state="6" />
+>>>>>>> 414d7bae8f89379a86e1569048ee51ccdf61ebc7
     <editor active="true" />
     <layout>
       <window_info id="Changes" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="7" side_tool="false" content_ui="tabs" />
       <window_info id="Terminal" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="7" side_tool="false" content_ui="tabs" />
       <window_info id="TODO" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="6" side_tool="false" content_ui="tabs" />
-      <window_info id="Database" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="3" side_tool="false" content_ui="tabs" />
       <window_info id="Structure" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.25" sideWeight="0.5" order="1" side_tool="false" content_ui="tabs" />
       <window_info id="Application Servers" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="7" side_tool="false" content_ui="tabs" />
+<<<<<<< HEAD
 <<<<<<< HEAD
       <window_info id="Project" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" weight="0.18818514" sideWeight="0.5" order="0" side_tool="false" content_ui="combo" />
 =======
       <window_info id="Project" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" weight="0.26432848" sideWeight="0.5" order="0" side_tool="false" content_ui="combo" />
 >>>>>>> d403072b36f940d4df18e034555b73513f6f1562
       <window_info id="Python Console" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="7" side_tool="false" content_ui="tabs" />
+=======
+      <window_info id="Project" active="true" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" weight="0.2133829" sideWeight="0.5" order="0" side_tool="false" content_ui="combo" />
+>>>>>>> 414d7bae8f89379a86e1569048ee51ccdf61ebc7
       <window_info id="Favorites" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="2" side_tool="true" content_ui="tabs" />
       <window_info id="Event Log" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="7" side_tool="true" content_ui="tabs" />
       <window_info id="Version Control" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="7" side_tool="false" content_ui="tabs" />
       <window_info id="Cvs" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.25" sideWeight="0.5" order="4" side_tool="false" content_ui="tabs" />
       <window_info id="Message" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="0" side_tool="false" content_ui="tabs" />
+<<<<<<< HEAD
+=======
+      <window_info id="Database" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="3" side_tool="false" content_ui="tabs" />
+      <window_info id="Find" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.32963374" sideWeight="0.5" order="1" side_tool="false" content_ui="tabs" />
+>>>>>>> 414d7bae8f89379a86e1569048ee51ccdf61ebc7
       <window_info id="Ant Build" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.25" sideWeight="0.5" order="1" side_tool="false" content_ui="tabs" />
       <window_info id="Find" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.32963374" sideWeight="0.5" order="1" side_tool="false" content_ui="tabs" />
       <window_info id="CSS Styles" active="true" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" weight="0.6437292" sideWeight="0.5" order="8" side_tool="false" content_ui="tabs" />
       <window_info id="Debug" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.39955604" sideWeight="0.5" order="3" side_tool="false" content_ui="tabs" />
       <window_info id="Commander" active="false" anchor="right" auto_hide="false" internal_type="SLIDING" type="SLIDING" visible="false" weight="0.4" sideWeight="0.5" order="0" side_tool="false" content_ui="tabs" />
+<<<<<<< HEAD
+=======
+      <window_info id="Python Console" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="7" side_tool="false" content_ui="tabs" />
+      <window_info id="Run" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="2" side_tool="false" content_ui="tabs" />
+      <window_info id="Inspection" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.39955604" sideWeight="0.5" order="5" side_tool="false" content_ui="tabs" />
+>>>>>>> 414d7bae8f89379a86e1569048ee51ccdf61ebc7
       <window_info id="Hierarchy" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.25" sideWeight="0.5" order="2" side_tool="false" content_ui="combo" />
       <window_info id="Inspection" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.39955604" sideWeight="0.5" order="5" side_tool="false" content_ui="tabs" />
       <window_info id="Run" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="2" side_tool="false" content_ui="tabs" />
@@ -1071,6 +971,7 @@
   </component>
   <component name="editorHistoryManager">
 <<<<<<< HEAD
+<<<<<<< HEAD
 =======
     <entry file="file://$PROJECT_DIR$/vendors/custom_stylesheets/style.css">
       <provider selected="true" editor-type-id="text-editor">
@@ -1083,6 +984,20 @@
       <provider selected="true" editor-type-id="text-editor">
         <state vertical-scroll-proportion="0.0" vertical-offset="274" max-vertical-offset="1333">
           <caret line="15" column="14" selection-start-line="15" selection-start-column="14" selection-end-line="15" selection-end-column="14" />
+=======
+    <entry file="file://$PROJECT_DIR$/client/gruntFile.js">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="0.0" vertical-offset="0" max-vertical-offset="4968">
+          <caret line="0" column="0" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/client/src/index.html">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="0.0" vertical-offset="108" max-vertical-offset="5859">
+          <caret line="4" column="41" selection-start-line="4" selection-start-column="41" selection-end-line="4" selection-end-column="41" />
+>>>>>>> 414d7bae8f89379a86e1569048ee51ccdf61ebc7
           <folding />
         </state>
       </provider>
@@ -1219,6 +1134,30 @@
         </state>
       </provider>
     </entry>
+<<<<<<< HEAD
+=======
+    <entry file="file://$PROJECT_DIR$/client/dist/static/angular_files.js">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="0.0" vertical-offset="906871" max-vertical-offset="914841">
+          <caret line="29192" column="22" selection-start-line="29192" selection-start-column="2" selection-end-line="29192" selection-end-column="22" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/client/dist/static/pegasusrises.js">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="0.0" vertical-offset="16337" max-vertical-offset="1371843">
+          <caret line="531" column="5" selection-start-line="531" selection-start-column="5" selection-end-line="531" selection-end-column="5" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/client/dist/static/pegasusrises_angular.js">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="-7.7411227" vertical-offset="6758" max-vertical-offset="9083">
+          <caret line="0" column="0" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
+        </state>
+      </provider>
+    </entry>
+>>>>>>> 414d7bae8f89379a86e1569048ee51ccdf61ebc7
     <entry file="file://$PROJECT_DIR$/client/src/vendor/tabletop/tabletop.js">
       <provider selected="true" editor-type-id="text-editor">
         <state vertical-scroll-proportion="-1.5979382" vertical-offset="1395" max-vertical-offset="17670">
@@ -1244,7 +1183,6 @@
       <provider selected="true" editor-type-id="text-editor">
         <state vertical-scroll-proportion="0.0" vertical-offset="0" max-vertical-offset="620">
           <caret line="10" column="13" selection-start-line="10" selection-start-column="13" selection-end-line="10" selection-end-column="13" />
-          <folding />
         </state>
       </provider>
     </entry>
@@ -1277,6 +1215,7 @@
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/client/src/app/admin/admin.js">
+<<<<<<< HEAD
       <provider selected="true" editor-type-id="text-editor">
         <state vertical-scroll-proportion="0.0" vertical-offset="1582" max-vertical-offset="2697">
           <caret line="61" column="111" selection-start-line="61" selection-start-column="109" selection-end-line="61" selection-end-column="111" />
@@ -1345,6 +1284,8 @@
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/client/dist/static/pegasusrises.js">
+=======
+>>>>>>> 414d7bae8f89379a86e1569048ee51ccdf61ebc7
       <provider selected="true" editor-type-id="text-editor">
         <state vertical-scroll-proportion="0.0" vertical-offset="7998" max-vertical-offset="1679735">
           <caret line="487" column="6" selection-start-line="487" selection-start-column="6" selection-end-line="487" selection-end-column="6" />
@@ -1383,6 +1324,7 @@
     </entry>
     <entry file="file://$PROJECT_DIR$/templates/index.html">
       <provider selected="true" editor-type-id="text-editor">
+<<<<<<< HEAD
         <state vertical-scroll-proportion="0.0" vertical-offset="1736" max-vertical-offset="14043">
           <caret line="64" column="21" selection-start-line="64" selection-start-column="21" selection-end-line="64" selection-end-column="21" />
         </state>
@@ -1417,6 +1359,10 @@
         <state vertical-scroll-proportion="0.0" vertical-offset="0" max-vertical-offset="2976">
           <caret line="10" column="26" selection-start-line="10" selection-start-column="26" selection-end-line="10" selection-end-column="26" />
           <folding />
+=======
+        <state vertical-scroll-proportion="0.0" vertical-offset="0" max-vertical-offset="593526">
+          <caret line="0" column="0" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
+>>>>>>> 414d7bae8f89379a86e1569048ee51ccdf61ebc7
         </state>
       </provider>
     </entry>
@@ -1466,6 +1412,7 @@
       <provider selected="true" editor-type-id="text-editor">
         <state vertical-scroll-proportion="0.0" vertical-offset="0" max-vertical-offset="9362">
           <caret line="0" column="0" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
+<<<<<<< HEAD
           <folding>
             <marker date="1424368074000" expanded="true" signature="11261:13268" placeholder="[...]" />
             <marker date="1424368074000" expanded="true" signature="11378:13267" placeholder="{...}" />
@@ -1491,6 +1438,8 @@
             <marker date="1424368074000" expanded="true" signature="13986:14107" placeholder="{...}" />
           </folding>
 >>>>>>> d403072b36f940d4df18e034555b73513f6f1562
+=======
+>>>>>>> 414d7bae8f89379a86e1569048ee51ccdf61ebc7
         </state>
       </provider>
     </entry>
@@ -1554,22 +1503,33 @@
 <<<<<<< HEAD
     <entry file="file://$PROJECT_DIR$/app.yaml">
       <provider selected="true" editor-type-id="text-editor">
+<<<<<<< HEAD
         <state vertical-scroll-proportion="0.0" vertical-offset="274" max-vertical-offset="1333">
           <caret line="15" column="14" selection-start-line="15" selection-start-column="14" selection-end-line="15" selection-end-column="14" />
           <folding />
+=======
+        <state vertical-scroll-proportion="0.0" vertical-offset="1166" max-vertical-offset="4340">
+          <caret line="55" column="10" selection-start-line="55" selection-start-column="10" selection-end-line="55" selection-end-column="10" />
+>>>>>>> 414d7bae8f89379a86e1569048ee51ccdf61ebc7
         </state>
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/client/src/index.html">
       <provider selected="true" editor-type-id="text-editor">
+<<<<<<< HEAD
         <state vertical-scroll-proportion="-4.0" vertical-offset="259" max-vertical-offset="6727">
           <caret line="17" column="74" selection-start-line="17" selection-start-column="68" selection-end-line="17" selection-end-column="74" />
           <folding />
+=======
+        <state vertical-scroll-proportion="0.0" vertical-offset="183" max-vertical-offset="4216">
+          <caret line="17" column="52" selection-start-line="17" selection-start-column="52" selection-end-line="17" selection-end-column="52" />
+>>>>>>> 414d7bae8f89379a86e1569048ee51ccdf61ebc7
         </state>
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/client/dist/static/pegasusrises_angular.js">
       <provider selected="true" editor-type-id="text-editor">
+<<<<<<< HEAD
         <state vertical-scroll-proportion="0.0" vertical-offset="8079" max-vertical-offset="12865">
           <caret line="274" column="0" selection-start-line="274" selection-start-column="0" selection-end-line="274" selection-end-column="0" />
           <folding />
@@ -1587,11 +1547,16 @@
           <caret line="29237" column="16" selection-start-line="29237" selection-start-column="16" selection-end-line="29237" selection-end-column="16" />
 >>>>>>> d403072b36f940d4df18e034555b73513f6f1562
           <folding />
+=======
+        <state vertical-scroll-proportion="0.0" vertical-offset="31" max-vertical-offset="1054">
+          <caret line="18" column="25" selection-start-line="18" selection-start-column="25" selection-end-line="18" selection-end-column="25" />
+>>>>>>> 414d7bae8f89379a86e1569048ee51ccdf61ebc7
         </state>
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/client/src/app/home/homeService.js">
       <provider selected="true" editor-type-id="text-editor">
+<<<<<<< HEAD
 <<<<<<< HEAD
         <state vertical-scroll-proportion="0.0" vertical-offset="88" max-vertical-offset="1085">
           <caret line="24" column="10" selection-start-line="24" selection-start-column="10" selection-end-line="24" selection-end-column="10" />
@@ -1602,6 +1567,10 @@
           <folding>
             <element signature="e#0#40#0" expanded="false" />
           </folding>
+=======
+        <state vertical-scroll-proportion="0.0" vertical-offset="329" max-vertical-offset="1271">
+          <caret line="22" column="20" selection-start-line="22" selection-start-column="20" selection-end-line="22" selection-end-column="20" />
+>>>>>>> 414d7bae8f89379a86e1569048ee51ccdf61ebc7
         </state>
       </provider>
     </entry>
@@ -1623,9 +1592,14 @@
 =======
     <entry file="file://$PROJECT_DIR$/client/gruntFile.js">
       <provider selected="true" editor-type-id="text-editor">
+<<<<<<< HEAD
         <state vertical-scroll-proportion="0.0" vertical-offset="496" max-vertical-offset="5704">
           <caret line="103" column="14" selection-start-line="103" selection-start-column="14" selection-end-line="103" selection-end-column="14" />
           <folding />
+=======
+        <state vertical-scroll-proportion="0.0" vertical-offset="434" max-vertical-offset="620">
+          <caret line="14" column="8" selection-start-line="14" selection-start-column="8" selection-end-line="14" selection-end-column="8" />
+>>>>>>> 414d7bae8f89379a86e1569048ee51ccdf61ebc7
         </state>
       </provider>
     </entry>
@@ -1639,13 +1613,19 @@
     </entry>
     <entry file="file://$PROJECT_DIR$/app.yaml">
       <provider selected="true" editor-type-id="text-editor">
+<<<<<<< HEAD
         <state vertical-scroll-proportion="0.0" vertical-offset="274" max-vertical-offset="1333">
           <caret line="15" column="14" selection-start-line="15" selection-start-column="14" selection-end-line="15" selection-end-column="14" />
 >>>>>>> d403072b36f940d4df18e034555b73513f6f1562
+=======
+        <state vertical-scroll-proportion="0.0" vertical-offset="486" max-vertical-offset="837">
+          <caret line="18" column="73" selection-start-line="18" selection-start-column="73" selection-end-line="18" selection-end-column="73" />
+>>>>>>> 414d7bae8f89379a86e1569048ee51ccdf61ebc7
           <folding />
         </state>
       </provider>
     </entry>
+<<<<<<< HEAD
     <entry file="file://$PROJECT_DIR$/client/src/app/home/homeController.js">
       <provider selected="true" editor-type-id="text-editor">
         <state vertical-scroll-proportion="0.53264606" vertical-offset="1178" max-vertical-offset="2976">
@@ -1653,6 +1633,37 @@
           <folding>
             <element signature="e#0#40#0" expanded="false" />
           </folding>
+=======
+    <entry file="file://$PROJECT_DIR$/templates/index.html">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="0.0" vertical-offset="8586" max-vertical-offset="12366">
+          <caret line="318" column="87" selection-start-line="318" selection-start-column="82" selection-end-line="318" selection-end-column="87" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/client/gruntFile.js">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="0.0" vertical-offset="3051" max-vertical-offset="4968">
+          <caret line="124" column="10" selection-start-line="124" selection-start-column="10" selection-end-line="124" selection-end-column="10" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/client/src/app/app.js">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="0.0" vertical-offset="0" max-vertical-offset="2592">
+          <caret line="84" column="0" selection-start-line="84" selection-start-column="0" selection-end-line="84" selection-end-column="0" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/client/src/index.html">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="0.046232875" vertical-offset="0" max-vertical-offset="5859">
+          <caret line="1" column="37" selection-start-line="1" selection-start-column="37" selection-end-line="1" selection-end-column="37" />
+          <folding />
+>>>>>>> 414d7bae8f89379a86e1569048ee51ccdf61ebc7
         </state>
       </provider>
     </entry>

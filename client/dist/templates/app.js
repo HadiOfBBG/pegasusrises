@@ -361,9 +361,13 @@ angular.module("home/home.tpl.html", []).run(["$templateCache", function($templa
     "<!--<button class=\"btn btn-warning\" ng-click=\"testToast()\">Test Toast</button>-->\n" +
     "\n" +
 <<<<<<< HEAD
+<<<<<<< HEAD
     "<div class=\"btn btn-warning\" ng-show=\"files.length\" ng-click=\"getFile()\"> Get file from Google </div>");
 =======
     "<div class=\"btn btn-warning\" ng-file-select ng-model=\"files\">Upload</div>\n" +
     "<div class=\"btn btn-warning\"  ng-click=\"odkTest()\"> Send to ODK </div>");
 >>>>>>> d403072b36f940d4df18e034555b73513f6f1562
+=======
+    "<div class=\"btn btn-warning\" ng-show=\"files.length\" ng-click=\"getFile()\"> Get file from Google </div>");
+>>>>>>> 414d7bae8f89379a86e1569048ee51ccdf61ebc7
 }]);

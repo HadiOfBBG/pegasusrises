@@ -204,17 +204,9 @@ angular.module('home')
             homeService.uploadGoogleSheet(fileToUpload).
                 success(function(data, status, headers, config) {
                     growl.success("Data was posted successfully", {});
-                    console.log(data);
-                    console.log(status);
-                    console.log(headers);
-                    console.log(config);
                 }).
                 error(function(data, status, headers, config) {
                     growl.error("Something went wrong on the server", {});
-                    console.log(data);
-                    console.log(status);
-                    console.log(headers);
-                    console.log(config);
                 });
         };
 
@@ -237,7 +229,10 @@ angular.module('home')
                             };
                         });
                         if (data) {
+<<<<<<< HEAD
                             console.log($scope.surveyDataReturned);
+=======
+>>>>>>> 414d7bae8f89379a86e1569048ee51ccdf61ebc7
                             homeService.uploadGoogleSheetContentsAsJson($scope.surveyDataReturned)
                                 .success(function(data){
                                     growl.success("Data was posted successfully", {});
@@ -324,6 +319,13 @@ angular.module('home')
             }
         }
 
+        $scope.getFile = function(){
+            homeService.getFileFromGoogle($scope.files[ $scope.files.length - 1].id)
+                .success(function(data, stuff, more, headers){
+                    homeService.sendXLSDownloadUrl(data['exportLinks']['application/vnd.openxmlformats-officedocument.spreadsheetml.sheet'])
+                })
+        };
+
     }]);
 /**
  * Created by kaygee on 2/13/15.
@@ -343,6 +345,9 @@ angular.module('home')
         };
 
 <<<<<<< HEAD
+<<<<<<< HEAD
+=======
+>>>>>>> 414d7bae8f89379a86e1569048ee51ccdf61ebc7
         homeService.sendXLSDownloadUrl = function(xlsUrl ){
             return $http.post('/gcs', {downloadUrl : xlsUrl });
         };
@@ -353,11 +358,14 @@ angular.module('home')
         };
 
         homeService.sendFileToOdk = function(){
+<<<<<<< HEAD
 =======
         homeService.sendFileToOdk = function(){
 //            fileObject
 //            return $http.post('http://23.21.114.69/xlsform/', fileObject);
 >>>>>>> d403072b36f940d4df18e034555b73513f6f1562
+=======
+>>>>>>> 414d7bae8f89379a86e1569048ee51ccdf61ebc7
             return $resource('http://23.21.114.69/xlsform/', {});
         };
 

@@ -12,6 +12,7 @@ angular.module('home')
             homeService.uploadGoogleSheet(fileToUpload).
                 success(function(data, status, headers, config) {
                     growl.success("Data was posted successfully", {});
+<<<<<<< HEAD
                     console.log(data);
                     console.log(status);
                     console.log(headers);
@@ -23,6 +24,11 @@ angular.module('home')
                     console.log(status);
                     console.log(headers);
                     console.log(config);
+=======
+                }).
+                error(function(data, status, headers, config) {
+                    growl.error("Something went wrong on the server", {});
+>>>>>>> 414d7bae8f89379a86e1569048ee51ccdf61ebc7
                 });
         };
 
@@ -45,7 +51,10 @@ angular.module('home')
                             };
                         });
                         if (data) {
+<<<<<<< HEAD
                             console.log($scope.surveyDataReturned);
+=======
+>>>>>>> 414d7bae8f89379a86e1569048ee51ccdf61ebc7
                             homeService.uploadGoogleSheetContentsAsJson($scope.surveyDataReturned)
                                 .success(function(data){
                                     growl.success("Data was posted successfully", {});
@@ -65,13 +74,17 @@ angular.module('home')
         };
 
 <<<<<<< HEAD
+<<<<<<< HEAD
 
         var CLIENT_ID = '982002203062-qllsi843lackaof6acad3308p7m1j5pr.apps.googleusercontent.com';
         var SCOPES = 'https://www.googleapis.com/auth/drive';
+=======
+>>>>>>> 414d7bae8f89379a86e1569048ee51ccdf61ebc7
 
         $scope.getFile = function(){
             homeService.getFileFromGoogle($scope.files[ $scope.files.length - 1].id)
                 .success(function(data, stuff, more, headers){
+<<<<<<< HEAD
                     console.log(data);
 
                     var urlToPost = data['exportLinks']['application/vnd.openxmlformats-officedocument.spreadsheetml.sheet'];
@@ -135,4 +148,10 @@ angular.module('home')
 
 >>>>>>> d403072b36f940d4df18e034555b73513f6f1562
 
+=======
+                    homeService.sendXLSDownloadUrl(data['exportLinks']['application/vnd.openxmlformats-officedocument.spreadsheetml.sheet'])
+                })
+        };
+
+>>>>>>> 414d7bae8f89379a86e1569048ee51ccdf61ebc7
     }]);
