@@ -256,6 +256,31 @@ angular.module('home')
             }
         };
 
+        $scope.$watch('files', function () {
+            $scope.upload($scope.files);
+        });
+        $scope.odkTest = function(){
+            homeService.sendFileToOdk().query()
+        };
+
+        $scope.upload = function (files) {
+            if (files && files.length) {
+                for (var i = 0; i < files.length; i++) {
+                    var file = files[i];
+                    $upload.upload({
+                        url: 'http://23.21.114.69/xlsform/',
+                        fields: {'username': $scope.username},
+                        file: file
+                    }).progress(function (evt) {
+                        var progressPercentage = parseInt(100.0 * evt.loaded / evt.total);
+                        console.log('progress: ' + progressPercentage + '% ' + evt.config.file.name);
+                    }).success(function (data, status, headers, config) {
+                        console.log('file ' + config.file.name + 'uploaded. Response: ' + data);
+                    });
+                }
+            }
+        };
+
 
         var CLIENT_ID = '982002203062-qllsi843lackaof6acad3308p7m1j5pr.apps.googleusercontent.com';
         var SCOPES = 'https://www.googleapis.com/auth/drive';
@@ -317,6 +342,7 @@ angular.module('home')
             return $http.post('/google/sheet/json', fileObject);
         };
 
+<<<<<<< HEAD
         homeService.sendXLSDownloadUrl = function(xlsUrl ){
             return $http.post('/gcs', {downloadUrl : xlsUrl });
         };
@@ -327,6 +353,11 @@ angular.module('home')
         };
 
         homeService.sendFileToOdk = function(){
+=======
+        homeService.sendFileToOdk = function(){
+//            fileObject
+//            return $http.post('http://23.21.114.69/xlsform/', fileObject);
+>>>>>>> d403072b36f940d4df18e034555b73513f6f1562
             return $resource('http://23.21.114.69/xlsform/', {});
         };
 

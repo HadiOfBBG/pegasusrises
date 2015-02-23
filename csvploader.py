@@ -13,6 +13,7 @@ from poster.encode import multipart_encode, MultipartParam
 import logging
 from google.appengine.api import users
 from db_from_google_sheets import DbFromGoogleSheet
+<<<<<<< HEAD
 import json
 from google.appengine.api import files
 import cloudstorage as gcs
@@ -20,6 +21,8 @@ from google.appengine.api import app_identity
 import webapp2, urllib
 # import gcs_client as gcs
 import time
+=======
+>>>>>>> d403072b36f940d4df18e034555b73513f6f1562
 
 retry_params = gcs.RetryParams(initial_delay=0.2,
                                           max_delay=5.0,
@@ -39,6 +42,7 @@ class CSVUploadHandler(JinjaTemplating,blobstore_handlers.BlobstoreUploadHandler
 
 
     def post(self):
+<<<<<<< HEAD
         content_from_server = json.loads(self.request.body)
         url = content_from_server['downloadUrl']
         self.response.out.write('oooooooooooooooooooooooooooooooooooooooooo  '+url)
@@ -90,16 +94,27 @@ class CSVUploadHandler(JinjaTemplating,blobstore_handlers.BlobstoreUploadHandler
         # token = body['accessToken']
         # self.response.out.write(token)
         # self.update("","1NNuNCTzzWiE-b4gJxyigY-nZPbfpnIReDipRmk-YOr4",token)
+=======
+        google_sheet = self.request.get('url')
+
+        self.read_google_sheet(google_sheet)
+        # return
+        self.uploadFiles(google_sheet)
+        self.update("","1NNuNCTzzWiE-b4gJxyigY-nZPbfpnIReDipRmk-YOr4")
+>>>>>>> d403072b36f940d4df18e034555b73513f6f1562
         # google_sheet = self.request.get('url')
         # logging.debug("value of my var is %s", 'okkkkkkkkkkkkkkkkkk')
         # sheet_name = self.request.get('name')
  
         # self.uploadFiles(google_sheet,sheet_name)
+<<<<<<< HEAD
         # google_sheet = self.request.get('url')
 
         # self.read_google_sheet(google_sheet)
         # return
         # self.uploadFiles(google_sheet)
+=======
+>>>>>>> d403072b36f940d4df18e034555b73513f6f1562
         # file = self.request.get('csv_import')
         # file  = '\n'.join(file.splitlines())
         # lines = csv.reader(StringIO.StringIO(file),dialect=csv.excel_tab)
@@ -111,7 +126,12 @@ class CSVUploadHandler(JinjaTemplating,blobstore_handlers.BlobstoreUploadHandler
         #     else:
         #         xmlBody = ""
         #         visibility = false
+<<<<<<< HEAD
     def update(self,content, file_id,token):
+=======
+
+    def update(self,content, file_id):
+>>>>>>> d403072b36f940d4df18e034555b73513f6f1562
         user = users.get_current_user()
         url = 'https://www.googleapis.com/upload/drive/v2/files/%s?uploadType=media' % file_id
         headers = {
@@ -170,8 +190,14 @@ class CSVUploadHandler(JinjaTemplating,blobstore_handlers.BlobstoreUploadHandler
             self.response.headers['Content-Type'] = 'application/x-bittorrent'
             self.response.out.write(file.file)
             return file
+<<<<<<< HEAD
 
             return file
+=======
+            # self.response.out.write(file.file)
+            # return file
+            self.read_google_sheet(file)
+>>>>>>> d403072b36f940d4df18e034555b73513f6f1562
         else:
             self.response.set_status(404)
 
@@ -190,6 +216,7 @@ class CSVUploadHandler(JinjaTemplating,blobstore_handlers.BlobstoreUploadHandler
         t = urlfetch.fetch(url=send_url, payload="".join(data), method=urlfetch.POST, headers=headers)
         self.response.headers['Content-Type'] = 'text/plain'
         self.response.out.write(t.content)
+<<<<<<< HEAD
         
 
         file = self.getFile(key)
@@ -217,3 +244,5 @@ class CSVUploadHandler(JinjaTemplating,blobstore_handlers.BlobstoreUploadHandler
         gcs_file.write(data + '\n')
         gcs_file.close()
         return gcs_file
+=======
+>>>>>>> d403072b36f940d4df18e034555b73513f6f1562
