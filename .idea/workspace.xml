@@ -2,421 +2,14 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="7c55b412-7925-4368-9ccc-d922ed595688" name="Default" comment="">
-      <change type="DELETED" beforePath="$PROJECT_DIR$/client/dist/static/images/Thumbs.db" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/client/dist/static/images/aa.png" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/client/dist/static/images/ame.png" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/client/dist/static/images/bb.png" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/client/dist/static/images/bfdfh.png" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/client/dist/static/images/cc.png" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/client/dist/static/images/contact people/Thumbs.db" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/client/dist/static/images/contact people/aa-1.png" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/client/dist/static/images/contact people/aa-2.png" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/client/dist/static/images/contact people/aa-3.png" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/client/dist/static/images/contact people/aa-5.png" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/client/dist/static/images/contact people/aa-6.png" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/client/dist/static/images/contact people/aa-7.png" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/client/dist/static/images/contact people/aa-8.png" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/client/dist/static/images/dd.png" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/client/dist/static/images/ee.png" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/client/dist/static/images/fhu.png" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/client/dist/static/images/gfu.png" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/client/dist/static/images/gg.png" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/client/dist/static/images/ghk.png" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/client/dist/static/images/ght.png" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/client/dist/static/images/hd-a.png" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/client/dist/static/images/hd-b-07.png" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/client/dist/static/images/hd-b.png" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/client/dist/static/images/hd-c.png" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/client/dist/static/images/hd-d.png" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/client/dist/static/images/hd-e.png" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/client/dist/static/images/hd-f.png" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/client/dist/static/images/logo-skype.png" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/client/dist/static/images/m+.png" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/client/dist/static/images/media/Thumbs.db" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/client/dist/static/images/media/aa-05.png" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/client/dist/static/images/media/aa-07.png" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/client/dist/static/images/media/aa-10.png" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/client/dist/static/images/media/aa-12.png" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/client/dist/static/images/media/aa.png" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/client/dist/static/images/media/ee.png" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/client/dist/static/images/media/ff.png" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/client/dist/static/images/media/gg.png" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/client/dist/static/images/media/hh.png" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/client/dist/static/images/media/ii.png" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/client/dist/static/images/media/jj.png" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/client/dist/static/images/media/kk.png" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/client/dist/static/images/media/ll.png" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/client/dist/static/images/photos/Thumbs.db" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/client/dist/static/images/photos/user1.jpg" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/client/dist/static/images/photos/user10.jpg" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/client/dist/static/images/photos/user12.jpg" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/client/dist/static/images/photos/user2.jpg" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/client/dist/static/images/photos/user3.jpg" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/client/dist/static/images/photos/user4.jpg" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/client/dist/static/images/photos/user5.jpg" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/client/dist/static/images/photos/user6.jpg" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/client/dist/static/images/photos/user7.jpg" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/client/dist/static/images/photos/user8.jpg" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/client/dist/static/images/photos/user9.jpg" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/client/dist/static/images/s-logo.png" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/client/dist/static/images/superbox/Thumbs.db" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/client/dist/static/images/superbox/close.gif.png" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/client/dist/static/images/superbox/superbox-full-1.jpg" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/client/dist/static/images/superbox/superbox-full-10.jpg" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/client/dist/static/images/superbox/superbox-full-11.jpg" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/client/dist/static/images/superbox/superbox-full-12.jpg" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/client/dist/static/images/superbox/superbox-full-13.jpg" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/client/dist/static/images/superbox/superbox-full-14.jpg" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/client/dist/static/images/superbox/superbox-full-15.jpg" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/client/dist/static/images/superbox/superbox-full-16.jpg" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/client/dist/static/images/superbox/superbox-full-17.jpg" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/client/dist/static/images/superbox/superbox-full-18.jpg" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/client/dist/static/images/superbox/superbox-full-19.jpg" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/client/dist/static/images/superbox/superbox-full-2.jpg" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/client/dist/static/images/superbox/superbox-full-20.jpg" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/client/dist/static/images/superbox/superbox-full-21.jpg" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/client/dist/static/images/superbox/superbox-full-22.jpg" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/client/dist/static/images/superbox/superbox-full-23.jpg" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/client/dist/static/images/superbox/superbox-full-24.jpg" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/client/dist/static/images/superbox/superbox-full-3.jpg" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/client/dist/static/images/superbox/superbox-full-4.jpg" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/client/dist/static/images/superbox/superbox-full-5.jpg" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/client/dist/static/images/superbox/superbox-full-6.jpg" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/client/dist/static/images/superbox/superbox-full-7.jpg" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/client/dist/static/images/superbox/superbox-full-8.jpg" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/client/dist/static/images/superbox/superbox-full-9.jpg" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/client/dist/static/images/superbox/superbox-thumb-1.jpg" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/client/dist/static/images/superbox/superbox-thumb-10.jpg" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/client/dist/static/images/superbox/superbox-thumb-11.jpg" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/client/dist/static/images/superbox/superbox-thumb-12.jpg" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/client/dist/static/images/superbox/superbox-thumb-13.jpg" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/client/dist/static/images/superbox/superbox-thumb-14.jpg" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/client/dist/static/images/superbox/superbox-thumb-15.jpg" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/client/dist/static/images/superbox/superbox-thumb-16.jpg" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/client/dist/static/images/superbox/superbox-thumb-17.jpg" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/client/dist/static/images/superbox/superbox-thumb-18.jpg" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/client/dist/static/images/superbox/superbox-thumb-19.jpg" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/client/dist/static/images/superbox/superbox-thumb-2.jpg" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/client/dist/static/images/superbox/superbox-thumb-20.jpg" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/client/dist/static/images/superbox/superbox-thumb-21.jpg" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/client/dist/static/images/superbox/superbox-thumb-22.jpg" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/client/dist/static/images/superbox/superbox-thumb-23.jpg" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/client/dist/static/images/superbox/superbox-thumb-24.jpg" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/client/dist/static/images/superbox/superbox-thumb-3.jpg" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/client/dist/static/images/superbox/superbox-thumb-4.jpg" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/client/dist/static/images/superbox/superbox-thumb-5.jpg" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/client/dist/static/images/superbox/superbox-thumb-6.jpg" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/client/dist/static/images/superbox/superbox-thumb-7.jpg" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/client/dist/static/images/superbox/superbox-thumb-8.jpg" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/client/dist/static/images/superbox/superbox-thumb-9.jpg" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/client/dist/static/images/t.png" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/client/dist/static/images/team/Thumbs.db" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/client/dist/static/images/team/team-1.png" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/client/dist/static/images/team/team-2.png" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/client/dist/static/images/team/team-3.png" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/client/dist/static/images/team/team-4.png" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/client/dist/static/images/theme/Thumbs.db" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/client/dist/static/images/theme/blue.png" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/client/dist/static/images/theme/dark.png" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/client/dist/static/images/theme/green.png" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/client/dist/static/images/theme/light.png" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/client/dist/static/images/theme/mang.png" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/client/dist/static/images/theme/red.png" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/client/dist/static/images/typograph_03.png" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/client/dist/static/images/uploadfile.png" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/client/dist/static/images/us-name.png" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/client/dist/static/images/user.png" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/client/dist/static/images/uvvrl.jpg" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/client/dist/static/images/visa.png" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/client/src/assets/images/Thumbs.db" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/client/src/assets/images/aa.png" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/client/src/assets/images/ame.png" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/client/src/assets/images/bb.png" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/client/src/assets/images/bfdfh.png" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/client/src/assets/images/cc.png" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/client/src/assets/images/contact people/Thumbs.db" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/client/src/assets/images/contact people/aa-1.png" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/client/src/assets/images/contact people/aa-2.png" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/client/src/assets/images/contact people/aa-3.png" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/client/src/assets/images/contact people/aa-5.png" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/client/src/assets/images/contact people/aa-6.png" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/client/src/assets/images/contact people/aa-7.png" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/client/src/assets/images/contact people/aa-8.png" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/client/src/assets/images/dd.png" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/client/src/assets/images/ee.png" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/client/src/assets/images/fhu.png" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/client/src/assets/images/gfu.png" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/client/src/assets/images/gg.png" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/client/src/assets/images/ghk.png" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/client/src/assets/images/ght.png" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/client/src/assets/images/hd-a.png" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/client/src/assets/images/hd-b-07.png" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/client/src/assets/images/hd-b.png" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/client/src/assets/images/hd-c.png" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/client/src/assets/images/hd-d.png" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/client/src/assets/images/hd-e.png" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/client/src/assets/images/hd-f.png" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/client/src/assets/images/logo-skype.png" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/client/src/assets/images/m+.png" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/client/src/assets/images/media/Thumbs.db" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/client/src/assets/images/media/aa-05.png" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/client/src/assets/images/media/aa-07.png" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/client/src/assets/images/media/aa-10.png" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/client/src/assets/images/media/aa-12.png" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/client/src/assets/images/media/aa.png" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/client/src/assets/images/media/ee.png" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/client/src/assets/images/media/ff.png" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/client/src/assets/images/media/gg.png" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/client/src/assets/images/media/hh.png" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/client/src/assets/images/media/ii.png" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/client/src/assets/images/media/jj.png" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/client/src/assets/images/media/kk.png" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/client/src/assets/images/media/ll.png" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/client/src/assets/images/photos/Thumbs.db" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/client/src/assets/images/photos/user1.jpg" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/client/src/assets/images/photos/user10.jpg" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/client/src/assets/images/photos/user12.jpg" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/client/src/assets/images/photos/user2.jpg" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/client/src/assets/images/photos/user3.jpg" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/client/src/assets/images/photos/user4.jpg" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/client/src/assets/images/photos/user5.jpg" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/client/src/assets/images/photos/user6.jpg" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/client/src/assets/images/photos/user7.jpg" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/client/src/assets/images/photos/user8.jpg" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/client/src/assets/images/photos/user9.jpg" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/client/src/assets/images/s-logo.png" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/client/src/assets/images/superbox/Thumbs.db" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/client/src/assets/images/superbox/close.gif.png" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/client/src/assets/images/superbox/superbox-full-1.jpg" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/client/src/assets/images/superbox/superbox-full-10.jpg" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/client/src/assets/images/superbox/superbox-full-11.jpg" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/client/src/assets/images/superbox/superbox-full-12.jpg" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/client/src/assets/images/superbox/superbox-full-13.jpg" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/client/src/assets/images/superbox/superbox-full-14.jpg" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/client/src/assets/images/superbox/superbox-full-15.jpg" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/client/src/assets/images/superbox/superbox-full-16.jpg" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/client/src/assets/images/superbox/superbox-full-17.jpg" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/client/src/assets/images/superbox/superbox-full-18.jpg" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/client/src/assets/images/superbox/superbox-full-19.jpg" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/client/src/assets/images/superbox/superbox-full-2.jpg" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/client/src/assets/images/superbox/superbox-full-20.jpg" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/client/src/assets/images/superbox/superbox-full-21.jpg" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/client/src/assets/images/superbox/superbox-full-22.jpg" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/client/src/assets/images/superbox/superbox-full-23.jpg" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/client/src/assets/images/superbox/superbox-full-24.jpg" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/client/src/assets/images/superbox/superbox-full-3.jpg" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/client/src/assets/images/superbox/superbox-full-4.jpg" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/client/src/assets/images/superbox/superbox-full-5.jpg" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/client/src/assets/images/superbox/superbox-full-6.jpg" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/client/src/assets/images/superbox/superbox-full-7.jpg" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/client/src/assets/images/superbox/superbox-full-8.jpg" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/client/src/assets/images/superbox/superbox-full-9.jpg" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/client/src/assets/images/superbox/superbox-thumb-1.jpg" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/client/src/assets/images/superbox/superbox-thumb-10.jpg" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/client/src/assets/images/superbox/superbox-thumb-11.jpg" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/client/src/assets/images/superbox/superbox-thumb-12.jpg" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/client/src/assets/images/superbox/superbox-thumb-13.jpg" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/client/src/assets/images/superbox/superbox-thumb-14.jpg" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/client/src/assets/images/superbox/superbox-thumb-15.jpg" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/client/src/assets/images/superbox/superbox-thumb-16.jpg" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/client/src/assets/images/superbox/superbox-thumb-17.jpg" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/client/src/assets/images/superbox/superbox-thumb-18.jpg" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/client/src/assets/images/superbox/superbox-thumb-19.jpg" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/client/src/assets/images/superbox/superbox-thumb-2.jpg" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/client/src/assets/images/superbox/superbox-thumb-20.jpg" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/client/src/assets/images/superbox/superbox-thumb-21.jpg" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/client/src/assets/images/superbox/superbox-thumb-22.jpg" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/client/src/assets/images/superbox/superbox-thumb-23.jpg" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/client/src/assets/images/superbox/superbox-thumb-24.jpg" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/client/src/assets/images/superbox/superbox-thumb-3.jpg" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/client/src/assets/images/superbox/superbox-thumb-4.jpg" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/client/src/assets/images/superbox/superbox-thumb-5.jpg" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/client/src/assets/images/superbox/superbox-thumb-6.jpg" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/client/src/assets/images/superbox/superbox-thumb-7.jpg" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/client/src/assets/images/superbox/superbox-thumb-8.jpg" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/client/src/assets/images/superbox/superbox-thumb-9.jpg" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/client/src/assets/images/t.png" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/client/src/assets/images/team/Thumbs.db" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/client/src/assets/images/team/team-1.png" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/client/src/assets/images/team/team-2.png" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/client/src/assets/images/team/team-3.png" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/client/src/assets/images/team/team-4.png" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/client/src/assets/images/theme/Thumbs.db" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/client/src/assets/images/theme/blue.png" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/client/src/assets/images/theme/dark.png" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/client/src/assets/images/theme/green.png" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/client/src/assets/images/theme/light.png" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/client/src/assets/images/theme/mang.png" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/client/src/assets/images/theme/red.png" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/client/src/assets/images/typograph_03.png" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/client/src/assets/images/uploadfile.png" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/client/src/assets/images/us-name.png" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/client/src/assets/images/user.png" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/client/src/assets/images/uvvrl.jpg" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/client/src/assets/images/visa.png" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/client/src/common/directives/crud/crud.js" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/client/src/common/directives/crud/crudButtons.js" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/client/src/common/directives/crud/edit.js" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/client/src/common/directives/gravatar.js" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/client/src/common/resources/backlog.js" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/client/src/common/resources/projects.js" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/client/src/common/resources/sprints.js" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/client/src/common/resources/tasks.js" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/client/src/common/security/authorization.js" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/client/src/common/security/index.js" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/client/src/common/security/interceptor.js" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/client/src/common/security/login/LoginFormController.js" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/client/src/common/security/login/form.tpl.html" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/client/src/common/security/login/login.js" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/client/src/common/security/login/toolbar.js" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/client/src/common/security/login/toolbar.tpl.html" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/client/src/common/security/retryQueue.js" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/client/src/common/services/breadcrumbs.js" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/client/src/common/services/crud.js" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/client/src/common/services/crudRouteProvider.js" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/client/src/common/services/exceptionHandler.js" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/client/src/common/services/httpRequestTracker.js" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/client/src/common/services/i18nNotifications.js" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/client/src/common/services/localizedMessages.js" afterPath="" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/client/node_modules/grunt-karma/node_modules/karma/node_modules/socket.io/node_modules/socket.io-client/dist/WebSocketMain.swf" afterPath="$PROJECT_DIR$/client/node_modules/grunt-karma/node_modules/karma/node_modules/socket.io/node_modules/socket.io-client/dist/WebSocketMain.swf" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/client/node_modules/grunt-karma/node_modules/karma/node_modules/socket.io/node_modules/socket.io-client/lib/vendor/web-socket-js/WebSocketMain.swf" afterPath="$PROJECT_DIR$/client/node_modules/grunt-karma/node_modules/karma/node_modules/socket.io/node_modules/socket.io-client/lib/vendor/web-socket-js/WebSocketMain.swf" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/client/node_modules/grunt-karma/node_modules/karma/node_modules/socket.io/node_modules/socket.io-client/dist/WebSocketMainInsecure.swf" afterPath="$PROJECT_DIR$/client/node_modules/grunt-karma/node_modules/karma/node_modules/socket.io/node_modules/socket.io-client/dist/WebSocketMainInsecure.swf" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/client/node_modules/grunt-karma/node_modules/karma/node_modules/socket.io/node_modules/socket.io-client/lib/vendor/web-socket-js/WebSocketMainInsecure.zip" afterPath="$PROJECT_DIR$/client/node_modules/grunt-karma/node_modules/karma/node_modules/socket.io/node_modules/socket.io-client/lib/vendor/web-socket-js/WebSocketMainInsecure.zip" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/client/node_modules/grunt-karma/node_modules/karma/node_modules/socket.io/node_modules/socket.io-client/node_modules/ws/build/Release/bufferutil.node" afterPath="$PROJECT_DIR$/client/node_modules/grunt-karma/node_modules/karma/node_modules/socket.io/node_modules/socket.io-client/node_modules/ws/build/Release/bufferutil.node" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/client/node_modules/grunt-karma/node_modules/karma/node_modules/socket.io/node_modules/socket.io-client/node_modules/ws/build/Release/obj.target/bufferutil/src/bufferutil.o" afterPath="$PROJECT_DIR$/client/node_modules/grunt-karma/node_modules/karma/node_modules/socket.io/node_modules/socket.io-client/node_modules/ws/build/Release/obj.target/bufferutil/src/bufferutil.o" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/client/node_modules/grunt-karma/node_modules/karma/node_modules/socket.io/node_modules/socket.io-client/node_modules/ws/build/Release/obj.target/validation/src/validation.o" afterPath="$PROJECT_DIR$/client/node_modules/grunt-karma/node_modules/karma/node_modules/socket.io/node_modules/socket.io-client/node_modules/ws/build/Release/obj.target/validation/src/validation.o" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/client/node_modules/grunt-karma/node_modules/karma/node_modules/socket.io/node_modules/socket.io-client/lib/vendor/web-socket-js/flash-src/com/hurlant/crypto/symmetric/AESKey.as" afterPath="$PROJECT_DIR$/client/node_modules/grunt-karma/node_modules/karma/node_modules/socket.io/node_modules/socket.io-client/lib/vendor/web-socket-js/flash-src/com/hurlant/crypto/symmetric/AESKey.as" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/client/node_modules/grunt-karma/node_modules/karma/node_modules/socket.io/node_modules/socket.io-client/lib/vendor/web-socket-js/flash-src/com/hurlant/crypto/tests/AESKeyTest.as" afterPath="$PROJECT_DIR$/client/node_modules/grunt-karma/node_modules/karma/node_modules/socket.io/node_modules/socket.io-client/lib/vendor/web-socket-js/flash-src/com/hurlant/crypto/tests/AESKeyTest.as" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/client/node_modules/grunt-karma/node_modules/karma/node_modules/socket.io/node_modules/socket.io-client/lib/vendor/web-socket-js/flash-src/com/hurlant/crypto/prng/ARC4.as" afterPath="$PROJECT_DIR$/client/node_modules/grunt-karma/node_modules/karma/node_modules/socket.io/node_modules/socket.io-client/lib/vendor/web-socket-js/flash-src/com/hurlant/crypto/prng/ARC4.as" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/client/node_modules/grunt-karma/node_modules/karma/node_modules/socket.io/node_modules/socket.io-client/lib/vendor/web-socket-js/flash-src/com/hurlant/crypto/tests/ARC4Test.as" afterPath="$PROJECT_DIR$/client/node_modules/grunt-karma/node_modules/karma/node_modules/socket.io/node_modules/socket.io-client/lib/vendor/web-socket-js/flash-src/com/hurlant/crypto/tests/ARC4Test.as" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/client/node_modules/grunt-karma/node_modules/karma/node_modules/socket.io/node_modules/socket.io-client/lib/vendor/web-socket-js/flash-src/com/hurlant/util/ArrayUtil.as" afterPath="$PROJECT_DIR$/client/node_modules/grunt-karma/node_modules/karma/node_modules/socket.io/node_modules/socket.io-client/lib/vendor/web-socket-js/flash-src/com/hurlant/util/ArrayUtil.as" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/client/node_modules/grunt-karma/node_modules/karma/node_modules/socket.io/node_modules/socket.io-client/lib/vendor/web-socket-js/flash-src/com/hurlant/math/BarrettReduction.as" afterPath="$PROJECT_DIR$/client/node_modules/grunt-karma/node_modules/karma/node_modules/socket.io/node_modules/socket.io-client/lib/vendor/web-socket-js/flash-src/com/hurlant/math/BarrettReduction.as" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/client/node_modules/grunt-karma/node_modules/karma/node_modules/socket.io/node_modules/socket.io-client/lib/vendor/web-socket-js/flash-src/com/hurlant/util/Base64.as" afterPath="$PROJECT_DIR$/client/node_modules/grunt-karma/node_modules/karma/node_modules/socket.io/node_modules/socket.io-client/lib/vendor/web-socket-js/flash-src/com/hurlant/util/Base64.as" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/client/node_modules/grunt-karma/node_modules/karma/node_modules/socket.io/node_modules/socket.io-client/lib/vendor/web-socket-js/flash-src/com/hurlant/math/BigInteger.as" afterPath="$PROJECT_DIR$/client/node_modules/grunt-karma/node_modules/karma/node_modules/socket.io/node_modules/socket.io-client/lib/vendor/web-socket-js/flash-src/com/hurlant/math/BigInteger.as" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/client/node_modules/grunt-karma/node_modules/karma/node_modules/socket.io/node_modules/socket.io-client/lib/vendor/web-socket-js/flash-src/com/hurlant/crypto/tests/BigIntegerTest.as" afterPath="$PROJECT_DIR$/client/node_modules/grunt-karma/node_modules/karma/node_modules/socket.io/node_modules/socket.io-client/lib/vendor/web-socket-js/flash-src/com/hurlant/crypto/tests/BigIntegerTest.as" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/client/node_modules/grunt-karma/node_modules/karma/node_modules/socket.io/node_modules/socket.io-client/lib/vendor/web-socket-js/flash-src/com/hurlant/crypto/symmetric/BlowFishKey.as" afterPath="$PROJECT_DIR$/client/node_modules/grunt-karma/node_modules/karma/node_modules/socket.io/node_modules/socket.io-client/lib/vendor/web-socket-js/flash-src/com/hurlant/crypto/symmetric/BlowFishKey.as" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/client/node_modules/grunt-karma/node_modules/karma/node_modules/socket.io/node_modules/socket.io-client/lib/vendor/web-socket-js/flash-src/com/hurlant/crypto/tests/BlowFishKeyTest.as" afterPath="$PROJECT_DIR$/client/node_modules/grunt-karma/node_modules/karma/node_modules/socket.io/node_modules/socket.io-client/lib/vendor/web-socket-js/flash-src/com/hurlant/crypto/tests/BlowFishKeyTest.as" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/client/node_modules/grunt-karma/node_modules/karma/node_modules/socket.io/node_modules/socket.io-client/lib/vendor/web-socket-js/flash-src/com/hurlant/util/der/ByteString.as" afterPath="$PROJECT_DIR$/client/node_modules/grunt-karma/node_modules/karma/node_modules/socket.io/node_modules/socket.io-client/lib/vendor/web-socket-js/flash-src/com/hurlant/util/der/ByteString.as" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/client/node_modules/grunt-karma/node_modules/karma/node_modules/socket.io/node_modules/socket.io-client/lib/vendor/web-socket-js/flash-src/com/hurlant/crypto/symmetric/CBCMode.as" afterPath="$PROJECT_DIR$/client/node_modules/grunt-karma/node_modules/karma/node_modules/socket.io/node_modules/socket.io-client/lib/vendor/web-socket-js/flash-src/com/hurlant/crypto/symmetric/CBCMode.as" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/client/node_modules/grunt-karma/node_modules/karma/node_modules/socket.io/node_modules/socket.io-client/lib/vendor/web-socket-js/flash-src/com/hurlant/crypto/tests/CBCModeTest.as" afterPath="$PROJECT_DIR$/client/node_modules/grunt-karma/node_modules/karma/node_modules/socket.io/node_modules/socket.io-client/lib/vendor/web-socket-js/flash-src/com/hurlant/crypto/tests/CBCModeTest.as" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/client/node_modules/grunt-karma/node_modules/karma/node_modules/socket.io/node_modules/socket.io-client/lib/vendor/web-socket-js/flash-src/com/hurlant/crypto/symmetric/CFB8Mode.as" afterPath="$PROJECT_DIR$/client/node_modules/grunt-karma/node_modules/karma/node_modules/socket.io/node_modules/socket.io-client/lib/vendor/web-socket-js/flash-src/com/hurlant/crypto/symmetric/CFB8Mode.as" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/client/node_modules/grunt-karma/node_modules/karma/node_modules/socket.io/node_modules/socket.io-client/lib/vendor/web-socket-js/flash-src/com/hurlant/crypto/tests/CFB8ModeTest.as" afterPath="$PROJECT_DIR$/client/node_modules/grunt-karma/node_modules/karma/node_modules/socket.io/node_modules/socket.io-client/lib/vendor/web-socket-js/flash-src/com/hurlant/crypto/tests/CFB8ModeTest.as" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/client/node_modules/grunt-karma/node_modules/karma/node_modules/socket.io/node_modules/socket.io-client/lib/vendor/web-socket-js/flash-src/com/hurlant/crypto/symmetric/CFBMode.as" afterPath="$PROJECT_DIR$/client/node_modules/grunt-karma/node_modules/karma/node_modules/socket.io/node_modules/socket.io-client/lib/vendor/web-socket-js/flash-src/com/hurlant/crypto/symmetric/CFBMode.as" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/client/node_modules/grunt-karma/node_modules/karma/node_modules/socket.io/node_modules/socket.io-client/lib/vendor/web-socket-js/flash-src/com/hurlant/crypto/tests/CFBModeTest.as" afterPath="$PROJECT_DIR$/client/node_modules/grunt-karma/node_modules/karma/node_modules/socket.io/node_modules/socket.io-client/lib/vendor/web-socket-js/flash-src/com/hurlant/crypto/tests/CFBModeTest.as" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/client/node_modules/grunt-karma/node_modules/karma/node_modules/socket.io/node_modules/socket.io-client/lib/vendor/web-socket-js/flash-src/com/hurlant/crypto/symmetric/CTRMode.as" afterPath="$PROJECT_DIR$/client/node_modules/grunt-karma/node_modules/karma/node_modules/socket.io/node_modules/socket.io-client/lib/vendor/web-socket-js/flash-src/com/hurlant/crypto/symmetric/CTRMode.as" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/client/node_modules/grunt-karma/node_modules/karma/node_modules/socket.io/node_modules/socket.io-client/lib/vendor/web-socket-js/flash-src/com/hurlant/crypto/tests/CTRModeTest.as" afterPath="$PROJECT_DIR$/client/node_modules/grunt-karma/node_modules/karma/node_modules/socket.io/node_modules/socket.io-client/lib/vendor/web-socket-js/flash-src/com/hurlant/crypto/tests/CTRModeTest.as" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/client/node_modules/grunt-karma/node_modules/karma/node_modules/socket.io/node_modules/socket.io-client/lib/vendor/web-socket-js/flash-src/com/hurlant/crypto/tls/CipherSuites.as" afterPath="$PROJECT_DIR$/client/node_modules/grunt-karma/node_modules/karma/node_modules/socket.io/node_modules/socket.io-client/lib/vendor/web-socket-js/flash-src/com/hurlant/crypto/tls/CipherSuites.as" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/client/node_modules/grunt-karma/node_modules/karma/node_modules/socket.io/node_modules/socket.io-client/lib/vendor/web-socket-js/flash-src/com/hurlant/math/ClassicReduction.as" afterPath="$PROJECT_DIR$/client/node_modules/grunt-karma/node_modules/karma/node_modules/socket.io/node_modules/socket.io-client/lib/vendor/web-socket-js/flash-src/com/hurlant/math/ClassicReduction.as" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/client/node_modules/grunt-karma/node_modules/karma/node_modules/socket.io/node_modules/socket.io-client/lib/vendor/web-socket-js/flash-src/com/hurlant/crypto/Crypto.as" afterPath="$PROJECT_DIR$/client/node_modules/grunt-karma/node_modules/karma/node_modules/socket.io/node_modules/socket.io-client/lib/vendor/web-socket-js/flash-src/com/hurlant/crypto/Crypto.as" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/client/node_modules/grunt-karma/node_modules/karma/node_modules/socket.io/node_modules/socket.io-client/lib/vendor/web-socket-js/flash-src/com/hurlant/util/der/DER.as" afterPath="$PROJECT_DIR$/client/node_modules/grunt-karma/node_modules/karma/node_modules/socket.io/node_modules/socket.io-client/lib/vendor/web-socket-js/flash-src/com/hurlant/util/der/DER.as" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/client/node_modules/grunt-karma/node_modules/karma/node_modules/socket.io/node_modules/socket.io-client/lib/vendor/web-socket-js/flash-src/com/hurlant/crypto/symmetric/DESKey.as" afterPath="$PROJECT_DIR$/client/node_modules/grunt-karma/node_modules/karma/node_modules/socket.io/node_modules/socket.io-client/lib/vendor/web-socket-js/flash-src/com/hurlant/crypto/symmetric/DESKey.as" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/client/node_modules/grunt-karma/node_modules/karma/node_modules/socket.io/node_modules/socket.io-client/lib/vendor/web-socket-js/flash-src/com/hurlant/crypto/tests/DESKeyTest.as" afterPath="$PROJECT_DIR$/client/node_modules/grunt-karma/node_modules/karma/node_modules/socket.io/node_modules/socket.io-client/lib/vendor/web-socket-js/flash-src/com/hurlant/crypto/tests/DESKeyTest.as" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/client/node_modules/grunt-karma/node_modules/karma/node_modules/socket.io/node_modules/socket.io-client/lib/vendor/web-socket-js/flash-src/com/hurlant/crypto/symmetric/ECBMode.as" afterPath="$PROJECT_DIR$/client/node_modules/grunt-karma/node_modules/karma/node_modules/socket.io/node_modules/socket.io-client/lib/vendor/web-socket-js/flash-src/com/hurlant/crypto/symmetric/ECBMode.as" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/client/node_modules/grunt-karma/node_modules/karma/node_modules/socket.io/node_modules/socket.io-client/lib/vendor/web-socket-js/flash-src/com/hurlant/crypto/tests/ECBModeTest.as" afterPath="$PROJECT_DIR$/client/node_modules/grunt-karma/node_modules/karma/node_modules/socket.io/node_modules/socket.io-client/lib/vendor/web-socket-js/flash-src/com/hurlant/crypto/tests/ECBModeTest.as" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/client/node_modules/grunt-karma/node_modules/karma/node_modules/socket.io/node_modules/socket.io-client/lib/vendor/web-socket-js/flash-src/com/hurlant/crypto/hash/HMAC.as" afterPath="$PROJECT_DIR$/client/node_modules/grunt-karma/node_modules/karma/node_modules/socket.io/node_modules/socket.io-client/lib/vendor/web-socket-js/flash-src/com/hurlant/crypto/hash/HMAC.as" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/client/node_modules/grunt-karma/node_modules/karma/node_modules/socket.io/node_modules/socket.io-client/lib/vendor/web-socket-js/flash-src/com/hurlant/crypto/tests/HMACTest.as" afterPath="$PROJECT_DIR$/client/node_modules/grunt-karma/node_modules/karma/node_modules/socket.io/node_modules/socket.io-client/lib/vendor/web-socket-js/flash-src/com/hurlant/crypto/tests/HMACTest.as" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/client/node_modules/grunt-karma/node_modules/karma/node_modules/socket.io/node_modules/socket.io-client/lib/vendor/web-socket-js/flash-src/com/hurlant/util/Hex.as" afterPath="$PROJECT_DIR$/client/node_modules/grunt-karma/node_modules/karma/node_modules/socket.io/node_modules/socket.io-client/lib/vendor/web-socket-js/flash-src/com/hurlant/util/Hex.as" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/client/node_modules/grunt-karma/node_modules/karma/node_modules/socket.io/node_modules/socket.io-client/lib/vendor/web-socket-js/flash-src/com/hurlant/util/der/IAsn1Type.as" afterPath="$PROJECT_DIR$/client/node_modules/grunt-karma/node_modules/karma/node_modules/socket.io/node_modules/socket.io-client/lib/vendor/web-socket-js/flash-src/com/hurlant/util/der/IAsn1Type.as" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/client/node_modules/grunt-karma/node_modules/karma/node_modules/socket.io/node_modules/socket.io-client/lib/vendor/web-socket-js/flash-src/com/hurlant/crypto/symmetric/ICipher.as" afterPath="$PROJECT_DIR$/client/node_modules/grunt-karma/node_modules/karma/node_modules/socket.io/node_modules/socket.io-client/lib/vendor/web-socket-js/flash-src/com/hurlant/crypto/symmetric/ICipher.as" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/client/node_modules/grunt-karma/node_modules/karma/node_modules/socket.io/node_modules/socket.io-client/lib/vendor/web-socket-js/flash-src/com/hurlant/crypto/tls/IConnectionState.as" afterPath="$PROJECT_DIR$/client/node_modules/grunt-karma/node_modules/karma/node_modules/socket.io/node_modules/socket.io-client/lib/vendor/web-socket-js/flash-src/com/hurlant/crypto/tls/IConnectionState.as" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/client/node_modules/grunt-karma/node_modules/karma/node_modules/socket.io/node_modules/socket.io-client/lib/vendor/web-socket-js/flash-src/com/hurlant/crypto/hash/IHMAC.as" afterPath="$PROJECT_DIR$/client/node_modules/grunt-karma/node_modules/karma/node_modules/socket.io/node_modules/socket.io-client/lib/vendor/web-socket-js/flash-src/com/hurlant/crypto/hash/IHMAC.as" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/client/node_modules/grunt-karma/node_modules/karma/node_modules/socket.io/node_modules/socket.io-client/lib/vendor/web-socket-js/flash-src/com/hurlant/crypto/hash/IHash.as" afterPath="$PROJECT_DIR$/client/node_modules/grunt-karma/node_modules/karma/node_modules/socket.io/node_modules/socket.io-client/lib/vendor/web-socket-js/flash-src/com/hurlant/crypto/hash/IHash.as" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/client/node_modules/grunt-karma/node_modules/karma/node_modules/socket.io/node_modules/socket.io-client/lib/vendor/web-socket-js/flash-src/com/hurlant/crypto/symmetric/IMode.as" afterPath="$PROJECT_DIR$/client/node_modules/grunt-karma/node_modules/karma/node_modules/socket.io/node_modules/socket.io-client/lib/vendor/web-socket-js/flash-src/com/hurlant/crypto/symmetric/IMode.as" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/client/node_modules/grunt-karma/node_modules/karma/node_modules/socket.io/node_modules/socket.io-client/lib/vendor/web-socket-js/flash-src/com/hurlant/crypto/prng/IPRNG.as" afterPath="$PROJECT_DIR$/client/node_modules/grunt-karma/node_modules/karma/node_modules/socket.io/node_modules/socket.io-client/lib/vendor/web-socket-js/flash-src/com/hurlant/crypto/prng/IPRNG.as" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/client/node_modules/grunt-karma/node_modules/karma/node_modules/socket.io/node_modules/socket.io-client/lib/vendor/web-socket-js/flash-src/com/hurlant/crypto/symmetric/IPad.as" afterPath="$PROJECT_DIR$/client/node_modules/grunt-karma/node_modules/karma/node_modules/socket.io/node_modules/socket.io-client/lib/vendor/web-socket-js/flash-src/com/hurlant/crypto/symmetric/IPad.as" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/client/node_modules/grunt-karma/node_modules/karma/node_modules/socket.io/node_modules/socket.io-client/lib/vendor/web-socket-js/flash-src/com/hurlant/math/IReduction.as" afterPath="$PROJECT_DIR$/client/node_modules/grunt-karma/node_modules/karma/node_modules/socket.io/node_modules/socket.io-client/lib/vendor/web-socket-js/flash-src/com/hurlant/math/IReduction.as" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/client/node_modules/grunt-karma/node_modules/karma/node_modules/socket.io/node_modules/socket.io-client/lib/vendor/web-socket-js/flash-src/com/hurlant/crypto/tls/ISecurityParameters.as" afterPath="$PROJECT_DIR$/client/node_modules/grunt-karma/node_modules/karma/node_modules/socket.io/node_modules/socket.io-client/lib/vendor/web-socket-js/flash-src/com/hurlant/crypto/tls/ISecurityParameters.as" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/client/node_modules/grunt-karma/node_modules/karma/node_modules/socket.io/node_modules/socket.io-client/lib/vendor/web-socket-js/flash-src/com/hurlant/crypto/symmetric/IStreamCipher.as" afterPath="$PROJECT_DIR$/client/node_modules/grunt-karma/node_modules/karma/node_modules/socket.io/node_modules/socket.io-client/lib/vendor/web-socket-js/flash-src/com/hurlant/crypto/symmetric/IStreamCipher.as" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/client/node_modules/grunt-karma/node_modules/karma/node_modules/socket.io/node_modules/socket.io-client/lib/vendor/web-socket-js/flash-src/com/hurlant/crypto/symmetric/ISymmetricKey.as" afterPath="$PROJECT_DIR$/client/node_modules/grunt-karma/node_modules/karma/node_modules/socket.io/node_modules/socket.io-client/lib/vendor/web-socket-js/flash-src/com/hurlant/crypto/symmetric/ISymmetricKey.as" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/client/node_modules/grunt-karma/node_modules/karma/node_modules/socket.io/node_modules/socket.io-client/lib/vendor/web-socket-js/flash-src/com/hurlant/crypto/tests/ITestHarness.as" afterPath="$PROJECT_DIR$/client/node_modules/grunt-karma/node_modules/karma/node_modules/socket.io/node_modules/socket.io-client/lib/vendor/web-socket-js/flash-src/com/hurlant/crypto/tests/ITestHarness.as" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/client/node_modules/grunt-karma/node_modules/karma/node_modules/socket.io/node_modules/socket.io-client/lib/vendor/web-socket-js/flash-src/com/hurlant/crypto/symmetric/IVMode.as" afterPath="$PROJECT_DIR$/client/node_modules/grunt-karma/node_modules/karma/node_modules/socket.io/node_modules/socket.io-client/lib/vendor/web-socket-js/flash-src/com/hurlant/crypto/symmetric/IVMode.as" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/client/node_modules/grunt-karma/node_modules/karma/node_modules/socket.io/node_modules/socket.io-client/lib/vendor/web-socket-js/flash-src/com/hurlant/util/der/Integer.as" afterPath="$PROJECT_DIR$/client/node_modules/grunt-karma/node_modules/karma/node_modules/socket.io/node_modules/socket.io-client/lib/vendor/web-socket-js/flash-src/com/hurlant/util/der/Integer.as" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/client/node_modules/grunt-karma/node_modules/karma/node_modules/socket.io/node_modules/socket.io-client/lib/vendor/web-socket-js/flash-src/com/hurlant/crypto/tls/KeyExchanges.as" afterPath="$PROJECT_DIR$/client/node_modules/grunt-karma/node_modules/karma/node_modules/socket.io/node_modules/socket.io-client/lib/vendor/web-socket-js/flash-src/com/hurlant/crypto/tls/KeyExchanges.as" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/client/node_modules/grunt-karma/node_modules/karma/node_modules/socket.io/node_modules/socket.io-client/lib/vendor/web-socket-js/flash-src/com/hurlant/crypto/hash/MAC.as" afterPath="$PROJECT_DIR$/client/node_modules/grunt-karma/node_modules/karma/node_modules/socket.io/node_modules/socket.io-client/lib/vendor/web-socket-js/flash-src/com/hurlant/crypto/hash/MAC.as" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/client/node_modules/grunt-karma/node_modules/karma/node_modules/socket.io/node_modules/socket.io-client/lib/vendor/web-socket-js/flash-src/com/hurlant/crypto/tls/MACs.as" afterPath="$PROJECT_DIR$/client/node_modules/grunt-karma/node_modules/karma/node_modules/socket.io/node_modules/socket.io-client/lib/vendor/web-socket-js/flash-src/com/hurlant/crypto/tls/MACs.as" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/client/node_modules/grunt-karma/node_modules/karma/node_modules/socket.io/node_modules/socket.io-client/lib/vendor/web-socket-js/flash-src/com/hurlant/crypto/hash/MD2.as" afterPath="$PROJECT_DIR$/client/node_modules/grunt-karma/node_modules/karma/node_modules/socket.io/node_modules/socket.io-client/lib/vendor/web-socket-js/flash-src/com/hurlant/crypto/hash/MD2.as" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/client/node_modules/grunt-karma/node_modules/karma/node_modules/socket.io/node_modules/socket.io-client/lib/vendor/web-socket-js/flash-src/com/hurlant/crypto/tests/MD2Test.as" afterPath="$PROJECT_DIR$/client/node_modules/grunt-karma/node_modules/karma/node_modules/socket.io/node_modules/socket.io-client/lib/vendor/web-socket-js/flash-src/com/hurlant/crypto/tests/MD2Test.as" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/client/node_modules/grunt-karma/node_modules/karma/node_modules/socket.io/node_modules/socket.io-client/lib/vendor/web-socket-js/flash-src/com/gsolo/encryption/MD5.as" afterPath="$PROJECT_DIR$/client/node_modules/grunt-karma/node_modules/karma/node_modules/socket.io/node_modules/socket.io-client/lib/vendor/web-socket-js/flash-src/com/gsolo/encryption/MD5.as" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/client/node_modules/grunt-karma/node_modules/karma/node_modules/socket.io/node_modules/socket.io-client/lib/vendor/web-socket-js/flash-src/com/hurlant/crypto/hash/MD5.as" afterPath="$PROJECT_DIR$/client/node_modules/grunt-karma/node_modules/karma/node_modules/socket.io/node_modules/socket.io-client/lib/vendor/web-socket-js/flash-src/com/hurlant/crypto/hash/MD5.as" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/client/node_modules/grunt-karma/node_modules/karma/node_modules/socket.io/node_modules/socket.io-client/lib/vendor/web-socket-js/flash-src/com/hurlant/crypto/tests/MD5Test.as" afterPath="$PROJECT_DIR$/client/node_modules/grunt-karma/node_modules/karma/node_modules/socket.io/node_modules/socket.io-client/lib/vendor/web-socket-js/flash-src/com/hurlant/crypto/tests/MD5Test.as" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/client/node_modules/grunt-karma/node_modules/karma/node_modules/socket.io/node_modules/socket.io-client/lib/vendor/web-socket-js/flash-src/com/hurlant/util/Memory.as" afterPath="$PROJECT_DIR$/client/node_modules/grunt-karma/node_modules/karma/node_modules/socket.io/node_modules/socket.io-client/lib/vendor/web-socket-js/flash-src/com/hurlant/util/Memory.as" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/client/node_modules/grunt-karma/node_modules/karma/node_modules/socket.io/node_modules/socket.io-client/lib/vendor/web-socket-js/flash-src/com/hurlant/math/MontgomeryReduction.as" afterPath="$PROJECT_DIR$/client/node_modules/grunt-karma/node_modules/karma/node_modules/socket.io/node_modules/socket.io-client/lib/vendor/web-socket-js/flash-src/com/hurlant/math/MontgomeryReduction.as" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/client/node_modules/grunt-karma/node_modules/karma/node_modules/socket.io/node_modules/socket.io-client/lib/vendor/web-socket-js/flash-src/com/hurlant/crypto/symmetric/NullPad.as" afterPath="$PROJECT_DIR$/client/node_modules/grunt-karma/node_modules/karma/node_modules/socket.io/node_modules/socket.io-client/lib/vendor/web-socket-js/flash-src/com/hurlant/crypto/symmetric/NullPad.as" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/client/node_modules/grunt-karma/node_modules/karma/node_modules/socket.io/node_modules/socket.io-client/lib/vendor/web-socket-js/flash-src/com/hurlant/math/NullReduction.as" afterPath="$PROJECT_DIR$/client/node_modules/grunt-karma/node_modules/karma/node_modules/socket.io/node_modules/socket.io-client/lib/vendor/web-socket-js/flash-src/com/hurlant/math/NullReduction.as" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/client/node_modules/grunt-karma/node_modules/karma/node_modules/socket.io/node_modules/socket.io-client/lib/vendor/web-socket-js/flash-src/com/hurlant/crypto/symmetric/OFBMode.as" afterPath="$PROJECT_DIR$/client/node_modules/grunt-karma/node_modules/karma/node_modules/socket.io/node_modules/socket.io-client/lib/vendor/web-socket-js/flash-src/com/hurlant/crypto/symmetric/OFBMode.as" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/client/node_modules/grunt-karma/node_modules/karma/node_modules/socket.io/node_modules/socket.io-client/lib/vendor/web-socket-js/flash-src/com/hurlant/crypto/tests/OFBModeTest.as" afterPath="$PROJECT_DIR$/client/node_modules/grunt-karma/node_modules/karma/node_modules/socket.io/node_modules/socket.io-client/lib/vendor/web-socket-js/flash-src/com/hurlant/crypto/tests/OFBModeTest.as" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/client/node_modules/grunt-karma/node_modules/karma/node_modules/socket.io/node_modules/socket.io-client/lib/vendor/web-socket-js/flash-src/com/hurlant/util/der/OID.as" afterPath="$PROJECT_DIR$/client/node_modules/grunt-karma/node_modules/karma/node_modules/socket.io/node_modules/socket.io-client/lib/vendor/web-socket-js/flash-src/com/hurlant/util/der/OID.as" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/client/node_modules/grunt-karma/node_modules/karma/node_modules/socket.io/node_modules/socket.io-client/lib/vendor/web-socket-js/flash-src/com/hurlant/util/der/ObjectIdentifier.as" afterPath="$PROJECT_DIR$/client/node_modules/grunt-karma/node_modules/karma/node_modules/socket.io/node_modules/socket.io-client/lib/vendor/web-socket-js/flash-src/com/hurlant/util/der/ObjectIdentifier.as" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/client/node_modules/grunt-karma/node_modules/karma/node_modules/socket.io/node_modules/socket.io-client/lib/vendor/web-socket-js/flash-src/com/hurlant/util/der/PEM.as" afterPath="$PROJECT_DIR$/client/node_modules/grunt-karma/node_modules/karma/node_modules/socket.io/node_modules/socket.io-client/lib/vendor/web-socket-js/flash-src/com/hurlant/util/der/PEM.as" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/client/node_modules/grunt-karma/node_modules/karma/node_modules/socket.io/node_modules/socket.io-client/lib/vendor/web-socket-js/flash-src/com/hurlant/crypto/symmetric/PKCS5.as" afterPath="$PROJECT_DIR$/client/node_modules/grunt-karma/node_modules/karma/node_modules/socket.io/node_modules/socket.io-client/lib/vendor/web-socket-js/flash-src/com/hurlant/crypto/symmetric/PKCS5.as" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/client/node_modules/grunt-karma/node_modules/karma/node_modules/socket.io/node_modules/socket.io-client/lib/vendor/web-socket-js/flash-src/com/hurlant/util/der/PrintableString.as" afterPath="$PROJECT_DIR$/client/node_modules/grunt-karma/node_modules/karma/node_modules/socket.io/node_modules/socket.io-client/lib/vendor/web-socket-js/flash-src/com/hurlant/util/der/PrintableString.as" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/client/node_modules/grunt-karma/node_modules/karma/node_modules/socket.io/node_modules/socket.io-client/lib/vendor/web-socket-js/flash-src/com/hurlant/crypto/tests/RSAKeyTest.as" afterPath="$PROJECT_DIR$/client/node_modules/grunt-karma/node_modules/karma/node_modules/socket.io/node_modules/socket.io-client/lib/vendor/web-socket-js/flash-src/com/hurlant/crypto/tests/RSAKeyTest.as" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/client/node_modules/grunt-karma/node_modules/karma/node_modules/socket.io/node_modules/socket.io-client/lib/vendor/web-socket-js/flash-src/com/hurlant/crypto/prng/Random.as" afterPath="$PROJECT_DIR$/client/node_modules/grunt-karma/node_modules/karma/node_modules/socket.io/node_modules/socket.io-client/lib/vendor/web-socket-js/flash-src/com/hurlant/crypto/prng/Random.as" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/client/node_modules/grunt-karma/node_modules/karma/node_modules/socket.io/node_modules/socket.io-client/lib/vendor/web-socket-js/flash-src/com/hurlant/crypto/hash/SHA1.as" afterPath="$PROJECT_DIR$/client/node_modules/grunt-karma/node_modules/karma/node_modules/socket.io/node_modules/socket.io-client/lib/vendor/web-socket-js/flash-src/com/hurlant/crypto/hash/SHA1.as" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/client/node_modules/grunt-karma/node_modules/karma/node_modules/socket.io/node_modules/socket.io-client/lib/vendor/web-socket-js/flash-src/com/hurlant/crypto/tests/SHA1Test.as" afterPath="$PROJECT_DIR$/client/node_modules/grunt-karma/node_modules/karma/node_modules/socket.io/node_modules/socket.io-client/lib/vendor/web-socket-js/flash-src/com/hurlant/crypto/tests/SHA1Test.as" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/client/node_modules/grunt-karma/node_modules/karma/node_modules/socket.io/node_modules/socket.io-client/lib/vendor/web-socket-js/flash-src/com/hurlant/crypto/hash/SHA224.as" afterPath="$PROJECT_DIR$/client/node_modules/grunt-karma/node_modules/karma/node_modules/socket.io/node_modules/socket.io-client/lib/vendor/web-socket-js/flash-src/com/hurlant/crypto/hash/SHA224.as" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/client/node_modules/grunt-karma/node_modules/karma/node_modules/socket.io/node_modules/socket.io-client/lib/vendor/web-socket-js/flash-src/com/hurlant/crypto/tests/SHA224Test.as" afterPath="$PROJECT_DIR$/client/node_modules/grunt-karma/node_modules/karma/node_modules/socket.io/node_modules/socket.io-client/lib/vendor/web-socket-js/flash-src/com/hurlant/crypto/tests/SHA224Test.as" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/client/node_modules/grunt-karma/node_modules/karma/node_modules/socket.io/node_modules/socket.io-client/lib/vendor/web-socket-js/flash-src/com/hurlant/crypto/hash/SHA256.as" afterPath="$PROJECT_DIR$/client/node_modules/grunt-karma/node_modules/karma/node_modules/socket.io/node_modules/socket.io-client/lib/vendor/web-socket-js/flash-src/com/hurlant/crypto/hash/SHA256.as" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/client/node_modules/grunt-karma/node_modules/karma/node_modules/socket.io/node_modules/socket.io-client/lib/vendor/web-socket-js/flash-src/com/hurlant/crypto/tests/SHA256Test.as" afterPath="$PROJECT_DIR$/client/node_modules/grunt-karma/node_modules/karma/node_modules/socket.io/node_modules/socket.io-client/lib/vendor/web-socket-js/flash-src/com/hurlant/crypto/tests/SHA256Test.as" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/client/node_modules/grunt-karma/node_modules/karma/node_modules/socket.io/node_modules/socket.io-client/lib/vendor/web-socket-js/flash-src/com/hurlant/crypto/hash/SHABase.as" afterPath="$PROJECT_DIR$/client/node_modules/grunt-karma/node_modules/karma/node_modules/socket.io/node_modules/socket.io-client/lib/vendor/web-socket-js/flash-src/com/hurlant/crypto/hash/SHABase.as" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/client/node_modules/grunt-karma/node_modules/karma/node_modules/socket.io/node_modules/socket.io-client/lib/vendor/web-socket-js/flash-src/com/hurlant/crypto/tls/SSLEvent.as" afterPath="$PROJECT_DIR$/client/node_modules/grunt-karma/node_modules/karma/node_modules/socket.io/node_modules/socket.io-client/lib/vendor/web-socket-js/flash-src/com/hurlant/crypto/tls/SSLEvent.as" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/client/node_modules/grunt-karma/node_modules/karma/node_modules/socket.io/node_modules/socket.io-client/lib/vendor/web-socket-js/flash-src/com/hurlant/crypto/tls/SSLSecurityParameters.as" afterPath="$PROJECT_DIR$/client/node_modules/grunt-karma/node_modules/karma/node_modules/socket.io/node_modules/socket.io-client/lib/vendor/web-socket-js/flash-src/com/hurlant/crypto/tls/SSLSecurityParameters.as" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/client/node_modules/grunt-karma/node_modules/karma/node_modules/socket.io/node_modules/socket.io-client/lib/vendor/web-socket-js/flash-src/com/hurlant/util/der/Sequence.as" afterPath="$PROJECT_DIR$/client/node_modules/grunt-karma/node_modules/karma/node_modules/socket.io/node_modules/socket.io-client/lib/vendor/web-socket-js/flash-src/com/hurlant/util/der/Sequence.as" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/client/node_modules/grunt-karma/node_modules/karma/node_modules/socket.io/node_modules/socket.io-client/lib/vendor/web-socket-js/flash-src/com/hurlant/util/der/Set.as" afterPath="$PROJECT_DIR$/client/node_modules/grunt-karma/node_modules/karma/node_modules/socket.io/node_modules/socket.io-client/lib/vendor/web-socket-js/flash-src/com/hurlant/util/der/Set.as" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/client/node_modules/grunt-karma/node_modules/karma/node_modules/socket.io/node_modules/socket.io-client/lib/vendor/web-socket-js/flash-src/com/hurlant/crypto/symmetric/SimpleIVMode.as" afterPath="$PROJECT_DIR$/client/node_modules/grunt-karma/node_modules/karma/node_modules/socket.io/node_modules/socket.io-client/lib/vendor/web-socket-js/flash-src/com/hurlant/crypto/symmetric/SimpleIVMode.as" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/client/node_modules/grunt-karma/node_modules/karma/node_modules/socket.io/node_modules/socket.io-client/lib/vendor/web-socket-js/flash-src/com/hurlant/crypto/tls/TLSConfig.as" afterPath="$PROJECT_DIR$/client/node_modules/grunt-karma/node_modules/karma/node_modules/socket.io/node_modules/socket.io-client/lib/vendor/web-socket-js/flash-src/com/hurlant/crypto/tls/TLSConfig.as" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/client/node_modules/grunt-karma/node_modules/karma/node_modules/socket.io/node_modules/socket.io-client/lib/vendor/web-socket-js/flash-src/com/hurlant/crypto/tls/TLSConnectionState.as" afterPath="$PROJECT_DIR$/client/node_modules/grunt-karma/node_modules/karma/node_modules/socket.io/node_modules/socket.io-client/lib/vendor/web-socket-js/flash-src/com/hurlant/crypto/tls/TLSConnectionState.as" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/client/node_modules/grunt-karma/node_modules/karma/node_modules/socket.io/node_modules/socket.io-client/lib/vendor/web-socket-js/flash-src/com/hurlant/crypto/tls/TLSError.as" afterPath="$PROJECT_DIR$/client/node_modules/grunt-karma/node_modules/karma/node_modules/socket.io/node_modules/socket.io-client/lib/vendor/web-socket-js/flash-src/com/hurlant/crypto/tls/TLSError.as" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/client/node_modules/grunt-karma/node_modules/karma/node_modules/socket.io/node_modules/socket.io-client/lib/vendor/web-socket-js/flash-src/com/hurlant/crypto/tls/TLSEvent.as" afterPath="$PROJECT_DIR$/client/node_modules/grunt-karma/node_modules/karma/node_modules/socket.io/node_modules/socket.io-client/lib/vendor/web-socket-js/flash-src/com/hurlant/crypto/tls/TLSEvent.as" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/client/node_modules/grunt-karma/node_modules/karma/node_modules/socket.io/node_modules/socket.io-client/lib/vendor/web-socket-js/flash-src/com/hurlant/crypto/prng/TLSPRF.as" afterPath="$PROJECT_DIR$/client/node_modules/grunt-karma/node_modules/karma/node_modules/socket.io/node_modules/socket.io-client/lib/vendor/web-socket-js/flash-src/com/hurlant/crypto/prng/TLSPRF.as" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/client/node_modules/grunt-karma/node_modules/karma/node_modules/socket.io/node_modules/socket.io-client/lib/vendor/web-socket-js/flash-src/com/hurlant/crypto/tests/TLSPRFTest.as" afterPath="$PROJECT_DIR$/client/node_modules/grunt-karma/node_modules/karma/node_modules/socket.io/node_modules/socket.io-client/lib/vendor/web-socket-js/flash-src/com/hurlant/crypto/tests/TLSPRFTest.as" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/client/node_modules/grunt-karma/node_modules/karma/node_modules/socket.io/node_modules/socket.io-client/lib/vendor/web-socket-js/flash-src/com/hurlant/crypto/symmetric/TLSPad.as" afterPath="$PROJECT_DIR$/client/node_modules/grunt-karma/node_modules/karma/node_modules/socket.io/node_modules/socket.io-client/lib/vendor/web-socket-js/flash-src/com/hurlant/crypto/symmetric/TLSPad.as" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/client/node_modules/grunt-karma/node_modules/karma/node_modules/socket.io/node_modules/socket.io-client/lib/vendor/web-socket-js/flash-src/com/hurlant/crypto/tls/TLSSecurityParameters.as" afterPath="$PROJECT_DIR$/client/node_modules/grunt-karma/node_modules/karma/node_modules/socket.io/node_modules/socket.io-client/lib/vendor/web-socket-js/flash-src/com/hurlant/crypto/tls/TLSSecurityParameters.as" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/client/node_modules/grunt-karma/node_modules/karma/node_modules/socket.io/node_modules/socket.io-client/lib/vendor/web-socket-js/flash-src/com/hurlant/crypto/tls/TLSSocket.as" afterPath="$PROJECT_DIR$/client/node_modules/grunt-karma/node_modules/karma/node_modules/socket.io/node_modules/socket.io-client/lib/vendor/web-socket-js/flash-src/com/hurlant/crypto/tls/TLSSocket.as" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/client/node_modules/grunt-karma/node_modules/karma/node_modules/socket.io/node_modules/socket.io-client/lib/vendor/web-socket-js/flash-src/com/hurlant/crypto/tls/TLSSocketEvent.as" afterPath="$PROJECT_DIR$/client/node_modules/grunt-karma/node_modules/karma/node_modules/socket.io/node_modules/socket.io-client/lib/vendor/web-socket-js/flash-src/com/hurlant/crypto/tls/TLSSocketEvent.as" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/client/node_modules/grunt-karma/node_modules/karma/node_modules/socket.io/node_modules/socket.io-client/lib/vendor/web-socket-js/flash-src/com/hurlant/crypto/tests/TestCase.as" afterPath="$PROJECT_DIR$/client/node_modules/grunt-karma/node_modules/karma/node_modules/socket.io/node_modules/socket.io-client/lib/vendor/web-socket-js/flash-src/com/hurlant/crypto/tests/TestCase.as" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/client/node_modules/grunt-karma/node_modules/karma/node_modules/socket.io/node_modules/socket.io-client/node_modules/active-x-obfuscator/node_modules/zeparser/Tokenizer.js" afterPath="$PROJECT_DIR$/client/node_modules/grunt-karma/node_modules/karma/node_modules/socket.io/node_modules/socket.io-client/node_modules/active-x-obfuscator/node_modules/zeparser/Tokenizer.js" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/client/node_modules/grunt-karma/node_modules/karma/node_modules/socket.io/node_modules/socket.io-client/lib/vendor/web-socket-js/flash-src/com/hurlant/crypto/symmetric/TripleDESKey.as" afterPath="$PROJECT_DIR$/client/node_modules/grunt-karma/node_modules/karma/node_modules/socket.io/node_modules/socket.io-client/lib/vendor/web-socket-js/flash-src/com/hurlant/crypto/symmetric/TripleDESKey.as" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/client/node_modules/grunt-karma/node_modules/karma/node_modules/socket.io/node_modules/socket.io-client/lib/vendor/web-socket-js/flash-src/com/hurlant/crypto/tests/TripleDESKeyTest.as" afterPath="$PROJECT_DIR$/client/node_modules/grunt-karma/node_modules/karma/node_modules/socket.io/node_modules/socket.io-client/lib/vendor/web-socket-js/flash-src/com/hurlant/crypto/tests/TripleDESKeyTest.as" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/client/node_modules/grunt-karma/node_modules/karma/node_modules/socket.io/node_modules/socket.io-client/lib/vendor/web-socket-js/flash-src/com/hurlant/util/der/Type.as" afterPath="$PROJECT_DIR$/client/node_modules/grunt-karma/node_modules/karma/node_modules/socket.io/node_modules/socket.io-client/lib/vendor/web-socket-js/flash-src/com/hurlant/util/der/Type.as" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/client/node_modules/grunt-karma/node_modules/karma/node_modules/socket.io/node_modules/socket.io-client/lib/vendor/web-socket-js/flash-src/com/hurlant/util/der/UTCTime.as" afterPath="$PROJECT_DIR$/client/node_modules/grunt-karma/node_modules/karma/node_modules/socket.io/node_modules/socket.io-client/lib/vendor/web-socket-js/flash-src/com/hurlant/util/der/UTCTime.as" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/client/node_modules/grunt-karma/node_modules/karma/node_modules/socket.io/node_modules/socket.io-client/lib/vendor/web-socket-js/flash-src/com/hurlant/crypto/cert/X509Certificate.as" afterPath="$PROJECT_DIR$/client/node_modules/grunt-karma/node_modules/karma/node_modules/socket.io/node_modules/socket.io-client/lib/vendor/web-socket-js/flash-src/com/hurlant/crypto/cert/X509Certificate.as" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/client/node_modules/grunt-karma/node_modules/karma/node_modules/socket.io/node_modules/socket.io-client/lib/vendor/web-socket-js/flash-src/com/hurlant/crypto/cert/X509CertificateCollection.as" afterPath="$PROJECT_DIR$/client/node_modules/grunt-karma/node_modules/karma/node_modules/socket.io/node_modules/socket.io-client/lib/vendor/web-socket-js/flash-src/com/hurlant/crypto/cert/X509CertificateCollection.as" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/client/node_modules/grunt-karma/node_modules/karma/node_modules/socket.io/node_modules/socket.io-client/lib/vendor/web-socket-js/flash-src/com/hurlant/crypto/symmetric/XTeaKey.as" afterPath="$PROJECT_DIR$/client/node_modules/grunt-karma/node_modules/karma/node_modules/socket.io/node_modules/socket.io-client/lib/vendor/web-socket-js/flash-src/com/hurlant/crypto/symmetric/XTeaKey.as" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/client/node_modules/grunt-karma/node_modules/karma/node_modules/socket.io/node_modules/socket.io-client/lib/vendor/web-socket-js/flash-src/com/hurlant/crypto/tests/XTeaKeyTest.as" afterPath="$PROJECT_DIR$/client/node_modules/grunt-karma/node_modules/karma/node_modules/socket.io/node_modules/socket.io-client/lib/vendor/web-socket-js/flash-src/com/hurlant/crypto/tests/XTeaKeyTest.as" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/client/node_modules/grunt-karma/node_modules/karma/node_modules/socket.io/node_modules/socket.io-client/node_modules/active-x-obfuscator/node_modules/zeparser/ZeParser.js" afterPath="$PROJECT_DIR$/client/node_modules/grunt-karma/node_modules/karma/node_modules/socket.io/node_modules/socket.io-client/node_modules/active-x-obfuscator/node_modules/zeparser/ZeParser.js" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/client/src/vendor/angular/angular-animate.js" afterPath="$PROJECT_DIR$/client/src/vendor/angular/angular-animate.js" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/client/src/vendor/angular/angular-cookies.js" afterPath="$PROJECT_DIR$/client/src/vendor/angular/angular-cookies.js" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/client/src/vendor/angular/angular-sanitize.js" afterPath="$PROJECT_DIR$/client/src/vendor/angular/angular-sanitize.js" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/client/src/vendor/angular/angular.js" afterPath="$PROJECT_DIR$/client/src/vendor/angular/angular.js" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/.idea/libraries/Google_App_Engine_SDK.xml" afterPath="$PROJECT_DIR$/.idea/libraries/Google_App_Engine_SDK.xml" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/.idea/libraries/Google_App_Engine_SDK2.xml" afterPath="$PROJECT_DIR$/.idea/libraries/Google_App_Engine_SDK2.xml" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/client/dist/static/all-pegasusrises.css" afterPath="$PROJECT_DIR$/client/dist/static/all-pegasusrises.css" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/client/dist/static/angular_files.js" afterPath="$PROJECT_DIR$/client/dist/static/angular_files.js" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/client/dist/templates/app.js" afterPath="$PROJECT_DIR$/client/dist/templates/app.js" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/client/node_modules/grunt-karma/node_modules/karma/node_modules/socket.io/node_modules/socket.io-client/node_modules/uglify-js/tmp/app.js" afterPath="$PROJECT_DIR$/client/node_modules/grunt-karma/node_modules/karma/node_modules/socket.io/node_modules/socket.io-client/node_modules/uglify-js/tmp/app.js" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/client/src/app/app.js" afterPath="$PROJECT_DIR$/client/src/app/app.js" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/app.yaml" afterPath="$PROJECT_DIR$/app.yaml" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/client/node_modules/grunt-karma/node_modules/karma/node_modules/socket.io/node_modules/socket.io-client/node_modules/active-x-obfuscator/node_modules/zeparser/benchmark.html" afterPath="$PROJECT_DIR$/client/node_modules/grunt-karma/node_modules/karma/node_modules/socket.io/node_modules/socket.io-client/node_modules/active-x-obfuscator/node_modules/zeparser/benchmark.html" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/client/node_modules/grunt-karma/node_modules/karma/node_modules/socket.io/node_modules/socket.io-client/lib/vendor/web-socket-js/flash-src/com/hurlant/math/bi_internal.as" afterPath="$PROJECT_DIR$/client/node_modules/grunt-karma/node_modules/karma/node_modules/socket.io/node_modules/socket.io-client/lib/vendor/web-socket-js/flash-src/com/hurlant/math/bi_internal.as" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/client/dist/templates/common.js" afterPath="$PROJECT_DIR$/client/dist/templates/common.js" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/client/node_modules/grunt-karma/node_modules/karma/node_modules/socket.io/node_modules/socket.io-client/node_modules/uglify-js/test/unit/compress/test/const.js" afterPath="$PROJECT_DIR$/client/node_modules/grunt-karma/node_modules/karma/node_modules/socket.io/node_modules/socket.io-client/node_modules/uglify-js/test/unit/compress/test/const.js" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/client/gruntFile.js" afterPath="$PROJECT_DIR$/client/gruntFile.js" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/client/src/app/home/home.js" afterPath="$PROJECT_DIR$/client/src/app/home/home.js" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/client/src/app/home/home.tpl.html" afterPath="$PROJECT_DIR$/client/src/app/home/home.tpl.html" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/client/src/app/home/homeService.js" afterPath="$PROJECT_DIR$/client/src/app/home/homeService.js" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/client/node_modules/grunt-karma/node_modules/karma/node_modules/socket.io/node_modules/socket.io-client/node_modules/uglify-js/test/unit/compress/test/if.js" afterPath="$PROJECT_DIR$/client/node_modules/grunt-karma/node_modules/karma/node_modules/socket.io/node_modules/socket.io-client/node_modules/uglify-js/test/unit/compress/test/if.js" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/client/node_modules/grunt-karma/node_modules/karma/node_modules/socket.io/node_modules/socket.io-client/node_modules/uglify-js/test/unit/compress/test/ifreturn.js" afterPath="$PROJECT_DIR$/client/node_modules/grunt-karma/node_modules/karma/node_modules/socket.io/node_modules/socket.io-client/node_modules/uglify-js/test/unit/compress/test/ifreturn.js" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/client/dist/html/index.html" afterPath="$PROJECT_DIR$/client/dist/html/index.html" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/client/src/index.html" afterPath="$PROJECT_DIR$/client/src/index.html" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/templates/index.html" afterPath="$PROJECT_DIR$/templates/index.html" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/.idea/pegasusrises.iml" afterPath="$PROJECT_DIR$/.idea/pegasusrises.iml" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/client/dist/static/pegasusrises.js" afterPath="$PROJECT_DIR$/client/dist/static/pegasusrises.js" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/client/dist/static/pegasusrises_angular.js" afterPath="$PROJECT_DIR$/client/dist/static/pegasusrises_angular.js" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/routes.py" afterPath="$PROJECT_DIR$/routes.py" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/client/dist/static/scripts.js" afterPath="$PROJECT_DIR$/client/dist/static/scripts.js" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/vendors/custom_stylesheets/style.css" afterPath="$PROJECT_DIR$/vendors/custom_stylesheets/style.css" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/client/node_modules/grunt-karma/node_modules/karma/node_modules/socket.io/node_modules/socket.io-client/node_modules/active-x-obfuscator/node_modules/zeparser/test-parser.html" afterPath="$PROJECT_DIR$/client/node_modules/grunt-karma/node_modules/karma/node_modules/socket.io/node_modules/socket.io-client/node_modules/active-x-obfuscator/node_modules/zeparser/test-parser.html" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/client/node_modules/grunt-karma/node_modules/karma/node_modules/socket.io/node_modules/socket.io-client/node_modules/active-x-obfuscator/node_modules/zeparser/test-tokenizer.html" afterPath="$PROJECT_DIR$/client/node_modules/grunt-karma/node_modules/karma/node_modules/socket.io/node_modules/socket.io-client/node_modules/active-x-obfuscator/node_modules/zeparser/test-tokenizer.html" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/client/node_modules/grunt-karma/node_modules/karma/node_modules/socket.io/node_modules/socket.io-client/node_modules/active-x-obfuscator/node_modules/zeparser/unicodecategories.js" afterPath="$PROJECT_DIR$/client/node_modules/grunt-karma/node_modules/karma/node_modules/socket.io/node_modules/socket.io-client/node_modules/active-x-obfuscator/node_modules/zeparser/unicodecategories.js" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/client/node_modules/grunt-karma/node_modules/karma/node_modules/socket.io/node_modules/socket.io-client/node_modules/uglify-js/test/unit/compress/test/var.js" afterPath="$PROJECT_DIR$/client/node_modules/grunt-karma/node_modules/karma/node_modules/socket.io/node_modules/socket.io-client/node_modules/uglify-js/test/unit/compress/test/var.js" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/.idea/workspace.xml" afterPath="$PROJECT_DIR$/.idea/workspace.xml" />
     </list>
     <ignored path="pegasusrises.iws" />
@@ -431,9 +24,6 @@
     <option name="LAST_RESOLUTION" value="IGNORE" />
   </component>
   <component name="ChangesViewManager" flattened_view="true" show_ignored="false" />
-  <component name="CoverageDataManager">
-    <SUITE FILE_PATH="coverage/pegasusrises$pegasusrises.coverage" NAME="pegasusrises Coverage Results" MODIFIED="1424175730441" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="" />
-  </component>
   <component name="CreatePatchCommitExecutor">
     <option name="PATCH_PATH" value="" />
   </component>
@@ -446,52 +36,10 @@
   </component>
   <component name="FileEditorManager">
     <leaf>
-      <file leaf-file-name="home.js" pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/client/src/app/home/home.js">
-          <provider selected="true" editor-type-id="text-editor">
-            <state vertical-scroll-proportion="0.0" vertical-offset="434" max-vertical-offset="620">
-              <caret line="14" column="8" selection-start-line="14" selection-start-column="8" selection-end-line="14" selection-end-column="8" />
-              <folding />
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file leaf-file-name="homeService.js" pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/client/src/app/home/homeService.js">
-          <provider selected="true" editor-type-id="text-editor">
-            <state vertical-scroll-proportion="0.0" vertical-offset="620" max-vertical-offset="1085">
-              <caret line="22" column="20" selection-start-line="22" selection-start-column="20" selection-end-line="22" selection-end-column="20" />
-              <folding>
-                <element signature="e#0#40#0" expanded="false" />
-              </folding>
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file leaf-file-name="db_from_google_sheets.py" pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/db_from_google_sheets.py">
-          <provider selected="true" editor-type-id="text-editor">
-            <state vertical-scroll-proportion="0.0" vertical-offset="186" max-vertical-offset="3875">
-              <caret line="17" column="52" selection-start-line="17" selection-start-column="52" selection-end-line="17" selection-end-column="52" />
-              <folding />
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file leaf-file-name="routes.py" pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/routes.py">
-          <provider selected="true" editor-type-id="text-editor">
-            <state vertical-scroll-proportion="0.0" vertical-offset="310" max-vertical-offset="1116">
-              <caret line="18" column="25" selection-start-line="18" selection-start-column="25" selection-end-line="18" selection-end-column="25" />
-              <folding />
-            </state>
-          </provider>
-        </entry>
-      </file>
       <file leaf-file-name="home.tpl.html" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/client/src/app/home/home.tpl.html">
           <provider selected="true" editor-type-id="text-editor">
-            <state vertical-scroll-proportion="-11.75" vertical-offset="88" max-vertical-offset="961">
+            <state vertical-scroll-proportion="0.0" vertical-offset="486" max-vertical-offset="837">
               <caret line="18" column="73" selection-start-line="18" selection-start-column="73" selection-end-line="18" selection-end-column="73" />
               <folding />
             </state>
@@ -501,46 +49,39 @@
       <file leaf-file-name="index.html" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/templates/index.html">
           <provider selected="true" editor-type-id="text-editor">
-            <state vertical-scroll-proportion="41.075" vertical-offset="11501" max-vertical-offset="14198">
+            <state vertical-scroll-proportion="0.0" vertical-offset="8586" max-vertical-offset="12366">
               <caret line="318" column="87" selection-start-line="318" selection-start-column="82" selection-end-line="318" selection-end-column="87" />
               <folding />
             </state>
           </provider>
         </entry>
       </file>
-      <file leaf-file-name="gruntFile.js" pinned="false" current-in-tab="true">
+      <file leaf-file-name="gruntFile.js" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/client/gruntFile.js">
           <provider selected="true" editor-type-id="text-editor">
-            <state vertical-scroll-proportion="0.7812142" vertical-offset="2821" max-vertical-offset="5704">
-              <caret line="113" column="52" selection-start-line="113" selection-start-column="52" selection-end-line="113" selection-end-column="52" />
+            <state vertical-scroll-proportion="0.0" vertical-offset="3051" max-vertical-offset="4968">
+              <caret line="124" column="10" selection-start-line="124" selection-start-column="10" selection-end-line="124" selection-end-column="10" />
               <folding />
             </state>
           </provider>
         </entry>
       </file>
-      <file leaf-file-name="index.html" pinned="false" current-in-tab="false">
+      <file leaf-file-name="app.js" pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/client/src/app/app.js">
+          <provider selected="true" editor-type-id="text-editor">
+            <state vertical-scroll-proportion="0.0" vertical-offset="0" max-vertical-offset="2592">
+              <caret line="84" column="0" selection-start-line="84" selection-start-column="0" selection-end-line="84" selection-end-column="0" />
+              <folding />
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="index.html" pinned="false" current-in-tab="true">
         <entry file="file://$PROJECT_DIR$/client/src/index.html">
           <provider selected="true" editor-type-id="text-editor">
-            <state vertical-scroll-proportion="-3.1" vertical-offset="0" max-vertical-offset="6727">
-              <caret line="4" column="41" selection-start-line="4" selection-start-column="41" selection-end-line="4" selection-end-column="41" />
+            <state vertical-scroll-proportion="0.046232875" vertical-offset="0" max-vertical-offset="5859">
+              <caret line="1" column="37" selection-start-line="1" selection-start-column="37" selection-end-line="1" selection-end-column="37" />
               <folding />
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file leaf-file-name="index.html" pinned="false" current-in-tab="false">
-        <entry file="file://$USER_HOME$/Downloads/angular-hint-master/correctExample/index.html">
-          <provider selected="true" editor-type-id="text-editor">
-            <state vertical-scroll-proportion="-15.5" vertical-offset="0" max-vertical-offset="806">
-              <caret line="108" column="0" selection-start-line="108" selection-start-column="0" selection-end-line="108" selection-end-column="0" />
-              <folding>
-                <element signature="n#head#0;n#html#0;n#!!top" expanded="false" />
-                <element signature="n#header#0;n#body#0;n#html#0;n#!!top" expanded="false" />
-                <element signature="n#div#0;n#body#0;n#html#0;n#!!top" expanded="false" />
-                <element signature="n#div#1;n#body#0;n#html#0;n#!!top" expanded="false" />
-                <element signature="n#div#2;n#body#0;n#html#0;n#!!top" expanded="false" />
-                <element signature="n#script#2;n#body#0;n#html#0;n#!!top" expanded="false" />
-              </folding>
             </state>
           </provider>
         </entry>
@@ -600,9 +141,9 @@
         <option value="$PROJECT_DIR$/routes.py" />
         <option value="$PROJECT_DIR$/client/src/app/home/home.js" />
         <option value="$PROJECT_DIR$/client/src/app/home/home.tpl.html" />
-        <option value="$PROJECT_DIR$/client/src/index.html" />
         <option value="$PROJECT_DIR$/client/src/vendor/angular/angular-hint.js" />
         <option value="$PROJECT_DIR$/client/gruntFile.js" />
+        <option value="$PROJECT_DIR$/client/src/index.html" />
       </list>
     </option>
   </component>
@@ -610,9 +151,10 @@
     <detection-done>true</detection-done>
   </component>
   <component name="ProjectFrameBounds">
-    <option name="y" value="22" />
-    <option name="width" value="1920" />
-    <option name="height" value="970" />
+    <option name="x" value="-8" />
+    <option name="y" value="-8" />
+    <option name="width" value="1382" />
+    <option name="height" value="784" />
   </component>
   <component name="ProjectLevelVcsManager" settingsEditedManually="false">
     <OptionsSetting value="true" id="Add" />
@@ -653,20 +195,6 @@
             </PATH_ELEMENT>
             <PATH_ELEMENT>
               <option name="myItemId" value="Pegasus" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
-            </PATH_ELEMENT>
-          </PATH>
-          <PATH>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="Pegasus" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.ProjectViewProjectNode" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="Pegasus" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="templates" />
               <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
             </PATH_ELEMENT>
           </PATH>
@@ -750,6 +278,28 @@
               <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
             </PATH_ELEMENT>
           </PATH>
+          <PATH>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="Pegasus" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.ProjectViewProjectNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="Pegasus" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="client" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="src" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="app" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+          </PATH>
         </subPane>
       </pane>
     </panes>
@@ -763,6 +313,7 @@
     <property name="options.splitter.details.proportions" value="0.2" />
     <property name="FullScreen" value="false" />
     <property name="DefaultHtmlFileTemplate" value="Html5" />
+    <property name="HbShouldOpenHtmlAsHb" value="" />
   </component>
   <component name="PyConsoleOptionsProvider">
     <option name="myPythonConsoleState">
@@ -785,102 +336,15 @@
       <recent name="$PROJECT_DIR$/vendors/nivo_lightbox/js" />
     </key>
   </component>
-  <component name="RunManager" selected="App Engine server.pegasusrises">
-    <configuration default="true" type="DjangoTestsConfigurationType" factoryName="Django tests">
-      <option name="INTERPRETER_OPTIONS" value="" />
-      <option name="PARENT_ENVS" value="true" />
-      <envs>
-        <env name="PYTHONUNBUFFERED" value="1" />
-      </envs>
-      <option name="SDK_HOME" value="" />
-      <option name="WORKING_DIRECTORY" value="" />
-      <option name="IS_MODULE_SDK" value="false" />
-      <option name="ADD_CONTENT_ROOTS" value="true" />
-      <option name="ADD_SOURCE_ROOTS" value="true" />
-      <module name="pegasusrises" />
-      <EXTENSION ID="PythonCoverageRunConfigurationExtension" enabled="false" sample_coverage="true" runner="coverage.py" />
-      <option name="TARGET" value="" />
-      <option name="SETTINGS_FILE" value="" />
-      <option name="CUSTOM_SETTINGS" value="false" />
-      <option name="USE_OPTIONS" value="false" />
-      <option name="OPTIONS" value="" />
-      <method />
-    </configuration>
+  <component name="RunManager">
     <configuration default="true" type="JavaScriptTestRunnerKarma" factoryName="Karma" config-file="">
       <envs />
-      <method />
-    </configuration>
-    <configuration default="true" type="tests" factoryName="py.test">
-      <option name="INTERPRETER_OPTIONS" value="" />
-      <option name="PARENT_ENVS" value="true" />
-      <envs />
-      <option name="SDK_HOME" value="" />
-      <option name="WORKING_DIRECTORY" value="" />
-      <option name="IS_MODULE_SDK" value="false" />
-      <option name="ADD_CONTENT_ROOTS" value="true" />
-      <option name="ADD_SOURCE_ROOTS" value="true" />
-      <module name="pegasusrises" />
-      <EXTENSION ID="PythonCoverageRunConfigurationExtension" enabled="false" sample_coverage="true" runner="coverage.py" />
-      <option name="SCRIPT_NAME" value="" />
-      <option name="CLASS_NAME" value="" />
-      <option name="METHOD_NAME" value="" />
-      <option name="FOLDER_NAME" value="" />
-      <option name="TEST_TYPE" value="TEST_SCRIPT" />
-      <option name="PATTERN" value="" />
-      <option name="USE_PATTERN" value="false" />
-      <option name="testToRun" value="" />
-      <option name="keywords" value="" />
-      <option name="params" value="" />
-      <option name="USE_PARAM" value="false" />
-      <option name="USE_KEYWORD" value="false" />
-      <method />
-    </configuration>
-    <configuration default="true" type="tests" factoryName="Nosetests">
-      <option name="INTERPRETER_OPTIONS" value="" />
-      <option name="PARENT_ENVS" value="true" />
-      <envs />
-      <option name="SDK_HOME" value="" />
-      <option name="WORKING_DIRECTORY" value="" />
-      <option name="IS_MODULE_SDK" value="false" />
-      <option name="ADD_CONTENT_ROOTS" value="true" />
-      <option name="ADD_SOURCE_ROOTS" value="true" />
-      <module name="pegasusrises" />
-      <EXTENSION ID="PythonCoverageRunConfigurationExtension" enabled="false" sample_coverage="true" runner="coverage.py" />
-      <option name="SCRIPT_NAME" value="" />
-      <option name="CLASS_NAME" value="" />
-      <option name="METHOD_NAME" value="" />
-      <option name="FOLDER_NAME" value="" />
-      <option name="TEST_TYPE" value="TEST_SCRIPT" />
-      <option name="PATTERN" value="" />
-      <option name="USE_PATTERN" value="false" />
-      <option name="PARAMS" value="" />
-      <option name="USE_PARAM" value="false" />
       <method />
     </configuration>
     <configuration default="true" type="JavascriptDebugType" factoryName="JavaScript Debug">
       <method />
     </configuration>
     <configuration default="true" type="NodeJSConfigurationType" factoryName="Node.js" working-dir="">
-      <method />
-    </configuration>
-    <configuration default="true" type="tests" factoryName="Doctests">
-      <option name="INTERPRETER_OPTIONS" value="" />
-      <option name="PARENT_ENVS" value="true" />
-      <envs />
-      <option name="SDK_HOME" value="" />
-      <option name="WORKING_DIRECTORY" value="" />
-      <option name="IS_MODULE_SDK" value="false" />
-      <option name="ADD_CONTENT_ROOTS" value="true" />
-      <option name="ADD_SOURCE_ROOTS" value="true" />
-      <module name="pegasusrises" />
-      <EXTENSION ID="PythonCoverageRunConfigurationExtension" enabled="false" sample_coverage="true" runner="coverage.py" />
-      <option name="SCRIPT_NAME" value="" />
-      <option name="CLASS_NAME" value="" />
-      <option name="METHOD_NAME" value="" />
-      <option name="FOLDER_NAME" value="" />
-      <option name="TEST_TYPE" value="TEST_SCRIPT" />
-      <option name="PATTERN" value="" />
-      <option name="USE_PATTERN" value="false" />
       <method />
     </configuration>
     <configuration default="true" type="js.build_tools.gulp" factoryName="Gulp.js">
@@ -890,112 +354,6 @@
       <arguments />
       <pass-parent-envs>true</pass-parent-envs>
       <envs />
-      <method />
-    </configuration>
-    <configuration default="true" type="PyLettuceRunConfigurationType" factoryName="Lettuce">
-      <option name="INTERPRETER_OPTIONS" value="" />
-      <option name="PARENT_ENVS" value="true" />
-      <envs />
-      <option name="SDK_HOME" value="" />
-      <option name="WORKING_DIRECTORY" value="" />
-      <option name="IS_MODULE_SDK" value="false" />
-      <option name="ADD_CONTENT_ROOTS" value="true" />
-      <option name="ADD_SOURCE_ROOTS" value="true" />
-      <module name="pegasusrises" />
-      <EXTENSION ID="PythonCoverageRunConfigurationExtension" enabled="false" sample_coverage="true" runner="coverage.py" />
-      <option name="ADDITIONAL_ARGS" value="" />
-      <method />
-    </configuration>
-    <configuration default="true" type="Python.AppEngineServer" factoryName="App Engine server">
-      <option name="INTERPRETER_OPTIONS" value="" />
-      <option name="PARENT_ENVS" value="true" />
-      <envs />
-      <option name="SDK_HOME" value="" />
-      <option name="WORKING_DIRECTORY" value="" />
-      <option name="IS_MODULE_SDK" value="false" />
-      <option name="ADD_CONTENT_ROOTS" value="true" />
-      <option name="ADD_SOURCE_ROOTS" value="true" />
-      <module name="pegasusrises" />
-      <EXTENSION ID="PythonCoverageRunConfigurationExtension" enabled="false" sample_coverage="true" runner="coverage.py" />
-      <option name="launchJavascriptDebuger" value="false" />
-      <option name="host" value="127.0.0.1" />
-      <option name="browserUrl" value="" />
-      <option name="additionalOptions" value="" />
-      <method />
-    </configuration>
-    <configuration default="true" type="PythonConfigurationType" factoryName="Python">
-      <option name="INTERPRETER_OPTIONS" value="" />
-      <option name="PARENT_ENVS" value="true" />
-      <envs>
-        <env name="PYTHONUNBUFFERED" value="1" />
-      </envs>
-      <option name="SDK_HOME" value="" />
-      <option name="WORKING_DIRECTORY" value="" />
-      <option name="IS_MODULE_SDK" value="false" />
-      <option name="ADD_CONTENT_ROOTS" value="true" />
-      <option name="ADD_SOURCE_ROOTS" value="true" />
-      <module name="pegasusrises" />
-      <EXTENSION ID="PythonCoverageRunConfigurationExtension" enabled="false" sample_coverage="true" runner="coverage.py" />
-      <option name="SCRIPT_NAME" value="" />
-      <option name="PARAMETERS" value="" />
-      <option name="SHOW_COMMAND_LINE" value="false" />
-      <method />
-    </configuration>
-    <configuration default="true" type="tests" factoryName="Unittests">
-      <option name="INTERPRETER_OPTIONS" value="" />
-      <option name="PARENT_ENVS" value="true" />
-      <envs />
-      <option name="SDK_HOME" value="" />
-      <option name="WORKING_DIRECTORY" value="" />
-      <option name="IS_MODULE_SDK" value="false" />
-      <option name="ADD_CONTENT_ROOTS" value="true" />
-      <option name="ADD_SOURCE_ROOTS" value="true" />
-      <module name="pegasusrises" />
-      <EXTENSION ID="PythonCoverageRunConfigurationExtension" enabled="false" sample_coverage="true" runner="coverage.py" />
-      <option name="SCRIPT_NAME" value="" />
-      <option name="CLASS_NAME" value="" />
-      <option name="METHOD_NAME" value="" />
-      <option name="FOLDER_NAME" value="" />
-      <option name="TEST_TYPE" value="TEST_SCRIPT" />
-      <option name="PATTERN" value="" />
-      <option name="USE_PATTERN" value="false" />
-      <option name="PUREUNITTEST" value="true" />
-      <option name="PARAMS" value="" />
-      <option name="USE_PARAM" value="false" />
-      <method />
-    </configuration>
-    <configuration default="true" type="PyBehaveRunConfigurationType" factoryName="Behave">
-      <option name="INTERPRETER_OPTIONS" value="" />
-      <option name="PARENT_ENVS" value="true" />
-      <envs />
-      <option name="SDK_HOME" value="" />
-      <option name="WORKING_DIRECTORY" value="" />
-      <option name="IS_MODULE_SDK" value="false" />
-      <option name="ADD_CONTENT_ROOTS" value="true" />
-      <option name="ADD_SOURCE_ROOTS" value="true" />
-      <module name="pegasusrises" />
-      <EXTENSION ID="PythonCoverageRunConfigurationExtension" enabled="false" sample_coverage="true" runner="coverage.py" />
-      <option name="ADDITIONAL_ARGS" value="" />
-      <method />
-    </configuration>
-    <configuration default="true" type="tests" factoryName="Attests">
-      <option name="INTERPRETER_OPTIONS" value="" />
-      <option name="PARENT_ENVS" value="true" />
-      <envs />
-      <option name="SDK_HOME" value="" />
-      <option name="WORKING_DIRECTORY" value="" />
-      <option name="IS_MODULE_SDK" value="false" />
-      <option name="ADD_CONTENT_ROOTS" value="true" />
-      <option name="ADD_SOURCE_ROOTS" value="true" />
-      <module name="pegasusrises" />
-      <EXTENSION ID="PythonCoverageRunConfigurationExtension" enabled="false" sample_coverage="true" runner="coverage.py" />
-      <option name="SCRIPT_NAME" value="" />
-      <option name="CLASS_NAME" value="" />
-      <option name="METHOD_NAME" value="" />
-      <option name="FOLDER_NAME" value="" />
-      <option name="TEST_TYPE" value="TEST_SCRIPT" />
-      <option name="PATTERN" value="" />
-      <option name="USE_PATTERN" value="false" />
       <method />
     </configuration>
     <configuration default="false" name="pegasusrises" type="Python.AppEngineServer" factoryName="App Engine server">
@@ -1017,9 +375,7 @@
       <ConfigurationWrapper RunnerId="PyDebugRunner" />
       <method />
     </configuration>
-    <list size="1">
-      <item index="0" class="java.lang.String" itemvalue="App Engine server.pegasusrises" />
-    </list>
+    <list size="0" />
   </component>
   <component name="ShelveChangesManager" show_recycled="false" />
   <component name="SvnConfiguration">
@@ -1035,30 +391,30 @@
     <servers />
   </component>
   <component name="ToolWindowManager">
-    <frame x="0" y="22" width="1920" height="970" extended-state="6" />
+    <frame x="-8" y="-8" width="1382" height="784" extended-state="6" />
     <editor active="true" />
     <layout>
       <window_info id="Changes" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="7" side_tool="false" content_ui="tabs" />
       <window_info id="Terminal" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="7" side_tool="false" content_ui="tabs" />
       <window_info id="TODO" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="6" side_tool="false" content_ui="tabs" />
-      <window_info id="Database" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="3" side_tool="false" content_ui="tabs" />
       <window_info id="Structure" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.25" sideWeight="0.5" order="1" side_tool="false" content_ui="tabs" />
       <window_info id="Application Servers" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="7" side_tool="false" content_ui="tabs" />
-      <window_info id="Project" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" weight="0.21354167" sideWeight="0.5" order="0" side_tool="false" content_ui="combo" />
-      <window_info id="Python Console" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="7" side_tool="false" content_ui="tabs" />
+      <window_info id="Project" active="true" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" weight="0.2133829" sideWeight="0.5" order="0" side_tool="false" content_ui="combo" />
       <window_info id="Favorites" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="2" side_tool="true" content_ui="tabs" />
       <window_info id="Event Log" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="7" side_tool="true" content_ui="tabs" />
       <window_info id="Version Control" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="7" side_tool="false" content_ui="tabs" />
       <window_info id="Cvs" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.25" sideWeight="0.5" order="4" side_tool="false" content_ui="tabs" />
       <window_info id="Message" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="0" side_tool="false" content_ui="tabs" />
-      <window_info id="Ant Build" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.25" sideWeight="0.5" order="1" side_tool="false" content_ui="tabs" />
+      <window_info id="Database" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="3" side_tool="false" content_ui="tabs" />
       <window_info id="Find" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.32963374" sideWeight="0.5" order="1" side_tool="false" content_ui="tabs" />
+      <window_info id="Ant Build" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.25" sideWeight="0.5" order="1" side_tool="false" content_ui="tabs" />
       <window_info id="CSS Styles" active="true" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" weight="0.6437292" sideWeight="0.5" order="8" side_tool="false" content_ui="tabs" />
       <window_info id="Debug" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.39955604" sideWeight="0.5" order="3" side_tool="false" content_ui="tabs" />
       <window_info id="Commander" active="false" anchor="right" auto_hide="false" internal_type="SLIDING" type="SLIDING" visible="false" weight="0.4" sideWeight="0.5" order="0" side_tool="false" content_ui="tabs" />
-      <window_info id="Hierarchy" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.25" sideWeight="0.5" order="2" side_tool="false" content_ui="combo" />
-      <window_info id="Inspection" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.39955604" sideWeight="0.5" order="5" side_tool="false" content_ui="tabs" />
+      <window_info id="Python Console" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="7" side_tool="false" content_ui="tabs" />
       <window_info id="Run" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="2" side_tool="false" content_ui="tabs" />
+      <window_info id="Inspection" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.39955604" sideWeight="0.5" order="5" side_tool="false" content_ui="tabs" />
+      <window_info id="Hierarchy" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.25" sideWeight="0.5" order="2" side_tool="false" content_ui="combo" />
     </layout>
   </component>
   <component name="Vcs.Log.UiProperties">
@@ -1084,6 +440,22 @@
     <watches-manager />
   </component>
   <component name="editorHistoryManager">
+    <entry file="file://$PROJECT_DIR$/client/gruntFile.js">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="0.0" vertical-offset="0" max-vertical-offset="4968">
+          <caret line="0" column="0" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/client/src/index.html">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="0.0" vertical-offset="108" max-vertical-offset="5859">
+          <caret line="4" column="41" selection-start-line="4" selection-start-column="41" selection-end-line="4" selection-end-column="41" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
     <entry file="file://$PROJECT_DIR$/client/package.json">
       <provider selected="true" editor-type-id="text-editor">
         <state vertical-scroll-proportion="-7.65" vertical-offset="407" max-vertical-offset="1240">
@@ -1135,7 +507,6 @@
       <provider selected="true" editor-type-id="text-editor">
         <state vertical-scroll-proportion="0.0" vertical-offset="0" max-vertical-offset="186">
           <caret line="0" column="0" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
-          <folding />
         </state>
       </provider>
     </entry>
@@ -1150,9 +521,6 @@
       <provider selected="true" editor-type-id="text-editor">
         <state vertical-scroll-proportion="0.0" vertical-offset="0" max-vertical-offset="1116">
           <caret line="0" column="0" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
-          <folding>
-            <element signature="e#0#10#0" expanded="false" />
-          </folding>
         </state>
       </provider>
     </entry>
@@ -1237,7 +605,6 @@
       <provider selected="true" editor-type-id="text-editor">
         <state vertical-scroll-proportion="0.0" vertical-offset="16337" max-vertical-offset="1371843">
           <caret line="531" column="5" selection-start-line="531" selection-start-column="5" selection-end-line="531" selection-end-column="5" />
-          <folding />
         </state>
       </provider>
     </entry>
@@ -1259,7 +626,6 @@
       <provider selected="true" editor-type-id="text-editor">
         <state vertical-scroll-proportion="0.0" vertical-offset="0" max-vertical-offset="1333">
           <caret line="31" column="0" selection-start-line="31" selection-start-column="0" selection-end-line="31" selection-end-column="0" />
-          <folding />
         </state>
       </provider>
     </entry>
@@ -1267,7 +633,6 @@
       <provider selected="true" editor-type-id="text-editor">
         <state vertical-scroll-proportion="0.0" vertical-offset="212" max-vertical-offset="1085">
           <caret line="24" column="44" selection-start-line="24" selection-start-column="22" selection-end-line="24" selection-end-column="44" />
-          <folding />
         </state>
       </provider>
     </entry>
@@ -1275,7 +640,6 @@
       <provider selected="true" editor-type-id="text-editor">
         <state vertical-scroll-proportion="0.0" vertical-offset="0" max-vertical-offset="620">
           <caret line="10" column="13" selection-start-line="10" selection-start-column="13" selection-end-line="10" selection-end-column="13" />
-          <folding />
         </state>
       </provider>
     </entry>
@@ -1307,13 +671,6 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/client/src/app/app.js">
-      <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="0.0" vertical-offset="1917" max-vertical-offset="2790">
-          <caret line="84" column="0" selection-start-line="84" selection-start-column="0" selection-end-line="84" selection-end-column="0" />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/client/src/app/admin/admin.js">
       <provider selected="true" editor-type-id="text-editor">
         <state vertical-scroll-proportion="0.0" vertical-offset="1582" max-vertical-offset="2697">
@@ -1332,7 +689,6 @@
       <provider selected="true" editor-type-id="text-editor">
         <state vertical-scroll-proportion="0.0" vertical-offset="0" max-vertical-offset="593526">
           <caret line="0" column="0" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
-          <folding />
         </state>
       </provider>
     </entry>
@@ -1361,9 +717,6 @@
       <provider selected="true" editor-type-id="text-editor">
         <state vertical-scroll-proportion="0.0" vertical-offset="0" max-vertical-offset="131192">
           <caret line="0" column="0" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
-          <folding>
-            <element signature="n#!!doc" expanded="false" />
-          </folding>
         </state>
       </provider>
     </entry>
@@ -1378,7 +731,6 @@
       <provider selected="true" editor-type-id="text-editor">
         <state vertical-scroll-proportion="0.0" vertical-offset="1166" max-vertical-offset="4340">
           <caret line="55" column="10" selection-start-line="55" selection-start-column="10" selection-end-line="55" selection-end-column="10" />
-          <folding />
         </state>
       </provider>
     </entry>
@@ -1386,7 +738,6 @@
       <provider selected="true" editor-type-id="text-editor">
         <state vertical-scroll-proportion="0.0" vertical-offset="183" max-vertical-offset="4216">
           <caret line="17" column="52" selection-start-line="17" selection-start-column="52" selection-end-line="17" selection-end-column="52" />
-          <folding />
         </state>
       </provider>
     </entry>
@@ -1394,7 +745,6 @@
       <provider selected="true" editor-type-id="text-editor">
         <state vertical-scroll-proportion="0.0" vertical-offset="31" max-vertical-offset="1054">
           <caret line="18" column="25" selection-start-line="18" selection-start-column="25" selection-end-line="18" selection-end-column="25" />
-          <folding />
         </state>
       </provider>
     </entry>
@@ -1402,9 +752,6 @@
       <provider selected="true" editor-type-id="text-editor">
         <state vertical-scroll-proportion="0.0" vertical-offset="329" max-vertical-offset="1271">
           <caret line="22" column="20" selection-start-line="22" selection-start-column="20" selection-end-line="22" selection-end-column="20" />
-          <folding>
-            <element signature="e#0#40#0" expanded="false" />
-          </folding>
         </state>
       </provider>
     </entry>
@@ -1412,13 +759,12 @@
       <provider selected="true" editor-type-id="text-editor">
         <state vertical-scroll-proportion="0.0" vertical-offset="434" max-vertical-offset="620">
           <caret line="14" column="8" selection-start-line="14" selection-start-column="8" selection-end-line="14" selection-end-column="8" />
-          <folding />
         </state>
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/client/src/app/home/home.tpl.html">
       <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="-11.75" vertical-offset="88" max-vertical-offset="961">
+        <state vertical-scroll-proportion="0.0" vertical-offset="486" max-vertical-offset="837">
           <caret line="18" column="73" selection-start-line="18" selection-start-column="73" selection-end-line="18" selection-end-column="73" />
           <folding />
         </state>
@@ -1426,39 +772,32 @@
     </entry>
     <entry file="file://$PROJECT_DIR$/templates/index.html">
       <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="41.075" vertical-offset="11501" max-vertical-offset="14198">
+        <state vertical-scroll-proportion="0.0" vertical-offset="8586" max-vertical-offset="12366">
           <caret line="318" column="87" selection-start-line="318" selection-start-column="82" selection-end-line="318" selection-end-column="87" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/client/gruntFile.js">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="0.0" vertical-offset="3051" max-vertical-offset="4968">
+          <caret line="124" column="10" selection-start-line="124" selection-start-column="10" selection-end-line="124" selection-end-column="10" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/client/src/app/app.js">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="0.0" vertical-offset="0" max-vertical-offset="2592">
+          <caret line="84" column="0" selection-start-line="84" selection-start-column="0" selection-end-line="84" selection-end-column="0" />
           <folding />
         </state>
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/client/src/index.html">
       <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="-3.1" vertical-offset="0" max-vertical-offset="6727">
-          <caret line="4" column="41" selection-start-line="4" selection-start-column="41" selection-end-line="4" selection-end-column="41" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$USER_HOME$/Downloads/angular-hint-master/correctExample/index.html">
-      <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="-15.5" vertical-offset="0" max-vertical-offset="806">
-          <caret line="108" column="0" selection-start-line="108" selection-start-column="0" selection-end-line="108" selection-end-column="0" />
-          <folding>
-            <element signature="n#head#0;n#html#0;n#!!top" expanded="false" />
-            <element signature="n#header#0;n#body#0;n#html#0;n#!!top" expanded="false" />
-            <element signature="n#div#0;n#body#0;n#html#0;n#!!top" expanded="false" />
-            <element signature="n#div#1;n#body#0;n#html#0;n#!!top" expanded="false" />
-            <element signature="n#div#2;n#body#0;n#html#0;n#!!top" expanded="false" />
-            <element signature="n#script#2;n#body#0;n#html#0;n#!!top" expanded="false" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/client/gruntFile.js">
-      <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="0.7812142" vertical-offset="2821" max-vertical-offset="5704">
-          <caret line="113" column="52" selection-start-line="113" selection-start-column="52" selection-end-line="113" selection-end-column="52" />
+        <state vertical-scroll-proportion="0.046232875" vertical-offset="0" max-vertical-offset="5859">
+          <caret line="1" column="37" selection-start-line="1" selection-start-column="37" selection-end-line="1" selection-end-column="37" />
           <folding />
         </state>
       </provider>
