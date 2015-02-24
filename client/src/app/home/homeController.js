@@ -3,7 +3,8 @@
  */
 
 angular.module('home')
-    .controller('prHomeCtrl', ['$rootScope', '$scope', 'homeService', 'growl', '$upload', function($rootScope, $scope, homeService, growl, $upload){
+    .controller('prHomeController', ['$rootScope', '$scope', 'homeService', 'growl', '$upload',
+        function($rootScope, $scope, homeService, growl, $upload){
         $scope.files = [];
 
 
@@ -12,9 +13,17 @@ angular.module('home')
             homeService.uploadGoogleSheet(fileToUpload).
                 success(function(data, status, headers, config) {
                     growl.success("Data was posted successfully", {});
+                    console.log(data);
+                    console.log(status);
+                    console.log(headers);
+                    console.log(config);
                 }).
                 error(function(data, status, headers, config) {
                     growl.error("Something went wrong on the server", {});
+                    console.log(data);
+                    console.log(status);
+                    console.log(headers);
+                    console.log(config);
                 });
         };
 
@@ -52,20 +61,25 @@ angular.module('home')
             }
         };
 
-
         $scope.getFile = function(){
             homeService.getFileFromGoogle($scope.files[ $scope.files.length - 1].id)
                 .success(function(data, stuff, more, headers){
-                    homeService.sendXLSDownloadUrl(data['exportLinks']['application/vnd.openxmlformats-officedocument.spreadsheetml.sheet'])
+                    console.log(data);
+
+                    var urlToPost = data['exportLinks']['application/vnd.openxmlformats-officedocument.spreadsheetml.sheet'];
+
+                    homeService.sendXLSDownloadUrl(urlToPost)
+
                 })
         };
+
 
         $scope.configJoyRide = [
             {
                 type: "title",
                 heading: "Welcome to the Pegasus Tutorial",
                 text: '<div class="row">' +
-                '<div id="title-text" class=" text-center col-md-12"><br>' +
+                '<div id="title-text" style="font-size: large;" class=" text-center col-md-12"><br>' +
                 'This walkthrough will help you familiarize with the Pegasus Build System</div></div>',
                 scroll: true
             },
@@ -103,7 +117,12 @@ angular.module('home')
         };
 
         $scope.onFinish = function(){
-            alert("Joy ride ends")
+            //alert("Joy ride ends")
+        };
+
+        $scope.sendFileToOdk = function(){
+            homeService.sendFileToOdk();
         }
+
 
     }]);

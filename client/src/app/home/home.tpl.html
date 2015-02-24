@@ -3,7 +3,7 @@
     <div class="row" style="padding-bottom: 50px">
         <p class="h5 text-center">To create a server, click the button below to create your first server on Pegasusrises</p>
         <div class="text-center" style="margin: 50px 0">
-            <button  id="ngJoyRide_1_gdrive" class="col-lg-offset-4 col-lg-4 btn-lg btn btn-primary" lk-google-picker picker-files="files"><i class="fa fa-dashboard"></i>&nbsp;&nbsp;&nbsp;Create a server</button>
+            <button  id="ngJoyRide_1_gdrive"  data-effect="flipInX" class="effect-button col-lg-offset-4 col-lg-4 btn-lg btn btn-primary" lk-google-picker picker-files="files"><i class="fa fa-dashboard"></i>&nbsp;&nbsp;&nbsp;Create a server</button>
         </div>
         <p  class="text-center col-lg-offset-4 col-lg-4 blue_text"><em><i class="fa fa-warning"></i>  This will open Google Drive</em></p>
     </div>
@@ -24,4 +24,7 @@
 
 <div class="btn btn-warning" ng-show="files.length" ng-click="getFile()"> Get file from Google </div>
 
+<div class="btn btn-danger" ng-show="files.length" ng-click="sendFileToOdk()">Send File To XIframe</div>
+
 <div ng-joy-ride="startJoyRide" config="configJoyRide" on-finish="onFinish()"  on-skip="onFinish()"></div>
+

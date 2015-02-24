@@ -1,4 +1,4 @@
-angular.module('templates.app', ['admin/profile.tpl.html', 'admin/settings.tpl.html', 'home/home.tpl.html']);
+angular.module('templates.app', ['admin/profile.tpl.html', 'admin/settings.tpl.html', 'home/home.tpl.html', 'survey/selected_survey.tpl.html', 'survey/survey_list.tpl.html']);
 
 angular.module("admin/profile.tpl.html", []).run(["$templateCache", function($templateCache) {
   $templateCache.put("admin/profile.tpl.html",
@@ -340,7 +340,7 @@ angular.module("home/home.tpl.html", []).run(["$templateCache", function($templa
     "    <div class=\"row\" style=\"padding-bottom: 50px\">\n" +
     "        <p class=\"h5 text-center\">To create a server, click the button below to create your first server on Pegasusrises</p>\n" +
     "        <div class=\"text-center\" style=\"margin: 50px 0\">\n" +
-    "            <button  id=\"ngJoyRide_1_gdrive\" class=\"col-lg-offset-4 col-lg-4 btn-lg btn btn-primary\" lk-google-picker picker-files=\"files\"><i class=\"fa fa-dashboard\"></i>&nbsp;&nbsp;&nbsp;Create a server</button>\n" +
+    "            <button  id=\"ngJoyRide_1_gdrive\"  data-effect=\"flipInX\" class=\"effect-button col-lg-offset-4 col-lg-4 btn-lg btn btn-primary\" lk-google-picker picker-files=\"files\"><i class=\"fa fa-dashboard\"></i>&nbsp;&nbsp;&nbsp;Create a server</button>\n" +
     "        </div>\n" +
     "        <p  class=\"text-center col-lg-offset-4 col-lg-4 blue_text\"><em><i class=\"fa fa-warning\"></i>  This will open Google Drive</em></p>\n" +
     "    </div>\n" +
@@ -361,5 +361,156 @@ angular.module("home/home.tpl.html", []).run(["$templateCache", function($templa
     "\n" +
     "<div class=\"btn btn-warning\" ng-show=\"files.length\" ng-click=\"getFile()\"> Get file from Google </div>\n" +
     "\n" +
-    "<div ng-joy-ride=\"startJoyRide\" config=\"configJoyRide\" on-finish=\"onFinish()\"  on-skip=\"onFinish()\"></div>");
+    "<div class=\"btn btn-danger\" ng-show=\"files.length\" ng-click=\"sendFileToOdk()\">Send File To XIframe</div>\n" +
+    "\n" +
+    "<div ng-joy-ride=\"startJoyRide\" config=\"configJoyRide\" on-finish=\"onFinish()\"  on-skip=\"onFinish()\"></div>\n" +
+    "\n" +
+    "");
+}]);
+
+angular.module("survey/selected_survey.tpl.html", []).run(["$templateCache", function($templateCache) {
+  $templateCache.put("survey/selected_survey.tpl.html",
+    "<div class=\"row center\">\n" +
+    "    <div class=\"col-lg-12 \">\n" +
+    "        <section class=\"panel default blue_title h2\">\n" +
+    "            <div class=\"panel-heading border\">Citizen Journalism Survey</div>\n" +
+    "        </section>\n" +
+    "    </div>\n" +
+    "</div>\n" +
+    "\n" +
+    "<ui-gmap-google-map center='map.center' zoom='map.zoom'>\n" +
+    "\n" +
+    "    <ui-gmap-markers\n" +
+    "            models=\"markers\"\n" +
+    "            idkey=\"'id'\"\n" +
+    "            coords=\"'points'\">\n" +
+    "    </ui-gmap-markers>\n" +
+    "            <!--models='{expression}'-->\n" +
+    "            <!--doCluster=\"{string or object}\"-->\n" +
+    "            <!--clusterOptions='{expression}'-->\n" +
+    "            <!--fit=\"{string or object}\"-->\n" +
+    "\n" +
+    "            <!--labelContent='{expression}'-->\n" +
+    "\n" +
+    "            <!--icon=\"'{string}'\"-->\n" +
+    "            <!--options=\"'{string}'\"-->\n" +
+    "            <!--labelContent=\"'{string}'\"-->\n" +
+    "            <!--labelAnchor=\"'{string}'\"-->\n" +
+    "            <!--labelClass=\"'{string}'\"-->\n" +
+    "            <!--click=\"'{string or expression to a function}'\"-->\n" +
+    "            <!--modelsbyref=\"{expression}\"-->\n" +
+    "\n" +
+    "            <!--events=\"{expression}\"-->\n" +
+    "\n" +
+    "            <!--control='{expression}'-->\n" +
+    "            <!--chunk='{expression}'-->\n" +
+    "            <!--cleanchunk='{expression}'-->\n" +
+    "            <!--doRebuildAll=\"{string or object}\"-->\n" +
+    "            <!-->-->\n" +
+    "\n" +
+    "\n" +
+    "</ui-gmap-google-map>");
+}]);
+
+angular.module("survey/survey_list.tpl.html", []).run(["$templateCache", function($templateCache) {
+  $templateCache.put("survey/survey_list.tpl.html",
+    "<div class=\"container clear_both padding_fix\" ui-view=\"\">\n" +
+    "    <!--\\\\\\\\\\\\\\ container  start \\\\\\\\\\\\-->\n" +
+    "    <div class=\"task_bar clearfix\">\n" +
+    "        <div class=\"task_bar_left\">\n" +
+    "            <label>Search survey:</label>\n" +
+    "            <input type=\"text\" class=\"task_form\" placeholder=\" Survey title...\" name=\"\">\n" +
+    "            <button type=\"button\" class=\"btn btn-primary btn-icon\"><i class=\"fa fa-search\"></i> </button>\n" +
+    "        </div>\n" +
+    "        <div class=\"task_bar_right\">\n" +
+    "            <label>Sorting:</label>\n" +
+    "            <input type=\"text\" class=\"task_form\" placeholder=\"SORT BY DATE\" name=\"\">\n" +
+    "            <button type=\"button\" class=\"btn btn-primary btn-icon\"><i class=\"fa fa-arrows-v\"></i></button>\n" +
+    "        </div>\n" +
+    "    </div>\n" +
+    "    <div class=\"row\">\n" +
+    "        <!--\\\\\\\\\\\\\\ row  start \\\\\\\\\\\\-->\n" +
+    "        <div class=\"col-md-12\">\n" +
+    "            <!--red_border-->\n" +
+    "            <!--green_border-->\n" +
+    "            <!--orange_border-->\n" +
+    "            <!--blue_border-->\n" +
+    "            <section class=\"panel default blue_border vertical_border h1\">\n" +
+    "                <div class=\"task-header blue_task\"><a ui-sref=\"surveys.selected_survey\">Citizen Journalism Survey</a><span><i class=\"fa fa-clock-o\"></i>7 hours ago</span> </div>\n" +
+    "                <div class=\"row task_inner inner_padding\">\n" +
+    "                    <div class=\"col-sm-9\">\n" +
+    "                        <p><em>Description : &nbsp;</em>A Short survey to gather journalist feedback</p>\n" +
+    "                        <p><em>Questions : &nbsp;</em>8 questions</p>\n" +
+    "                        <p><em>Total Responses : &nbsp;</em>37 submissions</p>\n" +
+    "                    </div>\n" +
+    "                    <div class=\"col-sm-3\">\n" +
+    "                        <!--<div class=\"pull-right\"><span>August  15, 2014</span></div>-->\n" +
+    "                        <!--<div class=\"clearfix\"></div>-->\n" +
+    "                        <!--<div class=\"pull-right\"><span>August  17, 2014</span></div>-->\n" +
+    "                        <!--<div class=\"clearfix\"></div>-->\n" +
+    "                        <!--<div class=\"pull-right\"><span>August  19, 2014</span></div>-->\n" +
+    "                    </div>\n" +
+    "                </div>\n" +
+    "                <div class=\"task-footer\">\n" +
+    "                    <label class=\"pull-left\">\n" +
+    "                        <div class=\"progress\">\n" +
+    "                            <div class=\"progress-bar progress-bar-info\" role=\"progressbar\" aria-valuenow=\"40\" aria-valuemin=\"0\" aria-valuemax=\"100\" style=\"width: 60%;\">\n" +
+    "                                <span class=\"sr-only\">40% Complete</span> </div>\n" +
+    "                        </div>\n" +
+    "                    </label>\n" +
+    "                    <span class=\"label btn-primary\">40%</span>\n" +
+    "                    <div class=\"pull-right\">\n" +
+    "                        <ul class=\"footer-icons-group\">\n" +
+    "                            <li><a href=\"\"><i class=\"fa fa-pencil\"></i></a></li>\n" +
+    "                            <li><a href=\"\"><i class=\"fa fa-trash-o\"></i></a></li>\n" +
+    "                            <li class=\"dropup\"><a href=\"#\" class=\"dropdown-toggle\" data-toggle=\"dropdown\"><i class=\"fa fa-wrench\"></i></a></li>\n" +
+    "                        </ul>\n" +
+    "                    </div>\n" +
+    "                </div>\n" +
+    "            </section>\n" +
+    "            <section class=\"panel default blue_border vertical_border h1\">\n" +
+    "                <div class=\"task-header blue_task\">Short Story Journalism<span><i class=\"fa fa-clock-o\"></i>4 hours ago</span> </div>\n" +
+    "                <div class=\"row task_inner inner_padding\">\n" +
+    "                    <div class=\"col-sm-9\">\n" +
+    "                        <p><em>Description : &nbsp;</em>A survey on how journalist do their work</p>\n" +
+    "                        <p><em>Questions : &nbsp;</em>5 questions</p>\n" +
+    "                        <p><em>Total Responses : &nbsp;</em>17 submissions</p>\n" +
+    "                    </div>\n" +
+    "                    <div class=\"col-sm-3\">\n" +
+    "                        <!--<div class=\"pull-right\"><span>August  15, 2014</span></div>-->\n" +
+    "                        <!--<div class=\"clearfix\"></div>-->\n" +
+    "                        <!--<div class=\"pull-right\"><span>August  17, 2014</span></div>-->\n" +
+    "                        <!--<div class=\"clearfix\"></div>-->\n" +
+    "                        <!--<div class=\"pull-right\"><span>August  19, 2014</span></div>-->\n" +
+    "                    </div>\n" +
+    "                </div>\n" +
+    "                <div class=\"task-footer\">\n" +
+    "                    <label class=\"pull-left\">\n" +
+    "                        <div class=\"progress\">\n" +
+    "                            <div class=\"progress-bar progress-bar-success\" role=\"progressbar\" aria-valuenow=\"70\" aria-valuemin=\"0\" aria-valuemax=\"100\" style=\"width: 60%;\">\n" +
+    "                                <span class=\"sr-only\">70% Complete</span> </div>\n" +
+    "                        </div>\n" +
+    "                    </label>\n" +
+    "                    <span class=\"label btn-success\">70%</span>\n" +
+    "                    <div class=\"pull-right\">\n" +
+    "                        <ul class=\"footer-icons-group\">\n" +
+    "                            <li><a href=\"\"><i class=\"fa fa-pencil\"></i></a></li>\n" +
+    "                            <li><a href=\"\"><i class=\"fa fa-trash-o\"></i></a></li>\n" +
+    "                            <li class=\"dropup\"><a href=\"#\" class=\"dropdown-toggle\" data-toggle=\"dropdown\"><i class=\"fa fa-wrench\"></i></a></li>\n" +
+    "                        </ul>\n" +
+    "                    </div>\n" +
+    "                </div>\n" +
+    "            </section>\n" +
+    "            <div class=\"bs-callout bs-callout-warning \">\n" +
+    "                <h4><i class=\"fa fa-warning\"></i>No Survey!</h4>\n" +
+    "                <p>You currently do not have a survey on the system. <button class=\"btn btn-success\">Click to create a server</button> and start surveying.</p>\n" +
+    "            </div>\n" +
+    "        </div>\n" +
+    "\n" +
+    "\n" +
+    "\n" +
+    "\n" +
+    "    </div>\n" +
+    "    <!--\\\\\\\\\\\\\\ row  end \\\\\\\\\\\\-->\n" +
+    "</div>");
 }]);

@@ -93,36 +93,47 @@ angular.module('pegasusrises', [
     'templates.common',
     'home',
     'admin',
+    'survey',
     'lk-google-picker',
     'angular-loading-bar',
     'angular-growl',
     'angularFileUpload',
     'ngResource',
-    'ngJoyRide'
+    'ngJoyRide',
+    'uiGmapgoogle-maps'
 ])
-    .config(['$stateProvider','$urlRouterProvider','lkGoogleSettingsProvider', 'growlProvider', '$httpProvider', function($stateProvider, $urlRouterProvider, lkGoogleSettingsProvider, growlProvider, $httpProvider){
-        //for any unmatched url, redirect to the state '/home'
-        $urlRouterProvider.otherwise('/');
+    .constant('prConstantKeys', {
+        google_api_key: 'AIzaSyDSBIljWNHZ9xMXuaROc4oAypA8LT5xmaU'
+    })
+    .config(['$stateProvider','$urlRouterProvider','lkGoogleSettingsProvider',
+        'growlProvider', '$httpProvider', 'uiGmapGoogleMapApiProvider','prConstantKeys',
+        function($stateProvider, $urlRouterProvider, lkGoogleSettingsProvider,
+                 growlProvider, $httpProvider, uiGmapGoogleMapApiProvider, prConstantKeys){
+            //for any unmatched url, redirect to the state '/home'
+            $urlRouterProvider.otherwise('/');
 
-        //This is the configuration for the Google Picker API
-        lkGoogleSettingsProvider.configure({
-            apiKey   : 'AIzaSyDSBIljWNHZ9xMXuaROc4oAypA8LT5xmaU',
-            clientId : '982002203062-qllsi843lackaof6acad3308p7m1j5pr.apps.googleusercontent.com',
-            scopes   : ['https://www.googleapis.com/auth/drive', 'https://www.googleapis.com/auth/drive.readonly'],
-            locale   : 'en',
-            features : ['MULTISELECT_ENABLED'],
-            views    : [
-                'DocsUploadView()',
-                'DocsView().setMimeTypes("application/vnd.google-apps.spreadsheet")'
-            ]
-        });
-        //globally time the growl toatser to stay visible for 5seconds
-        growlProvider.globalTimeToLive(5000);
+            //This is the configuration for the Google Picker API
+            lkGoogleSettingsProvider.configure({
+                apiKey   : 'AIzaSyDSBIljWNHZ9xMXuaROc4oAypA8LT5xmaU',
+                clientId : '982002203062-qllsi843lackaof6acad3308p7m1j5pr.apps.googleusercontent.com',
+                scopes   : ['https://www.googleapis.com/auth/drive', 'https://www.googleapis.com/auth/drive.readonly'],
+                locale   : 'en',
+                features : ['MULTISELECT_ENABLED'],
+                views    : [
+                    'DocsUploadView()',
+                    'DocsView().setMimeTypes("application/vnd.google-apps.spreadsheet")'
+                ]
+            });
+            //globally time the growl toatser to stay visible for 5seconds
+            growlProvider.globalTimeToLive(5000);
 
-        $httpProvider.defaults.useXDomain = true;
-        delete $httpProvider.defaults.headers.common['X-Requested-With'];
-
-    }])
+            uiGmapGoogleMapApiProvider.configure({
+                key : prConstantKeys.google_api_key,
+                v: '3.17',
+                //libraries: 'weather,geometry,visualization'
+                libraries: ''
+            });
+        }])
     .run(['$rootScope', '$state', '$stateParams', '$location' ,function($rootScope, $state, $stateParams, $location){
         $rootScope.$state = $state;
         $rootScope.$stateParams = $stateParams;
@@ -134,61 +145,19 @@ angular.module('pegasusrises').controller('prBreadCrumbCtrl', ['$scope', '$state
         $scope.subtitle = ($state.current.name).toUpperCase();
     });
 }]);
-
-
-//angular.module('app', [
-//  'ngRoute',
-//  'projectsinfo',
-//  'dashboard',
-//  'projects',
-//  'admin',
-//  'services.breadcrumbs',
-//  'services.i18nNotifications',
-//  'services.httpRequestTracker',
-//  'security',
-//  'directives.crud',
-//  'templates.app',
-//  'templates.common']);
-
-//angular.module('app').constant('MONGOLAB_CONFIG', {
-//  baseUrl: '/databases/',
-//  dbName: 'ascrum'
-//});
-
-//TODO: move those messages to a separate module
-//angular.module('app').constant('I18N.MESSAGES', {
-//  'errors.route.changeError':'Route change error',
-//  'crud.user.save.success':"A user with id '{{id}}' was saved successfully.",
-//  'crud.user.remove.success':"A user with id '{{id}}' was removed successfully.",
-//  'crud.user.remove.error':"Something went wrong when removing user with id '{{id}}'.",
-//  'crud.user.save.error':"Something went wrong when saving a user...",
-//  'crud.project.save.success':"A project with id '{{id}}' was saved successfully.",
-//  'crud.project.remove.success':"A project with id '{{id}}' was removed successfully.",
-//  'crud.project.save.error':"Something went wrong when saving a project...",
-//  'login.reason.notAuthorized':"You do not have the necessary access permissions.  Do you want to login as someone else?",
-//  'login.reason.notAuthenticated':"You must be logged in to access this part of the application.",
-//  'login.error.invalidCredentials': "Login failed.  Please check your credentials and try again.",
-//  'login.error.serverError': "There was a problem with authenticating: {{exception}}."
-//});
-
-//angular.module('app').config(['$routeProvider', '$locationProvider', function ($routeProvider, $locationProvider) {
-//  $locationProvider.html5Mode(true);
-//  $routeProvider.otherwise({redirectTo:'/projectsinfo'});
-//}]);
-
 /**
  * Home Template
  *
  * Created by kaygee on 2/12/15.
  */
 
-angular.module('home', ['angular-loading-bar'])
+angular.module('home', [])
     .config(['$stateProvider', function($stateProvider){
         $stateProvider
             .state('home', {
                 url : '/',
                 templateUrl : 'home/home.tpl.html',
-                controller : 'prHomeCtrl'
+                controller : 'prHomeController'
             })
     }]);
 /**
@@ -196,7 +165,8 @@ angular.module('home', ['angular-loading-bar'])
  */
 
 angular.module('home')
-    .controller('prHomeCtrl', ['$rootScope', '$scope', 'homeService', 'growl', '$upload', function($rootScope, $scope, homeService, growl, $upload){
+    .controller('prHomeController', ['$rootScope', '$scope', 'homeService', 'growl', '$upload',
+        function($rootScope, $scope, homeService, growl, $upload){
         $scope.files = [];
 
 
@@ -205,9 +175,17 @@ angular.module('home')
             homeService.uploadGoogleSheet(fileToUpload).
                 success(function(data, status, headers, config) {
                     growl.success("Data was posted successfully", {});
+                    console.log(data);
+                    console.log(status);
+                    console.log(headers);
+                    console.log(config);
                 }).
                 error(function(data, status, headers, config) {
                     growl.error("Something went wrong on the server", {});
+                    console.log(data);
+                    console.log(status);
+                    console.log(headers);
+                    console.log(config);
                 });
         };
 
@@ -245,20 +223,25 @@ angular.module('home')
             }
         };
 
-
         $scope.getFile = function(){
             homeService.getFileFromGoogle($scope.files[ $scope.files.length - 1].id)
                 .success(function(data, stuff, more, headers){
-                    homeService.sendXLSDownloadUrl(data['exportLinks']['application/vnd.openxmlformats-officedocument.spreadsheetml.sheet'])
+                    console.log(data);
+
+                    var urlToPost = data['exportLinks']['application/vnd.openxmlformats-officedocument.spreadsheetml.sheet'];
+
+                    homeService.sendXLSDownloadUrl(urlToPost)
+
                 })
         };
+
 
         $scope.configJoyRide = [
             {
                 type: "title",
                 heading: "Welcome to the Pegasus Tutorial",
                 text: '<div class="row">' +
-                '<div id="title-text" class=" text-center col-md-12"><br>' +
+                '<div id="title-text" style="font-size: large;" class=" text-center col-md-12"><br>' +
                 'This walkthrough will help you familiarize with the Pegasus Build System</div></div>',
                 scroll: true
             },
@@ -296,8 +279,13 @@ angular.module('home')
         };
 
         $scope.onFinish = function(){
-            alert("Joy ride ends")
+            //alert("Joy ride ends")
+        };
+
+        $scope.sendFileToOdk = function(){
+            homeService.sendFileToOdk();
         }
+
 
     }]);
 /**
@@ -327,7 +315,21 @@ angular.module('home')
         };
 
         homeService.sendFileToOdk = function(){
-            return $resource('http://23.21.114.69/xlsform/', {});
+//            fileObject
+//            return $http.post('http://23.21.114.69/xlsform/', {file : 'file'});
+//            return $resource('http://23.21.114.69/xlsform/', {});
+            $.ajax({
+                url : 'http://23.21.114.69/xlsform/',
+                data : {file : 'file', fileName : 'FileName.xls'},
+                type : 'post',
+                beforeSend : function(xhr){
+                    xhr.setRequestHeader("Access-Control-Allow-Origin", "*");
+                },
+                crossDomain : true
+
+            }).done(function(data){
+                console.log('data ---- ', data)
+            })
         };
 
         return homeService;
@@ -408,3 +410,64 @@ function JSONToCSVConvertor(JSONData, ReportTitle, ShowLabel) {
     link.click();
     document.body.removeChild(link);
 }
+/**
+ * Created by Kaygee on 24/02/2015.
+ */
+
+angular.module('survey', [])
+    .config(['$stateProvider', function($stateProvider){
+        $stateProvider.
+            state('surveys', {
+                url : '/surveys',
+                templateUrl : 'survey/survey_list.tpl.html',
+                controller : 'prSurveyController'
+            })
+            .state('surveys.selected_survey', {
+                url : '/select/1',
+                templateUrl : 'survey/selected_survey.tpl.html',
+                controller : 'prSelectedSurveyController'
+            })
+    }]);
+/**
+ * Created by Kaygee on 24/02/2015.
+ */
+
+angular.module('survey')
+    .controller('prSurveyController', ['$rootScope', '$scope', 'homeService', 'growl',
+        function($rootScope, $scope, homeService, growl){
+
+        }])
+    .controller('prSelectedSurveyController', ['$rootScope', '$scope', 'homeService', 'growl','uiGmapGoogleMapApi',
+        function($rootScope, $scope, homeService, growl, uiGmapGoogleMapApi){
+            $scope.map = { center: { latitude: 5.558288, longitude: -0.173778 }, zoom: 8 };
+            $scope.markers = [
+                {id : 1, points : {latitude: 5.578288, longitude: -0.345 }},
+                { id : 2,  points : { latitude: 5.598288, longitude: -0.218 }},
+                { id : 3,  points : { latitude: 5.458288, longitude: -0.1148 }},
+                {id : 4,   points : { latitude: 5.358288, longitude: -0.089 }},
+                {id : 5,  points : { latitude: 5.258288, longitude: -0.13778} }
+            ];
+
+            // uiGmapGoogleMapApi is a promise.
+            // The "then" callback function provides the google.maps object.
+            uiGmapGoogleMapApi.then(function(maps) {
+
+            });
+        }]);
+
+
+/**
+ * Created by Kaygee on 24/02/2015.
+ */
+
+angular.module('survey')
+    .factory('surveyService' , [ '$http', function($http){
+        var surveyService = {};
+
+        surveyService.getAllSurveys = function(){
+            return $http.get('all/surveys')
+        };
+
+
+        return surveyService;
+    }]);

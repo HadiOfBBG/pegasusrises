@@ -3134,6 +3134,14 @@ h5{padding:10px;}
 .bs-callout-warning h4 {
     color: #F0AD4E;
 }
+
+.bs-callout-primary {
+    background-color: #e7f9fc;
+    border-color: #68abf3;
+}
+.bs-callout-primary h4 {
+    color: #68abf3;
+}
 .login_page{ width:100%; position:absolute;}
 .login_content {margin: 0 auto; padding: 20px 0;position: relative;text-align: center; transition: all 550ms ease-in-out 0s;width: 320px; margin-top:185px; border:2px solid #cccccc; border-radius:5px; padding:20px;background-color: #FFFFFF;}
 .col-sm-10 { width: 100.333%;}
@@ -3967,8 +3975,11 @@ input {
 .task-footer span{ margin-left:20px;}
 .task-footer label .progress{margin-bottom:0px; height:10px;}
 .footer-icons-group{margin:0px; padding:0px; margin-top:-15px;}
-.footer-icons-group li{list-style-type:none; float:left;}
-.footer-icons-group li a{text-decoration:none; padding:15px 10px 15px 10px; float:left; color:#999999; border-left:1px solid #E7E7E7;}
+.footer-icons-group li{list-style-type:none; float:left; width: 45px; text-align: center; color:#999999;}
+.footer-icons-group li:hover{background-color: rgba(222, 222, 222, 0.41)}
+.footer-icons-group li:active{background-color: #21A9E1; color: #ffffff;}
+.footer-icons-group li:active a{color: #ffffff;}
+.footer-icons-group li a{text-decoration:none; padding:15px 17px; float:left; border-left:1px solid #E7E7E7;}
 .red_task{ color:#F35958;}
 .orange_task{color: #FF6600;}
 .blue_task{color: #21A9E1;}
@@ -4135,18 +4146,18 @@ input {
 
 /*animation start*/
 .effect-button {
-    border: 1px solid rgba(0, 0, 0, 0);
-    border-radius: 3px;
-    color: #FFFFFF;
-    display: inline-block;
-    font-size:16px;
-    margin: 10px 0;
-    padding: 15px 0px 15px 0px;
+    /*border: 1px solid rgba(0, 0, 0, 0);*/
+    /*border-radius: 3px;*/
+    /*color: #FFFFFF;*/
+    /*display: inline-block;*/
+    /*font-size:16px;*/
+    /*margin: 10px 0;*/
+    /*padding: 15px 0px 15px 0px;*/
     transition: all 500ms ease 0s;
-    width: 100%;
-	background-color:#66CCCC;
-	cursor:pointer;
-	text-align:center;
+    /*width: 100%;*/
+	/*background-color:#66CCCC;*/
+	/*cursor:pointer;*/
+	/*text-align:center;*/
 }
 .effect-button i{padding-right:15px; min-width:30px; text-align:center;}
 .animate-title{margin-left:15px; display:block; clear:both; color:#6F6F6F;}
@@ -5358,6 +5369,12 @@ select, input[type="file"] { height: 34px !important;line-height: 30px;}
 .pointer{
     cursor: pointer;
 }
+
+.angular-google-map-container {
+    height: 400px;
+}
+
+
 /*! 
  * angular-loading-bar v0.6.0
  * https://chieffancypants.github.io/angular-loading-bar

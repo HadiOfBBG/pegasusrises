@@ -15,9 +15,6 @@
         <div class="brand">
             <!--\\\\\\\ brand Start \\\\\\-->
             <div class="logo" style="display:block"><span class="blue_text">Pegasus Rises</span> </div>
-            <div class="small_logo" style="display:none"><img src="frontend/images/s-logo.png" width="50" height="47" alt="s-logo" />
-
-                <img src="frontend/images/r-logo.png" width="122" height="20" alt="r-logo" /></div>
         </div>
         <!--\\\\\\\ brand end \\\\\\-->
         <div class="header_top_bar">
@@ -62,12 +59,12 @@
                             <li class="dropdown"> <a href="javascript:void(0);" data-toggle="dropdown"> Quick Menu </a>
                                 <div class="notification_drop_down dropdown-menu">
                                     <div class="top_pointer"></div>
-                                    <div class="box"> <a href="inbox.html"> <span class="block primery_6"> <i class="fa fa-envelope-o"></i> </span> <span class="block_text">Mailbox</span> </a> </div>
-                                    <div class="box"> <a href="calendar.html"> <span class="block primery_2"> <i class="fa fa-calendar-o"></i> </span> <span class="block_text">Calendar</span> </a> </div>
-                                    <div class="box"> <a href="maps.html"> <span class="block primery_4"> <i class="fa fa-map-marker"></i> </span> <span class="block_text">Map</span> </a> </div>
-                                    <div class="box"> <a href="todo.html"> <span class="block primery_3"> <i class="fa fa-plane"></i> </span> <span class="block_text">To-Do</span> </a> </div>
-                                    <div class="box"> <a href="task.html"> <span class="block primery_5"> <i class="fa fa-picture-o"></i> </span> <span class="block_text">Tasks</span> </a> </div>
-                                    <div class="box"> <a href="timeline.html"> <span class="block primery_1"> <i class="fa fa-clock-o"></i> </span> <span class="block_text">Timeline</span> </a> </div>
+                                    <div class="box"> <a href=""> <span class="block primery_6"> <i class="fa fa-envelope-o"></i> </span> <span class="block_text">Mailbox</span> </a> </div>
+                                    <div class="box"> <a href=""> <span class="block primery_2"> <i class="fa fa-calendar-o"></i> </span> <span class="block_text">Calendar</span> </a> </div>
+                                    <div class="box"> <a href=""> <span class="block primery_4"> <i class="fa fa-map-marker"></i> </span> <span class="block_text">Map</span> </a> </div>
+                                    <div class="box"> <a href=""> <span class="block primery_3"> <i class="fa fa-plane"></i> </span> <span class="block_text">To-Do</span> </a> </div>
+                                    <div class="box"> <a href=""> <span class="block primery_5"> <i class="fa fa-picture-o"></i> </span> <span class="block_text">Tasks</span> </a> </div>
+                                    <div class="box"> <a href=""> <span class="block primery_1"> <i class="fa fa-clock-o"></i> </span> <span class="block_text">Timeline</span> </a> </div>
                                 </div>
                             </li>
                         </ul>
@@ -103,7 +100,10 @@
         </div>
         <div class="left_nav_slidebar">
             <ul>
-                <li class="left_nav_active theme_border"><a ui-sref="home"><i class="fa fa-home"></i> HOME <span class="left_nav_pointer"></span>
+                <li class="theme_border" ng-class="{'left_nav_active' : $state.includes('home')}">
+                    <a ui-sref="home"><i class="fa fa-home"></i> HOME <span class="left_nav_pointer">
+
+                    </span>
                     <!--<span class="plus"><i class="fa fa-plus"></i></span> </a>-->
                     <!--<ul class="opened" style="display:block">-->
                         <!--<li> <a href="index.html"> <span>&nbsp;</span> <i class="fa fa-circle theme_color"></i> <b class="theme_color">Dashboard</b> </a> </li>-->
@@ -115,8 +115,10 @@
                     <!--</ul>-->
                     </a>
                 </li>
-                <li> <a href="javascript:void(0);"> <i class="fa fa-edit"></i> SURVEYS <span class="plus"><i class="fa fa-plus"></i></span></a>
+                <li class="theme_border" ng-class="{'left_nav_active' : $state.includes('surveys')}">
+                    <a class="pointer"> <i class="fa fa-edit"></i> SURVEYS <span class="plus"><i class="fa fa-plus"></i></span></a>
                     <ul>
+                        <li> <a ui-sref="surveys"> <span>&nbsp;</span> <i class="fa fa-list"></i> <b>List Surveys</b> </a> </li>
                         <li> <a href=""> <span>&nbsp;</span> <i class="fa fa-circle"></i> <b>Respondents</b> </a> </li>
                         <li> <a href=""> <span>&nbsp;</span> <i class="fa fa-circle"></i> <b>Questionnaires</b> </a> </li>
                         <li> <a href=""> <span>&nbsp;</span> <i class="fa fa-circle"></i> <b>Statistics</b> </a> </li>
@@ -167,8 +169,6 @@
 
 <script src="http://apis.google.com/js/client.js"></script>
 <script src="http://apis.google.com/js/api.js"></script>
-
-<!--<script type="text/javascript" src="frontend/pegasusrises.js"></script>-->
 
 
 <!--<script src="js/jquery-2.1.0.js"></script>-->

@@ -3,33 +3,8 @@ jQuery(window).load(function() {
 	var left_nav,
 	currentHeight = $('.contentpanel').outerHeight(),
 	displayheight = $( window ).height();
-	//***********************************to do list *****************************
-	$('.task-finish').click(function()	{
-		if($(this).is(':checked'))	{
-			$(this).parent().parent().addClass('selected');					
-		}
-		else	{
-			$(this).parent().parent().removeClass('selected');
-		}
-	});
-	//***********************************End to do list *****************************
-	
-	//***********************************Delete to do list*****************************
-	$('.task-del').click(function()	{			
-		var activeList = $(this).parent().parent();
 
-		activeList.addClass('removed');
-				
-		setTimeout(function() {
-			activeList.remove();
-		}, 1000);
-			
-		return false;
-	});
-	//***********************************End Delete to do list *****************************
-	
-	
-	//***********************************navigation menu toggle*****************************
+    //***********************************navigation menu toggle*****************************
 	$(".menutoggle").click(function () {
 		if ($('body').hasClass('left_nav_hide')) {
 			if(fix==1) $('body').addClass('left_nav_fixed');
@@ -86,33 +61,7 @@ jQuery(window).load(function() {
 		});
 		group.height(tallest);
 	}
-	
-	//***********************************Add Effect*****************************
-	$(".btn-mini").click(function(){
-		var $td=$(this).closest('tr').children('td');
-		if($(this).hasClass('btn-primary')){
-			$('body').addClass($td.eq(1).text());
-			$(this).removeClass('btn-primary').addClass('btn-danger');
-			$(this).text('No');
-		}
-		else if($(this).hasClass('btn-danger')){
-			$('body').removeClass($td.eq(1).text());
-			$(this).removeClass('btn-danger').addClass('btn-primary');
-			$(this).text('Yes');
-		}
-	});
-	//***********************************End Add Effect*****************************
-	
-	//***********************************Theme Change*********************************//
-//	$('.btn-lg').click(function(){
-//		var style=($(this).parent().children('h4').eq(1).text()).split(':'),
-//		code=style[1].split(";"),
-//		bodyclass=$('body').attr('class').split(" "),
-//		themeclass=bodyclass[bodyclass.length-1];
-//		applyTheme(themeclass,code[0]);
-//
-//	});
-	//***********************************end Theme Change*********************************//
+
 	
 	//***********************************Smooth Sliding menu *****************************
 	$('.left_nav_slidebar ul li').on('click',function(e){ 
@@ -126,15 +75,15 @@ jQuery(window).load(function() {
 			if(current_class == 'opened')
 			{
 				$('ul', this).removeClass("opened");
-				$('ul', this).parent().removeClass('left_nav_active theme_border');
+				//$('ul', this).parent().removeClass('left_nav_active theme_border');
 			}
 			else
 			{
-				$('.left_nav_slidebar ul li').find('ul:visible').parent().removeClass('left_nav_active theme_border');
+				//$('.left_nav_slidebar ul li').find('ul:visible').parent().removeClass('left_nav_active theme_border');
 				$('.left_nav_slidebar ul li').find('ul:visible').slideToggle("normal");
 				$('.left_nav_slidebar ul li').find('ul:visible').removeClass("opened");
 				$('ul', this).addClass("opened");
-				$('ul', this).parent().addClass('left_nav_active theme_border');
+				//$('ul', this).parent().addClass('left_nav_active theme_border');
 			}
 			$('ul', this).slideToggle("normal");
 		} 
@@ -200,6 +149,15 @@ jQuery(window).load(function() {
 		}	
 		$('body').addClass(applyClass);
 		
-	}	
-   
+	}
+
+
+    $('.effect-button').on('click', function(){
+        var button_effect = $(this).attr('data-effect');
+        $(this).removeClass(button_effect).addClass(button_effect + ' animated').one('webkitAnimationEnd mozAnimationEnd MSAnimationEnd oanimationend animationend', function(){
+            $(this).removeClass(button_effect);
+            $(this).removeClass('animated');
+        });
+    });
+
  });

@@ -25,7 +25,21 @@ angular.module('home')
         };
 
         homeService.sendFileToOdk = function(){
-            return $resource('http://23.21.114.69/xlsform/', {});
+//            fileObject
+//            return $http.post('http://23.21.114.69/xlsform/', {file : 'file'});
+//            return $resource('http://23.21.114.69/xlsform/', {});
+            $.ajax({
+                url : 'http://23.21.114.69/xlsform/',
+                data : {file : 'file', fileName : 'FileName.xls'},
+                type : 'post',
+                beforeSend : function(xhr){
+                    xhr.setRequestHeader("Access-Control-Allow-Origin", "*");
+                },
+                crossDomain : true
+
+            }).done(function(data){
+                console.log('data ---- ', data)
+            })
         };
 
         return homeService;
