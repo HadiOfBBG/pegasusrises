@@ -9,16 +9,20 @@ angular.module('pegasusrises', [
     'admin',
     'survey',
     'lk-google-picker',
-    'angular-loading-bar',
+    //'angular-loading-bar',
+    'cfp.loadingBar',
     'angular-growl',
     'angularFileUpload',
     'ngResource',
     'ngJoyRide',
-    'uiGmapgoogle-maps'
+    'uiGmapgoogle-maps',
+    'googlechart'
 ])
     .constant('prConstantKeys', {
-        google_api_key: 'AIzaSyDSBIljWNHZ9xMXuaROc4oAypA8LT5xmaU'
+        google_api_key: 'AIzaSyDSBIljWNHZ9xMXuaROc4oAypA8LT5xmaU',
+        google_client_id : '982002203062-qllsi843lackaof6acad3308p7m1j5pr.apps.googleusercontent.com'
     })
+
     .config(['$stateProvider','$urlRouterProvider','lkGoogleSettingsProvider',
         'growlProvider', '$httpProvider', 'uiGmapGoogleMapApiProvider','prConstantKeys',
         function($stateProvider, $urlRouterProvider, lkGoogleSettingsProvider,
@@ -28,13 +32,12 @@ angular.module('pegasusrises', [
 
             //This is the configuration for the Google Picker API
             lkGoogleSettingsProvider.configure({
-                apiKey   : 'AIzaSyDSBIljWNHZ9xMXuaROc4oAypA8LT5xmaU',
-                clientId : '982002203062-qllsi843lackaof6acad3308p7m1j5pr.apps.googleusercontent.com',
+                apiKey   :  prConstantKeys.google_api_key,
+                clientId : prConstantKeys.google_client_id,
                 scopes   : ['https://www.googleapis.com/auth/drive', 'https://www.googleapis.com/auth/drive.readonly'],
                 locale   : 'en',
-                features : ['MULTISELECT_ENABLED'],
+                features : [],
                 views    : [
-                    'DocsUploadView()',
                     'DocsView().setMimeTypes("application/vnd.google-apps.spreadsheet")'
                 ]
             });

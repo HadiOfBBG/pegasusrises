@@ -3,21 +3,13 @@ from main import MainHandler
 from db_from_csv import DbFromCsv
 from dashboard import DashboardHandler
 from csvploader import CSVUploadHandler
-<<<<<<< HEAD
 from ServeBlobFile import ServeHandler
-=======
->>>>>>> 355021b5b74b920e3eee60120f30f3545c144d3a
 from aggregate_db_read import ReadDataFromAggragate
 from models import pegasusFiles
 from db_from_google_sheets import DbFromGoogleSheet
 from pegasus_db_read import ReadDataFromPegasus
-<<<<<<< HEAD
 from gcs_client import MainPage
 from pegasus_email import EmailHandler
-
-
-=======
->>>>>>> 355021b5b74b920e3eee60120f30f3545c144d3a
 
 # define all routes here with their appropriate handlers
 #Note: remember to import your module and the appropriate objects in the model or that you
@@ -33,14 +25,10 @@ routes = [
     (r'/admin', DashboardHandler),
     (r'/upload', CSVUploadHandler),
     (r'/read/data/from/aggregate', ReadDataFromPegasus),
-<<<<<<< HEAD
     (r'/serve/([^/]+)?', ServeHandler),
     (r'/gcs_old', MainPage),
     (r'/read/data/from/aggregate', ReadDataFromAggragate),
     (r'/sendEmail', EmailHandler),
-
-=======
->>>>>>> 355021b5b74b920e3eee60120f30f3545c144d3a
 
 ]
 

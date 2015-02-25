@@ -363,6 +363,9 @@ angular.module("home/home.tpl.html", []).run(["$templateCache", function($templa
     "\n" +
     "<div class=\"btn btn-danger\" ng-show=\"files.length\" ng-click=\"sendFileToOdk()\">Send File To XIframe</div>\n" +
     "\n" +
+    "\n" +
+    "<div class=\"btn btn-primary\" ng-click=\"startLoadingBar()\">Start Loader</div>\n" +
+    "\n" +
     "<div ng-joy-ride=\"startJoyRide\" config=\"configJoyRide\" on-finish=\"onFinish()\"  on-skip=\"onFinish()\"></div>\n" +
     "\n" +
     "");
@@ -378,38 +381,17 @@ angular.module("survey/selected_survey.tpl.html", []).run(["$templateCache", fun
     "    </div>\n" +
     "</div>\n" +
     "\n" +
-    "<ui-gmap-google-map center='map.center' zoom='map.zoom'>\n" +
+    "<!--<ui-gmap-google-map center='map.center' zoom='map.zoom'>-->\n" +
     "\n" +
-    "    <ui-gmap-markers\n" +
-    "            models=\"markers\"\n" +
-    "            idkey=\"'id'\"\n" +
-    "            coords=\"'points'\">\n" +
-    "    </ui-gmap-markers>\n" +
-    "            <!--models='{expression}'-->\n" +
-    "            <!--doCluster=\"{string or object}\"-->\n" +
-    "            <!--clusterOptions='{expression}'-->\n" +
-    "            <!--fit=\"{string or object}\"-->\n" +
+    "    <!--<ui-gmap-markers-->\n" +
+    "            <!--models=\"markers\"-->\n" +
+    "            <!--idkey=\"'id'\"-->\n" +
+    "            <!--coords=\"'points'\">-->\n" +
+    "    <!--</ui-gmap-markers>-->\n" +
     "\n" +
-    "            <!--labelContent='{expression}'-->\n" +
+    "<!--</ui-gmap-google-map>-->\n" +
     "\n" +
-    "            <!--icon=\"'{string}'\"-->\n" +
-    "            <!--options=\"'{string}'\"-->\n" +
-    "            <!--labelContent=\"'{string}'\"-->\n" +
-    "            <!--labelAnchor=\"'{string}'\"-->\n" +
-    "            <!--labelClass=\"'{string}'\"-->\n" +
-    "            <!--click=\"'{string or expression to a function}'\"-->\n" +
-    "            <!--modelsbyref=\"{expression}\"-->\n" +
-    "\n" +
-    "            <!--events=\"{expression}\"-->\n" +
-    "\n" +
-    "            <!--control='{expression}'-->\n" +
-    "            <!--chunk='{expression}'-->\n" +
-    "            <!--cleanchunk='{expression}'-->\n" +
-    "            <!--doRebuildAll=\"{string or object}\"-->\n" +
-    "            <!-->-->\n" +
-    "\n" +
-    "\n" +
-    "</ui-gmap-google-map>");
+    "<div google-chart chart=\"chartObject\" style=\"height:600px; width:100%;\"></div>");
 }]);
 
 angular.module("survey/survey_list.tpl.html", []).run(["$templateCache", function($templateCache) {
