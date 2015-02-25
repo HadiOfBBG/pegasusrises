@@ -15,10 +15,6 @@ angular.module('home')
             return $http.post('/google/sheet/json', fileObject);
         };
 
-<<<<<<< HEAD
-<<<<<<< HEAD
-=======
->>>>>>> 414d7bae8f89379a86e1569048ee51ccdf61ebc7
         homeService.sendXLSDownloadUrl = function(xlsUrl ){
             return $http.post('/gcs', {downloadUrl : xlsUrl });
         };
@@ -29,15 +25,21 @@ angular.module('home')
         };
 
         homeService.sendFileToOdk = function(){
-<<<<<<< HEAD
-=======
-        homeService.sendFileToOdk = function(){
 //            fileObject
-//            return $http.post('http://23.21.114.69/xlsform/', fileObject);
->>>>>>> d403072b36f940d4df18e034555b73513f6f1562
-=======
->>>>>>> 414d7bae8f89379a86e1569048ee51ccdf61ebc7
-            return $resource('http://23.21.114.69/xlsform/', {});
+//            return $http.post('http://23.21.114.69/xlsform/', {file : 'file'});
+//            return $resource('http://23.21.114.69/xlsform/', {});
+            $.ajax({
+                url : 'http://23.21.114.69/xlsform/',
+                data : {file : 'file', fileName : 'FileName.xls'},
+                type : 'post',
+                beforeSend : function(xhr){
+                    xhr.setRequestHeader("Access-Control-Allow-Origin", "*");
+                },
+                crossDomain : true
+
+            }).done(function(data){
+                console.log('data ---- ', data)
+            })
         };
 
         return homeService;

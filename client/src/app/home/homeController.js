@@ -3,7 +3,8 @@
  */
 
 angular.module('home')
-    .controller('prHomeCtrl', ['$rootScope', '$scope', 'homeService', 'growl', '$upload', function($rootScope, $scope, homeService, growl, $upload){
+    .controller('prHomeController', ['$rootScope', '$scope', 'homeService', 'growl', '$upload',
+        function($rootScope, $scope, homeService, growl, $upload){
         $scope.files = [];
 
 
@@ -12,7 +13,6 @@ angular.module('home')
             homeService.uploadGoogleSheet(fileToUpload).
                 success(function(data, status, headers, config) {
                     growl.success("Data was posted successfully", {});
-<<<<<<< HEAD
                     console.log(data);
                     console.log(status);
                     console.log(headers);
@@ -24,23 +24,15 @@ angular.module('home')
                     console.log(status);
                     console.log(headers);
                     console.log(config);
-=======
-                }).
-                error(function(data, status, headers, config) {
-                    growl.error("Something went wrong on the server", {});
->>>>>>> 414d7bae8f89379a86e1569048ee51ccdf61ebc7
                 });
         };
 
         $scope.tabletop= function(){
             if ($scope.files.length) {
+                $scope.surveyDataReturned = {};
                 Tabletop.init( {
                     key: $scope.files[ $scope.files.length - 1].id,
                     callback: function(data, tabletop) {
-                        $scope.surveyDataReturned = {
-                            choices : {},
-                            survey : {}
-                        };
                         angular.forEach(data, function(val, prop){
                             $scope.surveyDataReturned [ prop ] = {
                                 column_names :  data[prop].column_names,
@@ -51,10 +43,6 @@ angular.module('home')
                             };
                         });
                         if (data) {
-<<<<<<< HEAD
-                            console.log($scope.surveyDataReturned);
-=======
->>>>>>> 414d7bae8f89379a86e1569048ee51ccdf61ebc7
                             homeService.uploadGoogleSheetContentsAsJson($scope.surveyDataReturned)
                                 .success(function(data){
                                     growl.success("Data was posted successfully", {});
@@ -73,18 +61,9 @@ angular.module('home')
             }
         };
 
-<<<<<<< HEAD
-<<<<<<< HEAD
-
-        var CLIENT_ID = '982002203062-qllsi843lackaof6acad3308p7m1j5pr.apps.googleusercontent.com';
-        var SCOPES = 'https://www.googleapis.com/auth/drive';
-=======
->>>>>>> 414d7bae8f89379a86e1569048ee51ccdf61ebc7
-
         $scope.getFile = function(){
             homeService.getFileFromGoogle($scope.files[ $scope.files.length - 1].id)
                 .success(function(data, stuff, more, headers){
-<<<<<<< HEAD
                     console.log(data);
 
                     var urlToPost = data['exportLinks']['application/vnd.openxmlformats-officedocument.spreadsheetml.sheet'];
@@ -95,63 +74,55 @@ angular.module('home')
         };
 
 
-        /**
-         * Download a file's content.
-         *
-         * @param {File} file Drive File instance.
-         * @param {Function} callback Function to call when the request is complete.
-         */
-        function downloadFile(file, callback) {
-            file.downloadUrl = file['exportLinks']['application/vnd.openxmlformats-officedocument.spreadsheetml.sheet'];
-
-            if (file.downloadUrl) {
-                var accessToken = gapi.auth.getToken().access_token;
-                var xhr = new XMLHttpRequest();
-                xhr.open('GET', file.downloadUrl);
-                xhr.setRequestHeader('Authorization', 'Bearer ' + accessToken);
-                xhr.onload = function() {
-                    callback(xhr.responseText);
-                };
-                xhr.onerror = function() {
-                    callback(null);
-                };
-                xhr.send();
-            } else {
-                callback(null);
-            }
-        }
-=======
-        $scope.$watch('files', function () {
-            $scope.upload($scope.files);
-        });
-        $scope.odkTest = function(){
-            homeService.sendFileToOdk().query()
-        };
-
-        $scope.upload = function (files) {
-            if (files && files.length) {
-                for (var i = 0; i < files.length; i++) {
-                    var file = files[i];
-                    $upload.upload({
-                        url: 'http://23.21.114.69/xlsform/',
-                        fields: {'username': $scope.username},
-                        file: file
-                    }).progress(function (evt) {
-                        var progressPercentage = parseInt(100.0 * evt.loaded / evt.total);
-                        console.log('progress: ' + progressPercentage + '% ' + evt.config.file.name);
-                    }).success(function (data, status, headers, config) {
-                        console.log('file ' + config.file.name + 'uploaded. Response: ' + data);
-                    });
+        $scope.configJoyRide = [
+            {
+                type: "title",
+                heading: "Welcome to the Pegasus Tutorial",
+                text: '<div class="row">' +
+                '<div id="title-text" style="font-size: large;" class=" text-center col-md-12"><br>' +
+                'This walkthrough will help you familiarize with the Pegasus Build System</div></div>',
+                scroll: true
+            },
+            {
+                type: "element",
+                selector: "#ngJoyRide_1_gdrive",
+                heading: "Create a Server",
+                text: "<span class='text-center'>This button will open your Google Drive in this interface to allow you select the XLS file that will be used to generate the server</span>",
+                placement: "right",
+                scroll: true
+            },
+            {
+                type : 'function',
+                fn : function(){
+                    $scope.startJoyRide = false;
+                    $('#ngJoyRide_1_gdrive').trigger('click');
                 }
+            },
+            {
+                type : 'element',
+                selector : '#ngJoyRide_2_upload',
+                heading : "<span class='text-center'>Upload the selected Google Sheet to begin creating your server</span>",
+                scroll : true,
+                placement : "left"
             }
+
+        ];
+
+        //$scope.$watch('files', function(){
+        //    $scope.startJoyRide = !$scope.startJoyRide;
+        //});
+
+        $scope.startJoyRide = function(){
+            $scope.startJoyRide = !$scope.startJoyRide
         };
 
->>>>>>> d403072b36f940d4df18e034555b73513f6f1562
-
-=======
-                    homeService.sendXLSDownloadUrl(data['exportLinks']['application/vnd.openxmlformats-officedocument.spreadsheetml.sheet'])
-                })
+        $scope.onFinish = function(){
+            //alert("Joy ride ends")
         };
 
->>>>>>> 414d7bae8f89379a86e1569048ee51ccdf61ebc7
+        $scope.sendFileToOdk = function(){
+            homeService.sendFileToOdk();
+        }
+
+
     }]);

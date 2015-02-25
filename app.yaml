@@ -15,8 +15,8 @@ handlers:
 - url: /pictures
   static_dir: pictures
 
-- url: /images
-  static_dir: client/dist/static/images
+#- url: /images
+#  static_dir: client/dist/static/images
 
 - url: /frontend
   static_dir: client/dist/static

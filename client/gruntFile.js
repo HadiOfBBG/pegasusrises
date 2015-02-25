@@ -48,8 +48,8 @@ module.exports = function (grunt) {
                 app: ['src/app/**/*.tpl.html'],
                 common: ['src/common/**/*.tpl.html']
             },
-            css : ['src/stylesheets/font*.css', 'src/stylesheets/boot*.css', 'src/stylesheets/animate.css','src/stylesheets/admin.css',
-                'src/stylesheets/*.css','src/vendor/angular-loading-bar/*.css', 'src/vendor/angular-growl-2/*.css']
+            css : ['src/stylesheets/font*.css', 'src/stylesheets/boot*.css', 'src/stylesheets/animate.css','src/stylesheets/pegasus.css',
+                'src/stylesheets/*.css','src/vendor/angular-loading-bar/*.css', 'src/vendor/angular-growl-2/*.css', 'src/vendor/ng-joyride/*.css']
         },
         clean: ['<%= distdir %>/*'],
         copy: {
@@ -119,7 +119,7 @@ module.exports = function (grunt) {
                 dest: '<%= distdirStatic %>/<%= pkg.name %>_angular.js'
             },
             vendors: {
-                src:['src/scripts/common-script.js', 'src/vendor/google/*.js', 'src/vendor/tabletop/*.js', 'src/vendor/angular-growl-2/*.js', 'src/vendor/angular-file-uploader/*.js'],
+                src:['src/scripts/common-script.js', 'src/vendor/google/*.js', 'src/vendor/tabletop/*.js', 'src/vendor/angular-growl-2/*.js', 'src/vendor/angular-file-uploader/*.js','src/vendor/ng-joyride/*.js'],
                 dest: '<%= distdirStatic %>/scripts.js'
             }
         },
