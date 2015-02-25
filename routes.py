@@ -26,6 +26,7 @@ routes = [
 ]
 
 config = {}
+
 config['webapp2_extras.sessions'] = {
     'secret_key': 'something-very-very-secret',
 }
