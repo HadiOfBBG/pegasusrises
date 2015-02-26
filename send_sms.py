@@ -9,7 +9,7 @@ from google.appengine.api import memcache
 from xml.dom import minidom
 from urllib2 import Request, urlopen, URLError
 from google.appengine.api import memcache
-from db_from_google_sheets import DbFromGoogleSheet
+from questions_details_from_google_sheets import QuestionsDetailsFromGoogleSheet
 from models.pegasus_model import BbgDemoModel
 
 

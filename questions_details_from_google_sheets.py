@@ -14,9 +14,10 @@ from models.track_questions_details import QuestionsDetails
 import json
 import re
 from models.pegasus_model import BbgDemoModel
+from models.dynamic_model_properties import DynamicModelsProperties
 
 
-class DbFromGoogleSheet(JinjaTemplating):
+class QuestionsDetailsFromGoogleSheet(JinjaTemplating):
 
 
 
@@ -97,7 +98,7 @@ class DbFromGoogleSheet(JinjaTemplating):
                                 "WHERE survey_name = :1 AND question_db_field_name <= :2 ", survey_name,question_db_field_name)
 
                 # if question has not been saved, do nothing
-                if finding_if_question_has_been_saved is None:
+                if finding_if_question_has_been_saved is not None:
                     # saving the question details into the question details table
                     question_type = 'close_ended'
                     insert_a_new_question_details = Questions(survey_name = survey_name, question = question_text_to_display, question_field = question_db_field_name, possible_answers = possible_answers_values, possible_answers_labels = possible_answers_labels, question_type = question_type)
@@ -144,46 +145,7 @@ class DbFromGoogleSheet(JinjaTemplating):
 
 
 
-        self.response.out.write('Server Created \n')
-
-        # inserting sample data into the dynamically created server (db or model)
-        name = 'Gbeila Aliu Wahab'
-        business_status = 'yes'
-        years_of_existence = 23
-        sources_of_funding = 'personal,loan,family_support'
-        location = 'Accra, Ghana'
-        business_building_pic = 'https://pegasusodk.appspot.com/view/binaryData?blobKey=build_Software-Engagement-Test_1420717947%5B%40version%3Dnull+and+%40uiVersion%3Dnull%5D%2Fdata%5B%40key%3Duuid%3A25acebc0-db2d-464a-bea3-aa05b5767239%5D%2Fpassport_picture&previewImage=true'
-        start_time = 'Thu Feb 19 17:40:25 UTC 2015'
-        end_time = 'Thu Feb 19 17:40:56 UTC 2015'
-        device_identity = '358099058816851'
-        # created_date_time = 'Thu Feb 19 17:40:56 UTC 2015'
+        self.response.out.write('Questions structure saved on your pegasus server\n')
 
 
-        insert_sample_data_into_server = BbgDemoModel(name = name, business_status = business_status, years_of_existence = years_of_existence, sources_of_funding = sources_of_funding, location = location, business_building_pic = business_building_pic, start_time = start_time, end_time = end_time, device_identity = device_identity)
-        insert_sample_data_into_server = BbgDemoModel(field_not_created = 'Not created', name = name, business_status = business_status, years_of_existence = years_of_existence, sources_of_funding = sources_of_funding, location = location, business_building_pic = business_building_pic, start_time = start_time, end_time = end_time, device_identity = device_identity)
-        insert_sample_data_into_server.put()
-
-
-
-
-        name = 'Francis Kofigah'
-        business_status = 'yes'
-        years_of_existence = 23
-        sources_of_funding = 'personal,loan,family_support'
-        location = 'Accra, Ghana'
-        business_building_pic = 'https://pegasusodk.appspot.com/view/binaryData?blobKey=build_Software-Engagement-Test_1420717947%5B%40version%3Dnull+and+%40uiVersion%3Dnull%5D%2Fdata%5B%40key%3Duuid%3A25acebc0-db2d-464a-bea3-aa05b5767239%5D%2Fpassport_picture&previewImage=true'
-        start_time = 'Thu Feb 19 17:40:25 UTC 2015'
-        end_time = 'Thu Feb 19 17:40:56 UTC 2015'
-        device_identity = '358099058816851'
-        # created_date_time = 'Thu Feb 19 17:40:56 UTC 2015'
-
-
-        insert_sample_data_into_server = BbgDemoModel(name = name, business_status = business_status, years_of_existence = years_of_existence, sources_of_funding = sources_of_funding, location = location, business_building_pic = business_building_pic, start_time = start_time, end_time = end_time, device_identity = device_identity)
-        insert_sample_data_into_server = BbgDemoModel(field_not_created = 'Not created', name = name, business_status = business_status, years_of_existence = years_of_existence, sources_of_funding = sources_of_funding, location = location, business_building_pic = business_building_pic, start_time = start_time, end_time = end_time, device_identity = device_identity)
-        insert_sample_data_into_server.put()
-
-        self.response.out.write('Data saved Into DB \n')
-
-
-        return
 

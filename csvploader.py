@@ -12,9 +12,9 @@ from google.appengine.api import urlfetch
 from poster.encode import multipart_encode, MultipartParam
 import logging
 from google.appengine.api import users
-from db_from_google_sheets import DbFromGoogleSheet
+from questions_details_from_google_sheets import QuestionsDetailsFromGoogleSheet
 
-class CSVUploadHandler(DbFromGoogleSheet):
+class CSVUploadHandler(QuestionsDetailsFromGoogleSheet):
 
     def get(self):
         # self.response.out.write(pegasusFiles.PegasusFiles)
@@ -31,7 +31,7 @@ class CSVUploadHandler(DbFromGoogleSheet):
         # google_sheet = self.request.get('url')
         # logging.debug("value of my var is %s", 'okkkkkkkkkkkkkkkkkk')
         # sheet_name = self.request.get('name')
- 
+
         # self.uploadFiles(google_sheet,sheet_name)
         # file = self.request.get('csv_import')
         # file  = '\n'.join(file.splitlines())
@@ -55,8 +55,8 @@ class CSVUploadHandler(DbFromGoogleSheet):
             }
         response = urlfetch.fetch(url, payload=content, method='PUT', headers=headers)
         # assert response.status_code == 200
-        # return response.content 
-        self.response.out.write(response.content)          
+        # return response.content
+        self.response.out.write(response.content)
 
 
     def uploadFiles(self, google_sheet,sheet_name):
@@ -99,7 +99,7 @@ class CSVUploadHandler(DbFromGoogleSheet):
     def submitFile(self,key):
         payload = {}
         files = self.getBlobFile(key)
-        payload['file'] = MultipartParam('file', 
+        payload['file'] = MultipartParam('file',
                                           name="file.name",
                                           filetype="file.type",
                                           fileobj="files.file")

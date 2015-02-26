@@ -1,8 +1,8 @@
 from google.appengine.ext import db
+from google.appengine.ext import ndb
 
-class BbgDemoModel(db.Expando):
+class BbgDemoModel(ndb.Expando):
 	created_date_time = db.DateTimeProperty(auto_now_add = True)
-	# created_date_time = db.DateTimeProperty()
 	# data_submitted = db.DateTimeProperty()
 
 
