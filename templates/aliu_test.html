@@ -18,23 +18,37 @@
 </form>
 
 
-<h3>Getting Data Submitted On Aggregate</h3>
+<!-- <h3>Getting Data Submitted On Aggregate</h3>
 
 <form action="read/data/from/aggregate" method="post" accept-charset="utf-8" enctype="multipart/form-data">
 
 	<input type="file" name="csv_import" value="csv_import" placeholder="upload file">
 
 	<input type="submit" name="submit" value="submit">
-</form>
+</form> -->
+
+
 
 <h3>Read Data From Pegasus DB</h3>
 
 <form action="/read/data/from/pegasus" method="post" accept-charset="utf-8" enctype="multipart/form-data">
 
+    <input type="submit" name="submit" value="submit">
+    
+</form>
+
+
+
+<h3>Send SMS Via Voto API</h3>
+
+<form action="/send/sms/via/votoapi" method="post" accept-charset="utf-8" enctype="multipart/form-data">
+
     <input type="file" name="csv_import" value="csv_import" placeholder="upload file">
 
     <input type="submit" name="submit" value="submit">
+
 </form>
+
 
 
 

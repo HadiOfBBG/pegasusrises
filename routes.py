@@ -7,6 +7,8 @@ from aggregate_db_read import ReadDataFromAggragate
 from models import pegasusFiles
 from db_from_google_sheets import DbFromGoogleSheet
 from pegasus_db_read import ReadDataFromPegasus
+from send_sms import SendSMSViaVotoAPI
+
 
 
 # define all routes here with their appropriate handlers
@@ -22,6 +24,8 @@ routes = [
     (r'/upload', CSVUploadHandler),
     (r'/read/data/from/aggregate', ReadDataFromAggragate),
     (r'/read/data/from/pegasus', ReadDataFromPegasus),
+    (r'/send/sms/via/votoapi', SendSMSViaVotoAPI),
+
 
 
 ]
