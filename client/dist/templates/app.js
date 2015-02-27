@@ -361,11 +361,6 @@ angular.module("home/home.tpl.html", []).run(["$templateCache", function($templa
     "\n" +
     "<div class=\"btn btn-warning\" ng-show=\"files.length\" ng-click=\"getFile()\"> Get file from Google </div>\n" +
     "\n" +
-    "<div class=\"btn btn-danger\" ng-show=\"files.length\" ng-click=\"sendFileToOdk()\">Send File To XIframe</div>\n" +
-    "\n" +
-    "\n" +
-    "<div class=\"btn btn-primary\" ng-click=\"startLoadingBar()\">Start Loader</div>\n" +
-    "\n" +
     "<div ng-joy-ride=\"startJoyRide\" config=\"configJoyRide\" on-finish=\"onFinish()\"  on-skip=\"onFinish()\"></div>\n" +
     "\n" +
     "");
