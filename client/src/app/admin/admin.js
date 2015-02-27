@@ -37,7 +37,7 @@ angular.module('admin', [])
                 body.removeClass('red_thm');
                 body.removeClass('magento_thm');
                 body.removeClass('green_thm');
-                body.addClass(themeclass);
+                body.addClass(choice.key);
         };
 
           $scope.headerOptions = [

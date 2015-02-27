@@ -1,40 +1,39 @@
 <div class="row center">
+
     <div class="col-lg-12 ">
         <section class="panel default blue_title h2">
             <div class="panel-heading border">Citizen Journalism Survey</div>
         </section>
     </div>
+
+    <div class="col-lg-12" ng-init="showButtons = false" ng-show="showButtons">
+        <div class="btn-group">
+            <button class="btn btn-primary" ng-class="{'active' :   $scope.chartObject.type == 'BarChart' }" ng-click="changeChartType('BarChart')"> BarChart</button>
+            <button class="btn btn-warning" ng-class="{'active' :   $scope.chartObject.type == 'PieChart' }" ng-click="changeChartType('PieChart')">PieChart</button>
+            <button class="btn btn-success" ng-class="{'active' :   $scope.chartObject.type == 'ColumnChart' }" ng-click="changeChartType('ColumnChart')">ColumnChart</button>
+        </div>
+    </div>
 </div>
 
-<ui-gmap-google-map center='map.center' zoom='map.zoom'>
+<tabset>
+    <tab heading="Google Map with Markers" select="toggleButtons(false)">
+        <ui-gmap-google-map center='map.center' zoom='map.zoom'>
 
-    <ui-gmap-markers
-            models="markers"
-            idkey="'id'"
-            coords="'points'">
-    </ui-gmap-markers>
-            <!--models='{expression}'-->
-            <!--doCluster="{string or object}"-->
-            <!--clusterOptions='{expression}'-->
-            <!--fit="{string or object}"-->
+        <ui-gmap-markers
+                models="markers"
+                idkey="'id'"
+                coords="'points'">
+        </ui-gmap-markers>
 
-            <!--labelContent='{expression}'-->
-
-            <!--icon="'{string}'"-->
-            <!--options="'{string}'"-->
-            <!--labelContent="'{string}'"-->
-            <!--labelAnchor="'{string}'"-->
-            <!--labelClass="'{string}'"-->
-            <!--click="'{string or expression to a function}'"-->
-            <!--modelsbyref="{expression}"-->
-
-            <!--events="{expression}"-->
-
-            <!--control='{expression}'-->
-            <!--chunk='{expression}'-->
-            <!--cleanchunk='{expression}'-->
-            <!--doRebuildAll="{string or object}"-->
-            <!-->-->
-
-
-</ui-gmap-google-map>
+    </ui-gmap-google-map>
+    </tab>
+    <!--<tab ng-repeat="tab in tabs" heading="{{tab.title}}" active="tab.active" disabled="tab.disabled">-->
+        <!--{{tab.content}}-->
+    <!--</tab>-->
+    <tab select="toggleButtons(true)">
+        <tab-heading>
+            <i class="glyphicon glyphicon-bell"></i> Google Charts
+        </tab-heading>
+        <div google-chart chart="chartObject" style="height:600px; width:100%;"></div>
+    </tab>
+</tabset>

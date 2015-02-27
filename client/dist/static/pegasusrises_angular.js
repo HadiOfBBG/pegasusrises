@@ -37,7 +37,7 @@ angular.module('admin', [])
                 body.removeClass('red_thm');
                 body.removeClass('magento_thm');
                 body.removeClass('green_thm');
-                body.addClass(themeclass);
+                body.addClass(choice.key);
         };
 
           $scope.headerOptions = [
@@ -95,16 +95,20 @@ angular.module('pegasusrises', [
     'admin',
     'survey',
     'lk-google-picker',
-    'angular-loading-bar',
+    //'angular-loading-bar',
+    'cfp.loadingBar',
     'angular-growl',
     'angularFileUpload',
     'ngResource',
     'ngJoyRide',
-    'uiGmapgoogle-maps'
+    'uiGmapgoogle-maps',
+    'googlechart'
 ])
     .constant('prConstantKeys', {
-        google_api_key: 'AIzaSyDSBIljWNHZ9xMXuaROc4oAypA8LT5xmaU'
+        google_api_key: 'AIzaSyDSBIljWNHZ9xMXuaROc4oAypA8LT5xmaU',
+        google_client_id : '982002203062-qllsi843lackaof6acad3308p7m1j5pr.apps.googleusercontent.com'
     })
+
     .config(['$stateProvider','$urlRouterProvider','lkGoogleSettingsProvider',
         'growlProvider', '$httpProvider', 'uiGmapGoogleMapApiProvider','prConstantKeys',
         function($stateProvider, $urlRouterProvider, lkGoogleSettingsProvider,
@@ -114,13 +118,12 @@ angular.module('pegasusrises', [
 
             //This is the configuration for the Google Picker API
             lkGoogleSettingsProvider.configure({
-                apiKey   : 'AIzaSyDSBIljWNHZ9xMXuaROc4oAypA8LT5xmaU',
-                clientId : '982002203062-qllsi843lackaof6acad3308p7m1j5pr.apps.googleusercontent.com',
+                apiKey   :  prConstantKeys.google_api_key,
+                clientId : prConstantKeys.google_client_id,
                 scopes   : ['https://www.googleapis.com/auth/drive', 'https://www.googleapis.com/auth/drive.readonly'],
                 locale   : 'en',
-                features : ['MULTISELECT_ENABLED'],
+                features : [],
                 views    : [
-                    'DocsUploadView()',
                     'DocsView().setMimeTypes("application/vnd.google-apps.spreadsheet")'
                 ]
             });
@@ -134,9 +137,22 @@ angular.module('pegasusrises', [
                 libraries: ''
             });
         }])
-    .run(['$rootScope', '$state', '$stateParams', '$location' ,function($rootScope, $state, $stateParams, $location){
+    .run(['$rootScope', '$state', '$stateParams', 'cfpLoadingBar' ,function($rootScope, $state, $stateParams, cfpLoadingBar){
         $rootScope.$state = $state;
         $rootScope.$stateParams = $stateParams;
+
+        $rootScope.$on('$stateChangeStart',function(event, toState, toParams, fromState, fromParams){
+            cfpLoadingBar.start();
+            //$rootScope.loading = true;
+        });
+
+        $rootScope.$on('$viewContentLoading',function(event){
+            cfpLoadingBar.inc();
+        });
+
+        $rootScope.$on('$viewContentLoaded',function(event){
+            cfpLoadingBar.complete();
+        });
 
     }]);
 
@@ -144,6 +160,52 @@ angular.module('pegasusrises').controller('prBreadCrumbCtrl', ['$scope', '$state
     $scope.$watch('$state', function(oldVal, newVal){
         $scope.subtitle = ($state.current.name).toUpperCase();
     });
+
+    $scope.configJoyRide = [
+        {
+            type: "title",
+            heading: "Welcome to the Pegasus Tutorial",
+            text: '<div class="row">' +
+            '<div id="title-text" style="font-size: medium;" class=" text-center col-md-12"><br>' +
+            'This walkthrough will help you familiarize with the Pegasus Build System</div></div>',
+            scroll: true
+        },
+        {
+            type: "element",
+            selector: "#ngJoyRide_1_gdrive",
+            heading: "Create a Server",
+            text: "<span class=''  style='font-size: medium;'>This button will open your Google Drive in this interface to allow you select the XLS file that will be used to generate the server</span>" +
+            "<br><span  style='font-size: small;'>Clicking \"NEXT\'</span>",
+            placement: "left",
+            scroll: true
+        },
+        {
+            type : 'function',
+            fn : function(){
+                $scope.startJoyRide = false;
+                $('#ngJoyRide_1_gdrive').trigger('click');
+            }
+        },
+        {
+            type : 'element',
+            selector : '#ngJoyRide_2_upload',
+            heading : "<span class='text-center'  style='font-size: medium;'>Upload the selected Google Sheet to begin creating your server</span>",
+            scroll : true,
+            placement : "left"
+        }
+
+    ];
+
+    $scope.startJoyRide = function(){
+        $scope.startJoyRide = !$scope.startJoyRide
+    };
+
+    $scope.onFinish = function(){
+        //alert("Joy ride ends")
+    };
+
+
+
 }]);
 /**
  * Home Template
@@ -165,129 +227,82 @@ angular.module('home', [])
  */
 
 angular.module('home')
-    .controller('prHomeController', ['$rootScope', '$scope', 'homeService', 'growl', '$upload',
-        function($rootScope, $scope, homeService, growl, $upload){
-        $scope.files = [];
+    .controller('prHomeController', ['$rootScope', '$scope', 'homeService', 'growl', '$upload','cfpLoadingBar',
+        function($rootScope, $scope, homeService, growl, $upload, cfpLoadingBar){
+            $scope.files = [];
 
 
-        $scope.uploadSheet = function(){
-            var fileToUpload = $scope.files[ $scope.files.length - 1 ];
-            homeService.uploadGoogleSheet(fileToUpload).
-                success(function(data, status, headers, config) {
-                    growl.success("Data was posted successfully", {});
-                    console.log(data);
-                    console.log(status);
-                    console.log(headers);
-                    console.log(config);
-                }).
-                error(function(data, status, headers, config) {
-                    growl.error("Something went wrong on the server", {});
-                    console.log(data);
-                    console.log(status);
-                    console.log(headers);
-                    console.log(config);
-                });
-        };
+            $scope.uploadSheet = function(){
+                var fileToUpload = $scope.files[ $scope.files.length - 1 ];
+                homeService.uploadGoogleSheet(fileToUpload).
+                    success(function(data, status, headers, config) {
+                        growl.success("Data was posted successfully", {});
+                        console.log(data);
+                        console.log(status);
+                        console.log(headers);
+                        console.log(config);
+                    }).
+                    error(function(data, status, headers, config) {
+                        growl.error("Something went wrong on the server", {});
+                        console.log(data);
+                        console.log(status);
+                        console.log(headers);
+                        console.log(config);
+                    });
+            };
 
-        $scope.tabletop= function(){
-            if ($scope.files.length) {
-                $scope.surveyDataReturned = {};
-                Tabletop.init( {
-                    key: $scope.files[ $scope.files.length - 1].id,
-                    callback: function(data, tabletop) {
-                        angular.forEach(data, function(val, prop){
-                            $scope.surveyDataReturned [ prop ] = {
-                                column_names :  data[prop].column_names,
-                                elements :  data[prop].elements,
-                                name :  data[prop].name,
-                                original_columns : data[prop].original_columns,
-                                pretty_columns : data[prop].pretty_columns
-                            };
-                        });
-                        if (data) {
-                            homeService.uploadGoogleSheetContentsAsJson($scope.surveyDataReturned)
-                                .success(function(data){
-                                    growl.success("Data was posted successfully", {});
-                                })
-                                .error(function(){
-                                    growl.error("Something went wrong on the server", {});
-                                })
-                        }else{
-                            alert("The file has not been shared to the public")
-                        }
-                    },
-                    simpleSheet: false
-                })
-            }else{
-                alert("No file selected")
-            }
-        };
-
-        $scope.getFile = function(){
-            homeService.getFileFromGoogle($scope.files[ $scope.files.length - 1].id)
-                .success(function(data, stuff, more, headers){
-                    console.log(data);
-
-                    var urlToPost = data['exportLinks']['application/vnd.openxmlformats-officedocument.spreadsheetml.sheet'];
-
-                    homeService.sendXLSDownloadUrl(urlToPost)
-
-                })
-        };
-
-
-        $scope.configJoyRide = [
-            {
-                type: "title",
-                heading: "Welcome to the Pegasus Tutorial",
-                text: '<div class="row">' +
-                '<div id="title-text" style="font-size: large;" class=" text-center col-md-12"><br>' +
-                'This walkthrough will help you familiarize with the Pegasus Build System</div></div>',
-                scroll: true
-            },
-            {
-                type: "element",
-                selector: "#ngJoyRide_1_gdrive",
-                heading: "Create a Server",
-                text: "<span class='text-center'>This button will open your Google Drive in this interface to allow you select the XLS file that will be used to generate the server</span>",
-                placement: "right",
-                scroll: true
-            },
-            {
-                type : 'function',
-                fn : function(){
-                    $scope.startJoyRide = false;
-                    $('#ngJoyRide_1_gdrive').trigger('click');
+            $scope.tabletop= function(){
+                if ($scope.files.length) {
+                    $scope.surveyDataReturned = {};
+                    Tabletop.init( {
+                        key: $scope.files[ $scope.files.length - 1].id,
+                        callback: function(data, tabletop) {
+                            angular.forEach(data, function(val, prop){
+                                $scope.surveyDataReturned [ prop ] = {
+                                    column_names :  data[prop].column_names,
+                                    elements :  data[prop].elements,
+                                    name :  data[prop].name,
+                                    original_columns : data[prop].original_columns,
+                                    pretty_columns : data[prop].pretty_columns
+                                };
+                            });
+                            if (data) {
+                                homeService.uploadGoogleSheetContentsAsJson($scope.surveyDataReturned)
+                                    .success(function(data){
+                                        growl.success("Data was posted successfully", {});
+                                    })
+                                    .error(function(){
+                                        growl.error("Something went wrong on the server", {});
+                                    })
+                            }else{
+                                alert("The file has not been shared to the public")
+                            }
+                        },
+                        simpleSheet: false
+                    })
+                }else{
+                    alert("No file selected")
                 }
-            },
-            {
-                type : 'element',
-                selector : '#ngJoyRide_2_upload',
-                heading : "<span class='text-center'>Upload the selected Google Sheet to begin creating your server</span>",
-                scroll : true,
-                placement : "left"
-            }
+            };
 
-        ];
+            $scope.getFile = function(){
+                homeService.getFileFromGoogle($scope.files[ $scope.files.length - 1].id)
+                    .success(function(data, stuff, more, headers){
+                        console.log(data);
 
-        //$scope.$watch('files', function(){
-        //    $scope.startJoyRide = !$scope.startJoyRide;
-        //});
+                        var urlToPost = data['exportLinks']['application/vnd.openxmlformats-officedocument.spreadsheetml.sheet'];
 
-        $scope.startJoyRide = function(){
-            $scope.startJoyRide = !$scope.startJoyRide
-        };
+                        homeService.sendXLSDownloadUrl(urlToPost)
 
-        $scope.onFinish = function(){
-            //alert("Joy ride ends")
-        };
-
-        $scope.sendFileToOdk = function(){
-            homeService.sendFileToOdk();
-        }
+                    })
+            };
 
 
-    }]);
+            $scope.sendFileToOdk = function(){
+                homeService.sendFileToOdk();
+            };
+
+        }]);
 /**
  * Created by kaygee on 2/13/15.
  */
@@ -453,6 +468,56 @@ angular.module('survey')
             uiGmapGoogleMapApi.then(function(maps) {
 
             });
+
+            $scope.chartObject = {};
+
+            $scope.onions = [
+                {v: "Onions"},
+                {v: 3},
+            ];
+
+            $scope.chartObject.data = {"cols": [
+                {id: "t", label: "Topping", type: "string"},
+                {id: "s", label: "Slices", type: "number"}
+            ], "rows": [
+                {c: [
+                    {v: "Mushrooms"},
+                    {v: 3},
+                ]},
+                {c: $scope.onions},
+                {c: [
+                    {v: "Olives"},
+                    {v: 31}
+                ]},
+                {c: [
+                    {v: "Zucchini"},
+                    {v: 1},
+                ]},
+                {c: [
+                    {v: "Pepperoni"},
+                    {v: 2},
+                ]}
+            ]};
+
+
+            // $routeParams.chartType == BarChart or PieChart or ColumnChart...
+            $scope.chartObject.type = 'ColumnChart';
+            $scope.chartObject.options = {
+                'title': 'How Much Pizza I Ate Last Night'
+            };
+            $scope.changeChartType = function (chartType) {
+                $scope.chartObject.type = chartType;
+            };
+
+            $scope.tabs = [
+                { title:'Dynamic Title 1', content:'Dynamic content 1' },
+                { title:'Dynamic Title 2', content:'Dynamic content 2', disabled: true }
+            ];
+
+            $scope.toggleButtons = function(state){
+                $scope.showButtons = state;
+            }
+
         }]);
 
 

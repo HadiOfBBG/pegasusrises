@@ -361,8 +361,6 @@ angular.module("home/home.tpl.html", []).run(["$templateCache", function($templa
     "\n" +
     "<div class=\"btn btn-warning\" ng-show=\"files.length\" ng-click=\"getFile()\"> Get file from Google </div>\n" +
     "\n" +
-    "<div class=\"btn btn-danger\" ng-show=\"files.length\" ng-click=\"sendFileToOdk()\">Send File To XIframe</div>\n" +
-    "\n" +
     "<div ng-joy-ride=\"startJoyRide\" config=\"configJoyRide\" on-finish=\"onFinish()\"  on-skip=\"onFinish()\"></div>\n" +
     "\n" +
     "");
@@ -371,45 +369,45 @@ angular.module("home/home.tpl.html", []).run(["$templateCache", function($templa
 angular.module("survey/selected_survey.tpl.html", []).run(["$templateCache", function($templateCache) {
   $templateCache.put("survey/selected_survey.tpl.html",
     "<div class=\"row center\">\n" +
+    "\n" +
     "    <div class=\"col-lg-12 \">\n" +
     "        <section class=\"panel default blue_title h2\">\n" +
     "            <div class=\"panel-heading border\">Citizen Journalism Survey</div>\n" +
     "        </section>\n" +
     "    </div>\n" +
+    "\n" +
+    "    <div class=\"col-lg-12\" ng-init=\"showButtons = false\" ng-show=\"showButtons\">\n" +
+    "        <div class=\"btn-group\">\n" +
+    "            <button class=\"btn btn-primary\" ng-class=\"{'active' :   $scope.chartObject.type == 'BarChart' }\" ng-click=\"changeChartType('BarChart')\"> BarChart</button>\n" +
+    "            <button class=\"btn btn-warning\" ng-class=\"{'active' :   $scope.chartObject.type == 'PieChart' }\" ng-click=\"changeChartType('PieChart')\">PieChart</button>\n" +
+    "            <button class=\"btn btn-success\" ng-class=\"{'active' :   $scope.chartObject.type == 'ColumnChart' }\" ng-click=\"changeChartType('ColumnChart')\">ColumnChart</button>\n" +
+    "        </div>\n" +
+    "    </div>\n" +
     "</div>\n" +
     "\n" +
-    "<ui-gmap-google-map center='map.center' zoom='map.zoom'>\n" +
+    "<tabset>\n" +
+    "    <tab heading=\"Google Map with Markers\" select=\"toggleButtons(false)\">\n" +
+    "        <ui-gmap-google-map center='map.center' zoom='map.zoom'>\n" +
     "\n" +
-    "    <ui-gmap-markers\n" +
-    "            models=\"markers\"\n" +
-    "            idkey=\"'id'\"\n" +
-    "            coords=\"'points'\">\n" +
-    "    </ui-gmap-markers>\n" +
-    "            <!--models='{expression}'-->\n" +
-    "            <!--doCluster=\"{string or object}\"-->\n" +
-    "            <!--clusterOptions='{expression}'-->\n" +
-    "            <!--fit=\"{string or object}\"-->\n" +
+    "        <ui-gmap-markers\n" +
+    "                models=\"markers\"\n" +
+    "                idkey=\"'id'\"\n" +
+    "                coords=\"'points'\">\n" +
+    "        </ui-gmap-markers>\n" +
     "\n" +
-    "            <!--labelContent='{expression}'-->\n" +
-    "\n" +
-    "            <!--icon=\"'{string}'\"-->\n" +
-    "            <!--options=\"'{string}'\"-->\n" +
-    "            <!--labelContent=\"'{string}'\"-->\n" +
-    "            <!--labelAnchor=\"'{string}'\"-->\n" +
-    "            <!--labelClass=\"'{string}'\"-->\n" +
-    "            <!--click=\"'{string or expression to a function}'\"-->\n" +
-    "            <!--modelsbyref=\"{expression}\"-->\n" +
-    "\n" +
-    "            <!--events=\"{expression}\"-->\n" +
-    "\n" +
-    "            <!--control='{expression}'-->\n" +
-    "            <!--chunk='{expression}'-->\n" +
-    "            <!--cleanchunk='{expression}'-->\n" +
-    "            <!--doRebuildAll=\"{string or object}\"-->\n" +
-    "            <!-->-->\n" +
-    "\n" +
-    "\n" +
-    "</ui-gmap-google-map>");
+    "    </ui-gmap-google-map>\n" +
+    "    </tab>\n" +
+    "    <!--<tab ng-repeat=\"tab in tabs\" heading=\"{{tab.title}}\" active=\"tab.active\" disabled=\"tab.disabled\">-->\n" +
+    "        <!--{{tab.content}}-->\n" +
+    "    <!--</tab>-->\n" +
+    "    <tab select=\"toggleButtons(true)\">\n" +
+    "        <tab-heading>\n" +
+    "            <i class=\"glyphicon glyphicon-bell\"></i> Google Charts\n" +
+    "        </tab-heading>\n" +
+    "        <div google-chart chart=\"chartObject\" style=\"height:600px; width:100%;\"></div>\n" +
+    "    </tab>\n" +
+    "</tabset>\n" +
+    "");
 }]);
 
 angular.module("survey/survey_list.tpl.html", []).run(["$templateCache", function($templateCache) {

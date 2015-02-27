@@ -1,4 +1,4 @@
-/*! pegasusrises - v0.0.1-A - 2015-02-24
+/*! pegasusrises - v0.0.1-A - 2015-02-27
  * pegasusrises.com
  * Copyright (c) 2015 BBG Digital Innovation Lab;
  * Licensed MIT
@@ -42,7 +42,7 @@ angular.module('admin', [])
                 body.removeClass('red_thm');
                 body.removeClass('magento_thm');
                 body.removeClass('green_thm');
-                body.addClass(themeclass);
+                body.addClass(choice.key);
         };
 
           $scope.headerOptions = [
@@ -100,16 +100,20 @@ angular.module('pegasusrises', [
     'admin',
     'survey',
     'lk-google-picker',
-    'angular-loading-bar',
+    //'angular-loading-bar',
+    'cfp.loadingBar',
     'angular-growl',
     'angularFileUpload',
     'ngResource',
     'ngJoyRide',
-    'uiGmapgoogle-maps'
+    'uiGmapgoogle-maps',
+    'googlechart'
 ])
     .constant('prConstantKeys', {
-        google_api_key: 'AIzaSyDSBIljWNHZ9xMXuaROc4oAypA8LT5xmaU'
+        google_api_key: 'AIzaSyDSBIljWNHZ9xMXuaROc4oAypA8LT5xmaU',
+        google_client_id : '982002203062-qllsi843lackaof6acad3308p7m1j5pr.apps.googleusercontent.com'
     })
+
     .config(['$stateProvider','$urlRouterProvider','lkGoogleSettingsProvider',
         'growlProvider', '$httpProvider', 'uiGmapGoogleMapApiProvider','prConstantKeys',
         function($stateProvider, $urlRouterProvider, lkGoogleSettingsProvider,
@@ -119,13 +123,12 @@ angular.module('pegasusrises', [
 
             //This is the configuration for the Google Picker API
             lkGoogleSettingsProvider.configure({
-                apiKey   : 'AIzaSyDSBIljWNHZ9xMXuaROc4oAypA8LT5xmaU',
-                clientId : '982002203062-qllsi843lackaof6acad3308p7m1j5pr.apps.googleusercontent.com',
+                apiKey   :  prConstantKeys.google_api_key,
+                clientId : prConstantKeys.google_client_id,
                 scopes   : ['https://www.googleapis.com/auth/drive', 'https://www.googleapis.com/auth/drive.readonly'],
                 locale   : 'en',
-                features : ['MULTISELECT_ENABLED'],
+                features : [],
                 views    : [
-                    'DocsUploadView()',
                     'DocsView().setMimeTypes("application/vnd.google-apps.spreadsheet")'
                 ]
             });
@@ -139,9 +142,22 @@ angular.module('pegasusrises', [
                 libraries: ''
             });
         }])
-    .run(['$rootScope', '$state', '$stateParams', '$location' ,function($rootScope, $state, $stateParams, $location){
+    .run(['$rootScope', '$state', '$stateParams', 'cfpLoadingBar' ,function($rootScope, $state, $stateParams, cfpLoadingBar){
         $rootScope.$state = $state;
         $rootScope.$stateParams = $stateParams;
+
+        $rootScope.$on('$stateChangeStart',function(event, toState, toParams, fromState, fromParams){
+            cfpLoadingBar.start();
+            //$rootScope.loading = true;
+        });
+
+        $rootScope.$on('$viewContentLoading',function(event){
+            cfpLoadingBar.inc();
+        });
+
+        $rootScope.$on('$viewContentLoaded',function(event){
+            cfpLoadingBar.complete();
+        });
 
     }]);
 
@@ -149,6 +165,52 @@ angular.module('pegasusrises').controller('prBreadCrumbCtrl', ['$scope', '$state
     $scope.$watch('$state', function(oldVal, newVal){
         $scope.subtitle = ($state.current.name).toUpperCase();
     });
+
+    $scope.configJoyRide = [
+        {
+            type: "title",
+            heading: "Welcome to the Pegasus Tutorial",
+            text: '<div class="row">' +
+            '<div id="title-text" style="font-size: medium;" class=" text-center col-md-12"><br>' +
+            'This walkthrough will help you familiarize with the Pegasus Build System</div></div>',
+            scroll: true
+        },
+        {
+            type: "element",
+            selector: "#ngJoyRide_1_gdrive",
+            heading: "Create a Server",
+            text: "<span class=''  style='font-size: medium;'>This button will open your Google Drive in this interface to allow you select the XLS file that will be used to generate the server</span>" +
+            "<br><span  style='font-size: small;'>Clicking \"NEXT\'</span>",
+            placement: "left",
+            scroll: true
+        },
+        {
+            type : 'function',
+            fn : function(){
+                $scope.startJoyRide = false;
+                $('#ngJoyRide_1_gdrive').trigger('click');
+            }
+        },
+        {
+            type : 'element',
+            selector : '#ngJoyRide_2_upload',
+            heading : "<span class='text-center'  style='font-size: medium;'>Upload the selected Google Sheet to begin creating your server</span>",
+            scroll : true,
+            placement : "left"
+        }
+
+    ];
+
+    $scope.startJoyRide = function(){
+        $scope.startJoyRide = !$scope.startJoyRide
+    };
+
+    $scope.onFinish = function(){
+        //alert("Joy ride ends")
+    };
+
+
+
 }]);
 /**
  * Home Template
@@ -170,129 +232,82 @@ angular.module('home', [])
  */
 
 angular.module('home')
-    .controller('prHomeController', ['$rootScope', '$scope', 'homeService', 'growl', '$upload',
-        function($rootScope, $scope, homeService, growl, $upload){
-        $scope.files = [];
+    .controller('prHomeController', ['$rootScope', '$scope', 'homeService', 'growl', '$upload','cfpLoadingBar',
+        function($rootScope, $scope, homeService, growl, $upload, cfpLoadingBar){
+            $scope.files = [];
 
 
-        $scope.uploadSheet = function(){
-            var fileToUpload = $scope.files[ $scope.files.length - 1 ];
-            homeService.uploadGoogleSheet(fileToUpload).
-                success(function(data, status, headers, config) {
-                    growl.success("Data was posted successfully", {});
-                    console.log(data);
-                    console.log(status);
-                    console.log(headers);
-                    console.log(config);
-                }).
-                error(function(data, status, headers, config) {
-                    growl.error("Something went wrong on the server", {});
-                    console.log(data);
-                    console.log(status);
-                    console.log(headers);
-                    console.log(config);
-                });
-        };
+            $scope.uploadSheet = function(){
+                var fileToUpload = $scope.files[ $scope.files.length - 1 ];
+                homeService.uploadGoogleSheet(fileToUpload).
+                    success(function(data, status, headers, config) {
+                        growl.success("Data was posted successfully", {});
+                        console.log(data);
+                        console.log(status);
+                        console.log(headers);
+                        console.log(config);
+                    }).
+                    error(function(data, status, headers, config) {
+                        growl.error("Something went wrong on the server", {});
+                        console.log(data);
+                        console.log(status);
+                        console.log(headers);
+                        console.log(config);
+                    });
+            };
 
-        $scope.tabletop= function(){
-            if ($scope.files.length) {
-                $scope.surveyDataReturned = {};
-                Tabletop.init( {
-                    key: $scope.files[ $scope.files.length - 1].id,
-                    callback: function(data, tabletop) {
-                        angular.forEach(data, function(val, prop){
-                            $scope.surveyDataReturned [ prop ] = {
-                                column_names :  data[prop].column_names,
-                                elements :  data[prop].elements,
-                                name :  data[prop].name,
-                                original_columns : data[prop].original_columns,
-                                pretty_columns : data[prop].pretty_columns
-                            };
-                        });
-                        if (data) {
-                            homeService.uploadGoogleSheetContentsAsJson($scope.surveyDataReturned)
-                                .success(function(data){
-                                    growl.success("Data was posted successfully", {});
-                                })
-                                .error(function(){
-                                    growl.error("Something went wrong on the server", {});
-                                })
-                        }else{
-                            alert("The file has not been shared to the public")
-                        }
-                    },
-                    simpleSheet: false
-                })
-            }else{
-                alert("No file selected")
-            }
-        };
-
-        $scope.getFile = function(){
-            homeService.getFileFromGoogle($scope.files[ $scope.files.length - 1].id)
-                .success(function(data, stuff, more, headers){
-                    console.log(data);
-
-                    var urlToPost = data['exportLinks']['application/vnd.openxmlformats-officedocument.spreadsheetml.sheet'];
-
-                    homeService.sendXLSDownloadUrl(urlToPost)
-
-                })
-        };
-
-
-        $scope.configJoyRide = [
-            {
-                type: "title",
-                heading: "Welcome to the Pegasus Tutorial",
-                text: '<div class="row">' +
-                '<div id="title-text" style="font-size: large;" class=" text-center col-md-12"><br>' +
-                'This walkthrough will help you familiarize with the Pegasus Build System</div></div>',
-                scroll: true
-            },
-            {
-                type: "element",
-                selector: "#ngJoyRide_1_gdrive",
-                heading: "Create a Server",
-                text: "<span class='text-center'>This button will open your Google Drive in this interface to allow you select the XLS file that will be used to generate the server</span>",
-                placement: "right",
-                scroll: true
-            },
-            {
-                type : 'function',
-                fn : function(){
-                    $scope.startJoyRide = false;
-                    $('#ngJoyRide_1_gdrive').trigger('click');
+            $scope.tabletop= function(){
+                if ($scope.files.length) {
+                    $scope.surveyDataReturned = {};
+                    Tabletop.init( {
+                        key: $scope.files[ $scope.files.length - 1].id,
+                        callback: function(data, tabletop) {
+                            angular.forEach(data, function(val, prop){
+                                $scope.surveyDataReturned [ prop ] = {
+                                    column_names :  data[prop].column_names,
+                                    elements :  data[prop].elements,
+                                    name :  data[prop].name,
+                                    original_columns : data[prop].original_columns,
+                                    pretty_columns : data[prop].pretty_columns
+                                };
+                            });
+                            if (data) {
+                                homeService.uploadGoogleSheetContentsAsJson($scope.surveyDataReturned)
+                                    .success(function(data){
+                                        growl.success("Data was posted successfully", {});
+                                    })
+                                    .error(function(){
+                                        growl.error("Something went wrong on the server", {});
+                                    })
+                            }else{
+                                alert("The file has not been shared to the public")
+                            }
+                        },
+                        simpleSheet: false
+                    })
+                }else{
+                    alert("No file selected")
                 }
-            },
-            {
-                type : 'element',
-                selector : '#ngJoyRide_2_upload',
-                heading : "<span class='text-center'>Upload the selected Google Sheet to begin creating your server</span>",
-                scroll : true,
-                placement : "left"
-            }
+            };
 
-        ];
+            $scope.getFile = function(){
+                homeService.getFileFromGoogle($scope.files[ $scope.files.length - 1].id)
+                    .success(function(data, stuff, more, headers){
+                        console.log(data);
 
-        //$scope.$watch('files', function(){
-        //    $scope.startJoyRide = !$scope.startJoyRide;
-        //});
+                        var urlToPost = data['exportLinks']['application/vnd.openxmlformats-officedocument.spreadsheetml.sheet'];
 
-        $scope.startJoyRide = function(){
-            $scope.startJoyRide = !$scope.startJoyRide
-        };
+                        homeService.sendXLSDownloadUrl(urlToPost)
 
-        $scope.onFinish = function(){
-            //alert("Joy ride ends")
-        };
-
-        $scope.sendFileToOdk = function(){
-            homeService.sendFileToOdk();
-        }
+                    })
+            };
 
 
-    }]);
+            $scope.sendFileToOdk = function(){
+                homeService.sendFileToOdk();
+            };
+
+        }]);
 /**
  * Created by kaygee on 2/13/15.
  */
@@ -458,6 +473,56 @@ angular.module('survey')
             uiGmapGoogleMapApi.then(function(maps) {
 
             });
+
+            $scope.chartObject = {};
+
+            $scope.onions = [
+                {v: "Onions"},
+                {v: 3},
+            ];
+
+            $scope.chartObject.data = {"cols": [
+                {id: "t", label: "Topping", type: "string"},
+                {id: "s", label: "Slices", type: "number"}
+            ], "rows": [
+                {c: [
+                    {v: "Mushrooms"},
+                    {v: 3},
+                ]},
+                {c: $scope.onions},
+                {c: [
+                    {v: "Olives"},
+                    {v: 31}
+                ]},
+                {c: [
+                    {v: "Zucchini"},
+                    {v: 1},
+                ]},
+                {c: [
+                    {v: "Pepperoni"},
+                    {v: 2},
+                ]}
+            ]};
+
+
+            // $routeParams.chartType == BarChart or PieChart or ColumnChart...
+            $scope.chartObject.type = 'ColumnChart';
+            $scope.chartObject.options = {
+                'title': 'How Much Pizza I Ate Last Night'
+            };
+            $scope.changeChartType = function (chartType) {
+                $scope.chartObject.type = chartType;
+            };
+
+            $scope.tabs = [
+                { title:'Dynamic Title 1', content:'Dynamic content 1' },
+                { title:'Dynamic Title 2', content:'Dynamic content 2', disabled: true }
+            ];
+
+            $scope.toggleButtons = function(state){
+                $scope.showButtons = state;
+            }
+
         }]);
 
 
@@ -2283,315 +2348,7 @@ angular.module('angular-growl').service('growlMessages', [
  * Copyright (c) 2014 Wes Cruver
  * License: MIT
  */
-/*
- * angular-loading-bar
- *
- * intercepts XHR requests and creates a loading bar.
- * Based on the excellent nprogress work by rstacruz (more info in readme)
- *
- * (c) 2013 Wes Cruver
- * License: MIT
- */
-
-
-(function() {
-
-'use strict';
-
-// Alias the loading bar for various backwards compatibilities since the project has matured:
-angular.module('angular-loading-bar', ['cfp.loadingBarInterceptor']);
-angular.module('chieffancypants.loadingBar', ['cfp.loadingBarInterceptor']);
-
-
-/**
- * loadingBarInterceptor service
- *
- * Registers itself as an Angular interceptor and listens for XHR requests.
- */
-angular.module('cfp.loadingBarInterceptor', ['cfp.loadingBar'])
-  .config(['$httpProvider', function ($httpProvider) {
-
-    var interceptor = ['$q', '$cacheFactory', '$timeout', '$rootScope', 'cfpLoadingBar', function ($q, $cacheFactory, $timeout, $rootScope, cfpLoadingBar) {
-
-      /**
-       * The total number of requests made
-       */
-      var reqsTotal = 0;
-
-      /**
-       * The number of requests completed (either successfully or not)
-       */
-      var reqsCompleted = 0;
-
-      /**
-       * The amount of time spent fetching before showing the loading bar
-       */
-      var latencyThreshold = cfpLoadingBar.latencyThreshold;
-
-      /**
-       * $timeout handle for latencyThreshold
-       */
-      var startTimeout;
-
-
-      /**
-       * calls cfpLoadingBar.complete() which removes the
-       * loading bar from the DOM.
-       */
-      function setComplete() {
-        $timeout.cancel(startTimeout);
-        cfpLoadingBar.complete();
-        reqsCompleted = 0;
-        reqsTotal = 0;
-      }
-
-      /**
-       * Determine if the response has already been cached
-       * @param  {Object}  config the config option from the request
-       * @return {Boolean} retrns true if cached, otherwise false
-       */
-      function isCached(config) {
-        var cache;
-        var defaultCache = $cacheFactory.get('$http');
-        var defaults = $httpProvider.defaults;
-
-        // Choose the proper cache source. Borrowed from angular: $http service
-        if ((config.cache || defaults.cache) && config.cache !== false &&
-          (config.method === 'GET' || config.method === 'JSONP')) {
-            cache = angular.isObject(config.cache) ? config.cache
-              : angular.isObject(defaults.cache) ? defaults.cache
-              : defaultCache;
-        }
-
-        var cached = cache !== undefined ?
-          cache.get(config.url) !== undefined : false;
-
-        if (config.cached !== undefined && cached !== config.cached) {
-          return config.cached;
-        }
-        config.cached = cached;
-        return cached;
-      }
-
-
-      return {
-        'request': function(config) {
-          // Check to make sure this request hasn't already been cached and that
-          // the requester didn't explicitly ask us to ignore this request:
-          if (!config.ignoreLoadingBar && !isCached(config)) {
-            $rootScope.$broadcast('cfpLoadingBar:loading', {url: config.url});
-            if (reqsTotal === 0) {
-              startTimeout = $timeout(function() {
-                cfpLoadingBar.start();
-              }, latencyThreshold);
-            }
-            reqsTotal++;
-            cfpLoadingBar.set(reqsCompleted / reqsTotal);
-          }
-          return config;
-        },
-
-        'response': function(response) {
-          if (!response.config.ignoreLoadingBar && !isCached(response.config)) {
-            reqsCompleted++;
-            $rootScope.$broadcast('cfpLoadingBar:loaded', {url: response.config.url, result: response});
-            if (reqsCompleted >= reqsTotal) {
-              setComplete();
-            } else {
-              cfpLoadingBar.set(reqsCompleted / reqsTotal);
-            }
-          }
-          return response;
-        },
-
-        'responseError': function(rejection) {
-          if (!rejection.config.ignoreLoadingBar && !isCached(rejection.config)) {
-            reqsCompleted++;
-            $rootScope.$broadcast('cfpLoadingBar:loaded', {url: rejection.config.url, result: rejection});
-            if (reqsCompleted >= reqsTotal) {
-              setComplete();
-            } else {
-              cfpLoadingBar.set(reqsCompleted / reqsTotal);
-            }
-          }
-          return $q.reject(rejection);
-        }
-      };
-    }];
-
-    $httpProvider.interceptors.push(interceptor);
-  }]);
-
-
-/**
- * Loading Bar
- *
- * This service handles adding and removing the actual element in the DOM.
- * Generally, best practices for DOM manipulation is to take place in a
- * directive, but because the element itself is injected in the DOM only upon
- * XHR requests, and it's likely needed on every view, the best option is to
- * use a service.
- */
-angular.module('cfp.loadingBar', [])
-  .provider('cfpLoadingBar', function() {
-
-    this.includeSpinner = true;
-    this.includeBar = true;
-    this.latencyThreshold = 100;
-    this.startSize = 0.02;
-    this.parentSelector = 'body';
-    this.spinnerTemplate = '<div id="loading-bar-spinner"><div class="spinner-icon"></div></div>';
-    this.loadingBarTemplate = '<div id="loading-bar"><div class="bar"><div class="peg"></div></div></div>';
-
-    this.$get = ['$injector', '$document', '$timeout', '$rootScope', function ($injector, $document, $timeout, $rootScope) {
-      var $animate;
-      var $parentSelector = this.parentSelector,
-        loadingBarContainer = angular.element(this.loadingBarTemplate),
-        loadingBar = loadingBarContainer.find('div').eq(0),
-        spinner = angular.element(this.spinnerTemplate);
-
-      var incTimeout,
-        completeTimeout,
-        started = false,
-        status = 0;
-
-      var includeSpinner = this.includeSpinner;
-      var includeBar = this.includeBar;
-      var startSize = this.startSize;
-
-      /**
-       * Inserts the loading bar element into the dom, and sets it to 2%
-       */
-      function _start() {
-        if (!$animate) {
-          $animate = $injector.get('$animate');
-        }
-
-        var $parent = $document.find($parentSelector).eq(0);
-        $timeout.cancel(completeTimeout);
-
-        // do not continually broadcast the started event:
-        if (started) {
-          return;
-        }
-
-        $rootScope.$broadcast('cfpLoadingBar:started');
-        started = true;
-
-        if (includeBar) {
-          $animate.enter(loadingBarContainer, $parent);
-        }
-
-        if (includeSpinner) {
-          $animate.enter(spinner, $parent);
-        }
-
-        _set(startSize);
-      }
-
-      /**
-       * Set the loading bar's width to a certain percent.
-       *
-       * @param n any value between 0 and 1
-       */
-      function _set(n) {
-        if (!started) {
-          return;
-        }
-        var pct = (n * 100) + '%';
-        loadingBar.css('width', pct);
-        status = n;
-
-        // increment loadingbar to give the illusion that there is always
-        // progress but make sure to cancel the previous timeouts so we don't
-        // have multiple incs running at the same time.
-        $timeout.cancel(incTimeout);
-        incTimeout = $timeout(function() {
-          _inc();
-        }, 250);
-      }
-
-      /**
-       * Increments the loading bar by a random amount
-       * but slows down as it progresses
-       */
-      function _inc() {
-        if (_status() >= 1) {
-          return;
-        }
-
-        var rnd = 0;
-
-        // TODO: do this mathmatically instead of through conditions
-
-        var stat = _status();
-        if (stat >= 0 && stat < 0.25) {
-          // Start out between 3 - 6% increments
-          rnd = (Math.random() * (5 - 3 + 1) + 3) / 100;
-        } else if (stat >= 0.25 && stat < 0.65) {
-          // increment between 0 - 3%
-          rnd = (Math.random() * 3) / 100;
-        } else if (stat >= 0.65 && stat < 0.9) {
-          // increment between 0 - 2%
-          rnd = (Math.random() * 2) / 100;
-        } else if (stat >= 0.9 && stat < 0.99) {
-          // finally, increment it .5 %
-          rnd = 0.005;
-        } else {
-          // after 99%, don't increment:
-          rnd = 0;
-        }
-
-        var pct = _status() + rnd;
-        _set(pct);
-      }
-
-      function _status() {
-        return status;
-      }
-
-      function _completeAnimation() {
-        status = 0;
-        started = false;
-      }
-
-      function _complete() {
-        if (!$animate) {
-          $animate = $injector.get('$animate');
-        }
-
-        $rootScope.$broadcast('cfpLoadingBar:completed');
-        _set(1);
-
-        $timeout.cancel(completeTimeout);
-
-        // Attempt to aggregate any start/complete calls within 500ms:
-        completeTimeout = $timeout(function() {
-          var promise = $animate.leave(loadingBarContainer, _completeAnimation);
-          if (promise && promise.then) {
-            promise.then(_completeAnimation);
-          }
-          $animate.leave(spinner);
-        }, 500);
-      }
-
-      return {
-        start            : _start,
-        set              : _set,
-        status           : _status,
-        inc              : _inc,
-        complete         : _complete,
-        includeSpinner   : this.includeSpinner,
-        latencyThreshold : this.latencyThreshold,
-        parentSelector   : this.parentSelector,
-        startSize        : this.startSize
-      };
-
-
-    }];     //
-  });       // wtf javascript. srsly
-})();       //
-
+!function(){"use strict";angular.module("angular-loading-bar",["cfp.loadingBarInterceptor"]),angular.module("chieffancypants.loadingBar",["cfp.loadingBarInterceptor"]),angular.module("cfp.loadingBarInterceptor",["cfp.loadingBar"]).config(["$httpProvider",function(a){var b=["$q","$cacheFactory","$timeout","$rootScope","cfpLoadingBar",function(b,c,d,e,f){function g(){d.cancel(i),f.complete(),k=0,j=0}function h(b){var d,e=c.get("$http"),f=a.defaults;!b.cache&&!f.cache||b.cache===!1||"GET"!==b.method&&"JSONP"!==b.method||(d=angular.isObject(b.cache)?b.cache:angular.isObject(f.cache)?f.cache:e);var g=void 0!==d?void 0!==d.get(b.url):!1;return void 0!==b.cached&&g!==b.cached?b.cached:(b.cached=g,g)}var i,j=0,k=0,l=f.latencyThreshold;return{request:function(a){return a.ignoreLoadingBar||h(a)||(e.$broadcast("cfpLoadingBar:loading",{url:a.url}),0===j&&(i=d(function(){f.start()},l)),j++,f.set(k/j)),a},response:function(a){return a.config.ignoreLoadingBar||h(a.config)||(k++,e.$broadcast("cfpLoadingBar:loaded",{url:a.config.url,result:a}),k>=j?g():f.set(k/j)),a},responseError:function(a){return a.config.ignoreLoadingBar||h(a.config)||(k++,e.$broadcast("cfpLoadingBar:loaded",{url:a.config.url,result:a}),k>=j?g():f.set(k/j)),b.reject(a)}}}];a.interceptors.push(b)}]),angular.module("cfp.loadingBar",[]).provider("cfpLoadingBar",function(){this.includeSpinner=!0,this.includeBar=!0,this.latencyThreshold=100,this.startSize=.02,this.parentSelector="body",this.spinnerTemplate='<div id="loading-bar-spinner"><div class="spinner-icon"></div></div>',this.loadingBarTemplate='<div id="loading-bar"><div class="bar"><div class="peg"></div></div></div>',this.$get=["$injector","$document","$timeout","$rootScope",function(a,b,c,d){function e(){k||(k=a.get("$animate"));var e=b.find(n).eq(0);c.cancel(m),r||(d.$broadcast("cfpLoadingBar:started"),r=!0,u&&k.enter(o,e),t&&k.enter(q,e),f(v))}function f(a){if(r){var b=100*a+"%";p.css("width",b),s=a,c.cancel(l),l=c(function(){g()},250)}}function g(){if(!(h()>=1)){var a=0,b=h();a=b>=0&&.25>b?(3*Math.random()+3)/100:b>=.25&&.65>b?3*Math.random()/100:b>=.65&&.9>b?2*Math.random()/100:b>=.9&&.99>b?.005:0;var c=h()+a;f(c)}}function h(){return s}function i(){s=0,r=!1}function j(){k||(k=a.get("$animate")),d.$broadcast("cfpLoadingBar:completed"),f(1),c.cancel(m),m=c(function(){var a=k.leave(o,i);a&&a.then&&a.then(i),k.leave(q)},500)}var k,l,m,n=this.parentSelector,o=angular.element(this.loadingBarTemplate),p=o.find("div").eq(0),q=angular.element(this.spinnerTemplate),r=!1,s=0,t=this.includeSpinner,u=this.includeBar,v=this.startSize;return{start:e,set:f,status:h,inc:g,complete:j,includeSpinner:this.includeSpinner,latencyThreshold:this.latencyThreshold,parentSelector:this.parentSelector,startSize:this.startSize}}]})}();
 /**
  * @license AngularJS v1.3.13
  * (c) 2010-2014 Google, Inc. http://angularjs.org
@@ -68413,6 +68170,273 @@ angular.module('lk-google-picker', [])
     }
   }
 }]);
+
+/**
+ * @description Google Chart Api Directive Module for AngularJS
+ * @version 0.0.11
+ * @author Nicolas Bouillon <nicolas@bouil.org>
+ * @author GitHub contributors
+ * @license MIT
+ * @year 2013
+ */
+(function (document, window, angular) {
+    'use strict';
+
+    angular.module('googlechart', [])
+
+        .value('googleChartApiConfig', {
+            version: '1',
+            optionalSettings: {
+                packages: ['corechart']
+            }
+        })
+
+        .provider('googleJsapiUrl', function () {
+            var protocol = 'https:';
+            var url = '//www.google.com/jsapi';
+
+            this.setProtocol = function (newProtocol) {
+                protocol = newProtocol;
+            };
+
+            this.setUrl = function (newUrl) {
+                url = newUrl;
+            };
+
+            this.$get = function () {
+                return (protocol ? protocol : '') + url;
+            };
+        })
+        .factory('googleChartApiPromise', ['$rootScope', '$q', 'googleChartApiConfig', 'googleJsapiUrl', function ($rootScope, $q, apiConfig, googleJsapiUrl) {
+            var apiReady = $q.defer();
+            var onLoad = function () {
+                // override callback function
+                var settings = {
+                    callback: function () {
+                        var oldCb = apiConfig.optionalSettings.callback;
+                        $rootScope.$apply(function () {
+                            apiReady.resolve();
+                        });
+
+                        if (angular.isFunction(oldCb)) {
+                            oldCb.call(this);
+                        }
+                    }
+                };
+
+                settings = angular.extend({}, apiConfig.optionalSettings, settings);
+
+                window.google.load('visualization', apiConfig.version, settings);
+            };
+            var head = document.getElementsByTagName('head')[0];
+            var script = document.createElement('script');
+
+            script.setAttribute('type', 'text/javascript');
+            script.src = googleJsapiUrl;
+
+            if (script.addEventListener) { // Standard browsers (including IE9+)
+                script.addEventListener('load', onLoad, false);
+            } else { // IE8 and below
+                script.onreadystatechange = function () {
+                    if (script.readyState === 'loaded' || script.readyState === 'complete') {
+                        script.onreadystatechange = null;
+                        onLoad();
+                    }
+                };
+            }
+
+            head.appendChild(script);
+
+            return apiReady.promise;
+        }])
+        .directive('googleChart', ['$timeout', '$window', '$rootScope', 'googleChartApiPromise', function ($timeout, $window, $rootScope, googleChartApiPromise) {
+            return {
+                restrict: 'A',
+                scope: {
+                    beforeDraw: '&',
+                    chart: '=chart',
+                    onReady: '&',
+                    onSelect: '&',
+                    select: '&'
+                },
+                link: function ($scope, $elm, $attrs) {
+                    /* Watches, to refresh the chart when its data, formatters, options, view,
+                        or type change. All other values intentionally disregarded to avoid double
+                        calls to the draw function. Please avoid making changes to these objects
+                        directly from this directive.*/
+                    $scope.$watch(function () {
+                        if ($scope.chart) {
+                            return {
+                                customFormatters: $scope.chart.customFormatters,
+                                data: $scope.chart.data,
+                                formatters: $scope.chart.formatters,
+                                options: $scope.chart.options,
+                                type: $scope.chart.type,
+                                view: $scope.chart.view
+                            };
+                        }
+                        return $scope.chart;
+                    }, function () {
+                        drawAsync();
+                    }, true); // true is for deep object equality checking
+
+                    // Redraw the chart if the window is resized
+                    var resizeHandler = $rootScope.$on('resizeMsg', function () {
+                        $timeout(function () {
+                            // Not always defined yet in IE so check
+                            if ($scope.chartWrapper) {
+                                drawAsync();
+                            }
+                        });
+                    });
+
+                    //Cleanup resize handler.
+                    $scope.$on('$destroy', function () {
+                        resizeHandler();
+                    });
+
+                    // Keeps old formatter configuration to compare against
+                    $scope.oldChartFormatters = {};
+
+                    function applyFormat(formatType, formatClass, dataTable) {
+                        var i;
+                        if (typeof ($scope.chart.formatters[formatType]) !== 'undefined') {
+                            if (!angular.equals($scope.chart.formatters[formatType], $scope.oldChartFormatters[formatType])) {
+                                $scope.oldChartFormatters[formatType] = $scope.chart.formatters[formatType];
+                                $scope.formatters[formatType] = [];
+
+                                if (formatType === 'color') {
+                                    for (var cIdx = 0; cIdx < $scope.chart.formatters[formatType].length; cIdx++) {
+                                        var colorFormat = new formatClass();
+
+                                        for (i = 0; i < $scope.chart.formatters[formatType][cIdx].formats.length; i++) {
+                                            var data = $scope.chart.formatters[formatType][cIdx].formats[i];
+
+                                            if (typeof (data.fromBgColor) !== 'undefined' && typeof (data.toBgColor) !== 'undefined')
+                                                colorFormat.addGradientRange(data.from, data.to, data.color, data.fromBgColor, data.toBgColor);
+                                            else
+                                                colorFormat.addRange(data.from, data.to, data.color, data.bgcolor);
+                                        }
+
+                                        $scope.formatters[formatType].push(colorFormat);
+                                    }
+                                } else {
+
+                                    for (i = 0; i < $scope.chart.formatters[formatType].length; i++) {
+                                        $scope.formatters[formatType].push(new formatClass(
+                                            $scope.chart.formatters[formatType][i])
+                                        );
+                                    }
+                                }
+                            }
+
+
+                            //apply formats to dataTable
+                            for (i = 0; i < $scope.formatters[formatType].length; i++) {
+                                if ($scope.chart.formatters[formatType][i].columnNum < dataTable.getNumberOfColumns())
+                                    $scope.formatters[formatType][i].format(dataTable, $scope.chart.formatters[formatType][i].columnNum);
+                            }
+
+
+                            //Many formatters require HTML tags to display special formatting
+                            if (formatType === 'arrow' || formatType === 'bar' || formatType === 'color')
+                                $scope.chart.options.allowHtml = true;
+                        }
+                    }
+
+                    function draw() {
+                        if (!draw.triggered && ($scope.chart !== undefined)) {
+                            draw.triggered = true;
+                            $timeout(function () {
+
+                                if (typeof ($scope.chartWrapper) === 'undefined') {
+                                    var chartWrapperArgs = {
+                                        chartType: $scope.chart.type,
+                                        dataTable: $scope.chart.data,
+                                        view: $scope.chart.view,
+                                        options: $scope.chart.options,
+                                        containerId: $elm[0]
+                                    };
+
+                                    $scope.chartWrapper = new google.visualization.ChartWrapper(chartWrapperArgs);
+                                    google.visualization.events.addListener($scope.chartWrapper, 'ready', function () {
+                                        $scope.chart.displayed = true;
+                                        $scope.$apply(function (scope) {
+                                            scope.onReady({ chartWrapper: scope.chartWrapper });
+                                        });
+                                    });
+                                    google.visualization.events.addListener($scope.chartWrapper, 'error', function (err) {
+                                        console.log("Chart not displayed due to error: " + err.message + ". Full error object follows.");
+                                        console.log(err);
+                                    });
+                                    google.visualization.events.addListener($scope.chartWrapper, 'select', function () {
+                                        var selectEventRetParams = { selectedItems: $scope.chartWrapper.getChart().getSelection() };
+                                        // This is for backwards compatibility for people using 'selectedItem' that only wanted the first selection.
+                                        selectEventRetParams.selectedItem = selectEventRetParams.selectedItems[0];
+                                        $scope.$apply(function () {
+                                            if ($attrs.select) {
+                                                console.log('Angular-Google-Chart: The \'select\' attribute is deprecated and will be removed in a future release.  Please use \'onSelect\'.');
+                                                $scope.select(selectEventRetParams);
+                                            }
+                                            else {
+                                                $scope.onSelect(selectEventRetParams);
+                                            }
+                                        });
+                                    });
+                                }
+                                else {
+                                    $scope.chartWrapper.setChartType($scope.chart.type);
+                                    $scope.chartWrapper.setDataTable($scope.chart.data);
+                                    $scope.chartWrapper.setView($scope.chart.view);
+                                    $scope.chartWrapper.setOptions($scope.chart.options);
+                                }
+
+                                if (typeof ($scope.formatters) === 'undefined')
+                                    $scope.formatters = {};
+
+                                if (typeof ($scope.chart.formatters) !== 'undefined') {
+                                    applyFormat("number", google.visualization.NumberFormat, $scope.chartWrapper.getDataTable());
+                                    applyFormat("arrow", google.visualization.ArrowFormat, $scope.chartWrapper.getDataTable());
+                                    applyFormat("date", google.visualization.DateFormat, $scope.chartWrapper.getDataTable());
+                                    applyFormat("bar", google.visualization.BarFormat, $scope.chartWrapper.getDataTable());
+                                    applyFormat("color", google.visualization.ColorFormat, $scope.chartWrapper.getDataTable());
+                                }
+
+                                var customFormatters = $scope.chart.customFormatters;
+                                if (typeof (customFormatters) !== 'undefined') {
+                                    for (var name in customFormatters) {
+                                        applyFormat(name, customFormatters[name], $scope.chartWrapper.getDataTable());
+                                    }
+                                }
+
+                                $timeout(function () {
+                                    $scope.beforeDraw({ chartWrapper: $scope.chartWrapper });
+                                    $scope.chartWrapper.draw();
+                                    draw.triggered = false;
+                                });
+                            }, 0, true);
+                        } else if ($scope.chart !== undefined) {
+                            $timeout.cancel(draw.recallTimeout);
+                            draw.recallTimeout = $timeout(draw, 10);
+                        }
+                    }
+
+                    function drawAsync() {
+                        googleChartApiPromise.then(function () {
+                            draw();
+                        });
+                    }
+                }
+            };
+        }])
+
+        .run(['$rootScope', '$window', function ($rootScope, $window) {
+            angular.element($window).bind('resize', function () {
+                $rootScope.$emit('resizeMsg');
+            });
+        }]);
+
+})(document, window, window.angular);
 
 /*!
  * jQuery JavaScript Library v1.11.2

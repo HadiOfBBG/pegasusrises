@@ -26,8 +26,8 @@ routes = [
     (r'/admin', DashboardHandler),
     (r'/upload', CSVUploadHandler),
     (r'/read/data/from/aggregate', ReadDataFromPegasus),
-    # (r'/serve/([^/]+)?', ServeHandler),
-    (r'/gcsold', MainPage),
+    (r'/serve/([^/]+)?', ServeHandler),
+    (r'/gcs_old', MainPage),
     (r'/read/data/from/aggregate', ReadDataFromAggragate),
     (r'/sendmail', EmailHandler),
 
