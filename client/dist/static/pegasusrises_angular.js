@@ -95,7 +95,6 @@ angular.module('pegasusrises', [
     'admin',
     'survey',
     'lk-google-picker',
-    //'angular-loading-bar',
     'cfp.loadingBar',
     'angular-growl',
     'angularFileUpload',
@@ -104,6 +103,7 @@ angular.module('pegasusrises', [
     'uiGmapgoogle-maps',
     'googlechart'
 ])
+    //'angular-loading-bar',
     .constant('prConstantKeys', {
         google_api_key: 'AIzaSyDSBIljWNHZ9xMXuaROc4oAypA8LT5xmaU',
         google_client_id : '982002203062-qllsi843lackaof6acad3308p7m1j5pr.apps.googleusercontent.com'
