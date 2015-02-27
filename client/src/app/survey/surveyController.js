@@ -56,9 +56,22 @@ angular.module('survey')
 
 
             // $routeParams.chartType == BarChart or PieChart or ColumnChart...
-            $scope.chartObject.type = 'BarChart';
+            $scope.chartObject.type = 'ColumnChart';
             $scope.chartObject.options = {
                 'title': 'How Much Pizza I Ate Last Night'
+            };
+            $scope.changeChartType = function (chartType) {
+                $scope.chartObject.type = chartType;
+            };
+
+            $scope.tabs = [
+                { title:'Dynamic Title 1', content:'Dynamic content 1' },
+                { title:'Dynamic Title 2', content:'Dynamic content 2', disabled: true }
+            ];
+
+            $scope.toggleButtons = function(state){
+                $scope.showButtons = state;
             }
+
         }]);
 

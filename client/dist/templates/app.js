@@ -369,24 +369,45 @@ angular.module("home/home.tpl.html", []).run(["$templateCache", function($templa
 angular.module("survey/selected_survey.tpl.html", []).run(["$templateCache", function($templateCache) {
   $templateCache.put("survey/selected_survey.tpl.html",
     "<div class=\"row center\">\n" +
+    "\n" +
     "    <div class=\"col-lg-12 \">\n" +
     "        <section class=\"panel default blue_title h2\">\n" +
     "            <div class=\"panel-heading border\">Citizen Journalism Survey</div>\n" +
     "        </section>\n" +
     "    </div>\n" +
+    "\n" +
+    "    <div class=\"col-lg-12\" ng-init=\"showButtons = false\" ng-show=\"showButtons\">\n" +
+    "        <div class=\"btn-group\">\n" +
+    "            <button class=\"btn btn-primary\" ng-class=\"{'active' :   $scope.chartObject.type == 'BarChart' }\" ng-click=\"changeChartType('BarChart')\"> BarChart</button>\n" +
+    "            <button class=\"btn btn-warning\" ng-class=\"{'active' :   $scope.chartObject.type == 'PieChart' }\" ng-click=\"changeChartType('PieChart')\">PieChart</button>\n" +
+    "            <button class=\"btn btn-success\" ng-class=\"{'active' :   $scope.chartObject.type == 'ColumnChart' }\" ng-click=\"changeChartType('ColumnChart')\">ColumnChart</button>\n" +
+    "        </div>\n" +
+    "    </div>\n" +
     "</div>\n" +
     "\n" +
-    "<!--<ui-gmap-google-map center='map.center' zoom='map.zoom'>-->\n" +
+    "<tabset>\n" +
+    "    <tab heading=\"Google Map with Markers\" select=\"toggleButtons(false)\">\n" +
+    "        <ui-gmap-google-map center='map.center' zoom='map.zoom'>\n" +
     "\n" +
-    "    <!--<ui-gmap-markers-->\n" +
-    "            <!--models=\"markers\"-->\n" +
-    "            <!--idkey=\"'id'\"-->\n" +
-    "            <!--coords=\"'points'\">-->\n" +
-    "    <!--</ui-gmap-markers>-->\n" +
+    "        <ui-gmap-markers\n" +
+    "                models=\"markers\"\n" +
+    "                idkey=\"'id'\"\n" +
+    "                coords=\"'points'\">\n" +
+    "        </ui-gmap-markers>\n" +
     "\n" +
-    "<!--</ui-gmap-google-map>-->\n" +
-    "\n" +
-    "<div google-chart chart=\"chartObject\" style=\"height:600px; width:100%;\"></div>");
+    "    </ui-gmap-google-map>\n" +
+    "    </tab>\n" +
+    "    <!--<tab ng-repeat=\"tab in tabs\" heading=\"{{tab.title}}\" active=\"tab.active\" disabled=\"tab.disabled\">-->\n" +
+    "        <!--{{tab.content}}-->\n" +
+    "    <!--</tab>-->\n" +
+    "    <tab select=\"toggleButtons(true)\">\n" +
+    "        <tab-heading>\n" +
+    "            <i class=\"glyphicon glyphicon-bell\"></i> Google Charts\n" +
+    "        </tab-heading>\n" +
+    "        <div google-chart chart=\"chartObject\" style=\"height:600px; width:100%;\"></div>\n" +
+    "    </tab>\n" +
+    "</tabset>\n" +
+    "");
 }]);
 
 angular.module("survey/survey_list.tpl.html", []).run(["$templateCache", function($templateCache) {

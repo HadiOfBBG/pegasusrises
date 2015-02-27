@@ -1,4 +1,4 @@
-/*! pegasusrises - v0.0.1-A - 2015-02-25
+/*! pegasusrises - v0.0.1-A - 2015-02-27
  * pegasusrises.com
  * Copyright (c) 2015 BBG Digital Innovation Lab;
  * Licensed MIT
@@ -506,10 +506,23 @@ angular.module('survey')
 
 
             // $routeParams.chartType == BarChart or PieChart or ColumnChart...
-            $scope.chartObject.type = 'BarChart';
+            $scope.chartObject.type = 'ColumnChart';
             $scope.chartObject.options = {
                 'title': 'How Much Pizza I Ate Last Night'
+            };
+            $scope.changeChartType = function (chartType) {
+                $scope.chartObject.type = chartType;
+            };
+
+            $scope.tabs = [
+                { title:'Dynamic Title 1', content:'Dynamic content 1' },
+                { title:'Dynamic Title 2', content:'Dynamic content 2', disabled: true }
+            ];
+
+            $scope.toggleButtons = function(state){
+                $scope.showButtons = state;
             }
+
         }]);
 
 
