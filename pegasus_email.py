@@ -6,7 +6,7 @@ from google.appengine.api import users
 class EmailHandler(webapp2.RequestHandler):
 
 	def get(self):
-		user = users.get_current_user()
+		# user = users.get_current_user()
 
 		message = mail.EmailMessage(sender="comradehadi@gmail.com",
 		                            subject="Pegasus Notification")
