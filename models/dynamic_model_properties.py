@@ -11,4 +11,4 @@ class DynamicModelsProperties(db.Model):
     """docstring for Questions for the database columns
     This model is used to save questions details on pegasus"""
     model_name = db.TextProperty(required = True)
-    model_properties = db.TextProperty(required = True)
+    model_properties = db.StringListProperty(required = True)

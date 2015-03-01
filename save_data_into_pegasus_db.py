@@ -68,17 +68,24 @@ class SaveDataIntoPegasusDatabase(JinjaTemplating):
 
         dyanamic_model_fields = dynamic_expando_model._properties
 
-        print (dyanamic_model_fields)
+        list_of_properties_for_dynamic_model = []
+
+        for property in dyanamic_model_fields:
+            list_of_properties_for_dynamic_model.append(property)
+
+        # self.response.out.write(list_of_properties_for_dynamic_models)
+        # return
 
         model_name = 'BbgDemoModel'
-        # using repr to serialised the list data, can use 'eval' to get list back
-        model_properties = repr(dyanamic_model_fields)
-
-        insert_a_new_dynamic_model_property = DynamicModelsProperties(model_name = model_name, model_properties = model_properties)
+        insert_a_new_dynamic_model_property = DynamicModelsProperties(model_name = model_name, model_properties = list_of_properties_for_dynamic_model)
         insert_a_new_dynamic_model_property.put()
         print ("A new dynamic propert saved")
 
-        # self.response.out.write('A new dynamic property saved\n')
-        self.response.out.write(dyanamic_model_fields)
+        self.response.out.write('A new dynamic property saved\n')
+        self.response.out.write(list_of_properties_for_dynamic_model)
+
+
+
+
 
 
