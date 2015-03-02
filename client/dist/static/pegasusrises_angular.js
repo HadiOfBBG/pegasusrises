@@ -303,7 +303,7 @@ angular.module('home')
             };
 
             $scope.testDataRetrieve = function(){
-                homeService.getDataFromServer();
+
             };
 
         }]);
@@ -313,7 +313,7 @@ angular.module('home')
 
 
 angular.module('home')
-    .factory('homeService', ['$http','$resource', function($http, $resource){
+    .factory('homeService', ['$http','prConstantKeys', function($http, prConstantKeys){
         var homeService = {};
 
         homeService.uploadGoogleSheet = function(fileObject){
@@ -328,31 +328,9 @@ angular.module('home')
             return $http.post('/gcs', {downloadUrl : xlsUrl });
         };
 
-        homeService.getDataFromServer = function( ){
-            return $http.get('/read/data/from/pegasus')
-        };
-
         homeService.getFileFromGoogle = function(fileId){
             var url = 'https://www.googleapis.com/drive/v2/files/' + fileId;
-            return $http.get(url, {params : { key : 'AIzaSyDSBIljWNHZ9xMXuaROc4oAypA8LT5xmaU'}});
-        };
-
-        homeService.sendFileToOdk = function(){
-//            fileObject
-//            return $http.post('http://23.21.114.69/xlsform/', {file : 'file'});
-//            return $resource('http://23.21.114.69/xlsform/', {});
-            $.ajax({
-                url : 'http://23.21.114.69/xlsform/',
-                data : {file : 'file', fileName : 'FileName.xls'},
-                type : 'post',
-                beforeSend : function(xhr){
-                    xhr.setRequestHeader("Access-Control-Allow-Origin", "*");
-                },
-                crossDomain : true
-
-            }).done(function(data){
-                console.log('data ---- ', data)
-            })
+            return $http.get(url, {params : { key : prConstantKeys.google_api_key}});
         };
 
         return homeService;
@@ -372,7 +350,15 @@ angular.module('survey', [])
             .state('surveys.selected_survey', {
                 url : '/select/1',
                 templateUrl : 'survey/selected_survey.tpl.html',
-                controller : 'prSelectedSurveyController'
+                controller : 'prSelectedSurveyController',
+                resolve : {
+                    surveyService : 'surveyService',
+
+                    surveyData : function(surveyService){
+                        return surveyService.getAllSubmissions()
+                    }
+
+                }
             })
     }]);
 /**
@@ -384,8 +370,19 @@ angular.module('survey')
         function($rootScope, $scope, homeService, growl){
 
         }])
-    .controller('prSelectedSurveyController', ['$rootScope', '$scope', 'homeService', 'growl','uiGmapGoogleMapApi',
-        function($rootScope, $scope, homeService, growl, uiGmapGoogleMapApi){
+    .controller('prSelectedSurveyController', ['$rootScope', '$scope', 'homeService', 'growl','uiGmapGoogleMapApi','surveyData',
+        function($rootScope, $scope, homeService, growl, uiGmapGoogleMapApi, surveyData){
+
+            $scope.surveyData = surveyData.data;
+            if (surveyData.data.questions_details.length) {
+               $scope.surveyName =  surveyData.data.questions_details[0].survey_name
+            }
+
+            $scope.selectQuestion = function(question){
+                $scope.selected_question = question;
+            }
+
+
             $scope.map = { center: { latitude: 5.558288, longitude: -0.173778 }, zoom: 8 };
             $scope.markers = [
                 {id : 1, points : {latitude: 5.578288, longitude: -0.345 }},
@@ -465,6 +462,9 @@ angular.module('survey')
             return $http.get('all/surveys')
         };
 
+        surveyService.getAllSubmissions = function( ){
+            return $http.get('/read/data/from/pegasus')
+        };
 
         return surveyService;
     }]);

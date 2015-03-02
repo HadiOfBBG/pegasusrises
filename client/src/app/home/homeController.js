@@ -79,7 +79,7 @@ angular.module('home')
             };
 
             $scope.testDataRetrieve = function(){
-                homeService.getDataFromServer();
+
             };
 
         }]);

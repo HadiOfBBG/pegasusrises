@@ -2823,7 +2823,7 @@ box-shadow: 0px 1px 2px 0px rgba(0,0,0,0.2);}
 .red_title .panel-heading{color: #F35958;}
 .orange_title .panel-heading{color: #FF6600;}
 .magenta_title .panel-heading{color: #9B6BAB;}
-.blue_title .panel-heading{color: #f35958;}
+.blue_title .panel-heading{color: #123e57;}
 .gray_title .panel-heading{color: #666;}
 
 
@@ -4262,17 +4262,20 @@ input {
 .widget_inbox{ margin-bottom:20px;}
 .widget_inbox ul{margin:0px; padding:0px;}
 .widget_inbox ul li{list-style-type:none;}
-.widget_inbox ul li a{text-decoration:none; width:100%; padding:15px 20px 15px 20px;float:left; background-color:#FFFFFF; color:#ccc; border-bottom:1px solid #dbdbdb; font-size:12px;}
+.widget_inbox ul li a{text-decoration:none; width:100%; padding:15px 20px 15px 20px;float:left; background-color:#FFFFFF; color: #434343; border-bottom:1px solid #dbdbdb; font-size:13px; line-height : 35px}
+.widget_inbox ul li a:hover{background-color: rgba(22, 85, 116, 0.12)}
+.widget_inbox ul li a.active{background-color: rgba(33, 158, 221, 0.47); color: #ffffff;}
 .inbox_red{background-color:#dc6465!important; color:#FFFFFF!important;}
 .widget_inbox_heading{font-size:18px!important; text-transform:uppercase; text-align:center;}
+.widget_inbox_heading_left{font-size:18px!important; text-transform:uppercase; text-align:left;}
 .widget_inbox_heading i{font-size:20px; margin-top:3px;}
 .widget_inbox_header{ font-size:18px; color:#144158; display:block; margin-bottom:2px; margin-top:-8px;}
 .widget_inbox_time{ display:block; font-size:12px;}
 .inbox_blue{background-color:#123e57!important;}
 .inbox_gray{ background:#44484d!important;color:#FFFFFF!important;}
 .inbox_orange{background:#e27f55!important;color:#FFFFFF!important;}
-.inbox_blue .widget_inbox_header{color:#FFFFFF!important;}
-.inbox_orange .widget_inbox_header{color:#FFFFFF!important;}
+.inbox_blue .widget_inbox_header,.inbox_blue .widget_inbox_heading_left{color:#FFFFFF!important;}
+.inbox_orange .widget_inbox_header, .inbox_blue .widget_inbox_heading_left{color:#FFFFFF!important;}
 .inbox_blue .widget_inbox ul li a{color:#123e57!important;}
 .information{ padding:15px; color:#FFFFFF; border:none; margin-bottom:20px; display:block; width:100%; float:left;}
 .info{ border-radius:50%; float: left; height:80px; width:80px; }
@@ -5374,7 +5377,9 @@ select, input[type="file"] { height: 34px !important;line-height: 30px;}
     height: 400px;
 }
 
-
+.text-white-important{
+    color:  #ffffff !important;
+}
 /*! 
  * angular-loading-bar v0.6.0
  * https://chieffancypants.github.io/angular-loading-bar
