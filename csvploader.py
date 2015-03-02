@@ -17,7 +17,7 @@ import json
 from google.appengine.api import files
 import cloudstorage as gcs
 from google.appengine.api import app_identity
-import webapp2, urllib
+import webapp2
 # import gcs_client as gcs
 import time
 
@@ -41,6 +41,9 @@ urlfetch.set_default_fetch_deadline(60)
 
 
 class CSVUploadHandler(JinjaTemplating,blobstore_handlers.BlobstoreUploadHandler,blobstore_handlers.BlobstoreDownloadHandler):
+from questions_details_from_google_sheets import QuestionsDetailsFromGoogleSheet
+
+class CSVUploadHandler(QuestionsDetailsFromGoogleSheet):
 
     def get(self):
         # self.response.out.write(pegasusFiles.PegasusFiles)
@@ -100,6 +103,8 @@ class CSVUploadHandler(JinjaTemplating,blobstore_handlers.BlobstoreUploadHandler
         # self.response.out.write(token)
         # self.update("","1NNuNCTzzWiE-b4gJxyigY-nZPbfpnIReDipRmk-YOr4",token)
 
+
+
         google_sheet = self.request.get('url')
 
         self.read_google_sheet(google_sheet)
@@ -109,9 +114,8 @@ class CSVUploadHandler(JinjaTemplating,blobstore_handlers.BlobstoreUploadHandler
         # google_sheet = self.request.get('url')
         # logging.debug("value of my var is %s", 'okkkkkkkkkkkkkkkkkk')
         # sheet_name = self.request.get('name')
- 
-        # self.uploadFiles(google_sheet,sheet_name)
 
+        # self.uploadFiles(google_sheet,sheet_name)
         # file = self.request.get('csv_import')
         # file  = '\n'.join(file.splitlines())
         # lines = csv.reader(StringIO.StringIO(file),dialect=csv.excel_tab)
@@ -134,8 +138,8 @@ class CSVUploadHandler(JinjaTemplating,blobstore_handlers.BlobstoreUploadHandler
             }
         response = urlfetch.fetch(url, payload=content, method='PUT', headers=headers)
         # assert response.status_code == 200
-        # return response.content 
-        self.response.out.write(response.content)          
+        # return response.content
+        self.response.out.write(response.content)
 
     def sendFileToXForms(self,content):
         user = users.get_current_user()
@@ -183,9 +187,7 @@ class CSVUploadHandler(JinjaTemplating,blobstore_handlers.BlobstoreUploadHandler
             self.response.headers['Content-Type'] = 'application/x-bittorrent'
             self.response.out.write(file.file)
             return file
-            # self.response.out.write(file.file)
-            # return file
-            self.read_google_sheet(file)
+
         else:
             self.response.set_status(404)
 
@@ -194,7 +196,7 @@ class CSVUploadHandler(JinjaTemplating,blobstore_handlers.BlobstoreUploadHandler
     def submitFile(self,key):
         payload = {}
         files = self.getBlobFile(key)
-        payload['file'] = MultipartParam('file', 
+        payload['file'] = MultipartParam('file',
                                           name="file.name",
                                           filetype="file.type",
                                           fileobj="files.file")

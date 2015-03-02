@@ -6,10 +6,14 @@ from csvploader import CSVUploadHandler
 from ServeBlobFile import ServeHandler
 from aggregate_db_read import ReadDataFromAggragate
 from models import pegasusFiles
-from db_from_google_sheets import DbFromGoogleSheet
+from questions_details_from_google_sheets import QuestionsDetailsFromGoogleSheet
 from pegasus_db_read import ReadDataFromPegasus
 from gcs_client import MainPage
 from pegasus_email import EmailHandler
+from send_sms import SendSMSViaVotoAPI
+from save_data_into_pegasus_db import SaveDataIntoPegasusDatabase
+
+
 
 # define all routes here with their appropriate handlers
 #Note: remember to import your module and the appropriate objects in the model or that you
@@ -28,11 +32,18 @@ routes = [
     (r'/serve/([^/]+)?', ServeHandler),
     (r'/gcs_old', MainPage),
     (r'/read/data/from/aggregate', ReadDataFromAggragate),
-    (r'/sendEmail', EmailHandler),
+    (r'/sendmail', EmailHandler),
+    (r'/read/data/from/pegasus', ReadDataFromPegasus),
+    (r'/send/sms/via/votoapi', SendSMSViaVotoAPI),
+    (r'/save/data/on/pegasus/for/testing', SaveDataIntoPegasusDatabase),
+
+
+
 
 ]
 
 config = {}
+
 config['webapp2_extras.sessions'] = {
     'secret_key': 'something-very-very-secret',
 }
