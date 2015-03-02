@@ -3,7 +3,6 @@ from main import MainHandler
 from db_from_csv import DbFromCsv
 from dashboard import DashboardHandler
 from csvploader import CSVUploadHandler
-from ServeBlobFile import ServeHandler
 from aggregate_db_read import ReadDataFromAggragate
 from models import pegasusFiles
 from questions_details_from_google_sheets import QuestionsDetailsFromGoogleSheet
@@ -24,12 +23,11 @@ routes = [
     (r'/post/csv', DbFromCsv),
     (r'/post/google/sheet', CSVUploadHandler),
     (r'/gcs', CSVUploadHandler),
-    (r'/post/google/sheet/json', DbFromGoogleSheet),
-    (r'/google/sheet/json', DbFromGoogleSheet),
+    (r'/post/google/sheet/json', QuestionsDetailsFromGoogleSheet),
+    (r'/google/sheet/json', QuestionsDetailsFromGoogleSheet),
     (r'/admin', DashboardHandler),
     (r'/upload', CSVUploadHandler),
     (r'/read/data/from/aggregate', ReadDataFromPegasus),
-    (r'/serve/([^/]+)?', ServeHandler),
     (r'/gcs_old', MainPage),
     (r'/read/data/from/aggregate', ReadDataFromAggragate),
     (r'/sendmail', EmailHandler),

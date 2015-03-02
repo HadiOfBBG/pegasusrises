@@ -360,6 +360,7 @@ angular.module("home/home.tpl.html", []).run(["$templateCache", function($templa
     "\n" +
     "\n" +
     "<div class=\"btn btn-warning\" ng-show=\"files.length\" ng-click=\"getFile()\"> Get file from Google </div>\n" +
+    "<div class=\"btn btn-primary\" ng-click=\"testDataRetrieve()\">Test Data form DB </div>\n" +
     "\n" +
     "<div ng-joy-ride=\"startJoyRide\" config=\"configJoyRide\" on-finish=\"onFinish()\"  on-skip=\"onFinish()\"></div>\n" +
     "\n" +

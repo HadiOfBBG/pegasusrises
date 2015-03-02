@@ -12,7 +12,6 @@ from google.appengine.api import urlfetch
 from poster.encode import multipart_encode, MultipartParam
 import logging
 from google.appengine.api import users
-from db_from_google_sheets import DbFromGoogleSheet
 import json
 from google.appengine.api import files
 import cloudstorage as gcs
@@ -41,9 +40,6 @@ urlfetch.set_default_fetch_deadline(60)
 
 
 class CSVUploadHandler(JinjaTemplating,blobstore_handlers.BlobstoreUploadHandler,blobstore_handlers.BlobstoreDownloadHandler):
-from questions_details_from_google_sheets import QuestionsDetailsFromGoogleSheet
-
-class CSVUploadHandler(QuestionsDetailsFromGoogleSheet):
 
     def get(self):
         # self.response.out.write(pegasusFiles.PegasusFiles)

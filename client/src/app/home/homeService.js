@@ -19,6 +19,10 @@ angular.module('home')
             return $http.post('/gcs', {downloadUrl : xlsUrl });
         };
 
+        homeService.getDataFromServer = function( ){
+            return $http.get('/read/data/from/pegasus')
+        };
+
         homeService.getFileFromGoogle = function(fileId){
             var url = 'https://www.googleapis.com/drive/v2/files/' + fileId;
             return $http.get(url, {params : { key : 'AIzaSyDSBIljWNHZ9xMXuaROc4oAypA8LT5xmaU'}});
