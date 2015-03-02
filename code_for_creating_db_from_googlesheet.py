@@ -16,7 +16,9 @@ import re
 # from models.pegasus_model import BbgDemoModel
 
 
-class DbFromGoogleSheet(JinjaTemplating):
+# This class is currently not in use even though is fully functional
+# The Expando class in google data store is rendering its use superflous
+class CodeToCreateDbFromGoogleSheet(JinjaTemplating):
 
 
 
@@ -196,10 +198,11 @@ class DbFromGoogleSheet(JinjaTemplating):
         start_time = 'Thu Feb 19 17:40:25 UTC 2015'
         end_time = 'Thu Feb 19 17:40:56 UTC 2015'
         device_identity = '358099058816851'
-        # created_date_time = 'Thu Feb 19 17:40:56 UTC 2015'
+        created_date_time = 'Thu Feb 19 17:40:56 UTC 2015'
 
 
         insert_sample_data_into_server = BbgDemoModel(name = name, business_status = business_status, years_of_existence = years_of_existence, sources_of_funding = sources_of_funding, location = location, business_building_pic = business_building_pic, start_time = start_time, end_time = end_time, device_identity = device_identity)
+        insert_sample_data_into_server = BbgDemoModel(created_date_time = created_date_time, field_not_created = 'Not created', name = name, business_status = business_status, years_of_existence = years_of_existence, sources_of_funding = sources_of_funding, location = location, business_building_pic = business_building_pic, start_time = start_time, end_time = end_time, device_identity = device_identity)
         insert_sample_data_into_server.put()
 
         self.response.out.write('Data saved Into DB \n')
