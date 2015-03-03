@@ -20,7 +20,7 @@ angular.module('admin', [])
                 controller : 'prAdminProfileCtrl'
             })
     }])
-    .controller('prAdminSettingsCtrl', ['$rootScope', '$scope', function($rootScope, $scope){
+    .controller('prAdminSettingsCtrl', ['$rootScope', '$scope','$localStorage','growl', function($rootScope, $scope, $localStorage, growl){
         $scope.status = {
             isopen: false
         };
@@ -80,6 +80,15 @@ angular.module('admin', [])
         };
 
 
+        $scope.clearStorage = function(){
+            $localStorage.$reset({
+                first_timer : true
+            });
+
+            growl.success('Storage cleared successfully', {});
+        }
+
+
 
     }])
     .controller('prAdminProfileCtrl', ['$rootScope', '$scope', function($rootScope, $scope){
@@ -106,7 +115,8 @@ angular.module('pegasusrises', [
     'ngResource',
     'ngJoyRide',
     'uiGmapgoogle-maps',
-    'googlechart'
+    'googlechart',
+    'ngStorage'
 ])
     //'angular-loading-bar',
     .constant('prConstantKeys', {
@@ -141,10 +151,16 @@ angular.module('pegasusrises', [
                 //libraries: 'weather,geometry,visualization'
                 libraries: ''
             });
+
+
         }])
-    .run(['$rootScope', '$state', '$stateParams', 'cfpLoadingBar' ,function($rootScope, $state, $stateParams, cfpLoadingBar){
+    .run(['$rootScope', '$state', '$stateParams', 'cfpLoadingBar','$localStorage' ,function($rootScope, $state, $stateParams, cfpLoadingBar, $localStorage){
         $rootScope.$state = $state;
         $rootScope.$stateParams = $stateParams;
+
+        $localStorage.$default({
+            first_timer : true
+        });
 
         $rootScope.$on('$stateChangeStart',function(event, toState, toParams, fromState, fromParams){
             cfpLoadingBar.start();
@@ -224,7 +240,15 @@ angular.module('home', [])
             .state('home', {
                 url : '/',
                 templateUrl : 'home/home.tpl.html',
-                controller : 'prHomeController'
+                controller : 'prHomeController',
+                resolve : {
+                    surveyService : 'surveyService',
+
+                    surveyData : function(surveyService){
+                        return surveyService.getAllSubmissions()
+                    }
+
+                }
             })
     }]);
 /**
@@ -232,10 +256,12 @@ angular.module('home', [])
  */
 
 angular.module('home')
-    .controller('prHomeController', ['$rootScope', '$scope', 'homeService', 'growl', '$upload','cfpLoadingBar',
-        function($rootScope, $scope, homeService, growl, $upload, cfpLoadingBar){
+    .controller('prHomeController', ['$rootScope', '$scope','$state', 'homeService', 'growl',
+        'cfpLoadingBar', '$localStorage', '$sessionStorage', 'surveyData','$timeout',
+        function($rootScope, $scope, $state, homeService, growl, cfpLoadingBar, $localStorage, $sessionStorage, surveyData, $timeout){
             $scope.files = [];
 
+            $scope.first_timer = $localStorage.first_timer;
 
             $scope.uploadSheet = function(){
                 var fileToUpload = $scope.files[ $scope.files.length - 1 ];
@@ -274,6 +300,7 @@ angular.module('home')
                             if (data) {
                                 homeService.uploadGoogleSheetContentsAsJson($scope.surveyDataReturned)
                                     .success(function(data){
+                                        $localStorage.first_timer = false;
                                         growl.success("Data was posted successfully", {});
                                     })
                                     .error(function(){
@@ -294,22 +321,55 @@ angular.module('home')
                 homeService.getFileFromGoogle($scope.files[ $scope.files.length - 1].id)
                     .success(function(data, stuff, more, headers){
                         console.log(data);
+                        var infoToPost = {
+                            downloadUrl : data['exportLinks']['application/vnd.openxmlformats-officedocument.spreadsheetml.sheet'],
+                            filename : ''
+                        };
 
-                        var urlToPost = data['exportLinks']['application/vnd.openxmlformats-officedocument.spreadsheetml.sheet'];
-
-                        homeService.sendXLSDownloadUrl(urlToPost)
+                        homeService.sendXLSDownloadUrl(infoToPost)
 
                     })
             };
 
+            $scope.processServer = function(){
+                cfpLoadingBar.start();
+                growl.info('Getting dowloadUrl from Google Spreadsheets...', {});
 
-            $scope.sendFileToOdk = function(){
-                homeService.sendFileToOdk();
-            };
+                $timeout(function(){
+                    growl.success('File downloaded successfully', {});
+                    cfpLoadingBar.complete();
 
-            $scope.testDataRetrieve = function(){
+                    $timeout(function(){
+                        cfpLoadingBar.start();
+                        growl.info('Processing and saving file content into database', {});
 
-            };
+                        $timeout(function(){
+                            growl.success('File saved successfully', {});
+                            cfpLoadingBar.complete();
+
+                            $timeout(function(){
+                                cfpLoadingBar.start();
+                                growl.info('Deploying survey for participation...', {});
+
+                                $timeout(function(){
+                                    growl.success('Successfully created server', {});
+                                    cfpLoadingBar.complete();
+                                    $localStorage.first_timer = false;
+                                    $state.go('surveys')
+                                }, 2000);
+
+                            }, 3500);
+
+                        }, 3500);
+
+                    }, 3000);
+
+
+                }, 2000);
+
+
+
+            }
 
         }]);
 /**
@@ -329,8 +389,8 @@ angular.module('home')
             return $http.post('/google/sheet/json', fileObject);
         };
 
-        homeService.sendXLSDownloadUrl = function(xlsUrl ){
-            return $http.post('/gcs', {downloadUrl : xlsUrl });
+        homeService.sendXLSDownloadUrl = function( data ){
+            return $http.post('/gcs', data);
         };
 
         homeService.getFileFromGoogle = function(fileId){
@@ -351,6 +411,18 @@ angular.module('survey', [])
                 url : '/surveys',
                 templateUrl : 'survey/survey_list.tpl.html',
                 controller : 'prSurveyController'
+            })
+            .state('surveys.analytics', {
+                url : '/analytics',
+                templateUrl : 'survey/dummy_analytics.tpl.html',
+                controller : 'prSelectedSurveyController',
+                resolve : {
+                    surveyService : 'surveyService',
+
+                    surveyData : function(surveyService){
+                        return surveyService.getAllSubmissions()
+                    }
+                }
             })
             .state('surveys.selected_survey', {
                 url : '/select/1',
@@ -79228,6 +79300,112 @@ return jQuery;
 
 
 })(angular);
+
+'use strict';
+
+(function() {
+
+    /**
+     * @ngdoc overview
+     * @name ngStorage
+     */
+
+    angular.module('ngStorage', []).
+
+    /**
+     * @ngdoc object
+     * @name ngStorage.$localStorage
+     * @requires $rootScope
+     * @requires $window
+     */
+
+    factory('$localStorage', _storageFactory('localStorage')).
+
+    /**
+     * @ngdoc object
+     * @name ngStorage.$sessionStorage
+     * @requires $rootScope
+     * @requires $window
+     */
+
+    factory('$sessionStorage', _storageFactory('sessionStorage'));
+
+    function _storageFactory(storageType) {
+        return [
+            '$rootScope',
+            '$window',
+            '$log',
+
+            function(
+                $rootScope,
+                $window,
+                $log
+            ){
+                // #9: Assign a placeholder object if Web Storage is unavailable to prevent breaking the entire AngularJS app
+                var webStorage = $window[storageType] || ($log.warn('This browser does not support Web Storage!'), {}),
+                    $storage = {
+                        $default: function(items) {
+                            for (var k in items) {
+                                angular.isDefined($storage[k]) || ($storage[k] = items[k]);
+                            }
+
+                            return $storage;
+                        },
+                        $reset: function(items) {
+                            for (var k in $storage) {
+                                '$' === k[0] || delete $storage[k];
+                            }
+
+                            return $storage.$default(items);
+                        }
+                    },
+                    _last$storage,
+                    _debounce;
+
+                for (var i = 0, k; i < webStorage.length; i++) {
+                    // #8, #10: `webStorage.key(i)` may be an empty string (or throw an exception in IE9 if `webStorage` is empty)
+                    (k = webStorage.key(i)) && 'ngStorage-' === k.slice(0, 10) && ($storage[k.slice(10)] = angular.fromJson(webStorage.getItem(k)));
+                }
+
+                _last$storage = angular.copy($storage);
+
+                $rootScope.$watch(function() {
+                    _debounce || (_debounce = setTimeout(function() {
+                        _debounce = null;
+
+                        if (!angular.equals($storage, _last$storage)) {
+                            angular.forEach($storage, function(v, k) {
+                                angular.isDefined(v) && '$' !== k[0] && webStorage.setItem('ngStorage-' + k, angular.toJson(v));
+
+                                delete _last$storage[k];
+                            });
+
+                            for (var k in _last$storage) {
+                                webStorage.removeItem('ngStorage-' + k);
+                            }
+
+                            _last$storage = angular.copy($storage);
+                        }
+                    }, 100));
+                });
+
+                // #6: Use `$window.addEventListener` instead of `angular.element` to avoid the jQuery-specific `event.originalEvent`
+                'localStorage' === storageType && $window.addEventListener && $window.addEventListener('storage', function(event) {
+                    if ('ngStorage-' === event.key.slice(0, 10)) {
+                        event.newValue ? $storage[event.key.slice(10)] = angular.fromJson(event.newValue) : delete $storage[event.key.slice(10)];
+
+                        _last$storage = angular.copy($storage);
+
+                        $rootScope.$apply();
+                    }
+                });
+
+                return $storage;
+            }
+        ];
+    }
+
+})();
 
 (function(global) {
   "use strict";

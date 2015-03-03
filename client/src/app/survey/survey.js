@@ -10,6 +10,18 @@ angular.module('survey', [])
                 templateUrl : 'survey/survey_list.tpl.html',
                 controller : 'prSurveyController'
             })
+            .state('surveys.analytics', {
+                url : '/analytics',
+                templateUrl : 'survey/dummy_analytics.tpl.html',
+                controller : 'prSelectedSurveyController',
+                resolve : {
+                    surveyService : 'surveyService',
+
+                    surveyData : function(surveyService){
+                        return surveyService.getAllSubmissions()
+                    }
+                }
+            })
             .state('surveys.selected_survey', {
                 url : '/select/1',
                 templateUrl : 'survey/selected_survey.tpl.html',

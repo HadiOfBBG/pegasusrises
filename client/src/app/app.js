@@ -15,7 +15,8 @@ angular.module('pegasusrises', [
     'ngResource',
     'ngJoyRide',
     'uiGmapgoogle-maps',
-    'googlechart'
+    'googlechart',
+    'ngStorage'
 ])
     //'angular-loading-bar',
     .constant('prConstantKeys', {
@@ -50,10 +51,16 @@ angular.module('pegasusrises', [
                 //libraries: 'weather,geometry,visualization'
                 libraries: ''
             });
+
+
         }])
-    .run(['$rootScope', '$state', '$stateParams', 'cfpLoadingBar' ,function($rootScope, $state, $stateParams, cfpLoadingBar){
+    .run(['$rootScope', '$state', '$stateParams', 'cfpLoadingBar','$localStorage' ,function($rootScope, $state, $stateParams, cfpLoadingBar, $localStorage){
         $rootScope.$state = $state;
         $rootScope.$stateParams = $stateParams;
+
+        $localStorage.$default({
+            first_timer : true
+        });
 
         $rootScope.$on('$stateChangeStart',function(event, toState, toParams, fromState, fromParams){
             cfpLoadingBar.start();

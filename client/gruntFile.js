@@ -119,7 +119,9 @@ module.exports = function (grunt) {
                 dest: '<%= distdirStatic %>/<%= pkg.name %>_angular.js'
             },
             vendors: {
-                src:['src/scripts/common-script.js', 'src/vendor/google/*.js', 'src/vendor/tabletop/*.js','src/vendor/angular-loading-bar/*.js', 'src/vendor/angular-growl-2/*.js', 'src/vendor/angular-file-uploader/*.js','src/vendor/ng-joyride/*.js'],
+                src:['src/scripts/common-script.js', 'src/vendor/google/*.js',
+                    'src/vendor/tabletop/*.js','src/vendor/angular-loading-bar/*.js', 'src/vendor/angular-growl-2/*.js',
+                    'src/vendor/angular-file-uploader/*.js','src/vendor/ng-joyride/*.js', 'src/vendor/ngStorage/*.js'],
                 dest: '<%= distdirStatic %>/scripts.js'
             }
         },
