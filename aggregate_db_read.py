@@ -8,6 +8,7 @@ from google.appengine.ext import db
 from google.appengine.api import memcache
 from xml.dom import minidom
 from urllib2 import Request, urlopen, URLError
+import xmltodict
 
 class ReadDataFromAggragate(JinjaTemplating):
 
@@ -25,7 +26,8 @@ class ReadDataFromAggragate(JinjaTemplating):
 		#For Pegasus A, it is moslty likely going to be one form
 		# self.response.out.write('You are here to read data right?')
 		# return
-		form_id = 'build_Software-Engagement-Test_1420717947'
+		form_id = 'pegasusDemoQuestionnaire'
+
 		num_of_form_ids = '1000'
 
 		self.getIdsOfDataSubmissions(form_id, num_of_form_ids)
@@ -34,7 +36,7 @@ class ReadDataFromAggragate(JinjaTemplating):
 	def getIdsOfDataSubmissions(self, form_id,num_of_form_ids):
 
 		request = Request('https://pegasusodk.appspot.com/view/submissionList?formId=' + form_id + '&numEntries=' + num_of_form_ids)
-		
+
 		try:
 			response = urlopen(request)
 			data_submissions = response.read()
@@ -43,7 +45,7 @@ class ReadDataFromAggragate(JinjaTemplating):
 			# for submission_id in data_submissions_id:
 			# 	getDataSubmittedUsingSubmissionID(form_id,submission_id)
 			self.response.out.write(data_submissions)
-			
+
 		except URLError, e:
 			self.response.out.write('No submissions retrived. Got an error code:', e)
 

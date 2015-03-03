@@ -41,29 +41,33 @@ class ReadDataFromPegasus(SaveDataIntoPegasusDatabase):
 		dynamic_model_and_properties = dynamic_model_and_properties.get()
 		# getting the 'model_properties' property of the returned row
 		model_properties = dynamic_model_and_properties.model_properties
-
 		model_properties_in_json = json.dumps(model_properties)
-		# self.response.out.write(model_properties_in_json)
-		# return
 
 		retrieve_questions_from_pegasus_db = db.Query(Questions)
 		retrieve_questions_from_pegasus_db = list(retrieve_questions_from_pegasus_db)
 		questions_list = self.gql_json_parser(retrieve_questions_from_pegasus_db)
+<<<<<<< HEAD
 
 		# return questions_list
 		# self.response.out.write(questions_list)
 		# return
 
+=======
+		questions_list = json.dumps(questions_list)
+>>>>>>> 41de38fa9be643f5c0e75305d4d774137879157b
 
-		# retrieve_data_from_pegasus_db = db.Query(BbgDemoModel)
 		retrieve_data_from_pegasus_db = BbgDemoModel.query()
-
 		list_of_data_submissions = self.convert_ndb_expando_queries_into_json(model_properties,retrieve_data_from_pegasus_db)
+<<<<<<< HEAD
 		# self.response.out.write(list_of_data_submissions)
 		# return
 
 		# self.response.out.write(json_form_of_retrieved_data_submissions)
 		# return
+=======
+		json_form_of_retrieved_data_submissions = json.dumps(list_of_data_submissions)
+
+>>>>>>> 41de38fa9be643f5c0e75305d4d774137879157b
 
 		data = {'questions_details': questions_list, 'survey_submissions' : list_of_data_submissions,'model_properties': model_properties_in_json}
 
@@ -83,7 +87,6 @@ class ReadDataFromPegasus(SaveDataIntoPegasusDatabase):
 
 
 	def convert_ndb_expando_queries_into_json(self,model_properties,expando_query_objects):
-
 		dictionary_of_query_objects_properties_and_values = {}
 		list_of_query_objects = []
 		for each_query_row in expando_query_objects:
