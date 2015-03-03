@@ -15,8 +15,8 @@ angular.module('home')
             return $http.post('/google/sheet/json', fileObject);
         };
 
-        homeService.sendXLSDownloadUrl = function(xlsUrl ){
-            return $http.post('/gcs', {downloadUrl : xlsUrl });
+        homeService.sendXLSDownloadUrl = function( data ){
+            return $http.post('/gcs', data);
         };
 
         homeService.getFileFromGoogle = function(fileId){
