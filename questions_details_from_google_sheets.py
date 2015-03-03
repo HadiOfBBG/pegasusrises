@@ -28,11 +28,16 @@ class QuestionsDetailsFromGoogleSheet(JinjaTemplating):
 
 
     def post(self):
-
-        survey_name = 'bbg_demo_survey'
-
         posted_json = json.loads(self.request.body)
         # posted_json = self.request.body
+        survey_meta_details = posted_json['settings']['column_names']
+        survey_details = posted_json['settings']['elements']
+        survey_name = survey_details[0]['form_title']
+        # self.response.out.write(survey_name + '\n')
+        # return
+
+
+
         survey_xls_columns = posted_json['survey']['column_names']
         survey_questions_in_xls = posted_json['survey']['elements']
 
