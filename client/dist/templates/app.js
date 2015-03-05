@@ -360,6 +360,9 @@ angular.module("home/home.tpl.html", []).run(["$templateCache", function($templa
     "\n" +
     "\n" +
     "<div class=\"btn btn-warning\" ng-show=\"files.length\" ng-click=\"getFile()\"> Get file from Google </div>\n" +
+    "<div class=\"btn btn-primary\" ng-click=\"testDataRetrieve()\">Test Data form DB </div>\n" +
+    "\n" +
+    "<pre>{{ returnedData.questions_details | json }}</pre>\n" +
     "\n" +
     "<div ng-joy-ride=\"startJoyRide\" config=\"configJoyRide\" on-finish=\"onFinish()\"  on-skip=\"onFinish()\"></div>\n" +
     "\n" +
@@ -368,45 +371,63 @@ angular.module("home/home.tpl.html", []).run(["$templateCache", function($templa
 
 angular.module("survey/selected_survey.tpl.html", []).run(["$templateCache", function($templateCache) {
   $templateCache.put("survey/selected_survey.tpl.html",
-    "<div class=\"row center\">\n" +
+    "<div class=\"row\">\n" +
     "\n" +
-    "    <div class=\"col-lg-12 \">\n" +
+    "    <div class=\"col-lg-12 center\">\n" +
     "        <section class=\"panel default blue_title h2\">\n" +
-    "            <div class=\"panel-heading border\">Citizen Journalism Survey</div>\n" +
+    "            <div class=\"panel-heading border\">{{ surveyName || ' '}}</div>\n" +
     "        </section>\n" +
     "    </div>\n" +
     "\n" +
-    "    <div class=\"col-lg-12\" ng-init=\"showButtons = false\" ng-show=\"showButtons\">\n" +
-    "        <div class=\"btn-group\">\n" +
-    "            <button class=\"btn btn-primary\" ng-class=\"{'active' :   $scope.chartObject.type == 'BarChart' }\" ng-click=\"changeChartType('BarChart')\"> BarChart</button>\n" +
-    "            <button class=\"btn btn-warning\" ng-class=\"{'active' :   $scope.chartObject.type == 'PieChart' }\" ng-click=\"changeChartType('PieChart')\">PieChart</button>\n" +
-    "            <button class=\"btn btn-success\" ng-class=\"{'active' :   $scope.chartObject.type == 'ColumnChart' }\" ng-click=\"changeChartType('ColumnChart')\">ColumnChart</button>\n" +
+    "    <div class=\"col-md-6\">\n" +
+    "        <div class=\"widget_inbox\">\n" +
+    "            <ul>\n" +
+    "                <li>\n" +
+    "                    <a class=\"inbox_blue text-white-important widget_inbox_heading_left\" href=\"\">Survey Questions <span class=\"small\">&nbsp;&nbsp;(<em> {{surveyData.questions_details.length  }} </em>)</span>\n" +
+    "                        <span class=\"pull-right\"><i class=\"fa fa-cog\"></i></span>\n" +
+    "                    </a>\n" +
+    "                </li>\n" +
+    "                <li ng-repeat=\"question_item in surveyData.questions_details\"><a href=\"\" ng-class=\"{'active' : question_item.question_field == selected_question.question_field}\" ng-click=\"selectQuestion(question_item)\">\n" +
+    "                    <div class=\"widget_inbox_header\">\n" +
+    "                        <span class=\"pull-left widget_inbox_time\"><b>{{ $index + 1 }}</b></span>\n" +
+    "                        <span class=\"pull-right widget_inbox_time\">{{ question_item.question_type }}</span>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;Question\n" +
+    "                    </div>\n" +
+    "                    {{ question_item.question }}</a></li>\n" +
+    "\n" +
+    "            </ul>\n" +
     "        </div>\n" +
     "    </div>\n" +
+    "    <!--<div class=\"col-lg-12\" ng-init=\"showButtons = false\" ng-show=\"showButtons\">-->\n" +
+    "        <!--<div class=\"btn-group\">-->\n" +
+    "            <!--<button class=\"btn btn-primary\" ng-class=\"{'active' :   $scope.chartObject.type == 'BarChart' }\" ng-click=\"changeChartType('BarChart')\"> BarChart</button>-->\n" +
+    "            <!--<button class=\"btn btn-warning\" ng-class=\"{'active' :   $scope.chartObject.type == 'PieChart' }\" ng-click=\"changeChartType('PieChart')\">PieChart</button>-->\n" +
+    "            <!--<button class=\"btn btn-success\" ng-class=\"{'active' :   $scope.chartObject.type == 'ColumnChart' }\" ng-click=\"changeChartType('ColumnChart')\">ColumnChart</button>-->\n" +
+    "        <!--</div>-->\n" +
+    "    <!--</div>-->\n" +
     "</div>\n" +
     "\n" +
-    "<tabset>\n" +
-    "    <tab heading=\"Google Map with Markers\" select=\"toggleButtons(false)\">\n" +
-    "        <ui-gmap-google-map center='map.center' zoom='map.zoom'>\n" +
+    "<!--<tabset>-->\n" +
+    "    <!--<tab heading=\"Google Map with Markers\" select=\"toggleButtons(false)\">-->\n" +
+    "        <!--<ui-gmap-google-map center='map.center' zoom='map.zoom'>-->\n" +
     "\n" +
-    "        <ui-gmap-markers\n" +
-    "                models=\"markers\"\n" +
-    "                idkey=\"'id'\"\n" +
-    "                coords=\"'points'\">\n" +
-    "        </ui-gmap-markers>\n" +
+    "        <!--<ui-gmap-markers-->\n" +
+    "                <!--models=\"markers\"-->\n" +
+    "                <!--idkey=\"'id'\"-->\n" +
+    "                <!--coords=\"'points'\">-->\n" +
+    "        <!--</ui-gmap-markers>-->\n" +
     "\n" +
-    "    </ui-gmap-google-map>\n" +
-    "    </tab>\n" +
-    "    <!--<tab ng-repeat=\"tab in tabs\" heading=\"{{tab.title}}\" active=\"tab.active\" disabled=\"tab.disabled\">-->\n" +
-    "        <!--{{tab.content}}-->\n" +
+    "    <!--</ui-gmap-google-map>-->\n" +
     "    <!--</tab>-->\n" +
-    "    <tab select=\"toggleButtons(true)\">\n" +
-    "        <tab-heading>\n" +
-    "            <i class=\"glyphicon glyphicon-bell\"></i> Google Charts\n" +
-    "        </tab-heading>\n" +
-    "        <div google-chart chart=\"chartObject\" style=\"height:600px; width:100%;\"></div>\n" +
-    "    </tab>\n" +
-    "</tabset>\n" +
+    "    <!--&lt;!&ndash;<tab ng-repeat=\"tab in tabs\" heading=\"{{tab.title}}\" active=\"tab.active\" disabled=\"tab.disabled\">&ndash;&gt;-->\n" +
+    "        <!--&lt;!&ndash;{{tab.content}}&ndash;&gt;-->\n" +
+    "    <!--&lt;!&ndash;</tab>&ndash;&gt;-->\n" +
+    "    <!--<tab select=\"toggleButtons(true)\">-->\n" +
+    "        <!--<tab-heading>-->\n" +
+    "            <!--<i class=\"glyphicon glyphicon-bell\"></i> Google Charts-->\n" +
+    "        <!--</tab-heading>-->\n" +
+    "        <!--<div google-chart chart=\"chartObject\" style=\"height:600px; width:100%;\"></div>-->\n" +
+    "    <!--</tab>-->\n" +
+    "<!--</tabset>-->\n" +
     "");
 }]);
 

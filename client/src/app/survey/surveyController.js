@@ -7,8 +7,19 @@ angular.module('survey')
         function($rootScope, $scope, homeService, growl){
 
         }])
-    .controller('prSelectedSurveyController', ['$rootScope', '$scope', 'homeService', 'growl','uiGmapGoogleMapApi',
-        function($rootScope, $scope, homeService, growl, uiGmapGoogleMapApi){
+    .controller('prSelectedSurveyController', ['$rootScope', '$scope', 'homeService', 'growl','uiGmapGoogleMapApi','surveyData',
+        function($rootScope, $scope, homeService, growl, uiGmapGoogleMapApi, surveyData){
+
+            $scope.surveyData = surveyData.data;
+            if (surveyData.data.questions_details.length) {
+               $scope.surveyName =  surveyData.data.questions_details[0].survey_name
+            }
+
+            $scope.selectQuestion = function(question){
+                $scope.selected_question = question;
+            }
+
+
             $scope.map = { center: { latitude: 5.558288, longitude: -0.173778 }, zoom: 8 };
             $scope.markers = [
                 {id : 1, points : {latitude: 5.578288, longitude: -0.345 }},

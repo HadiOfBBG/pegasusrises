@@ -13,6 +13,14 @@ angular.module('survey', [])
             .state('surveys.selected_survey', {
                 url : '/select/1',
                 templateUrl : 'survey/selected_survey.tpl.html',
-                controller : 'prSelectedSurveyController'
+                controller : 'prSelectedSurveyController',
+                resolve : {
+                    surveyService : 'surveyService',
+
+                    surveyData : function(surveyService){
+                        return surveyService.getAllSubmissions()
+                    }
+
+                }
             })
     }]);

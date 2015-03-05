@@ -302,6 +302,10 @@ angular.module('home')
                 homeService.sendFileToOdk();
             };
 
+            $scope.testDataRetrieve = function(){
+
+            };
+
         }]);
 /**
  * Created by kaygee on 2/13/15.
@@ -309,7 +313,7 @@ angular.module('home')
 
 
 angular.module('home')
-    .factory('homeService', ['$http','$resource', function($http, $resource){
+    .factory('homeService', ['$http','prConstantKeys', function($http, prConstantKeys){
         var homeService = {};
 
         homeService.uploadGoogleSheet = function(fileObject){
@@ -326,105 +330,11 @@ angular.module('home')
 
         homeService.getFileFromGoogle = function(fileId){
             var url = 'https://www.googleapis.com/drive/v2/files/' + fileId;
-            return $http.get(url, {params : { key : 'AIzaSyDSBIljWNHZ9xMXuaROc4oAypA8LT5xmaU'}});
-        };
-
-        homeService.sendFileToOdk = function(){
-//            fileObject
-//            return $http.post('http://23.21.114.69/xlsform/', {file : 'file'});
-//            return $resource('http://23.21.114.69/xlsform/', {});
-            $.ajax({
-                url : 'http://23.21.114.69/xlsform/',
-                data : {file : 'file', fileName : 'FileName.xls'},
-                type : 'post',
-                beforeSend : function(xhr){
-                    xhr.setRequestHeader("Access-Control-Allow-Origin", "*");
-                },
-                crossDomain : true
-
-            }).done(function(data){
-                console.log('data ---- ', data)
-            })
+            return $http.get(url, {params : { key : prConstantKeys.google_api_key}});
         };
 
         return homeService;
     }]);
-/**
- * Created by kaygee on 2/18/15.
- */
-
-function JSONToCSVConvertor(JSONData, ReportTitle, ShowLabel) {
-    //If JSONData is not an object then JSON.parse will parse the JSON string in an Object
-    var arrData = typeof JSONData != 'object' ? JSON.parse(JSONData) : JSONData;
-
-    var CSV = '';
-    //Set Report title in first row or line
-
-    CSV  = ReportTitle +   '\r\n\n';
-
-    //This condition will generate the Label/Header
-    if (ShowLabel) {
-        var row = "";
-
-        //This loop will extract the label from 1st index of on array
-        for (var index in arrData[0]) {
-
-            //Now convert each value to string and comma-seprated
-            row  = index + ',';
-        }
-
-        row = row.slice(0, -1);
-
-        //append Label row with line break
-        CSV  = row  + '\r\n';
-    }
-
-    //1st loop is to extract each row
-    for (var i = 0; i < arrData.length; i  ) {
-        var row = "";
-
-        //2nd loop will extract each column and convert it in string comma-seprated
-        for (var index in arrData[i]) {
-            row  = '"'  +  arrData[i][index]  + '",';
-        }
-
-        row.slice(0, row.length - 1);
-
-        //add a line break after each row
-        CSV  = row +   '\r\n';
-    }
-
-    if (CSV == '') {
-        alert("Invalid data");
-        return;
-    }
-
-    //Generate a file name
-    var fileName = "MyReport_";
-    //this will remove the blank-spaces from the title and replace it with an underscore
-    fileName  = ReportTitle.replace(/ /g, "_");
-
-    //Initialize file format you want csv or xls
-    var uri = 'data:text/csv;charset=utf-8,' +  escape(CSV);
-
-    // Now the little tricky part.
-    // you can use either>> window.open(uri);
-    // but this will not work in some browsers
-    // or you will not get the correct file extension
-
-    //this trick will generate a temp <a /> tag
-    var link = document.createElement("a");
-    link.href = uri;
-
-    //set the visibility hidden so it will not effect on your web-layout
-    link.style = "visibility:hidden";
-    link.download = fileName +  ".csv";
-
-    //this part will append the anchor tag and remove it after automatic click
-    document.body.appendChild(link);
-    link.click();
-    document.body.removeChild(link);
-}
 /**
  * Created by Kaygee on 24/02/2015.
  */
@@ -440,7 +350,15 @@ angular.module('survey', [])
             .state('surveys.selected_survey', {
                 url : '/select/1',
                 templateUrl : 'survey/selected_survey.tpl.html',
-                controller : 'prSelectedSurveyController'
+                controller : 'prSelectedSurveyController',
+                resolve : {
+                    surveyService : 'surveyService',
+
+                    surveyData : function(surveyService){
+                        return surveyService.getAllSubmissions()
+                    }
+
+                }
             })
     }]);
 /**
@@ -452,8 +370,19 @@ angular.module('survey')
         function($rootScope, $scope, homeService, growl){
 
         }])
-    .controller('prSelectedSurveyController', ['$rootScope', '$scope', 'homeService', 'growl','uiGmapGoogleMapApi',
-        function($rootScope, $scope, homeService, growl, uiGmapGoogleMapApi){
+    .controller('prSelectedSurveyController', ['$rootScope', '$scope', 'homeService', 'growl','uiGmapGoogleMapApi','surveyData',
+        function($rootScope, $scope, homeService, growl, uiGmapGoogleMapApi, surveyData){
+
+            $scope.surveyData = surveyData.data;
+            if (surveyData.data.questions_details.length) {
+               $scope.surveyName =  surveyData.data.questions_details[0].survey_name
+            }
+
+            $scope.selectQuestion = function(question){
+                $scope.selected_question = question;
+            }
+
+
             $scope.map = { center: { latitude: 5.558288, longitude: -0.173778 }, zoom: 8 };
             $scope.markers = [
                 {id : 1, points : {latitude: 5.578288, longitude: -0.345 }},
@@ -533,6 +462,9 @@ angular.module('survey')
             return $http.get('all/surveys')
         };
 
+        surveyService.getAllSubmissions = function( ){
+            return $http.get('/read/data/from/pegasus')
+        };
 
         return surveyService;
     }]);

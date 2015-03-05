@@ -10,6 +10,9 @@ angular.module('survey')
             return $http.get('all/surveys')
         };
 
+        surveyService.getAllSubmissions = function( ){
+            return $http.get('/read/data/from/pegasus')
+        };
 
         return surveyService;
     }]);

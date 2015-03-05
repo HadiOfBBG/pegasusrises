@@ -50,7 +50,6 @@ class ReadDataFromPegasus(SaveDataIntoPegasusDatabase):
 		retrieve_questions_from_pegasus_db = list(retrieve_questions_from_pegasus_db)
 		questions_list = self.gql_json_parser(retrieve_questions_from_pegasus_db)
 
-		questions_list = json.dumps(questions_list)
 		# return questions_list
 		# self.response.out.write(questions_list)
 		# return
@@ -63,15 +62,14 @@ class ReadDataFromPegasus(SaveDataIntoPegasusDatabase):
 		# self.response.out.write(list_of_data_submissions)
 		# return
 
-		json_form_of_retrieved_data_submissions = json.dumps(list_of_data_submissions)
 		# self.response.out.write(json_form_of_retrieved_data_submissions)
 		# return
 
-		data = {'questions_details': questions_list, 'survey_submissions' : json_form_of_retrieved_data_submissions,'model_properties': model_properties_in_json}
+		data = {'questions_details': questions_list, 'survey_submissions' : list_of_data_submissions,'model_properties': model_properties_in_json}
 
 		data_returned_to_front_end = json.dumps(data)
 
-		self.response.out.write(data)
+		self.response.out.write(data_returned_to_front_end)
 
 		return
 

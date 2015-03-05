@@ -35,6 +35,7 @@ urlfetch.set_default_fetch_deadline(60)
 
 
 class CSVUploadHandler(JinjaTemplating,blobstore_handlers.BlobstoreUploadHandler,blobstore_handlers.BlobstoreDownloadHandler):
+
     def get(self):
         JinjaTemplating.render_template_only(self,'hadi_test.html')
 

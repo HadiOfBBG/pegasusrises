@@ -78,4 +78,8 @@ angular.module('home')
                 homeService.sendFileToOdk();
             };
 
+            $scope.testDataRetrieve = function(){
+
+            };
+
         }]);
