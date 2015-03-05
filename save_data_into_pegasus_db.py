@@ -17,6 +17,7 @@ class SaveDataIntoPegasusDatabase(JinjaTemplating):
     """docstring for ReadDataFromPegasus"""
     def get(self):
         JinjaTemplating.render_template_only(self, 'aliu_test.html')
+        return
 
 
     def post(self):
@@ -27,16 +28,17 @@ class SaveDataIntoPegasusDatabase(JinjaTemplating):
 
 
     def saveDataIntoDatabase(self):
-        # dynamic_expando_model = BbgDemoModel()
-        # dynamic_expando_model.name = 'Kanton Latifa'
-        # dynamic_expando_model.business_status = 'yes'
-        # dynamic_expando_model.years_of_existence = 23
-        # dynamic_expando_model.sources_of_funding = 'personal,loan,family_support'
-        # dynamic_expando_model.location = 'Accra, Ghana'
-        # dynamic_expando_model.business_building_pic = 'https://pegasusodk.appspot.com/view/binaryData?blobKey=build_Software-Engagement-Test_1420717947%5B%40version%3Dnull+and+%40uiVersion%3Dnull%5D%2Fdata%5B%40key%3Duuid%3A25acebc0-db2d-464a-bea3-aa05b5767239%5D%2Fpassport_picture&previewImage=true'
-        # dynamic_expando_model.start_time = 'Thu Feb 19 17:40:25 UTC 2015'
-        # dynamic_expando_model.end_time = 'Thu Feb 19 17:40:56 UTC 2015'
-        # dynamic_expando_model.device_identity = '358099058816851'
+
+        dynamic_expando_model = BbgDemoModel()
+        dynamic_expando_model.name = 'Kanton Latifa'
+        dynamic_expando_model.business_status = 'yes'
+        dynamic_expando_model.years_of_existence = 23
+        dynamic_expando_model.sources_of_funding = 'personal,loan,family_support'
+        dynamic_expando_model.location = 'Accra, Ghana'
+        dynamic_expando_model.business_building_pic = 'https://pegasusodk.appspot.com/view/binaryData?blobKey=build_Software-Engagement-Test_1420717947%5B%40version%3Dnull+and+%40uiVersion%3Dnull%5D%2Fdata%5B%40key%3Duuid%3A25acebc0-db2d-464a-bea3-aa05b5767239%5D%2Fpassport_picture&previewImage=true'
+        dynamic_expando_model.start_time = 'Thu Feb 19 17:40:25 UTC 2015'
+        dynamic_expando_model.end_time = 'Thu Feb 19 17:40:56 UTC 2015'
+        dynamic_expando_model.device_identity = '358099058816851'
 
 
         dynamic_expando_model.put()

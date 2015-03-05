@@ -39,9 +39,13 @@ class ReadDataFromPegasus(SaveDataIntoPegasusDatabase):
 		dynamic_model_and_properties = db.Query(DynamicModelsProperties)
 		# getting the first match element of the dynmaic property model
 		dynamic_model_and_properties = dynamic_model_and_properties.get()
-		# getting the 'model_properties' property of the returned row
-		model_properties = dynamic_model_and_properties.model_properties
-		model_properties_in_json = json.dumps(model_properties)
+		if dynamic_model_and_properties is None:
+			self.response.out.write("No model properties saved")
+		else:
+			# getting the 'model_properties' property of the returned row
+			model_properties = dynamic_model_and_properties.model_properties
+			model_properties_in_json = json.dumps(model_properties)
+
 
 		retrieve_questions_from_pegasus_db = db.Query(Questions)
 		retrieve_questions_from_pegasus_db = list(retrieve_questions_from_pegasus_db)
