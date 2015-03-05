@@ -1,5 +1,5 @@
 application: pegasusrisesapp
-version: 1
+version: 3
 runtime: python27
 api_version: 1
 threadsafe: yes
@@ -15,8 +15,8 @@ handlers:
 - url: /pictures
   static_dir: pictures
 
-- url: /images
-  static_dir: client/dist/static/images
+#- url: /images
+#  static_dir: client/dist/static/images
 
 - url: /frontend
   static_dir: client/dist/static

@@ -8,26 +8,92 @@ from google.appengine.ext import db
 from google.appengine.api import memcache
 from xml.dom import minidom
 from models import pegasusFiles
+import urllib
 from google.appengine.api import urlfetch
 from poster.encode import multipart_encode, MultipartParam
 import logging
 from google.appengine.api import users
-from questions_details_from_google_sheets import QuestionsDetailsFromGoogleSheet
+import json
+from google.appengine.api import files
+import cloudstorage as gcs
+from google.appengine.api import app_identity
+import webapp2
+from pegasus_email import EmailHandler as EmailHandler
+import time
 
-class CSVUploadHandler(QuestionsDetailsFromGoogleSheet):
+
+
+retry_params = gcs.RetryParams(initial_delay=0.2,
+                                          max_delay=5.0,
+                                          backoff_factor=2,
+                                          max_retry_period=15)
+
+gcs.set_default_retry_params(retry_params)
+# pegasusrise_converter_api = 'http://pegasus.gopagoda.io/sendXLSForms'
+pegasusrise_converter_api = 'http://msrc.gopagoda.io/api/sendXLSForms'
+urlfetch.set_default_fetch_deadline(60)
+
+
+class CSVUploadHandler(JinjaTemplating,blobstore_handlers.BlobstoreUploadHandler,blobstore_handlers.BlobstoreDownloadHandler):
 
     def get(self):
-        # self.response.out.write(pegasusFiles.PegasusFiles)
         JinjaTemplating.render_template_only(self,'hadi_test.html')
 
 
     def post(self):
-        google_sheet = self.request.get('url')
+        # EmailHandler.sendEmail()
+        content_from_server = json.loads(self.request.body)
+        url = content_from_server['downloadUrl']
 
-        self.read_google_sheet(google_sheet)
-        # return
-        self.uploadFiles(google_sheet)
-        self.update("","1NNuNCTzzWiE-b4gJxyigY-nZPbfpnIReDipRmk-YOr4")
+        form_fields = {
+        "filename":"guess",
+        "url":url
+        }
+        form_data = urllib.urlencode(form_fields)
+        result = urlfetch.fetch(url=pegasusrise_converter_api,
+        payload=form_data,
+        method=urlfetch.POST,
+        headers={'Content-Type': 'application/x-www-form-urlencoded'})
+
+        # self.response.out.write(result.content)
+        if "Successful form upload" in result.content:
+            return self.response.out.write("success")
+
+        else:
+            return self.response.out.write("error")
+        # EmailHandler.sendEmail()
+        # upload_url = blobstore.create_upload_url('/upload')
+        # files = pegasusFiles.PegasusFiles()
+        # files.name = 'sheet_name'
+        # files.file = db.Blob(self.request.get('csv_upload'))
+        # files.put()
+        # self.send_blob(file.file)
+
+        # file = self.request.get('csv_import')
+        # file  = '\n'.join(file.splitlines())
+        # lines = csv.reader(StringIO.StringIO(file),dialect=csv.excel_tab)
+        # output = StringIO.StringIO()
+        # output.write(lines)
+        # for eachRow in lines:
+        #     output.write(eachRow)
+        # self.response.out.write(output.getvalue())
+        # self.sendFileToXForms(output)
+
+        
+        # output.write(self.request.get('csv_upload'))
+        # self.sendFileToXForms(output)
+        # self.response.out.write(output.getvalue())
+
+        # self.response.out.write('http://pegasusrisesapp.appspot.com/' + str(file.key()))
+        # self.redirect('/serve/%s' % str(file.key()))
+        # body = json.loads(self.request.body)
+        # token = body['accessToken']
+        # self.response.out.write(token)
+        # self.update("","1NNuNCTzzWiE-b4gJxyigY-nZPbfpnIReDipRmk-YOr4",token)
+
+
+
+        
         # google_sheet = self.request.get('url')
         # logging.debug("value of my var is %s", 'okkkkkkkkkkkkkkkkkk')
         # sheet_name = self.request.get('name')
@@ -45,67 +111,109 @@ class CSVUploadHandler(QuestionsDetailsFromGoogleSheet):
         #         xmlBody = ""
         #         visibility = false
 
-    def update(self,content, file_id):
-        user = users.get_current_user()
-        url = 'https://www.googleapis.com/upload/drive/v2/files/%s?uploadType=media' % file_id
-        headers = {
-            'Content-Type': 'text/plain',
-            'Content-Length': str(len(content)),
-            'Authorization': user.access_token
-            }
-        response = urlfetch.fetch(url, payload=content, method='PUT', headers=headers)
-        # assert response.status_code == 200
-        # return response.content
-        self.response.out.write(response.content)
+    # def update(self,content, file_id):
+    #     user = users.get_current_user()
+    #     url = 'https://www.googleapis.com/upload/drive/v2/files/%s?uploadType=media' % file_id
+    #     headers = {
+    #         'Content-Type': 'text/plain',
+    #         'Content-Length': str(len(content)),
+    #         'Authorization': token
+    #         }
+    #     response = urlfetch.fetch(url, payload=content, method='PUT', headers=headers)
+    #     # assert response.status_code == 200
+    #     # return response.content
+    #     self.response.out.write(response.content)
+
+    # def sendFileToXForms(self,content):
+    #     user = users.get_current_user()
+    #     url = 'http://23.21.114.69/xlsform/'
+    #     headers = {
+    #         'Content-Type': 'multipart/form-data; boundary=---------------------------4082427511200',
+    #         'Content-Length': 'str(len(content))',
+    #         }
+    #     response = urlfetch.fetch(url, payload=content, method='POST', headers=headers)
+    #     # assert response.status_code == 200
+    #     # return response.content 
+    #     failure_status = response.content.find('This field is required.')
+    #     if(failure_status == -1):
+    #         self.response.out.write(response.content)
+    #     else:
+    #         self.response.out.write('File format not acceptable')
+        
+
+    # def uploadFiles(self, google_sheet,sheet_name):
+    #     file = pegasusFiles.PegasusFiles()
+    #     file.name = sheet_name
+    #     file.file = db.Blob(google_sheet)
+    #     file.put()
+    #     self.response.out.write('http://pegasusrisesapp.appspot.com/' + str(file.key()))
+    #     better = db.get(str(file.key))
+    #     self.response.out.write(better.name)
+    #     # # self.getFile(file.key())
+    #     # self.submitFile(file.key())
+    #     # self.response.out.write('http://pegasusrisesapp.appspot.com/' + str(file.key()))
+    #     self.getFile(file.key())
+
+    # def getFile(self, key):
+    #     file = db.get(key)
+    #     if file is not None:
+    #         self.response.headers['Content-Type'] = 'application/x-bittorrent'
+    #         self.response.out.write(file.file)
+    #         return file
+    #     else:
+    #         self.response.set_status(404)
 
 
-    def uploadFiles(self, google_sheet,sheet_name):
-        file = pegasusFiles.PegasusFiles()
-        file.name = sheet_name
-        file.file = db.Blob(google_sheet)
-        file.put()
-        self.response.out.write('http://pegasusrisesapp.appspot.com/' + str(file.key()))
-        better = db.get(str(file.key))
-        self.response.out.write(better.name)
-        # # self.getFile(file.key())
-        # self.submitFile(file.key())
-        # self.response.out.write('http://pegasusrisesapp.appspot.com/' + str(file.key()))
-        self.getFile(file.key())
+    # def getBlobFile(self, key):
+    #     file = blobstore.getBlobFile(key)
+    #     if file is not None:
+    #         self.response.headers['Content-Type'] = 'application/x-bittorrent'
+    #         self.response.out.write(file.file)
+    #         return file
 
-    def getFile(self, key):
-        file = db.get(key)
-        if file is not None:
-            self.response.headers['Content-Type'] = 'application/x-bittorrent'
-            self.response.out.write(file.file)
-            return file
-        else:
-            self.response.set_status(404)
-
-
-    def getBlobFile(self, key):
-        file = blobstore.getBlobFile(key)
-        if file is not None:
-            self.response.headers['Content-Type'] = 'application/x-bittorrent'
-            self.response.out.write(file.file)
-            return file
-            # self.response.out.write(file.file)
-            # return file
-            self.read_google_sheet(file)
-        else:
-            self.response.set_status(404)
+    #     else:
+    #         self.response.set_status(404)
 
 
 
-    def submitFile(self,key):
-        payload = {}
-        files = self.getBlobFile(key)
-        payload['file'] = MultipartParam('file',
-                                          name="file.name",
-                                          filetype="file.type",
-                                          fileobj="files.file")
-        payload['name'] = file.name
-        data = multipart_encode(payload)
-        send_url = "http://23.21.114.69/xlsform"
-        t = urlfetch.fetch(url=send_url, payload="".join(data), method=urlfetch.POST, headers=headers)
-        self.response.headers['Content-Type'] = 'text/plain'
-        self.response.out.write(t.content)
+    # def submitFile(self,key):
+    #     payload = {}
+    #     files = self.getBlobFile(key)
+    #     payload['file'] = MultipartParam('file',
+    #                                       name="file.name",
+    #                                       filetype="file.type",
+    #                                       fileobj="files.file")
+    #     payload['name'] = file.name
+    #     data = multipart_encode(payload)
+    #     send_url = "http://23.21.114.69/xlsform"
+    #     t = urlfetch.fetch(url=send_url, payload="".join(data), method=urlfetch.POST, headers=headers)
+    #     self.response.headers['Content-Type'] = 'text/plain'
+    #     self.response.out.write(t.content)
+
+
+    #     file = self.getFile(key)
+
+
+    # def create_file(self, filename,data):
+    #     """Create a file.
+
+    #     The retry_params specified in the open call will override the default
+    #     retry params for this particular file handle.
+
+    #     Args:
+    #       filename: filename.
+    #     """
+    #     self.response.write('Creating file %s\n' % filename)
+
+    #     write_retry_params = gcs.RetryParams(backoff_factor=1.1)
+    #     gcs_file = gcs.open(filename,
+    #                         'w',
+    #                         content_type='application/vnd.openxmlformats-officedocument.spreadsheetml.sheet',
+    #                         options={'x-goog-meta-foo': 'foo',
+    #                                  'x-goog-meta-bar': 'bar'},
+    #                         retry_params=write_retry_params)
+    #     gcs_file.write(data)
+    #     gcs_file.write(data + '\n')
+    #     gcs_file.close()
+    #     return gcs_file
+

@@ -7,6 +7,8 @@ from aggregate_db_read import ReadDataFromAggragate
 from models import pegasusFiles
 from questions_details_from_google_sheets import QuestionsDetailsFromGoogleSheet
 from pegasus_db_read import ReadDataFromPegasus
+from gcs_client import MainPage
+from pegasus_email import EmailHandler
 from send_sms import SendSMSViaVotoAPI
 from save_data_into_pegasus_db import SaveDataIntoPegasusDatabase
 
@@ -19,11 +21,15 @@ routes = [
     (r'/', MainHandler),
     (r'/testbyaliu', DbFromCsv),
     (r'/post/csv', DbFromCsv),
+    (r'/post/google/sheet', CSVUploadHandler),
+    (r'/gcs', CSVUploadHandler),
     (r'/post/google/sheet/json', QuestionsDetailsFromGoogleSheet),
     (r'/google/sheet/json', QuestionsDetailsFromGoogleSheet),
     (r'/admin', DashboardHandler),
     (r'/upload', CSVUploadHandler),
-    (r'/read/data/from/aggregate', ReadDataFromAggragate),
+    (r'/read/data/from/aggregate', ReadDataFromPegasus),
+    (r'/gcs_old', MainPage),
+    (r'/sendmail', EmailHandler),
     (r'/read/data/from/pegasus', ReadDataFromPegasus),
     (r'/send/sms/via/votoapi', SendSMSViaVotoAPI),
     (r'/save/data/on/pegasus/for/testing', SaveDataIntoPegasusDatabase),

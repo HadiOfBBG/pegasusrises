@@ -4,7 +4,7 @@
 
 
 angular.module('home')
-    .factory('homeService', ['$http','$resource', function($http, $resource){
+    .factory('homeService', ['$http','prConstantKeys', function($http, prConstantKeys){
         var homeService = {};
 
         homeService.uploadGoogleSheet = function(fileObject){
@@ -15,10 +15,13 @@ angular.module('home')
             return $http.post('/google/sheet/json', fileObject);
         };
 
-        homeService.sendFileToOdk = function(){
-//            fileObject
-//            return $http.post('http://23.21.114.69/xlsform/', fileObject);
-            return $resource('http://23.21.114.69/xlsform/', {});
+        homeService.sendXLSDownloadUrl = function( data ){
+            return $http.post('/gcs', data);
+        };
+
+        homeService.getFileFromGoogle = function(fileId){
+            var url = 'https://www.googleapis.com/drive/v2/files/' + fileId;
+            return $http.get(url, {params : { key : prConstantKeys.google_api_key}});
         };
 
         return homeService;

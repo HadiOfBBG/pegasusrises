@@ -7,6 +7,8 @@ from jinja_template import JinjaTemplating
 
 class DashboardHandler(JinjaTemplating):
     def get(self):
+        self.response.headers.add_header("Access-Control-Allow-Origin", "*")
+        self.response.headers['Content-Type'] = 'text/html'
         user = users.get_current_user()
         if user:
             template_values = {

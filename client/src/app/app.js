@@ -7,38 +7,66 @@ angular.module('pegasusrises', [
     'templates.common',
     'home',
     'admin',
+    'survey',
     'lk-google-picker',
-    'angular-loading-bar',
+    'cfp.loadingBar',
     'angular-growl',
     'angularFileUpload',
-    'ngResource'
+    'ngResource',
+    'ngJoyRide',
+    'uiGmapgoogle-maps',
+    'googlechart'
 ])
-    .config(['$stateProvider','$urlRouterProvider','lkGoogleSettingsProvider', 'growlProvider', '$httpProvider', function($stateProvider, $urlRouterProvider, lkGoogleSettingsProvider, growlProvider, $httpProvider){
-        //for any unmatched url, redirect to the state '/home'
-        $urlRouterProvider.otherwise('/');
+    //'angular-loading-bar',
+    .constant('prConstantKeys', {
+        google_api_key: 'AIzaSyDSBIljWNHZ9xMXuaROc4oAypA8LT5xmaU',
+        google_client_id : '982002203062-qllsi843lackaof6acad3308p7m1j5pr.apps.googleusercontent.com'
+    })
 
-        //This is the configuration for the Google Picker API
-        lkGoogleSettingsProvider.configure({
-            apiKey   : 'AIzaSyDSBIljWNHZ9xMXuaROc4oAypA8LT5xmaU',
-            clientId : '982002203062-qllsi843lackaof6acad3308p7m1j5pr.apps.googleusercontent.com',
-            scopes   : ['https://www.googleapis.com/auth/drive', 'https://www.googleapis.com/auth/drive.readonly'],
-            locale   : 'en',
-            features : ['MULTISELECT_ENABLED'],
-            views    : [
-                'DocsUploadView()',
-                'DocsView().setMimeTypes("application/vnd.google-apps.spreadsheet")'
-            ]
-        });
-        //globally time the growl toatser to stay visible for 5seconds
-        growlProvider.globalTimeToLive(5000);
+    .config(['$stateProvider','$urlRouterProvider','lkGoogleSettingsProvider',
+        'growlProvider', '$httpProvider', 'uiGmapGoogleMapApiProvider','prConstantKeys',
+        function($stateProvider, $urlRouterProvider, lkGoogleSettingsProvider,
+                 growlProvider, $httpProvider, uiGmapGoogleMapApiProvider, prConstantKeys){
+            //for any unmatched url, redirect to the state '/home'
+            $urlRouterProvider.otherwise('/');
 
-        $httpProvider.defaults.useXDomain = true;
-        delete $httpProvider.defaults.headers.common['X-Requested-With'];
+            //This is the configuration for the Google Picker API
+            lkGoogleSettingsProvider.configure({
+                apiKey   :  prConstantKeys.google_api_key,
+                clientId : prConstantKeys.google_client_id,
+                scopes   : ['https://www.googleapis.com/auth/drive', 'https://www.googleapis.com/auth/drive.readonly'],
+                locale   : 'en',
+                features : [],
+                views    : [
+                    'DocsView().setMimeTypes("application/vnd.google-apps.spreadsheet")'
+                ]
+            });
+            //globally time the growl toatser to stay visible for 5seconds
+            growlProvider.globalTimeToLive(5000);
 
-    }])
-    .run(['$rootScope', '$state', '$stateParams', '$location' ,function($rootScope, $state, $stateParams, $location){
+            uiGmapGoogleMapApiProvider.configure({
+                key : prConstantKeys.google_api_key,
+                v: '3.17',
+                //libraries: 'weather,geometry,visualization'
+                libraries: ''
+            });
+        }])
+    .run(['$rootScope', '$state', '$stateParams', 'cfpLoadingBar' ,function($rootScope, $state, $stateParams, cfpLoadingBar){
         $rootScope.$state = $state;
         $rootScope.$stateParams = $stateParams;
+
+        $rootScope.$on('$stateChangeStart',function(event, toState, toParams, fromState, fromParams){
+            cfpLoadingBar.start();
+            //$rootScope.loading = true;
+        });
+
+        $rootScope.$on('$viewContentLoading',function(event){
+            cfpLoadingBar.inc();
+        });
+
+        $rootScope.$on('$viewContentLoaded',function(event){
+            cfpLoadingBar.complete();
+        });
 
     }]);
 
@@ -46,45 +74,50 @@ angular.module('pegasusrises').controller('prBreadCrumbCtrl', ['$scope', '$state
     $scope.$watch('$state', function(oldVal, newVal){
         $scope.subtitle = ($state.current.name).toUpperCase();
     });
+
+    $scope.configJoyRide = [
+        {
+            type: "title",
+            heading: "Welcome to the Pegasus Tutorial",
+            text: '<div class="row">' +
+            '<div id="title-text" style="font-size: medium;" class=" text-center col-md-12"><br>' +
+            'This walkthrough will help you familiarize with the Pegasus Build System</div></div>',
+            scroll: true
+        },
+        {
+            type: "element",
+            selector: "#ngJoyRide_1_gdrive",
+            heading: "Create a Server",
+            text: "<span class=''  style='font-size: medium;'>This button will open your Google Drive in this interface to allow you select the XLS file that will be used to generate the server</span>" +
+            "<br><span  style='font-size: small;'>Clicking \"NEXT\'</span>",
+            placement: "left",
+            scroll: true
+        },
+        {
+            type : 'function',
+            fn : function(){
+                $scope.startJoyRide = false;
+                $('#ngJoyRide_1_gdrive').trigger('click');
+            }
+        },
+        {
+            type : 'element',
+            selector : '#ngJoyRide_2_upload',
+            heading : "<span class='text-center'  style='font-size: medium;'>Upload the selected Google Sheet to begin creating your server</span>",
+            scroll : true,
+            placement : "left"
+        }
+
+    ];
+
+    $scope.startJoyRide = function(){
+        $scope.startJoyRide = !$scope.startJoyRide
+    };
+
+    $scope.onFinish = function(){
+        //alert("Joy ride ends")
+    };
+
+
+
 }]);
-
-
-//angular.module('app', [
-//  'ngRoute',
-//  'projectsinfo',
-//  'dashboard',
-//  'projects',
-//  'admin',
-//  'services.breadcrumbs',
-//  'services.i18nNotifications',
-//  'services.httpRequestTracker',
-//  'security',
-//  'directives.crud',
-//  'templates.app',
-//  'templates.common']);
-
-//angular.module('app').constant('MONGOLAB_CONFIG', {
-//  baseUrl: '/databases/',
-//  dbName: 'ascrum'
-//});
-
-//TODO: move those messages to a separate module
-//angular.module('app').constant('I18N.MESSAGES', {
-//  'errors.route.changeError':'Route change error',
-//  'crud.user.save.success':"A user with id '{{id}}' was saved successfully.",
-//  'crud.user.remove.success':"A user with id '{{id}}' was removed successfully.",
-//  'crud.user.remove.error':"Something went wrong when removing user with id '{{id}}'.",
-//  'crud.user.save.error':"Something went wrong when saving a user...",
-//  'crud.project.save.success':"A project with id '{{id}}' was saved successfully.",
-//  'crud.project.remove.success':"A project with id '{{id}}' was removed successfully.",
-//  'crud.project.save.error':"Something went wrong when saving a project...",
-//  'login.reason.notAuthorized':"You do not have the necessary access permissions.  Do you want to login as someone else?",
-//  'login.reason.notAuthenticated':"You must be logged in to access this part of the application.",
-//  'login.error.invalidCredentials': "Login failed.  Please check your credentials and try again.",
-//  'login.error.serverError': "There was a problem with authenticating: {{exception}}."
-//});
-
-//angular.module('app').config(['$routeProvider', '$locationProvider', function ($routeProvider, $locationProvider) {
-//  $locationProvider.html5Mode(true);
-//  $routeProvider.otherwise({redirectTo:'/projectsinfo'});
-//}]);

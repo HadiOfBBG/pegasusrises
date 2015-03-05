@@ -1,0 +1,57 @@
+<div class="row">
+
+    <div class="col-lg-12 center">
+        <section class="panel default blue_title h2">
+            <div class="panel-heading border">{{ surveyName || ' '}}</div>
+        </section>
+    </div>
+
+    <div class="col-md-6">
+        <div class="widget_inbox">
+            <ul>
+                <li>
+                    <a class="inbox_blue text-white-important widget_inbox_heading_left" href="">Survey Questions <span class="small">&nbsp;&nbsp;(<em> {{surveyData.questions_details.length  }} </em>)</span>
+                        <span class="pull-right"><i class="fa fa-cog"></i></span>
+                    </a>
+                </li>
+                <li ng-repeat="question_item in surveyData.questions_details"><a href="" ng-class="{'active' : question_item.question_field == selected_question.question_field}" ng-click="selectQuestion(question_item)">
+                    <div class="widget_inbox_header">
+                        <span class="pull-left widget_inbox_time"><b>{{ $index + 1 }}</b></span>
+                        <span class="pull-right widget_inbox_time">{{ question_item.question_type }}</span>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;Question
+                    </div>
+                    {{ question_item.question }}</a></li>
+
+            </ul>
+        </div>
+    </div>
+    <!--<div class="col-lg-12" ng-init="showButtons = false" ng-show="showButtons">-->
+        <!--<div class="btn-group">-->
+            <!--<button class="btn btn-primary" ng-class="{'active' :   $scope.chartObject.type == 'BarChart' }" ng-click="changeChartType('BarChart')"> BarChart</button>-->
+            <!--<button class="btn btn-warning" ng-class="{'active' :   $scope.chartObject.type == 'PieChart' }" ng-click="changeChartType('PieChart')">PieChart</button>-->
+            <!--<button class="btn btn-success" ng-class="{'active' :   $scope.chartObject.type == 'ColumnChart' }" ng-click="changeChartType('ColumnChart')">ColumnChart</button>-->
+        <!--</div>-->
+    <!--</div>-->
+</div>
+
+<!--<tabset>-->
+    <!--<tab heading="Google Map with Markers" select="toggleButtons(false)">-->
+        <!--<ui-gmap-google-map center='map.center' zoom='map.zoom'>-->
+
+        <!--<ui-gmap-markers-->
+                <!--models="markers"-->
+                <!--idkey="'id'"-->
+                <!--coords="'points'">-->
+        <!--</ui-gmap-markers>-->
+
+    <!--</ui-gmap-google-map>-->
+    <!--</tab>-->
+    <!--&lt;!&ndash;<tab ng-repeat="tab in tabs" heading="{{tab.title}}" active="tab.active" disabled="tab.disabled">&ndash;&gt;-->
+        <!--&lt;!&ndash;{{tab.content}}&ndash;&gt;-->
+    <!--&lt;!&ndash;</tab>&ndash;&gt;-->
+    <!--<tab select="toggleButtons(true)">-->
+        <!--<tab-heading>-->
+            <!--<i class="glyphicon glyphicon-bell"></i> Google Charts-->
+        <!--</tab-heading>-->
+        <!--<div google-chart chart="chartObject" style="height:600px; width:100%;"></div>-->
+    <!--</tab>-->
+<!--</tabset>-->

@@ -37,7 +37,7 @@ angular.module('admin', [])
                 body.removeClass('red_thm');
                 body.removeClass('magento_thm');
                 body.removeClass('green_thm');
-                body.addClass(themeclass);
+                body.addClass(choice.key);
         };
 
           $scope.headerOptions = [
@@ -93,38 +93,66 @@ angular.module('pegasusrises', [
     'templates.common',
     'home',
     'admin',
+    'survey',
     'lk-google-picker',
-    'angular-loading-bar',
+    'cfp.loadingBar',
     'angular-growl',
     'angularFileUpload',
-    'ngResource'
+    'ngResource',
+    'ngJoyRide',
+    'uiGmapgoogle-maps',
+    'googlechart'
 ])
-    .config(['$stateProvider','$urlRouterProvider','lkGoogleSettingsProvider', 'growlProvider', '$httpProvider', function($stateProvider, $urlRouterProvider, lkGoogleSettingsProvider, growlProvider, $httpProvider){
-        //for any unmatched url, redirect to the state '/home'
-        $urlRouterProvider.otherwise('/');
+    //'angular-loading-bar',
+    .constant('prConstantKeys', {
+        google_api_key: 'AIzaSyDSBIljWNHZ9xMXuaROc4oAypA8LT5xmaU',
+        google_client_id : '982002203062-qllsi843lackaof6acad3308p7m1j5pr.apps.googleusercontent.com'
+    })
 
-        //This is the configuration for the Google Picker API
-        lkGoogleSettingsProvider.configure({
-            apiKey   : 'AIzaSyDSBIljWNHZ9xMXuaROc4oAypA8LT5xmaU',
-            clientId : '982002203062-qllsi843lackaof6acad3308p7m1j5pr.apps.googleusercontent.com',
-            scopes   : ['https://www.googleapis.com/auth/drive', 'https://www.googleapis.com/auth/drive.readonly'],
-            locale   : 'en',
-            features : ['MULTISELECT_ENABLED'],
-            views    : [
-                'DocsUploadView()',
-                'DocsView().setMimeTypes("application/vnd.google-apps.spreadsheet")'
-            ]
-        });
-        //globally time the growl toatser to stay visible for 5seconds
-        growlProvider.globalTimeToLive(5000);
+    .config(['$stateProvider','$urlRouterProvider','lkGoogleSettingsProvider',
+        'growlProvider', '$httpProvider', 'uiGmapGoogleMapApiProvider','prConstantKeys',
+        function($stateProvider, $urlRouterProvider, lkGoogleSettingsProvider,
+                 growlProvider, $httpProvider, uiGmapGoogleMapApiProvider, prConstantKeys){
+            //for any unmatched url, redirect to the state '/home'
+            $urlRouterProvider.otherwise('/');
 
-        $httpProvider.defaults.useXDomain = true;
-        delete $httpProvider.defaults.headers.common['X-Requested-With'];
+            //This is the configuration for the Google Picker API
+            lkGoogleSettingsProvider.configure({
+                apiKey   :  prConstantKeys.google_api_key,
+                clientId : prConstantKeys.google_client_id,
+                scopes   : ['https://www.googleapis.com/auth/drive', 'https://www.googleapis.com/auth/drive.readonly'],
+                locale   : 'en',
+                features : [],
+                views    : [
+                    'DocsView().setMimeTypes("application/vnd.google-apps.spreadsheet")'
+                ]
+            });
+            //globally time the growl toatser to stay visible for 5seconds
+            growlProvider.globalTimeToLive(5000);
 
-    }])
-    .run(['$rootScope', '$state', '$stateParams', '$location' ,function($rootScope, $state, $stateParams, $location){
+            uiGmapGoogleMapApiProvider.configure({
+                key : prConstantKeys.google_api_key,
+                v: '3.17',
+                //libraries: 'weather,geometry,visualization'
+                libraries: ''
+            });
+        }])
+    .run(['$rootScope', '$state', '$stateParams', 'cfpLoadingBar' ,function($rootScope, $state, $stateParams, cfpLoadingBar){
         $rootScope.$state = $state;
         $rootScope.$stateParams = $stateParams;
+
+        $rootScope.$on('$stateChangeStart',function(event, toState, toParams, fromState, fromParams){
+            cfpLoadingBar.start();
+            //$rootScope.loading = true;
+        });
+
+        $rootScope.$on('$viewContentLoading',function(event){
+            cfpLoadingBar.inc();
+        });
+
+        $rootScope.$on('$viewContentLoaded',function(event){
+            cfpLoadingBar.complete();
+        });
 
     }]);
 
@@ -132,62 +160,66 @@ angular.module('pegasusrises').controller('prBreadCrumbCtrl', ['$scope', '$state
     $scope.$watch('$state', function(oldVal, newVal){
         $scope.subtitle = ($state.current.name).toUpperCase();
     });
+
+    $scope.configJoyRide = [
+        {
+            type: "title",
+            heading: "Welcome to the Pegasus Tutorial",
+            text: '<div class="row">' +
+            '<div id="title-text" style="font-size: medium;" class=" text-center col-md-12"><br>' +
+            'This walkthrough will help you familiarize with the Pegasus Build System</div></div>',
+            scroll: true
+        },
+        {
+            type: "element",
+            selector: "#ngJoyRide_1_gdrive",
+            heading: "Create a Server",
+            text: "<span class=''  style='font-size: medium;'>This button will open your Google Drive in this interface to allow you select the XLS file that will be used to generate the server</span>" +
+            "<br><span  style='font-size: small;'>Clicking \"NEXT\'</span>",
+            placement: "left",
+            scroll: true
+        },
+        {
+            type : 'function',
+            fn : function(){
+                $scope.startJoyRide = false;
+                $('#ngJoyRide_1_gdrive').trigger('click');
+            }
+        },
+        {
+            type : 'element',
+            selector : '#ngJoyRide_2_upload',
+            heading : "<span class='text-center'  style='font-size: medium;'>Upload the selected Google Sheet to begin creating your server</span>",
+            scroll : true,
+            placement : "left"
+        }
+
+    ];
+
+    $scope.startJoyRide = function(){
+        $scope.startJoyRide = !$scope.startJoyRide
+    };
+
+    $scope.onFinish = function(){
+        //alert("Joy ride ends")
+    };
+
+
+
 }]);
-
-
-//angular.module('app', [
-//  'ngRoute',
-//  'projectsinfo',
-//  'dashboard',
-//  'projects',
-//  'admin',
-//  'services.breadcrumbs',
-//  'services.i18nNotifications',
-//  'services.httpRequestTracker',
-//  'security',
-//  'directives.crud',
-//  'templates.app',
-//  'templates.common']);
-
-//angular.module('app').constant('MONGOLAB_CONFIG', {
-//  baseUrl: '/databases/',
-//  dbName: 'ascrum'
-//});
-
-//TODO: move those messages to a separate module
-//angular.module('app').constant('I18N.MESSAGES', {
-//  'errors.route.changeError':'Route change error',
-//  'crud.user.save.success':"A user with id '{{id}}' was saved successfully.",
-//  'crud.user.remove.success':"A user with id '{{id}}' was removed successfully.",
-//  'crud.user.remove.error':"Something went wrong when removing user with id '{{id}}'.",
-//  'crud.user.save.error':"Something went wrong when saving a user...",
-//  'crud.project.save.success':"A project with id '{{id}}' was saved successfully.",
-//  'crud.project.remove.success':"A project with id '{{id}}' was removed successfully.",
-//  'crud.project.save.error':"Something went wrong when saving a project...",
-//  'login.reason.notAuthorized':"You do not have the necessary access permissions.  Do you want to login as someone else?",
-//  'login.reason.notAuthenticated':"You must be logged in to access this part of the application.",
-//  'login.error.invalidCredentials': "Login failed.  Please check your credentials and try again.",
-//  'login.error.serverError': "There was a problem with authenticating: {{exception}}."
-//});
-
-//angular.module('app').config(['$routeProvider', '$locationProvider', function ($routeProvider, $locationProvider) {
-//  $locationProvider.html5Mode(true);
-//  $routeProvider.otherwise({redirectTo:'/projectsinfo'});
-//}]);
-
 /**
  * Home Template
  *
  * Created by kaygee on 2/12/15.
  */
 
-angular.module('home', ['angular-loading-bar'])
+angular.module('home', [])
     .config(['$stateProvider', function($stateProvider){
         $stateProvider
             .state('home', {
                 url : '/',
                 templateUrl : 'home/home.tpl.html',
-                controller : 'prHomeCtrl'
+                controller : 'prHomeController'
             })
     }]);
 /**
@@ -195,101 +227,93 @@ angular.module('home', ['angular-loading-bar'])
  */
 
 angular.module('home')
-    .controller('prHomeCtrl', ['$rootScope', '$scope', 'homeService', 'growl', '$upload', function($rootScope, $scope, homeService, growl, $upload){
-        $scope.files = [];
+    .controller('prHomeController', ['$rootScope', '$scope', 'homeService', 'growl', '$upload','cfpLoadingBar',
+        function($rootScope, $scope, homeService, growl, $upload, cfpLoadingBar){
+            $scope.files = [];
 
 
-        $scope.uploadSheet = function(){
-            var fileToUpload = $scope.files[ $scope.files.length - 1 ];
-            homeService.uploadGoogleSheet(fileToUpload).
-                success(function(data, status, headers, config) {
-                    growl.success("Data was posted successfully", {});
-                    console.log(data);
-                    console.log(status);
-                    console.log(headers);
-                    console.log(config);
-                }).
-                error(function(data, status, headers, config) {
-                    growl.error("Something went wrong on the server", {});
-                    console.log(data);
-                    console.log(status);
-                    console.log(headers);
-                    console.log(config);
-                });
-        };
-
-        $scope.tabletop= function(){
-            if ($scope.files.length) {
-                Tabletop.init( {
-                    key: $scope.files[ $scope.files.length - 1].id,
-                    callback: function(data, tabletop) {
-                        $scope.surveyDataReturned = {
-                            choices : {},
-                            survey : {}
-                        };
-                        angular.forEach(data, function(val, prop){
-                            $scope.surveyDataReturned [ prop ] = {
-                                column_names :  data[prop].column_names,
-                                elements :  data[prop].elements,
-                                name :  data[prop].name,
-                                original_columns : data[prop].original_columns,
-                                pretty_columns : data[prop].pretty_columns
-                            };
-                        });
-                        if (data) {
-                            console.log($scope.surveyDataReturned);
-                            homeService.uploadGoogleSheetContentsAsJson($scope.surveyDataReturned)
-                                .success(function(data){
-                                    growl.success("Data was posted successfully", {});
-                                })
-                                .error(function(){
-                                    growl.error("Something went wrong on the server", {});
-                                })
-                        }else{
-                            alert("The file has not been shared to the public")
-                        }
-                    },
-                    simpleSheet: false
-                })
-            }else{
-                alert("No file selected")
-            }
-        };
-
-        $scope.$watch('files', function () {
-            $scope.upload($scope.files);
-        });
-        $scope.odkTest = function(){
-            homeService.sendFileToOdk().query()
-        };
-
-        $scope.upload = function (files) {
-            if (files && files.length) {
-                for (var i = 0; i < files.length; i++) {
-                    var file = files[i];
-                    $upload.upload({
-                        url: 'http://23.21.114.69/xlsform/',
-                        fields: {'username': $scope.username},
-                        file: file
-                    }).progress(function (evt) {
-                        var progressPercentage = parseInt(100.0 * evt.loaded / evt.total);
-                        console.log('progress: ' + progressPercentage + '% ' + evt.config.file.name);
-                    }).success(function (data, status, headers, config) {
-                        console.log('file ' + config.file.name + 'uploaded. Response: ' + data);
+            $scope.uploadSheet = function(){
+                var fileToUpload = $scope.files[ $scope.files.length - 1 ];
+                homeService.uploadGoogleSheet(fileToUpload).
+                    success(function(data, status, headers, config) {
+                        growl.success("Data was posted successfully", {});
+                        console.log(data);
+                        console.log(status);
+                        console.log(headers);
+                        console.log(config);
+                    }).
+                    error(function(data, status, headers, config) {
+                        growl.error("Something went wrong on the server", {});
+                        console.log(data);
+                        console.log(status);
+                        console.log(headers);
+                        console.log(config);
                     });
+            };
+
+            $scope.tabletop= function(){
+                if ($scope.files.length) {
+                    $scope.surveyDataReturned = {};
+                    Tabletop.init( {
+                        key: $scope.files[ $scope.files.length - 1].id,
+                        callback: function(data, tabletop) {
+                            angular.forEach(data, function(val, prop){
+                                $scope.surveyDataReturned [ prop ] = {
+                                    column_names :  data[prop].column_names,
+                                    elements :  data[prop].elements,
+                                    name :  data[prop].name,
+                                    original_columns : data[prop].original_columns,
+                                    pretty_columns : data[prop].pretty_columns
+                                };
+                            });
+                            if (data) {
+                                homeService.uploadGoogleSheetContentsAsJson($scope.surveyDataReturned)
+                                    .success(function(data){
+                                        growl.success("Data was posted successfully", {});
+                                    })
+                                    .error(function(){
+                                        growl.error("Something went wrong on the server", {});
+                                    })
+                            }else{
+                                alert("The file has not been shared to the public")
+                            }
+                        },
+                        simpleSheet: false
+                    })
+                }else{
+                    alert("No file selected")
                 }
-            }
-        };
+            };
+
+            $scope.getFile = function(){
+                homeService.getFileFromGoogle($scope.files[ $scope.files.length - 1].id)
+                    .success(function(data, stuff, more, headers){
+                        console.log(data);
+
+                        var urlToPost = data['exportLinks']['application/vnd.openxmlformats-officedocument.spreadsheetml.sheet'];
+
+                        homeService.sendXLSDownloadUrl(urlToPost)
+
+                    })
+            };
 
 
-    }]);
+            $scope.sendFileToOdk = function(){
+                homeService.sendFileToOdk();
+            };
+
+            $scope.testDataRetrieve = function(){
+
+            };
+
+        }]);
 /**
  * Created by kaygee on 2/13/15.
  */
 
 
 angular.module('home')
-    .factory('homeService', ['$http','$resource', function($http, $resource){
+    .factory('homeService', ['$http','prConstantKeys', function($http, prConstantKeys){
         var homeService = {};
 
         homeService.uploadGoogleSheet = function(fileObject){
@@ -300,87 +324,147 @@ angular.module('home')
             return $http.post('/google/sheet/json', fileObject);
         };
 
-        homeService.sendFileToOdk = function(){
-//            fileObject
-//            return $http.post('http://23.21.114.69/xlsform/', fileObject);
-            return $resource('http://23.21.114.69/xlsform/', {});
+        homeService.sendXLSDownloadUrl = function(xlsUrl ){
+            return $http.post('/gcs', {downloadUrl : xlsUrl });
+        };
+
+        homeService.getFileFromGoogle = function(fileId){
+            var url = 'https://www.googleapis.com/drive/v2/files/' + fileId;
+            return $http.get(url, {params : { key : prConstantKeys.google_api_key}});
         };
 
         return homeService;
     }]);
 /**
- * Created by kaygee on 2/18/15.
+ * Created by Kaygee on 24/02/2015.
  */
 
-function JSONToCSVConvertor(JSONData, ReportTitle, ShowLabel) {
-    //If JSONData is not an object then JSON.parse will parse the JSON string in an Object
-    var arrData = typeof JSONData != 'object' ? JSON.parse(JSONData) : JSONData;
+angular.module('survey', [])
+    .config(['$stateProvider', function($stateProvider){
+        $stateProvider.
+            state('surveys', {
+                url : '/surveys',
+                templateUrl : 'survey/survey_list.tpl.html',
+                controller : 'prSurveyController'
+            })
+            .state('surveys.selected_survey', {
+                url : '/select/1',
+                templateUrl : 'survey/selected_survey.tpl.html',
+                controller : 'prSelectedSurveyController',
+                resolve : {
+                    surveyService : 'surveyService',
 
-    var CSV = '';
-    //Set Report title in first row or line
+                    surveyData : function(surveyService){
+                        return surveyService.getAllSubmissions()
+                    }
 
-    CSV  = ReportTitle +   '\r\n\n';
+                }
+            })
+    }]);
+/**
+ * Created by Kaygee on 24/02/2015.
+ */
 
-    //This condition will generate the Label/Header
-    if (ShowLabel) {
-        var row = "";
+angular.module('survey')
+    .controller('prSurveyController', ['$rootScope', '$scope', 'homeService', 'growl',
+        function($rootScope, $scope, homeService, growl){
 
-        //This loop will extract the label from 1st index of on array
-        for (var index in arrData[0]) {
+        }])
+    .controller('prSelectedSurveyController', ['$rootScope', '$scope', 'homeService', 'growl','uiGmapGoogleMapApi','surveyData',
+        function($rootScope, $scope, homeService, growl, uiGmapGoogleMapApi, surveyData){
 
-            //Now convert each value to string and comma-seprated
-            row  = index + ',';
-        }
+            $scope.surveyData = surveyData.data;
+            if (surveyData.data.questions_details.length) {
+               $scope.surveyName =  surveyData.data.questions_details[0].survey_name
+            }
 
-        row = row.slice(0, -1);
+            $scope.selectQuestion = function(question){
+                $scope.selected_question = question;
+            }
 
-        //append Label row with line break
-        CSV  = row  + '\r\n';
-    }
 
-    //1st loop is to extract each row
-    for (var i = 0; i < arrData.length; i  ) {
-        var row = "";
+            $scope.map = { center: { latitude: 5.558288, longitude: -0.173778 }, zoom: 8 };
+            $scope.markers = [
+                {id : 1, points : {latitude: 5.578288, longitude: -0.345 }},
+                { id : 2,  points : { latitude: 5.598288, longitude: -0.218 }},
+                { id : 3,  points : { latitude: 5.458288, longitude: -0.1148 }},
+                {id : 4,   points : { latitude: 5.358288, longitude: -0.089 }},
+                {id : 5,  points : { latitude: 5.258288, longitude: -0.13778} }
+            ];
 
-        //2nd loop will extract each column and convert it in string comma-seprated
-        for (var index in arrData[i]) {
-            row  = '"'  +  arrData[i][index]  + '",';
-        }
+            // uiGmapGoogleMapApi is a promise.
+            // The "then" callback function provides the google.maps object.
+            uiGmapGoogleMapApi.then(function(maps) {
 
-        row.slice(0, row.length - 1);
+            });
 
-        //add a line break after each row
-        CSV  = row +   '\r\n';
-    }
+            $scope.chartObject = {};
 
-    if (CSV == '') {
-        alert("Invalid data");
-        return;
-    }
+            $scope.onions = [
+                {v: "Onions"},
+                {v: 3},
+            ];
 
-    //Generate a file name
-    var fileName = "MyReport_";
-    //this will remove the blank-spaces from the title and replace it with an underscore
-    fileName  = ReportTitle.replace(/ /g, "_");
+            $scope.chartObject.data = {"cols": [
+                {id: "t", label: "Topping", type: "string"},
+                {id: "s", label: "Slices", type: "number"}
+            ], "rows": [
+                {c: [
+                    {v: "Mushrooms"},
+                    {v: 3},
+                ]},
+                {c: $scope.onions},
+                {c: [
+                    {v: "Olives"},
+                    {v: 31}
+                ]},
+                {c: [
+                    {v: "Zucchini"},
+                    {v: 1},
+                ]},
+                {c: [
+                    {v: "Pepperoni"},
+                    {v: 2},
+                ]}
+            ]};
 
-    //Initialize file format you want csv or xls
-    var uri = 'data:text/csv;charset=utf-8,' +  escape(CSV);
 
-    // Now the little tricky part.
-    // you can use either>> window.open(uri);
-    // but this will not work in some browsers
-    // or you will not get the correct file extension
+            // $routeParams.chartType == BarChart or PieChart or ColumnChart...
+            $scope.chartObject.type = 'ColumnChart';
+            $scope.chartObject.options = {
+                'title': 'How Much Pizza I Ate Last Night'
+            };
+            $scope.changeChartType = function (chartType) {
+                $scope.chartObject.type = chartType;
+            };
 
-    //this trick will generate a temp <a /> tag
-    var link = document.createElement("a");
-    link.href = uri;
+            $scope.tabs = [
+                { title:'Dynamic Title 1', content:'Dynamic content 1' },
+                { title:'Dynamic Title 2', content:'Dynamic content 2', disabled: true }
+            ];
 
-    //set the visibility hidden so it will not effect on your web-layout
-    link.style = "visibility:hidden";
-    link.download = fileName +  ".csv";
+            $scope.toggleButtons = function(state){
+                $scope.showButtons = state;
+            }
 
-    //this part will append the anchor tag and remove it after automatic click
-    document.body.appendChild(link);
-    link.click();
-    document.body.removeChild(link);
-}
+        }]);
+
+
+/**
+ * Created by Kaygee on 24/02/2015.
+ */
+
+angular.module('survey')
+    .factory('surveyService' , [ '$http', function($http){
+        var surveyService = {};
+
+        surveyService.getAllSurveys = function(){
+            return $http.get('all/surveys')
+        };
+
+        surveyService.getAllSubmissions = function( ){
+            return $http.get('/read/data/from/pegasus')
+        };
+
+        return surveyService;
+    }]);
