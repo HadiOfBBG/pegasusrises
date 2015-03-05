@@ -29,7 +29,6 @@ routes = [
     (r'/upload', CSVUploadHandler),
     (r'/read/data/from/aggregate', ReadDataFromPegasus),
     (r'/gcs_old', MainPage),
-    (r'/read/data/from/aggregate', ReadDataFromAggragate),
     (r'/sendmail', EmailHandler),
     (r'/read/data/from/pegasus', ReadDataFromPegasus),
     (r'/send/sms/via/votoapi', SendSMSViaVotoAPI),
