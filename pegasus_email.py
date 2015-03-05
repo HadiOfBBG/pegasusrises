@@ -3,8 +3,9 @@ import webapp2
 from google.appengine.api import users
 
 
-class EmailHandler(webapp2.RequestHandler):
-	def sendEmail(self):
+class EmailHandler():
+	@staticmethod
+	def sendEmail():
 		user = users.get_current_user()
 
 		message = mail.EmailMessage(sender="comradehadi@gmail.com",

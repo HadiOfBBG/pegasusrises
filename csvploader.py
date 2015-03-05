@@ -39,9 +39,9 @@ class CSVUploadHandler(JinjaTemplating,blobstore_handlers.BlobstoreUploadHandler
     def get(self):
         JinjaTemplating.render_template_only(self,'hadi_test.html')
 
-
+    
     def post(self):
-        # EmailHandler.sendEmail()
+        EmailHandler.sendEmail()
         content_from_server = json.loads(self.request.body)
         url = content_from_server['downloadUrl']
 
