@@ -27,12 +27,13 @@ routes = [
     (r'/google/sheet/json', QuestionsDetailsFromGoogleSheet),
     (r'/admin', DashboardHandler),
     (r'/upload', CSVUploadHandler),
-    (r'/read/data/from/aggregate', ReadDataFromPegasus),
+    (r'/read/data/from/aggregate', ReadDataFromAggragate),
     (r'/gcs_old', MainPage),
     (r'/sendmail', EmailHandler),
     (r'/read/data/from/pegasus', ReadDataFromPegasus),
     (r'/send/sms/via/votoapi', SendSMSViaVotoAPI),
     (r'/save/data/on/pegasus/for/testing', SaveDataIntoPegasusDatabase),
+    (r'/read/raw/data/retrieved/from/aggregate', ReadDataFromAggragate),
 
 
 
