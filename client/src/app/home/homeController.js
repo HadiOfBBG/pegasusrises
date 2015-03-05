@@ -84,18 +84,17 @@ angular.module('home')
 
                 $timeout(function(){
                     growl.success('File downloaded successfully', {});
-                    cfpLoadingBar.complete();
+                    cfpLoadingBar.set(0.3);
 
                     $timeout(function(){
-                        cfpLoadingBar.start();
                         growl.info('Processing and saving file content into database', {});
 
                         $timeout(function(){
                             growl.success('File saved successfully', {});
-                            cfpLoadingBar.complete();
+                            cfpLoadingBar.set(0.6);
 
                             $timeout(function(){
-                                cfpLoadingBar.start();
+                                cfpLoadingBar.set(0.8);
                                 growl.info('Deploying survey for participation...', {});
 
                                 $timeout(function(){

@@ -64,7 +64,7 @@ angular.module('pegasusrises', [
 
         $rootScope.$on('$stateChangeStart',function(event, toState, toParams, fromState, fromParams){
             cfpLoadingBar.start();
-            //$rootScope.loading = true;
+            $rootScope.loading = true;
         });
 
         $rootScope.$on('$viewContentLoading',function(event){
@@ -73,6 +73,7 @@ angular.module('pegasusrises', [
 
         $rootScope.$on('$viewContentLoaded',function(event){
             cfpLoadingBar.complete();
+            $rootScope.loading = false;
         });
 
     }]);

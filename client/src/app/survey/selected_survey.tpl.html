@@ -14,7 +14,7 @@
                         <span class="pull-right" ng-click="$state.go('surveys.analytics')"><i class="fa fa-cog"></i></span>
                     </a>
                 </li>
-                <li ng-repeat="question_item in surveyData.questions_details"><a href="" ng-class="{'active' : question_item.question_field == selected_question.question_field}" ng-click="selectQuestion(question_item)">
+                <li ng-repeat="question_item in surveyData.questions_details"> <a href="" ng-class="{'active' : question_item.question_field == selected_question.question_field}" ng-click="selectQuestion(question_item)">
                     <div class="widget_inbox_header">
                         <span class="pull-left widget_inbox_time"><b>{{ $index + 1 }}</b></span>
                         <span class="pull-right widget_inbox_time">{{ question_item.question_type }}</span>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;Question

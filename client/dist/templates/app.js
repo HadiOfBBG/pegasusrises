@@ -615,7 +615,7 @@ angular.module("survey/selected_survey.tpl.html", []).run(["$templateCache", fun
     "                        <span class=\"pull-right\" ng-click=\"$state.go('surveys.analytics')\"><i class=\"fa fa-cog\"></i></span>\n" +
     "                    </a>\n" +
     "                </li>\n" +
-    "                <li ng-repeat=\"question_item in surveyData.questions_details\"><a href=\"\" ng-class=\"{'active' : question_item.question_field == selected_question.question_field}\" ng-click=\"selectQuestion(question_item)\">\n" +
+    "                <li ng-repeat=\"question_item in surveyData.questions_details\"> <a href=\"\" ng-class=\"{'active' : question_item.question_field == selected_question.question_field}\" ng-click=\"selectQuestion(question_item)\">\n" +
     "                    <div class=\"widget_inbox_header\">\n" +
     "                        <span class=\"pull-left widget_inbox_time\"><b>{{ $index + 1 }}</b></span>\n" +
     "                        <span class=\"pull-right widget_inbox_time\">{{ question_item.question_type }}</span>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;Question\n" +
