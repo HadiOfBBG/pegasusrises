@@ -65,10 +65,12 @@ angular.module('home')
                 homeService.getFileFromGoogle($scope.files[ $scope.files.length - 1].id)
                     .success(function(data, stuff, more, headers){
                         console.log(data);
+                        var infoToPost = {
+                            downloadUrl : data['exportLinks']['application/vnd.openxmlformats-officedocument.spreadsheetml.sheet'],
+                            filename : ''
+                        };
 
-                        var urlToPost = data['exportLinks']['application/vnd.openxmlformats-officedocument.spreadsheetml.sheet'];
-
-                        homeService.sendXLSDownloadUrl(urlToPost)
+                        homeService.sendXLSDownloadUrl(infoToPost)
 
                     })
             };

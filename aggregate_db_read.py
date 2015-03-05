@@ -5,19 +5,71 @@ from google.appengine.ext import blobstore
 from google.appengine.ext.webapp import blobstore_handlers
 from jinja_template import JinjaTemplating
 from google.appengine.ext import db
+from google.appengine.ext import ndb
 from google.appengine.api import memcache
 from xml.dom import minidom
 from urllib2 import Request, urlopen, URLError
+import xmltodict
+from models.save_raw_aggregate_data import SaveAggregateRawPostedData
+from save_data_into_pegasus_db import SaveDataIntoPegasusDatabase
 
-class ReadDataFromAggragate(JinjaTemplating):
+class ReadDataFromAggragate(SaveDataIntoPegasusDatabase):
 
 	"""docstring for ReadDataFromPegasus"""
 
-	def get():
-		print "Yet to use it"
+	def get(self):
+		# sample_json_object = ['foo', {'bar': ('baz', None, 1.0, 2)}]
+		# save_posted_data_by_aggregate = SaveAggregateRawPostedData()
+		# save_posted_data_by_aggregate.posted_json_data = sample_json_object
+		# save_posted_data_by_aggregate.put()
+		# return
+
+		# read_raw_data_posted_by_aggregate = ndb.Query(SaveAggregateRawPostedData)
+		read_raw_data_posted_by_aggregate = SaveAggregateRawPostedData.query()
+		# count = 1
+		# for each_raw_data in read_raw_data_posted_by_aggregate:
+		# 	if count == 1 and each_raw_data == None:
+		# 		self.response.out.write('No data \n')
+		# 	else:
+		# 		self.response.out.write('Data Below \n')
+		# 		self.response.out.write(each_raw_data)
+
+		if read_raw_data_posted_by_aggregate == None:
+			self.response.out.write('No data currently saved')
+		else:
+			for each_raw_data in read_raw_data_posted_by_aggregate:
+				self.response.out.write('Data Below \n')
+				self.response.out.write("\n")
+				self.response.out.write(each_raw_data.posted_json_data)
+
+
+
 
 	def post(self):
-		self.getFormIdsGeneratedByAggregate()
+
+		posted_data_by_aggregate = json.dumps(self.request.body)
+		self.processPostedByAggreateViaPublish(posted_data_by_aggregate)
+
+
+
+	def processPostedByAggreateViaPublish(self,posted_data_by_aggregate):
+
+		self.response.out.write(posted_data_by_aggregate)
+		save_posted_data_by_aggregate = SaveAggregateRawPostedData()
+		save_posted_data_by_aggregate.posted_json_data = posted_data_by_aggregate
+		save_posted_data_by_aggregate.put()
+
+		print('Data from aggregate saved')
+		self.response.out.write('Data from aggregate saved')
+		return
+
+		responses = posted_json_data.data
+
+
+
+
+
+
 
 	#this function get the ID of the form to retieve data from and also calls the function that requst for the data
 	def getFormIdsGeneratedByAggregate(self):
@@ -25,16 +77,17 @@ class ReadDataFromAggragate(JinjaTemplating):
 		#For Pegasus A, it is moslty likely going to be one form
 		# self.response.out.write('You are here to read data right?')
 		# return
-		form_id = 'build_Software-Engagement-Test_1420717947'
-		num_of_form_ids = '1000'
 
+		form_id = 'pegasusDemoQuestionnaire'
+		num_of_form_ids = '1000'
 		self.getIdsOfDataSubmissions(form_id, num_of_form_ids)
+
 
 
 	def getIdsOfDataSubmissions(self, form_id,num_of_form_ids):
 
 		request = Request('https://pegasusodk.appspot.com/view/submissionList?formId=' + form_id + '&numEntries=' + num_of_form_ids)
-		
+
 		try:
 			response = urlopen(request)
 			data_submissions = response.read()
@@ -43,7 +96,7 @@ class ReadDataFromAggragate(JinjaTemplating):
 			# for submission_id in data_submissions_id:
 			# 	getDataSubmittedUsingSubmissionID(form_id,submission_id)
 			self.response.out.write(data_submissions)
-			
+
 		except URLError, e:
 			self.response.out.write('No submissions retrived. Got an error code:', e)
 
