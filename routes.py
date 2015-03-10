@@ -11,6 +11,7 @@ from gcs_client import MainPage
 from pegasus_email import EmailHandler
 from send_sms import SendSMSViaVotoAPI
 from save_data_into_pegasus_db import SaveDataIntoPegasusDatabase
+from cron_read_data_from_aggregate import CronToReadDataFromAggregate
 
 
 
@@ -27,13 +28,13 @@ routes = [
     (r'/google/sheet/json', QuestionsDetailsFromGoogleSheet),
     (r'/admin', DashboardHandler),
     (r'/upload', CSVUploadHandler),
-    (r'/read/data/from/aggregate', ReadDataFromPegasus),
+    (r'/aggregate/database/read', ReadDataFromAggragate),
     (r'/gcs_old', MainPage),
-    (r'/read/data/from/aggregate', ReadDataFromAggragate),
     (r'/sendmail', EmailHandler),
-    (r'/read/data/from/pegasus', ReadDataFromPegasus),
+    (r'/pegasus/database/read', ReadDataFromPegasus),
     (r'/send/sms/via/votoapi', SendSMSViaVotoAPI),
-    (r'/save/data/on/pegasus/for/testing', SaveDataIntoPegasusDatabase),
+    (r'/save/data/on/pegasus', SaveDataIntoPegasusDatabase),
+    (r'/cron/aggregate/database/read', CronToReadDataFromAggregate),
 
 
 

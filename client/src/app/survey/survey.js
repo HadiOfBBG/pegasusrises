@@ -8,12 +8,7 @@ angular.module('survey', [])
             state('surveys', {
                 url : '/surveys',
                 templateUrl : 'survey/survey_list.tpl.html',
-                controller : 'prSurveyController'
-            })
-            .state('surveys.analytics', {
-                url : '/analytics',
-                templateUrl : 'survey/dummy_analytics.tpl.html',
-                controller : 'prSelectedSurveyController',
+                controller : 'prSurveyController',
                 resolve : {
                     surveyService : 'surveyService',
 
@@ -21,6 +16,11 @@ angular.module('survey', [])
                         return surveyService.getAllSubmissions()
                     }
                 }
+            })
+            .state('surveys.analytics', {
+                url : '/analytics',
+                templateUrl : 'survey/dummy_analytics.tpl.html',
+                controller : 'prSelectedSurveyController'
             })
             .state('surveys.selected_survey', {
                 url : '/select/1',

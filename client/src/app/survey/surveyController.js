@@ -3,21 +3,44 @@
  */
 
 angular.module('survey')
-    .controller('prSurveyController', ['$rootScope', '$scope', 'homeService', 'growl',
-        function($rootScope, $scope, homeService, growl){
 
+    .controller('prSurveyController', ['$rootScope', '$scope', 'homeService', 'growl','surveyData',
+        function($rootScope, $scope, homeService, growl, surveyData){
+
+            $scope.surveyData = surveyData.data;
+            if (surveyData.data.questions_details.length) {
+                $scope.surveyName =  surveyData.data.questions_details[0].survey_name
+            }
         }])
+
+
+
     .controller('prSelectedSurveyController', ['$rootScope', '$scope', 'homeService', 'growl','uiGmapGoogleMapApi','surveyData',
         function($rootScope, $scope, homeService, growl, uiGmapGoogleMapApi, surveyData){
 
             $scope.surveyData = surveyData.data;
             if (surveyData.data.questions_details.length) {
-               $scope.surveyName =  surveyData.data.questions_details[0].survey_name
+                $scope.surveyName =  surveyData.data.questions_details[0].survey_name
             }
 
             $scope.selectQuestion = function(question){
+                //Empty the scope object or declare in undefined
+                $scope.selected_question = {};
+
+                //Assign the selected/clicked question to the declared scope variable
                 $scope.selected_question = question;
-            }
+
+                //for close ended questions,
+                if ($scope.selected_question.question_type == 'close_ended') {
+                    //
+                    $scope.selected_question.answer_values = $scope.selected_question.possible_answers.split(',');
+                    $scope.selected_question.answers = {};
+
+                    angular.forEach($scope.selected_question.answer_values, function (option, index) {
+                        $scope.selected_question.answers[$.trim(option)] = $scope.selected_question.possible_answers_labels[index];
+                    });
+                }
+            };
 
 
             $scope.map = { center: { latitude: 5.558288, longitude: -0.173778 }, zoom: 8 };

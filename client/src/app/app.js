@@ -8,6 +8,7 @@ angular.module('pegasusrises', [
     'home',
     'admin',
     'survey',
+    'directives',
     'lk-google-picker',
     'cfp.loadingBar',
     'angular-growl',

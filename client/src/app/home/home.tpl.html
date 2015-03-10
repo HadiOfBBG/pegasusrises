@@ -31,8 +31,8 @@
         <!--</div>-->
     <!--</div>-->
 </div>
-
-<div class="container clear_both padding_fix" ng-hide="first_timer">
+<!--ng-hide - first_timer ||-->
+<div class="container clear_both padding_fix" ng-hide="true">
     <!--\\\\\\\ container  start \\\\\\-->
     <div class="row">
         <div class="col-sm-3 col-sm-6">
@@ -194,7 +194,11 @@
 </div>
 
 
-<!--<div class="btn btn-warning" ng-show="files.length" ng-click="getFile()"> Get file from Google </div>-->
+<p ng-hide="first_timer" class="text-center h2" style="margin-top: 50px">Click the button go to the survey list page</p>
+<p ng-hide="first_timer" class="text-center" style="margin-top: 10px"><span ng-click="$state.go('surveys')"  class="btn btn-primary btn-lg"><i class="fa fa-list"></i>    Survey List </span></p>
+
+
+<div class="btn btn-warning" ng-show="files.length" ng-click="getFile()"> Get file from Google </div>
 
 <!--<div ng-joy-ride="startJoyRide" config="configJoyRide" on-finish="onFinish()"  on-skip="onFinish()"></div>-->
 

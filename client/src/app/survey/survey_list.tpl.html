@@ -19,13 +19,13 @@
             <!--green_border-->
             <!--orange_border-->
             <!--blue_border-->
-            <section class="panel default blue_border vertical_border h1">
-                <div class="task-header blue_task"><a ui-sref="surveys.selected_survey">Citizen Journalism Survey</a><span><i class="fa fa-clock-o"></i>7 hours ago</span> </div>
+            <section class="panel default blue_border vertical_border h1" ng-show="surveyData.questions_details.length">
+                <div class="task-header blue_task"><a ui-sref="surveys.selected_survey">{{ surveyName }}</a><span><i class="fa fa-clock-o"></i>7 hours ago</span> </div>
                 <div class="row task_inner inner_padding">
                     <div class="col-sm-9">
                         <p><em>Description : &nbsp;</em>A Short survey to gather journalist feedback</p>
-                        <p><em>Questions : &nbsp;</em>8 questions</p>
-                        <p><em>Total Responses : &nbsp;</em>37 submissions</p>
+                        <p><em>Questions : &nbsp;</em>{{ surveyData.questions_details.length}} questions</p>
+                        <p><em>Total Responses : &nbsp;</em>{{ surveyData.survey_submissions.length }} submissions</p>
                     </div>
                     <div class="col-sm-3">
                         <!--<div class="pull-right"><span>August  15, 2014</span></div>-->
@@ -35,7 +35,7 @@
                         <!--<div class="pull-right"><span>August  19, 2014</span></div>-->
                     </div>
                 </div>
-                <div class="task-footer">
+                <div class="task-footer hidden">
                     <label class="pull-left">
                         <div class="progress">
                             <div class="progress-bar progress-bar-info" role="progressbar" aria-valuenow="40" aria-valuemin="0" aria-valuemax="100" style="width: 60%;">
@@ -52,7 +52,7 @@
                     </div>
                 </div>
             </section>
-            <div class="bs-callout bs-callout-warning hidden ">
+            <div class="bs-callout bs-callout-warning" ng-hide="surveyData.questions_details.length">
                 <h4><i class="fa fa-warning"></i>No Survey!</h4>
                 <p>You currently do not have a survey on the system. <button class="btn btn-success">Click to create a server</button> and start surveying.</p>
             </div>

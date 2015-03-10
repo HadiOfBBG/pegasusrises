@@ -11,7 +11,7 @@ angular.module('survey')
         };
 
         surveyService.getAllSubmissions = function( ){
-            return $http.get('/read/data/from/pegasus')
+            return $http.get('/pegasus/database/read')
         };
 
         return surveyService;

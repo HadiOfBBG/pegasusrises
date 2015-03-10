@@ -362,7 +362,7 @@ angular.module("home/home.tpl.html", []).run(["$templateCache", function($templa
     "\n" +
     "            <!--This show when a file is selected.-->\n" +
     "            <button ng-show=\"files.length\" ng-click=\"processServer()\" data-effect=\"\"  class=\"effect-button col-lg-offset-4 col-lg-4 btn-lg btn btn-success\" >\n" +
-    "               <i class=\"fa fa-dashboard\"></i>&nbsp;&nbsp;&nbsp;Create a server\n" +
+    "               <i class=\"fa fa-upload\"></i>&nbsp;&nbsp;&nbsp;Create a server\n" +
     "            </button>\n" +
     "\n" +
     "        </div>\n" +
@@ -382,8 +382,8 @@ angular.module("home/home.tpl.html", []).run(["$templateCache", function($templa
     "        <!--</div>-->\n" +
     "    <!--</div>-->\n" +
     "</div>\n" +
-    "\n" +
-    "<div class=\"container clear_both padding_fix\" ng-hide=\"first_timer\">\n" +
+    "<!--ng-hide - first_timer ||-->\n" +
+    "<div class=\"container clear_both padding_fix\" ng-hide=\"true\">\n" +
     "    <!--\\\\\\\\\\\\\\ container  start \\\\\\\\\\\\-->\n" +
     "    <div class=\"row\">\n" +
     "        <div class=\"col-sm-3 col-sm-6\">\n" +
@@ -545,7 +545,11 @@ angular.module("home/home.tpl.html", []).run(["$templateCache", function($templa
     "</div>\n" +
     "\n" +
     "\n" +
-    "<!--<div class=\"btn btn-warning\" ng-show=\"files.length\" ng-click=\"getFile()\"> Get file from Google </div>-->\n" +
+    "<p ng-hide=\"first_timer\" class=\"text-center h2\" style=\"margin-top: 50px\">Click the button go to the survey list page</p>\n" +
+    "<p ng-hide=\"first_timer\" class=\"text-center\" style=\"margin-top: 10px\"><span ng-click=\"$state.go('surveys')\"  class=\"btn btn-primary btn-lg\"><i class=\"fa fa-list\"></i>    Survey List </span></p>\n" +
+    "\n" +
+    "\n" +
+    "<div class=\"btn btn-warning\" ng-show=\"files.length\" ng-click=\"getFile()\"> Get file from Google </div>\n" +
     "\n" +
     "<!--<div ng-joy-ride=\"startJoyRide\" config=\"configJoyRide\" on-finish=\"onFinish()\"  on-skip=\"onFinish()\"></div>-->\n" +
     "\n" +
@@ -618,11 +622,17 @@ angular.module("survey/selected_survey.tpl.html", []).run(["$templateCache", fun
     "                <li ng-repeat=\"question_item in surveyData.questions_details\"> <a href=\"\" ng-class=\"{'active' : question_item.question_field == selected_question.question_field}\" ng-click=\"selectQuestion(question_item)\">\n" +
     "                    <div class=\"widget_inbox_header\">\n" +
     "                        <span class=\"pull-left widget_inbox_time\"><b>{{ $index + 1 }}</b></span>\n" +
-    "                        <span class=\"pull-right widget_inbox_time\">{{ question_item.question_type }}</span>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;Question\n" +
+    "                        <span class=\"pull-right widget_inbox_time\" open-closed=\"\" type=\"{{ question_item.question_type }}\"></span>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;Question\n" +
     "                    </div>\n" +
     "                    {{ question_item.question }}</a></li>\n" +
     "\n" +
     "            </ul>\n" +
+    "        </div>\n" +
+    "    </div>\n" +
+    "\n" +
+    "    <div class=\"col-md-6\">\n" +
+    "        <div class=\"widget_inbox\">\n" +
+    "            <pre>{{ surveyData | json }}</pre>\n" +
     "        </div>\n" +
     "    </div>\n" +
     "\n" +
@@ -654,13 +664,13 @@ angular.module("survey/survey_list.tpl.html", []).run(["$templateCache", functio
     "            <!--green_border-->\n" +
     "            <!--orange_border-->\n" +
     "            <!--blue_border-->\n" +
-    "            <section class=\"panel default blue_border vertical_border h1\">\n" +
-    "                <div class=\"task-header blue_task\"><a ui-sref=\"surveys.selected_survey\">Citizen Journalism Survey</a><span><i class=\"fa fa-clock-o\"></i>7 hours ago</span> </div>\n" +
+    "            <section class=\"panel default blue_border vertical_border h1\" ng-show=\"surveyData.questions_details.length\">\n" +
+    "                <div class=\"task-header blue_task\"><a ui-sref=\"surveys.selected_survey\">{{ surveyName }}</a><span><i class=\"fa fa-clock-o\"></i>7 hours ago</span> </div>\n" +
     "                <div class=\"row task_inner inner_padding\">\n" +
     "                    <div class=\"col-sm-9\">\n" +
     "                        <p><em>Description : &nbsp;</em>A Short survey to gather journalist feedback</p>\n" +
-    "                        <p><em>Questions : &nbsp;</em>8 questions</p>\n" +
-    "                        <p><em>Total Responses : &nbsp;</em>37 submissions</p>\n" +
+    "                        <p><em>Questions : &nbsp;</em>{{ surveyData.questions_details.length}} questions</p>\n" +
+    "                        <p><em>Total Responses : &nbsp;</em>{{ surveyData.survey_submissions.length }} submissions</p>\n" +
     "                    </div>\n" +
     "                    <div class=\"col-sm-3\">\n" +
     "                        <!--<div class=\"pull-right\"><span>August  15, 2014</span></div>-->\n" +
@@ -670,7 +680,7 @@ angular.module("survey/survey_list.tpl.html", []).run(["$templateCache", functio
     "                        <!--<div class=\"pull-right\"><span>August  19, 2014</span></div>-->\n" +
     "                    </div>\n" +
     "                </div>\n" +
-    "                <div class=\"task-footer\">\n" +
+    "                <div class=\"task-footer hidden\">\n" +
     "                    <label class=\"pull-left\">\n" +
     "                        <div class=\"progress\">\n" +
     "                            <div class=\"progress-bar progress-bar-info\" role=\"progressbar\" aria-valuenow=\"40\" aria-valuemin=\"0\" aria-valuemax=\"100\" style=\"width: 60%;\">\n" +
@@ -687,7 +697,7 @@ angular.module("survey/survey_list.tpl.html", []).run(["$templateCache", functio
     "                    </div>\n" +
     "                </div>\n" +
     "            </section>\n" +
-    "            <div class=\"bs-callout bs-callout-warning hidden \">\n" +
+    "            <div class=\"bs-callout bs-callout-warning\" ng-hide=\"surveyData.questions_details.length\">\n" +
     "                <h4><i class=\"fa fa-warning\"></i>No Survey!</h4>\n" +
     "                <p>You currently do not have a survey on the system. <button class=\"btn btn-success\">Click to create a server</button> and start surveying.</p>\n" +
     "            </div>\n" +

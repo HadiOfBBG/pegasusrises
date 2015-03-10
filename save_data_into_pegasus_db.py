@@ -17,6 +17,7 @@ class SaveDataIntoPegasusDatabase(JinjaTemplating):
     """docstring for ReadDataFromPegasus"""
     def get(self):
         JinjaTemplating.render_template_only(self, 'aliu_test.html')
+        return
 
 
     def post(self):
@@ -28,8 +29,6 @@ class SaveDataIntoPegasusDatabase(JinjaTemplating):
 
     def saveDataIntoDatabase(self):
 
-
-
         dynamic_expando_model = BbgDemoModel()
         dynamic_expando_model.name = 'Kanton Latifa'
         dynamic_expando_model.business_status = 'yes'
@@ -40,6 +39,7 @@ class SaveDataIntoPegasusDatabase(JinjaTemplating):
         dynamic_expando_model.start_time = 'Thu Feb 19 17:40:25 UTC 2015'
         dynamic_expando_model.end_time = 'Thu Feb 19 17:40:56 UTC 2015'
         dynamic_expando_model.device_identity = '358099058816851'
+
 
         dynamic_expando_model.put()
 

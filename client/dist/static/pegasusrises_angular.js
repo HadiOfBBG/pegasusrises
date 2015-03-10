@@ -103,6 +103,7 @@ angular.module('pegasusrises', [
     'home',
     'admin',
     'survey',
+    'directives',
     'lk-google-picker',
     'cfp.loadingBar',
     'angular-growl',
@@ -405,12 +406,7 @@ angular.module('survey', [])
             state('surveys', {
                 url : '/surveys',
                 templateUrl : 'survey/survey_list.tpl.html',
-                controller : 'prSurveyController'
-            })
-            .state('surveys.analytics', {
-                url : '/analytics',
-                templateUrl : 'survey/dummy_analytics.tpl.html',
-                controller : 'prSelectedSurveyController',
+                controller : 'prSurveyController',
                 resolve : {
                     surveyService : 'surveyService',
 
@@ -418,6 +414,11 @@ angular.module('survey', [])
                         return surveyService.getAllSubmissions()
                     }
                 }
+            })
+            .state('surveys.analytics', {
+                url : '/analytics',
+                templateUrl : 'survey/dummy_analytics.tpl.html',
+                controller : 'prSelectedSurveyController'
             })
             .state('surveys.selected_survey', {
                 url : '/select/1',
@@ -438,10 +439,18 @@ angular.module('survey', [])
  */
 
 angular.module('survey')
-    .controller('prSurveyController', ['$rootScope', '$scope', 'homeService', 'growl',
-        function($rootScope, $scope, homeService, growl){
 
+    .controller('prSurveyController', ['$rootScope', '$scope', 'homeService', 'growl','surveyData',
+        function($rootScope, $scope, homeService, growl, surveyData){
+
+            $scope.surveyData = surveyData.data;
+            if (surveyData.data.questions_details.length) {
+                $scope.surveyName =  surveyData.data.questions_details[0].survey_name
+            }
         }])
+
+
+
     .controller('prSelectedSurveyController', ['$rootScope', '$scope', 'homeService', 'growl','uiGmapGoogleMapApi','surveyData',
         function($rootScope, $scope, homeService, growl, uiGmapGoogleMapApi, surveyData){
 
@@ -452,7 +461,7 @@ angular.module('survey')
 
             $scope.selectQuestion = function(question){
                 $scope.selected_question = question;
-            }
+            };
 
 
             $scope.map = { center: { latitude: 5.558288, longitude: -0.173778 }, zoom: 8 };
@@ -535,7 +544,7 @@ angular.module('survey')
         };
 
         surveyService.getAllSubmissions = function( ){
-            return $http.get('/read/data/from/pegasus')
+            return $http.get('/pegasus/database/read')
         };
 
         return surveyService;

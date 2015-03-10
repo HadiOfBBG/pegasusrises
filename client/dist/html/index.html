@@ -77,7 +77,7 @@
                     {% raw %}
                     <ul class="dropdown-menu">
                         <div class="top_pointer"></div>
-                        <li> <a ui-sref="profile"><i class="fa fa-user"></i> Profile</a> </li>
+                        <li class="hidden"> <a ui-sref="profile"><i class="fa fa-user"></i> Profile</a> </li>
                         <li> <a ui-sref="settings"><i class="fa fa-cog"></i> Settings </a></li>
                         <li> <a href=""  ng-click="startJoyRide()"><i class="fa fa-question-circle"></i> Help</a> </li>
                         {% endraw %}
@@ -119,16 +119,16 @@
                     <a class="pointer"> <i class="fa fa-edit"></i> SURVEYS <span class="plus"><i class="fa fa-plus"></i></span></a>
                     <ul>
                         <li> <a ui-sref="surveys"> <span>&nbsp;</span> <i class="fa fa-list"></i> <b>List Surveys</b> </a> </li>
-                        <li> <a href=""> <span>&nbsp;</span> <i class="fa fa-circle"></i> <b>Respondents</b> </a> </li>
-                        <li> <a href=""> <span>&nbsp;</span> <i class="fa fa-circle"></i> <b>Questionnaires</b> </a> </li>
-                        <li> <a href=""> <span>&nbsp;</span> <i class="fa fa-circle"></i> <b>Statistics</b> </a> </li>
+                        <li class="hidden"> <a href=""> <span>&nbsp;</span> <i class="fa fa-circle"></i> <b>Respondents</b> </a> </li>
+                        <li class="hidden"> <a href=""> <span>&nbsp;</span> <i class="fa fa-circle"></i> <b>Questionnaires</b> </a> </li>
+                        <li class="hidden"> <a href=""> <span>&nbsp;</span> <i class="fa fa-circle"></i> <b>Statistics</b> </a> </li>
                     </ul>
                 </li>
 
 
 
 
-                <li> <a href="javascript:void(0);"> <i class="fa fa-glass"></i> EXTRA <span class="plus"><i class="fa fa-plus"></i></span></a>
+                <li class="hidden"> <a href="javascript:void(0);"> <i class="fa fa-glass"></i> EXTRA <span class="plus"><i class="fa fa-plus"></i></span></a>
                     <ul>
                         <li> <a href=""> <span>&nbsp;</span> <i class="fa fa-circle"></i> <b>Timeline</b> </a> </li>
                         <li> <a href=""> <span>&nbsp;</span> <i class="fa fa-circle"></i> <b>Profile</b> </a> </li>
@@ -166,6 +166,7 @@
 <!--<script type="text/javascript" src="frontend/pegasusrises.js"></script>-->
 <script type="text/javascript" src="templates/app.js"></script>
 <script type="text/javascript" src="templates/common.js"></script>
+<script type="text/javascript" src="frontend/directives.js"></script>
 <script type="text/javascript" src="frontend/scripts.js"></script>
 
 <script src="http://apis.google.com/js/client.js"></script>

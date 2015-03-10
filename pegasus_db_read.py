@@ -33,19 +33,24 @@ class ReadDataFromPegasus(SaveDataIntoPegasusDatabase):
 
 	def queryPegasusDatabase(self, cache_retrieve_unavailable = True):
 		data = {}
-		key = 'recently_retrieved_submissions'
-		survey_name = 'bbg_demo_survey'
+		# key = 'recently_retrieved_submissions'
+		# survey_name = 'bbg_demo_survey'
 		# Querying the dynamic properties model
 		dynamic_model_and_properties = db.Query(DynamicModelsProperties)
 		# getting the first match element of the dynmaic property model
 		dynamic_model_and_properties = dynamic_model_and_properties.get()
-		# getting the 'model_properties' property of the returned row
-		model_properties = dynamic_model_and_properties.model_properties
-		model_properties_in_json = json.dumps(model_properties)
+		if dynamic_model_and_properties is None:
+			self.response.out.write("No model properties saved")
+		else:
+			# getting the 'model_properties' property of the returned row
+			model_properties = dynamic_model_and_properties.model_properties
+			model_properties_in_json = json.dumps(model_properties)
+
 
 		retrieve_questions_from_pegasus_db = db.Query(Questions)
 		retrieve_questions_from_pegasus_db = list(retrieve_questions_from_pegasus_db)
 		questions_list = self.gql_json_parser(retrieve_questions_from_pegasus_db)
+
 
 		# return questions_list
 		# self.response.out.write(questions_list)
@@ -60,6 +65,7 @@ class ReadDataFromPegasus(SaveDataIntoPegasusDatabase):
 
 		# self.response.out.write(json_form_of_retrieved_data_submissions)
 		# return
+
 
 
 		data = {'questions_details': questions_list, 'survey_submissions' : list_of_data_submissions,'model_properties': model_properties_in_json}

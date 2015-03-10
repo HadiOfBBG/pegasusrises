@@ -17,11 +17,17 @@
                 <li ng-repeat="question_item in surveyData.questions_details"> <a href="" ng-class="{'active' : question_item.question_field == selected_question.question_field}" ng-click="selectQuestion(question_item)">
                     <div class="widget_inbox_header">
                         <span class="pull-left widget_inbox_time"><b>{{ $index + 1 }}</b></span>
-                        <span class="pull-right widget_inbox_time">{{ question_item.question_type }}</span>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;Question
+                        <span class="pull-right widget_inbox_time" open-closed="" type="{{ question_item.question_type }}"></span>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;Question
                     </div>
                     {{ question_item.question }}</a></li>
 
             </ul>
+        </div>
+    </div>
+
+    <div class="col-md-6">
+        <div class="widget_inbox">
+            <pre>{{ surveyData | json }}</pre>
         </div>
     </div>
 

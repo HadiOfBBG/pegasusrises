@@ -1,4 +1,4 @@
-/*! pegasusrises - v0.0.1-A - 2015-03-03
+/*! pegasusrises - v0.0.1-A - 2015-03-07
  * pegasusrises.com
  * Copyright (c) 2015 BBG Digital Innovation Lab;
  * Licensed MIT
@@ -108,6 +108,7 @@ angular.module('pegasusrises', [
     'home',
     'admin',
     'survey',
+    'directives',
     'lk-google-picker',
     'cfp.loadingBar',
     'angular-growl',
@@ -410,12 +411,7 @@ angular.module('survey', [])
             state('surveys', {
                 url : '/surveys',
                 templateUrl : 'survey/survey_list.tpl.html',
-                controller : 'prSurveyController'
-            })
-            .state('surveys.analytics', {
-                url : '/analytics',
-                templateUrl : 'survey/dummy_analytics.tpl.html',
-                controller : 'prSelectedSurveyController',
+                controller : 'prSurveyController',
                 resolve : {
                     surveyService : 'surveyService',
 
@@ -423,6 +419,11 @@ angular.module('survey', [])
                         return surveyService.getAllSubmissions()
                     }
                 }
+            })
+            .state('surveys.analytics', {
+                url : '/analytics',
+                templateUrl : 'survey/dummy_analytics.tpl.html',
+                controller : 'prSelectedSurveyController'
             })
             .state('surveys.selected_survey', {
                 url : '/select/1',
@@ -443,10 +444,18 @@ angular.module('survey', [])
  */
 
 angular.module('survey')
-    .controller('prSurveyController', ['$rootScope', '$scope', 'homeService', 'growl',
-        function($rootScope, $scope, homeService, growl){
 
+    .controller('prSurveyController', ['$rootScope', '$scope', 'homeService', 'growl','surveyData',
+        function($rootScope, $scope, homeService, growl, surveyData){
+
+            $scope.surveyData = surveyData.data;
+            if (surveyData.data.questions_details.length) {
+                $scope.surveyName =  surveyData.data.questions_details[0].survey_name
+            }
         }])
+
+
+
     .controller('prSelectedSurveyController', ['$rootScope', '$scope', 'homeService', 'growl','uiGmapGoogleMapApi','surveyData',
         function($rootScope, $scope, homeService, growl, uiGmapGoogleMapApi, surveyData){
 
@@ -457,7 +466,7 @@ angular.module('survey')
 
             $scope.selectQuestion = function(question){
                 $scope.selected_question = question;
-            }
+            };
 
 
             $scope.map = { center: { latitude: 5.558288, longitude: -0.173778 }, zoom: 8 };
@@ -540,87 +549,43 @@ angular.module('survey')
         };
 
         surveyService.getAllSubmissions = function( ){
-            return $http.get('/read/data/from/pegasus')
+            return $http.get('/pegasus/database/read')
         };
 
         return surveyService;
     }]);
-angular.module('directives.modal', []).directive('modal', ['$parse',function($parse) {
-  var backdropEl;
-  var body = angular.element(document.getElementsByTagName('body')[0]);
-  var defaultOpts = {
-    backdrop: true,
-    escape: true
-  };
-  return {
-    restrict: 'ECA',
-    link: function(scope, elm, attrs) {
-      var opts = angular.extend(defaultOpts, scope.$eval(attrs.uiOptions || attrs.bsOptions || attrs.options));
-      var shownExpr = attrs.modal || attrs.show;
-      var setClosed;
+/**
+ * Created by Kaygee on 07/03/2015.
+ */
 
-      if (attrs.close) {
-        setClosed = function() {
-          scope.$apply(attrs.close);
-        };
-      } else {
-        setClosed = function() {
-          scope.$apply(function() {
-            $parse(shownExpr).assign(scope, false);
-          });
-        };
-      }
-      elm.addClass('modal');
+angular.module('directives', []);
 
-      if (opts.backdrop && !backdropEl) {
-        backdropEl = angular.element('<div class="modal-backdrop"></div>');
-        backdropEl.css('display','none');
-        body.append(backdropEl);
-      }
 
-      function setShown(shown) {
-        scope.$apply(function() {
-          model.assign(scope, shown);
-        });
-      }
+angular.module('directives')
+    .directive('openClosed', [function(){
+        return {
+            restrict: 'ECA',
 
-      function escapeClose(evt) {
-        if (evt.which === 27) { setClosed(); }
-      }
-      function clickClose() {
-        setClosed();
-      }
+            replace: false,
 
-      function close() {
-        if (opts.escape) { body.unbind('keyup', escapeClose); }
-        if (opts.backdrop) {
-          backdropEl.css('display', 'none').removeClass('in');
-          backdropEl.unbind('click', clickClose);
+            scope: {
+                type: '@'
+            },
+
+            controller: function ($scope) {
+                $scope.label = {
+                    open_ended : 'OPEN',
+                    close_ended : 'CLOSED'
+                };
+
+                $scope.class = {
+                    open_ended : 'label-success',
+                    close_ended : 'label-danger'
+                }            },
+
+            template: '<span class="label" ng-title="{{  label [ type ] - ENDED }}" ng-class="class[ type ]" style="font-size: smaller">{{ label [ type ] }}</span>'
         }
-        elm.css('display', 'none').removeClass('in');
-        body.removeClass('modal-open');
-      }
-      function open() {
-        if (opts.escape) { body.bind('keyup', escapeClose); }
-        if (opts.backdrop) {
-          backdropEl.css('display', 'block').addClass('in');
-          backdropEl.bind('click', clickClose);
-        }
-        elm.css('display', 'block').addClass('in');
-        body.addClass('modal-open');
-      }
-
-      scope.$watch(shownExpr, function(isShown, oldShown) {
-        if (isShown) {
-          open();
-        } else {
-          close();
-        }
-      });
-    }
-  };
-}]);
-
+    }]);
 angular.module('resources.users', ['mongolabResource']);
 angular.module('resources.users').factory('Users', ['mongolabResource', function (mongoResource) {
 

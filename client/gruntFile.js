@@ -30,8 +30,8 @@ module.exports = function (grunt) {
     // Project configuration.
     grunt.initConfig({
         distdir: 'dist',
-        distdirStatic: 'dist/static',
-        distdirHtml: 'dist/html',
+        distdirStatic: '<%= distdir %>/static',
+        distdirHtml: '<%= distdir %>/html',
         pkg: grunt.file.readJSON('package.json'),
         banner:
         '/*! <%= pkg.title || pkg.name %> - v<%= pkg.version %> - <%= grunt.template.today("yyyy-mm-dd") %>\n' +
@@ -117,6 +117,10 @@ module.exports = function (grunt) {
             angular_application: {
                 src:['src/app/**/*.js'],
                 dest: '<%= distdirStatic %>/<%= pkg.name %>_angular.js'
+            },
+            directives : {
+                src:['src/common/directives/*.js'],
+                dest: '<%= distdirStatic %>/directives.js'
             },
             vendors: {
                 src:['src/scripts/common-script.js', 'src/vendor/google/*.js',
