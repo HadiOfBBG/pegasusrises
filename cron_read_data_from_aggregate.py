@@ -10,9 +10,11 @@ from questions_details_from_google_sheets import QuestionsDetailsFromGoogleSheet
 from models.pegasus_model import BbgDemoModel
 from models.questions import Questions
 from save_data_into_pegasus_db import SaveDataIntoPegasusDatabase
-from models.dynamic_model_properties import DynamicModelsProperties
+from urllib2 import Request, urlopen, URLError
 import json
 import ast
+from xmltodict import *
+import xmltodict
 
 class CronToReadDataFromAggregate(JinjaTemplating):
 
@@ -39,24 +41,29 @@ class CronToReadDataFromAggregate(JinjaTemplating):
         form_id = 'pegasusDemoQuestionnaire'
         num_of_form_ids = '1000'
         self.getIdsOfDataSubmissions(form_id, num_of_form_ids)
+        return
 
 
 
     def getIdsOfDataSubmissions(self, form_id,num_of_form_ids):
-
+        # uuid:64802bb2-383c-476d-a7aa-95db88bfb734
         request = Request('https://pegasusodk.appspot.com/view/submissionList?formId=' + form_id + '&numEntries=' + num_of_form_ids)
 
         try:
             response = urlopen(request)
             data_submissions = response.read()
-            #data_submissions_id = data_submissions[' uuid']
-            # Looping through to get data of each submission using submission_id
-            # for submission_id in data_submissions_id:
-            #   getDataSubmittedUsingSubmissionID(form_id,submission_id)
-            self.response.out.write(data_submissions)
-
+            converting_form_ids_in_xml_to_json = xmltodict.parse(data_submissions)
+            list_of_submissions_ids = converting_form_ids_in_xml_to_json['idChunk']['idList']['id']
+            # self.response.out.write(converting_form_ids_in_xml_to_json['idChunk']['idList']['id'])
+            # return
+            for submission_id in list_of_submissions_ids:
+                self.response.out.write(submission_id)
+                self.response.out.write("\n")
+                # return
+                # self.getDataSubmittedUsingSubmissionID(form_id, submission_id)
+            return
         except URLError, e:
-            self.response.out.write('No submissions retrived. Got an error code:', e)
+            self.response.out.write('No submissions IDs retrieved. Got an error code:')
 
 
     def getDataSubmittedUsingSubmissionID(self,form_id,submission_id):
@@ -65,11 +72,12 @@ class CronToReadDataFromAggregate(JinjaTemplating):
 
         try:
             response = urlopen(request)
-            data_assocuated_with_submission_id = response.read()
-            self.response.out.write(data_submissions)
+            data_associated_with_submission_id = response.read()
+            json_form_of_data_submitted = xmltodict.parse(data_associated_with_submission_id)
+            self.response.out.write(json_form_of_data_submitted)
 
         except URLError, e:
-            self.response.out.write('No submissions retrived. Got an error code:', e)
+            self.response.out.write('No submissions retrieved. Got an error code:')
 
 
 

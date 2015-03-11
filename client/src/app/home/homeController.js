@@ -3,10 +3,12 @@
  */
 
 angular.module('home')
-    .controller('prHomeController', ['$rootScope', '$scope', 'homeService', 'growl', '$upload','cfpLoadingBar',
-        function($rootScope, $scope, homeService, growl, $upload, cfpLoadingBar){
+    .controller('prHomeController', ['$rootScope', '$scope','$state', 'homeService','surveyService', 'growl',
+        'cfpLoadingBar', '$localStorage', '$sessionStorage', 'surveyData','$timeout',
+        function($rootScope, $scope, $state, homeService, surveyService, growl, cfpLoadingBar, $localStorage, $sessionStorage, surveyData, $timeout){
             $scope.files = [];
 
+            $scope.first_timer = $localStorage.first_timer;
 
             $scope.uploadSheet = function(){
                 var fileToUpload = $scope.files[ $scope.files.length - 1 ];
@@ -45,6 +47,7 @@ angular.module('home')
                             if (data) {
                                 homeService.uploadGoogleSheetContentsAsJson($scope.surveyDataReturned)
                                     .success(function(data){
+                                        $localStorage.first_timer = false;
                                         growl.success("Data was posted successfully", {});
                                     })
                                     .error(function(){
@@ -75,13 +78,56 @@ angular.module('home')
                     })
             };
 
+            $scope.processServer = function(){
+                cfpLoadingBar.start();
+                growl.info('Getting dowloadUrl from Google Spreadsheets...', {});
 
-            $scope.sendFileToOdk = function(){
-                homeService.sendFileToOdk();
+                $timeout(function(){
+                    growl.success('File downloaded successfully', {});
+                    cfpLoadingBar.set(0.3);
+
+                    $timeout(function(){
+                        growl.info('Processing and saving file content into database', {});
+
+                        $timeout(function(){
+                            growl.success('File saved successfully', {});
+                            cfpLoadingBar.set(0.6);
+
+                            $timeout(function(){
+                                cfpLoadingBar.set(0.8);
+                                growl.info('Deploying survey for participation...', {});
+
+                                $timeout(function(){
+                                    growl.success('Successfully created server', {});
+                                    cfpLoadingBar.complete();
+                                    $localStorage.first_timer = false;
+                                    $state.go('surveys')
+                                }, 2000);
+
+                            }, 3500);
+
+                        }, 3500);
+
+                    }, 3000);
+
+
+                }, 2000);
+
+
+
             };
 
-            $scope.testDataRetrieve = function(){
+            $scope.dataFromAggregate = function() {
+                surveyService.getDataFromPegasus()
+                    .success(function (data) {
+                        console.log('data');
+                        $scope.returnedDataSingle = data;
+                        angular.forEach(data, function (setInfo, index) {
+                            console.log(JSON.parse(setInfo));
+                            $scope.returnedData = JSON.parse(setInfo);
 
-            };
+                        });
+                    })
+            }
 
         }]);

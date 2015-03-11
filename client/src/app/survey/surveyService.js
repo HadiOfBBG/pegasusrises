@@ -11,8 +11,11 @@ angular.module('survey')
         };
 
         surveyService.getAllSubmissions = function( ){
-            return $http.get('/read/data/from/pegasus')
+            return $http.get('/pegasus/database/read')
         };
 
+        surveyService.sendRespondentEmail = function(data){
+            return $http.post('/sendmail', data)
+        };
         return surveyService;
     }]);

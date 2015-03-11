@@ -102,8 +102,13 @@ class QuestionsDetailsFromGoogleSheet(JinjaTemplating):
                 # finding_if_question_has_been_saved = db.GqlQuery("SELECT * FROM QuestionsDetails " +
                 #                 "WHERE survey_name = :1 AND question_db_field_name <= :2 ", survey_name,question_db_field_name)
 
-                finding_if_question_has_been_saved = QuestionsDetails.all().filter('survey_name =', survey_name).filter('question_db_field_name =', question_db_field_name).fetch(1)
+                finding_if_question_has_been_saved = QuestionsDetails.all().filter('survey_name =', survey_name).filter('question_db_field_name =', question_db_field_name)
 
+                # for result in finding_if_question_has_been_saved:
+                #     self.response.out.write(result)
+                # return
+
+                # if not v.get():
                 # if question has not been saved, do nothing
                 if finding_if_question_has_been_saved:
 
@@ -132,7 +137,11 @@ class QuestionsDetailsFromGoogleSheet(JinjaTemplating):
                 # finding_if_question_has_been_saved = db.GqlQuery("SELECT * FROM QuestionsDetails " +
                 #                 "WHERE survey_name = :1 AND question_db_field_name <= :2 ", survey_name,question_db_field_name)
 
-                finding_if_question_has_been_saved = QuestionsDetails.all().filter('survey_name =', survey_name).filter('question_db_field_name =', question_db_field_name).fetch(1)
+                finding_if_question_has_been_saved = QuestionsDetails.all().filter('survey_name =', survey_name).filter('question_db_field_name =', question_db_field_name)
+
+                for result in finding_if_question_has_been_saved:
+                    self.response.out.write(result)
+                    return
 
                 # if question has not been saved save it
                 if finding_if_question_has_been_saved:
