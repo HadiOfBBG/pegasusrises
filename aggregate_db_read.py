@@ -63,25 +63,28 @@ class ReadDataFromAggragate(SaveDataIntoPegasusDatabase):
 
 	def processPostedByAggreateViaPublish(self,posted_data_by_aggregate):
 
+		posted_data_by_aggregate = json.dumps(posted_data_by_aggregate)
+		posted_data_by_aggregate = json.loads(posted_data_by_aggregate)
+
 		logging.debug("The data posted: %s", str(posted_data_by_aggregate))
 
-		posted_data_by_aggregate = urllib.unquote(posted_data_by_aggregate)
+		# posted_data_by_aggregate = urllib.unquote(posted_data_by_aggregate)
 
-		for each_data_submitted in posted_data_by_aggregate:
-			each_data_submitted = json.dumps(each_data_submitted)
-			one_submission = each_data_submitted.data
-			unique_submission_id = one_submission.instanceID
-			logging.debug("Unique instance ID is %s", str(unique_submission_id))
+		each_data_submitted = json.dumps(each_data_submitted)
+		one_submission = each_data_submitted['data']
+		unique_submission_id = one_submission['instanceID']
+		logging.debug("Unique instance ID is %s", str(unique_submission_id))
 
-			self.response.out.write(posted_data_by_aggregate)
-			save_posted_data_by_aggregate = SaveAggregateRawPostedData()
-			save_posted_data_by_aggregate.posted_json_data = posted_data_by_aggregate
-			save_posted_data_by_aggregate.put()
+		self.response.out.write(posted_data_by_aggregate)
+		save_posted_data_by_aggregate = SaveAggregateRawPostedData()
+		save_posted_data_by_aggregate.posted_json_data = posted_data_by_aggregate
+		save_posted_data_by_aggregate.put()
 
-			print('Data from aggregate saved')
-			self.response.out.write('Data from aggregate saved')
-			return
+		print('Data from aggregate saved')
+		self.response.out.write('Data from aggregate saved')
+		return
 
+		# for each_data_submitted in posted_data_by_aggregate:
 			# self.response.out.write(posted_data_by_aggregate)
 			# save_posted_data_by_aggregate = SaveAggregateRawPostedData()
 			# save_posted_data_by_aggregate.posted_json_data = posted_data_by_aggregate
