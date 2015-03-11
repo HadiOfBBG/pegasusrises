@@ -551,11 +551,7 @@ angular.module("home/home.tpl.html", []).run(["$templateCache", function($templa
     "\n" +
     "<div class=\"btn btn-warning\" ng-show=\"files.length\" ng-click=\"getFile()\"> Get file from Google </div>\n" +
     "\n" +
-    "<div class=\"btn btn-info\" ng-click=\"dataFromAggregate()\"> Test Json Data </div>\n" +
-    "\n" +
-    "<div><pre>{{ returnedDataSingle | json }}</pre></div>\n" +
-    "\n" +
-    "<div><pre>{{ returnedData | json }}</pre></div>\n" +
+    "<!--<div class=\"btn btn-info\" ng-click=\"dataFromAggregate()\"> Test Json Data </div>-->\n" +
     "\n" +
     "<!--<div ng-joy-ride=\"startJoyRide\" config=\"configJoyRide\" on-finish=\"onFinish()\"  on-skip=\"onFinish()\"></div>-->\n" +
     "\n" +
@@ -629,7 +625,7 @@ angular.module("survey/respondents.tpl.html", []).run(["$templateCache", functio
     "                    <label class=\"col-sm-2 control-label\">Survey</label>\n" +
     "                    <div class=\"col-sm-9\">\n" +
     "                        <select id=\"source\" data-ng-model=\"respondent_form.survey\" class=\" form-control\">\n" +
-    "                                <option value=\"\">Select a survey</option>\n" +
+    "                                <!--<option value=\"\">Select a survey</option>-->\n" +
     "                                <option value=\"{{ surveyName}}\">{{surveyName}}</option>\n" +
     "                        </select>\n" +
     "                    </div><!--/col-sm-9-->\n" +
@@ -649,14 +645,17 @@ angular.module("survey/respondents.tpl.html", []).run(["$templateCache", functio
     "                                add-on-paste=\"true\"\n" +
     "                                allowed-tags-pattern=\"^([\\w\\-\\.]+)@((\\[([0-9]{1,3}\\.){3}[0-9]{1,3}\\])|(([\\w\\-]+\\.)+)([a-zA-Z]{2,4}))$\"\n" +
     "                                id=\"emails\" class=\"\"></tags-input>\n" +
+    "                        <span class=\"help-block\">Separate multiple email addresses with [COMMA] or [SPACE] or [TAB]</span>\n" +
     "                    </div>\n" +
+    "\n" +
+    "\n" +
     "                </div><!--/form-group-->\n" +
     "\n" +
     "\n" +
     "                <div class=\"form-group\">\n" +
-    "                    <div class=\"col-sm-offset-2 col-sm-10\">\n" +
+    "                    <div class=\" col-sm-2 pull-right\">\n" +
+    "                        <button class=\"hidden btn btn-default\" type=\"reset\" ng-click=\"resetRespondentForm()\">Cancel</button>\n" +
     "                        <button class=\"btn btn-primary\" type=\"submit\">Send</button>\n" +
-    "                        <button class=\"btn btn-default\" type=\"reset\">Cancel</button>\n" +
     "                    </div>\n" +
     "                </div><!--/form-group-->\n" +
     "            </form>\n" +
