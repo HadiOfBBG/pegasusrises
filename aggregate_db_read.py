@@ -43,9 +43,9 @@ class ReadDataFromAggragate(SaveDataIntoPegasusDatabase):
 				# data_list
 				# removing_quotes_around_data = urllib.unquote(each_raw_data.posted_json_data)
 				# converting_data_to_json = json.dumps(removing_quotes_around_data)
-				# converting_data_to_json = json.dumps(each_raw_data.posted_json_data)
+				converting_data_to_json = json.dumps(each_raw_data.posted_json_data)
 				# self.response.out.write('Data Below \n')
-				# self.response.out.write(converting_data_to_json)
+				self.response.out.write(converting_data_to_json)
 			return
 			# self.response.out.write('The end \n')
 
@@ -61,6 +61,8 @@ class ReadDataFromAggragate(SaveDataIntoPegasusDatabase):
 
 
 	def processPostedByAggreateViaPublish(self,posted_data_by_aggregate):
+
+		logging.debug("The data posted: %s", str(posted_data_by_aggregate))
 
 		posted_data_by_aggregate = urllib.unquote(posted_data_by_aggregate)
 
