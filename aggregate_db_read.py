@@ -66,22 +66,21 @@ class ReadDataFromAggragate(SaveDataIntoPegasusDatabase):
 		posted_data_by_aggregate = json.dumps(posted_data_by_aggregate)
 		posted_data_by_aggregate = json.loads(posted_data_by_aggregate)
 
-		logging.debug("The data posted: %s", str(posted_data_by_aggregate))
+		logging.debug(posted_data_by_aggregate)
 
 		# posted_data_by_aggregate = urllib.unquote(posted_data_by_aggregate)
+		the_real_inputed_data = posted_data_by_aggregate['data']
+		unique_submission_id = the_real_inputed_data['instanceID']
 
-		each_data_submitted = json.dumps(each_data_submitted)
-		one_submission = each_data_submitted['data']
-		unique_submission_id = one_submission['instanceID']
 		logging.debug("Unique instance ID is %s", str(unique_submission_id))
 
-		self.response.out.write(posted_data_by_aggregate)
 		save_posted_data_by_aggregate = SaveAggregateRawPostedData()
 		save_posted_data_by_aggregate.posted_json_data = posted_data_by_aggregate
+		save_posted_data_by_aggregate.submission_unique_identity = unique_submission_id
 		save_posted_data_by_aggregate.put()
 
-		print('Data from aggregate saved')
-		self.response.out.write('Data from aggregate saved')
+		logging.info('Data from aggregate saved')
+
 		return
 
 		# for each_data_submitted in posted_data_by_aggregate:
