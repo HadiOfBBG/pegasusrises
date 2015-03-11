@@ -17,6 +17,7 @@ import os
 import jinja2
 from google.appengine.ext import ndb
 import urllib
+import logging
 
 
 class ReadDataFromAggragate(SaveDataIntoPegasusDatabase):
