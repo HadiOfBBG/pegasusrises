@@ -10,6 +10,7 @@ from google.appengine.ext import ndb
 class SaveAggregateRawPostedData(ndb.Model):
   """NDB model to temporarily store the POST request."""
   posted_json_data = ndb.JsonProperty()
+  form_id = ndb.StringProperty()
   submission_unique_identity = ndb.StringProperty()
   timestamp = ndb.DateTimeProperty(auto_now_add=True)
 
