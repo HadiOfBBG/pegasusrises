@@ -40,7 +40,7 @@ class ReadDataFromAggragate(SaveDataIntoPegasusDatabase):
 			data_list = {}
 			self.response.out.write('The biginining  of the loop over the data\n')
 			for each_raw_data in read_raw_data_posted_by_aggregate:
-				data_list
+				# data_list
 				# removing_quotes_around_data = urllib.unquote(each_raw_data.posted_json_data)
 				# converting_data_to_json = json.dumps(removing_quotes_around_data)
 				# converting_data_to_json = json.dumps(each_raw_data.posted_json_data)
@@ -62,8 +62,10 @@ class ReadDataFromAggragate(SaveDataIntoPegasusDatabase):
 
 	def processPostedByAggreateViaPublish(self,posted_data_by_aggregate):
 
-		for each_data_submitted in posted_data_by_aggregate:
+		posted_data_by_aggregate = urllib.unquote(posted_data_by_aggregate)
 
+		for each_data_submitted in posted_data_by_aggregate:
+			each_data_submitted = json.dumps(each_data_submitted)
 			one_submission = each_data_submitted.data
 			unique_submission_id = one_submission.instanceID
 			logging.debug("Unique instance ID is %s", str(unique_submission_id))
