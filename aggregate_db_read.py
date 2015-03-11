@@ -63,12 +63,14 @@ class ReadDataFromAggragate(SaveDataIntoPegasusDatabase):
 
 	def processPostedByAggreateViaPublish(self,posted_data_by_aggregate):
 
-		posted_data_by_aggregate = json.dumps(posted_data_by_aggregate)
-		logging.debug(posted_data_by_aggregate)
-		return
+		# posted_data_by_aggregate = json.dumps(posted_data_by_aggregate)
+		# logging.debug(posted_data_by_aggregate)
+		# return
 		posted_data_by_aggregate = json.loads(posted_data_by_aggregate)
 
 		logging.debug(posted_data_by_aggregate)
+
+		return
 
 		# posted_data_by_aggregate = urllib.unquote(posted_data_by_aggregate)
 		the_real_inputed_data = posted_data_by_aggregate['data']
