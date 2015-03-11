@@ -39,6 +39,7 @@ class ReadDataFromPegasus(SaveDataIntoPegasusDatabase):
 		dynamic_model_and_properties = db.Query(DynamicModelsProperties)
 		# getting the first match element of the dynmaic property model
 		dynamic_model_and_properties = dynamic_model_and_properties.get()
+
 		if dynamic_model_and_properties is None:
 			self.response.out.write("No model properties saved")
 			return

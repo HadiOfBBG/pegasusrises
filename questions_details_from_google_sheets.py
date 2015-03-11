@@ -102,7 +102,12 @@ class QuestionsDetailsFromGoogleSheet(JinjaTemplating):
                 # finding_if_question_has_been_saved = db.GqlQuery("SELECT * FROM QuestionsDetails " +
                 #                 "WHERE survey_name = :1 AND question_db_field_name <= :2 ", survey_name,question_db_field_name)
 
-                finding_if_question_has_been_saved = QuestionsDetails.all().filter('survey_name =', survey_name).filter('question_db_field_name =', question_db_field_name)
+                # finding_if_question_has_been_saved = QuestionsDetails.all().filter('survey_name =', survey_name).filter('question_db_field_name =', question_db_field_name)
+
+                finding_if_question_has_been_saved = db.Query(QuestionsDetails)
+                # getting the first match element of the query property model
+                finding_if_question_has_been_saved = finding_if_question_has_been_saved.get()
+
 
                 # for result in finding_if_question_has_been_saved:
                 #     self.response.out.write(result)
@@ -110,7 +115,7 @@ class QuestionsDetailsFromGoogleSheet(JinjaTemplating):
 
                 # if not v.get():
                 # if question has not been saved, do nothing
-                if finding_if_question_has_been_saved:
+                if finding_if_question_has_been_saved is None:
 
                     print("Question Already Saved")
                     # if question has been saved
@@ -133,18 +138,14 @@ class QuestionsDetailsFromGoogleSheet(JinjaTemplating):
 
             else:
 
-                # GqlQuery interface constructs a query using a GQL query string
-                # finding_if_question_has_been_saved = db.GqlQuery("SELECT * FROM QuestionsDetails " +
-                #                 "WHERE survey_name = :1 AND question_db_field_name <= :2 ", survey_name,question_db_field_name)
+                # finding_if_question_has_been_saved = QuestionsDetails.all().filter('survey_name =', survey_name).filter('question_db_field_name =', question_db_field_name)
 
-                finding_if_question_has_been_saved = QuestionsDetails.all().filter('survey_name =', survey_name).filter('question_db_field_name =', question_db_field_name)
-
-                for result in finding_if_question_has_been_saved:
-                    self.response.out.write(result)
-                    return
+                finding_if_question_has_been_saved = db.Query(QuestionsDetails)
+                # getting the first match element of the query property model
+                finding_if_question_has_been_saved = finding_if_question_has_been_saved.get()
 
                 # if question has not been saved save it
-                if finding_if_question_has_been_saved:
+                if finding_if_question_has_been_saved is None:
 
                     print("Question Already Saved")
 

@@ -16,6 +16,7 @@ import json
 import os
 import jinja2
 from google.appengine.ext import ndb
+import urllib
 
 
 class ReadDataFromAggragate(SaveDataIntoPegasusDatabase):
@@ -31,21 +32,23 @@ class ReadDataFromAggragate(SaveDataIntoPegasusDatabase):
 
 		# read_raw_data_posted_by_aggregate = ndb.Query(SaveAggregateRawPostedData)
 		read_raw_data_posted_by_aggregate = SaveAggregateRawPostedData.query()
-		# count = 1
-		# for each_raw_data in read_raw_data_posted_by_aggregate:
-		# 	if count == 1 and each_raw_data == None:
-		# 		self.response.out.write('No data \n')
-		# 	else:
-		# 		self.response.out.write('Data Below \n')
-		# 		self.response.out.write(each_raw_data)
+
 
 		if read_raw_data_posted_by_aggregate == None:
 			self.response.out.write('No data currently saved')
 		else:
+			data_list = {}
+			self.response.out.write('The biginining  of the loop over the data\n')
 			for each_raw_data in read_raw_data_posted_by_aggregate:
-				self.response.out.write('Data Below \n')
-				self.response.out.write("\n")
-				self.response.out.write(each_raw_data.posted_json_data)
+				data_list
+				# removing_quotes_around_data = urllib.unquote(each_raw_data.posted_json_data)
+				# converting_data_to_json = json.dumps(removing_quotes_around_data)
+				# converting_data_to_json = json.dumps(each_raw_data.posted_json_data)
+				# self.response.out.write('Data Below \n')
+				# self.response.out.write(converting_data_to_json)
+			return
+			# self.response.out.write('The end \n')
+
 
 
 
@@ -59,15 +62,24 @@ class ReadDataFromAggragate(SaveDataIntoPegasusDatabase):
 
 	def processPostedByAggreateViaPublish(self,posted_data_by_aggregate):
 
-		self.response.out.write(posted_data_by_aggregate)
-		save_posted_data_by_aggregate = SaveAggregateRawPostedData()
-		save_posted_data_by_aggregate.posted_json_data = posted_data_by_aggregate
-		save_posted_data_by_aggregate.put()
+		for each_data_submitted in posted_data_by_aggregate:
 
-		print('Data from aggregate saved')
-		self.response.out.write('Data from aggregate saved')
-		return
+			one_submission = each_data_submitted['data']
+			unique_submission_id = one_submission['instanceID']
+			logging.debug("Unique instance ID is %s", str(unique_submission_id))
 
-		responses = posted_json_data.data
+			self.response.out.write(posted_data_by_aggregate)
+			save_posted_data_by_aggregate = SaveAggregateRawPostedData()
+			save_posted_data_by_aggregate.posted_json_data = posted_data_by_aggregate
+			save_posted_data_by_aggregate.put()
+
+			print('Data from aggregate saved')
+			self.response.out.write('Data from aggregate saved')
+			return
+
+			# self.response.out.write(posted_data_by_aggregate)
+			# save_posted_data_by_aggregate = SaveAggregateRawPostedData()
+			# save_posted_data_by_aggregate.posted_json_data = posted_data_by_aggregate
+			# save_posted_data_by_aggregate.put()
 
 
