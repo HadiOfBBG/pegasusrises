@@ -64,11 +64,14 @@ class ReadDataFromAggragate(SaveDataIntoPegasusDatabase):
 	def processPostedByAggreateViaPublish(self,posted_data_by_aggregate):
 
 		posted_data_by_aggregate = json.loads(posted_data_by_aggregate)
+
 		logging.debug(posted_data_by_aggregate)
 
 		# posted_data_by_aggregate = urllib.unquote(posted_data_by_aggregate)
 		logging.debug("The Form ID: %s", str(posted_data_by_aggregate__class__))
+
 		return
+
 		form_id = posted_data_by_aggregate['formId']
 
 		logging.debug("The Form ID: %s", str(unique_submission_id))
