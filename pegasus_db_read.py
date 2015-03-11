@@ -41,6 +41,7 @@ class ReadDataFromPegasus(SaveDataIntoPegasusDatabase):
 		dynamic_model_and_properties = dynamic_model_and_properties.get()
 		if dynamic_model_and_properties is None:
 			self.response.out.write("No model properties saved")
+			return
 		else:
 			# getting the 'model_properties' property of the returned row
 			model_properties = dynamic_model_and_properties.model_properties
@@ -48,33 +49,30 @@ class ReadDataFromPegasus(SaveDataIntoPegasusDatabase):
 
 
 		retrieve_questions_from_pegasus_db = db.Query(Questions)
-		retrieve_questions_from_pegasus_db = list(retrieve_questions_from_pegasus_db)
-		questions_list = self.gql_json_parser(retrieve_questions_from_pegasus_db)
 
 
-		# return questions_list
-		# self.response.out.write(questions_list)
-		# return
+		if retrieve_questions_from_pegasus_db:
+			retrieve_questions_from_pegasus_db = list(retrieve_questions_from_pegasus_db)
+			questions_list = self.gql_json_parser(retrieve_questions_from_pegasus_db)
+			# questions_list = json.dumps(questions_list)
 
+			retrieve_data_from_pegasus_db = BbgDemoModel.query()
+			if retrieve_data_from_pegasus_db:
+				list_of_data_submissions = self.convert_ndb_expando_queries_into_json(model_properties,retrieve_data_from_pegasus_db)
 
+				# json_form_of_retrieved_data_submissions = json.dumps(list_of_data_submissions)
+				data = {'questions_details': questions_list, 'survey_submissions' : list_of_data_submissions,'model_properties': model_properties_in_json}
+				data_returned_to_front_end = json.dumps(data)
+				self.response.out.write(data_returned_to_front_end)
 
-		retrieve_data_from_pegasus_db = BbgDemoModel.query()
-		list_of_data_submissions = self.convert_ndb_expando_queries_into_json(model_properties,retrieve_data_from_pegasus_db)
-		# self.response.out.write(list_of_data_submissions)
-		# return
+				return
+			else:
+				self.response.out.write("No Data Submitted On this survey yet")
+				return
+		else:
+			self.response.out.write("Build your server first")
+			return
 
-		# self.response.out.write(json_form_of_retrieved_data_submissions)
-		# return
-
-
-
-		data = {'questions_details': questions_list, 'survey_submissions' : list_of_data_submissions,'model_properties': model_properties_in_json}
-
-		data_returned_to_front_end = json.dumps(data)
-
-		self.response.out.write(data_returned_to_front_end)
-
-		return
 
 	# converting db.model queries into list for onward conversion into a json object
 	def gql_json_parser(self,query_obj):

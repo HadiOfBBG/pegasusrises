@@ -3,9 +3,9 @@
  */
 
 angular.module('home')
-    .controller('prHomeController', ['$rootScope', '$scope','$state', 'homeService', 'growl',
+    .controller('prHomeController', ['$rootScope', '$scope','$state', 'homeService','surveyService', 'growl',
         'cfpLoadingBar', '$localStorage', '$sessionStorage', 'surveyData','$timeout',
-        function($rootScope, $scope, $state, homeService, growl, cfpLoadingBar, $localStorage, $sessionStorage, surveyData, $timeout){
+        function($rootScope, $scope, $state, homeService, surveyService, growl, cfpLoadingBar, $localStorage, $sessionStorage, surveyData, $timeout){
             $scope.files = [];
 
             $scope.first_timer = $localStorage.first_timer;
@@ -115,6 +115,19 @@ angular.module('home')
 
 
 
+            };
+
+            $scope.dataFromAggregate = function() {
+                surveyService.getDataFromPegasus()
+                    .success(function (data) {
+                        console.log('data');
+                        $scope.returnedDataSingle = data;
+                        angular.forEach(data, function (setInfo, index) {
+                            console.log(JSON.parse(setInfo));
+                            $scope.returnedData = JSON.parse(setInfo);
+
+                        });
+                    })
             }
 
         }]);

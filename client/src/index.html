@@ -73,7 +73,7 @@
                 <div class="user_admin dropdown"> <a href="javascript:void(0);" data-toggle="dropdown" ng-controller="prBreadCrumbCtrl">
                     <img src="frontend/images/user.png" />
                      {% endraw %}
-                    <span class="user_adminname">{{ username }}</span> <b class="caret"></b> </a>
+                    <span class="user_adminname" id="user_logged_in_email">{{ username }}</span> <b class="caret"></b> </a>
                     {% raw %}
                     <ul class="dropdown-menu">
                         <div class="top_pointer"></div>
@@ -119,7 +119,7 @@
                     <a class="pointer"> <i class="fa fa-edit"></i> SURVEYS <span class="plus"><i class="fa fa-plus"></i></span></a>
                     <ul>
                         <li> <a ui-sref="surveys"> <span>&nbsp;</span> <i class="fa fa-list"></i> <b>List Surveys</b> </a> </li>
-                        <li class="hidden"> <a href=""> <span>&nbsp;</span> <i class="fa fa-circle"></i> <b>Respondents</b> </a> </li>
+                        <li> <a ui-sref="surveys.respondents"> <span>&nbsp;</span> <i class="fa fa-users"></i> <b>Respondents</b> </a> </li>
                         <li class="hidden"> <a href=""> <span>&nbsp;</span> <i class="fa fa-circle"></i> <b>Questionnaires</b> </a> </li>
                         <li class="hidden"> <a href=""> <span>&nbsp;</span> <i class="fa fa-circle"></i> <b>Statistics</b> </a> </li>
                     </ul>

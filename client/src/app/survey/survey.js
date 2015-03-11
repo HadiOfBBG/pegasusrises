@@ -22,6 +22,11 @@ angular.module('survey', [])
                 templateUrl : 'survey/dummy_analytics.tpl.html',
                 controller : 'prSelectedSurveyController'
             })
+            .state('surveys.respondents', {
+                url : '/respondents',
+                templateUrl : 'survey/respondents.tpl.html',
+                controller : 'prSurveyRespondentsController'
+            })
             .state('surveys.selected_survey', {
                 url : '/select/1',
                 templateUrl : 'survey/selected_survey.tpl.html',

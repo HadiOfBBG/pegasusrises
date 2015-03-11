@@ -1,4 +1,4 @@
-angular.module('templates.app', ['admin/profile.tpl.html', 'admin/settings.tpl.html', 'home/home.tpl.html', 'survey/dummy_analytics.tpl.html', 'survey/selected_survey.tpl.html', 'survey/survey_list.tpl.html']);
+angular.module('templates.app', ['admin/profile.tpl.html', 'admin/settings.tpl.html', 'home/home.tpl.html', 'survey/dummy_analytics.tpl.html', 'survey/respondents.tpl.html', 'survey/selected_survey.tpl.html', 'survey/survey_list.tpl.html']);
 
 angular.module("admin/profile.tpl.html", []).run(["$templateCache", function($templateCache) {
   $templateCache.put("admin/profile.tpl.html",
@@ -551,6 +551,12 @@ angular.module("home/home.tpl.html", []).run(["$templateCache", function($templa
     "\n" +
     "<div class=\"btn btn-warning\" ng-show=\"files.length\" ng-click=\"getFile()\"> Get file from Google </div>\n" +
     "\n" +
+    "<div class=\"btn btn-info\" ng-click=\"dataFromAggregate()\"> Test Json Data </div>\n" +
+    "\n" +
+    "<div><pre>{{ returnedDataSingle | json }}</pre></div>\n" +
+    "\n" +
+    "<div><pre>{{ returnedData | json }}</pre></div>\n" +
+    "\n" +
     "<!--<div ng-joy-ride=\"startJoyRide\" config=\"configJoyRide\" on-finish=\"onFinish()\"  on-skip=\"onFinish()\"></div>-->\n" +
     "\n" +
     "");
@@ -599,6 +605,64 @@ angular.module("survey/dummy_analytics.tpl.html", []).run(["$templateCache", fun
     "</div>\n" +
     "\n" +
     "");
+}]);
+
+angular.module("survey/respondents.tpl.html", []).run(["$templateCache", function($templateCache) {
+  $templateCache.put("survey/respondents.tpl.html",
+    "<div class=\"col-sm-12\">\n" +
+    "    <div class=\"block-web\">\n" +
+    "        <div class=\"header\">\n" +
+    "            <div class=\"actions hidden\">\n" +
+    "                <a href=\"#\" class=\"minimize\"><i class=\"fa fa-chevron-down\"></i></a>\n" +
+    "                <a href=\"#\" class=\"close-down\"><i class=\"fa fa-times\"></i></a> </div>\n" +
+    "            <h3 class=\"content-header\">Survey Respondents</h3>\n" +
+    "        </div>\n" +
+    "        <div class=\"porlets-content\">\n" +
+    "            <form role=\"form\" class=\"form-horizontal\" ng-submit=\"sendEmail()\">\n" +
+    "                <div class=\"form-group\">\n" +
+    "                    <label class=\"col-sm-2 control-label \" for=\"from\">From</label>\n" +
+    "                    <div class=\"col-sm-9\">\n" +
+    "                        <input type=\"email\" ng-disabled=\"true\" ng-model=\"respondent_form.from\" id=\"from\" class=\" form-control\" >\n" +
+    "                    </div>\n" +
+    "                </div><!--/form-group-->\n" +
+    "                <div class=\"form-group\">\n" +
+    "                    <label class=\"col-sm-2 control-label\">Survey</label>\n" +
+    "                    <div class=\"col-sm-9\">\n" +
+    "                        <select id=\"source\" data-ng-model=\"respondent_form.survey\" class=\" form-control\">\n" +
+    "                                <option value=\"\">Select a survey</option>\n" +
+    "                                <option value=\"{{ surveyName}}\">{{surveyName}}</option>\n" +
+    "                        </select>\n" +
+    "                    </div><!--/col-sm-9-->\n" +
+    "                </div><!--/form-group-->\n" +
+    "                <div class=\"form-group\">\n" +
+    "                    <label class=\"col-sm-2 control-label\" for=\"emails\">Recipients</label>\n" +
+    "                    <div class=\"col-sm-9\">\n" +
+    "                        <tags-input\n" +
+    "                                ng-model=\"respondent_form.emails\"\n" +
+    "                                displayProperty=\"email\"\n" +
+    "                                type=\"email\"\n" +
+    "                                placeholder=\"Add recipient email\"\n" +
+    "                                add-on-enter=\"true\"\n" +
+    "                                add-on-space=\"true\"\n" +
+    "                                add-on-comma=\"true\"\n" +
+    "                                add-on-blur=\"true\"\n" +
+    "                                add-on-paste=\"true\"\n" +
+    "                                allowed-tags-pattern=\"^([\\w\\-\\.]+)@((\\[([0-9]{1,3}\\.){3}[0-9]{1,3}\\])|(([\\w\\-]+\\.)+)([a-zA-Z]{2,4}))$\"\n" +
+    "                                id=\"emails\" class=\"\"></tags-input>\n" +
+    "                    </div>\n" +
+    "                </div><!--/form-group-->\n" +
+    "\n" +
+    "\n" +
+    "                <div class=\"form-group\">\n" +
+    "                    <div class=\"col-sm-offset-2 col-sm-10\">\n" +
+    "                        <button class=\"btn btn-primary\" type=\"submit\">Send</button>\n" +
+    "                        <button class=\"btn btn-default\" type=\"reset\">Cancel</button>\n" +
+    "                    </div>\n" +
+    "                </div><!--/form-group-->\n" +
+    "            </form>\n" +
+    "        </div><!--/porlets-content-->\n" +
+    "    </div><!--/block-web-->\n" +
+    "</div>");
 }]);
 
 angular.module("survey/selected_survey.tpl.html", []).run(["$templateCache", function($templateCache) {

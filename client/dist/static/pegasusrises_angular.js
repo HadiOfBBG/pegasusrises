@@ -112,7 +112,8 @@ angular.module('pegasusrises', [
     'ngJoyRide',
     'uiGmapgoogle-maps',
     'googlechart',
-    'ngStorage'
+    'ngStorage',
+    'ngTagsInput'
 ])
     //'angular-loading-bar',
     .constant('prConstantKeys', {
@@ -253,9 +254,9 @@ angular.module('home', [])
  */
 
 angular.module('home')
-    .controller('prHomeController', ['$rootScope', '$scope','$state', 'homeService', 'growl',
+    .controller('prHomeController', ['$rootScope', '$scope','$state', 'homeService','surveyService', 'growl',
         'cfpLoadingBar', '$localStorage', '$sessionStorage', 'surveyData','$timeout',
-        function($rootScope, $scope, $state, homeService, growl, cfpLoadingBar, $localStorage, $sessionStorage, surveyData, $timeout){
+        function($rootScope, $scope, $state, homeService, surveyService, growl, cfpLoadingBar, $localStorage, $sessionStorage, surveyData, $timeout){
             $scope.files = [];
 
             $scope.first_timer = $localStorage.first_timer;
@@ -365,6 +366,19 @@ angular.module('home')
 
 
 
+            };
+
+            $scope.dataFromAggregate = function() {
+                surveyService.getDataFromPegasus()
+                    .success(function (data) {
+                        console.log('data');
+                        $scope.returnedDataSingle = data;
+                        angular.forEach(data, function (setInfo, index) {
+                            console.log(JSON.parse(setInfo));
+                            $scope.returnedData = JSON.parse(setInfo);
+
+                        });
+                    })
             }
 
         }]);
@@ -420,6 +434,11 @@ angular.module('survey', [])
                 templateUrl : 'survey/dummy_analytics.tpl.html',
                 controller : 'prSelectedSurveyController'
             })
+            .state('surveys.respondents', {
+                url : '/respondents',
+                templateUrl : 'survey/respondents.tpl.html',
+                controller : 'prSurveyRespondentsController'
+            })
             .state('surveys.selected_survey', {
                 url : '/select/1',
                 templateUrl : 'survey/selected_survey.tpl.html',
@@ -456,11 +475,26 @@ angular.module('survey')
 
             $scope.surveyData = surveyData.data;
             if (surveyData.data.questions_details.length) {
-               $scope.surveyName =  surveyData.data.questions_details[0].survey_name
+                $scope.surveyName =  surveyData.data.questions_details[0].survey_name
             }
 
             $scope.selectQuestion = function(question){
+                //Empty the scope object or declare in undefined
+                $scope.selected_question = {};
+
+                //Assign the selected/clicked question to the declared scope variable
                 $scope.selected_question = question;
+
+                //for close ended questions,
+                if ($scope.selected_question.question_type == 'close_ended') {
+                    //
+                    $scope.selected_question.answer_values = $scope.selected_question.possible_answers.split(',');
+                    $scope.selected_question.answers = {};
+
+                    angular.forEach($scope.selected_question.answer_values, function (option, index) {
+                        $scope.selected_question.answers[$.trim(option)] = $scope.selected_question.possible_answers_labels[index];
+                    });
+                }
             };
 
 
@@ -526,6 +560,49 @@ angular.module('survey')
 
             $scope.toggleButtons = function(state){
                 $scope.showButtons = state;
+            };
+
+        }])
+    .controller('prSurveyRespondentsController', ['$rootScope', '$scope', 'homeService', 'growl','surveyData','surveyService',
+        function($rootScope, $scope, homeService, growl, surveyData, surveyService){
+
+            //get email address of logged in user from the backend
+            var from = $('#user_logged_in_email').text();
+
+            $scope.surveyData = surveyData.data;
+            if (surveyData.data.questions_details.length) {
+                $scope.surveyName = $.trim( surveyData.data.questions_details[0].survey_name)
+            }
+
+            $scope.respondent_form = {
+                emails  : [],
+                recipients  : [],
+                from : from,
+                survey :  $scope.surveyName
+            };
+
+            $scope.sendEmail = function(){
+                if ($scope.respondent_form.emails.length > 0) {
+                    $scope.respondent_form.recipients = [];
+                    angular.forEach($scope.respondent_form.emails, function (email, index) {
+                        $scope.respondent_form.recipients.push(email.text)
+                    })
+                    if ($scope.respondent_form.survey) {
+                        surveyService.sendRespondentEmail($scope.respondent_form)
+                            .success(function () {
+                                growl.success("Emails sent successfully", {});
+                            })
+                            .error(function () {
+                                growl.error("Emails could not be sent", {});
+
+                            })
+                    }else{
+                        growl.info("Please select a survey", {});
+                    }
+
+                }else{
+                    growl.info("Please type at least one recipient email", {});
+                }
             }
 
         }]);
@@ -547,5 +624,8 @@ angular.module('survey')
             return $http.get('/pegasus/database/read')
         };
 
+        surveyService.sendRespondentEmail = function(data){
+            return $http.post('/sendmail', data)
+        };
         return surveyService;
     }]);
