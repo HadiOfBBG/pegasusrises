@@ -64,8 +64,8 @@ class ReadDataFromAggragate(SaveDataIntoPegasusDatabase):
 
 		for each_data_submitted in posted_data_by_aggregate:
 
-			one_submission = each_data_submitted['data']
-			unique_submission_id = one_submission['instanceID']
+			one_submission = each_data_submitted.data
+			unique_submission_id = one_submission.instanceID
 			logging.debug("Unique instance ID is %s", str(unique_submission_id))
 
 			self.response.out.write(posted_data_by_aggregate)
