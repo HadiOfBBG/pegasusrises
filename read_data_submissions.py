@@ -18,29 +18,31 @@ import xmltodict
 from models.questions import Questions
 from pegasus_db_read import ReadDataFromPegasus
 
-class ReadDataSubmissions(ReaadDataFromPegasus):
+
+class ReadDataSubmissions(ReadDataFromPegasus):
 
     def get(self):
-        retrieve_questions_from_pegasus_db = db.Query(Questions)
-        retrieve_questions_from_pegasus_db = list(retrieve_questions_from_pegasus_db)
-        questions_list = self.gql_json_parser(retrieve_questions_from_pegasus_db)
-        data = {'questions_details': questions_list}
-        data_returned_to_front_end = json.dumps(data)
-        self.response.out.write(data_returned_to_front_end)
+        pass
+        # retrieve_questions_from_pegasus_db = db.Query(Questions)
+        # retrieve_questions_from_pegasus_db = list(retrieve_questions_from_pegasus_db)
+        # questions_list = self.gql_json_parser(retrieve_questions_from_pegasus_db)
+        # data = {'questions_details': questions_list}
+        # data_returned_to_front_end = json.dumps(data)
+        # self.response.out.write(data_returned_to_front_end)
 
-        return
+        # return
 
 
 
     def post(self):
+        pass
+        # retrieve_questions_from_pegasus_db = db.Query(Questions)
+        # retrieve_questions_from_pegasus_db = list(retrieve_questions_from_pegasus_db)
+        # questions_list = self.gql_json_parser(retrieve_questions_from_pegasus_db)
+        # data = {'questions_details': questions_list}
+        # data_returned_to_front_end = json.dumps(data)
+        # self.response.out.write(data_returned_to_front_end)
 
-        retrieve_questions_from_pegasus_db = db.Query(Questions)
-        retrieve_questions_from_pegasus_db = list(retrieve_questions_from_pegasus_db)
-        questions_list = self.gql_json_parser(retrieve_questions_from_pegasus_db)
-        data = {'questions_details': questions_list}
-        data_returned_to_front_end = json.dumps(data)
-        self.response.out.write(data_returned_to_front_end)
-
-        return
+        # return
 
 
