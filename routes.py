@@ -11,6 +11,7 @@ from gcs_client import MainPage
 from pegasus_email import EmailHandler
 from send_sms import SendSMSViaVotoAPI
 from save_data_into_pegasus_db import SaveDataIntoPegasusDatabase
+from pegasus_email import EmailHandler
 
 
 
@@ -32,6 +33,7 @@ routes = [
     (r'/sendmail', EmailHandler),
     (r'/pegasus/database/read', ReadDataFromPegasus),
     (r'/send/sms/via/votoapi', SendSMSViaVotoAPI),
+    (r'/sendemail', EmailHandler),
     (r'/save/data/on/pegasus', SaveDataIntoPegasusDatabase),
 
 

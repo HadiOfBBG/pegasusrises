@@ -41,7 +41,7 @@ class CSVUploadHandler(JinjaTemplating,blobstore_handlers.BlobstoreUploadHandler
 
     
     def post(self):
-        EmailHandler.sendEmail()
+        # EmailHandler.sendEmail()
         content_from_server = json.loads(self.request.body)
         url = content_from_server['downloadUrl']
 
@@ -49,6 +49,7 @@ class CSVUploadHandler(JinjaTemplating,blobstore_handlers.BlobstoreUploadHandler
         "filename":"guess",
         "url":url
         }
+
         form_data = urllib.urlencode(form_fields)
         result = urlfetch.fetch(url=pegasusrise_converter_api,
         payload=form_data,
