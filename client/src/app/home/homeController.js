@@ -4,8 +4,8 @@
 
 angular.module('home')
     .controller('prHomeController', ['$rootScope', '$scope','$state', 'homeService','surveyService', 'growl',
-        'cfpLoadingBar', '$localStorage', '$sessionStorage', 'surveyData','$timeout',
-        function($rootScope, $scope, $state, homeService, surveyService, growl, cfpLoadingBar, $localStorage, $sessionStorage, surveyData, $timeout){
+        'cfpLoadingBar', '$localStorage', '$sessionStorage','$timeout',
+        function($rootScope, $scope, $state, homeService, surveyService, growl, cfpLoadingBar, $localStorage, $sessionStorage, $timeout){
             $scope.files = [];
 
             $scope.first_timer = $localStorage.first_timer;
@@ -35,6 +35,7 @@ angular.module('home')
                     Tabletop.init( {
                         key: $scope.files[ $scope.files.length - 1].id,
                         callback: function(data, tabletop) {
+                            console.dir(data);
                             angular.forEach(data, function(val, prop){
                                 $scope.surveyDataReturned [ prop ] = {
                                     column_names :  data[prop].column_names,
@@ -43,11 +44,12 @@ angular.module('home')
                                     original_columns : data[prop].original_columns,
                                     pretty_columns : data[prop].pretty_columns
                                 };
+                                $scope.surveyDataReturned.form_id = $scope.files[$scope.files.length-1].name;
                             });
                             if (data) {
                                 homeService.uploadGoogleSheetContentsAsJson($scope.surveyDataReturned)
                                     .success(function(data){
-                                        $localStorage.first_timer = false;
+                                        //$localStorage.first_timer = false;
                                         growl.success("Data was posted successfully", {});
                                     })
                                     .error(function(){

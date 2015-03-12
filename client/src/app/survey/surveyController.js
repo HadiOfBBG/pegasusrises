@@ -4,8 +4,8 @@
 
 angular.module('survey')
 
-    .controller('prSurveyController', ['$rootScope', '$scope', 'homeService', 'growl','surveyData',
-        function($rootScope, $scope, homeService, growl, surveyData){
+    .controller('prSurveyController', ['$rootScope', '$scope', 'homeService', 'growl','questionData','submittedResponsesData',
+        function($rootScope, $scope, homeService, growl, questionData, submittedResponsesData){
 
             //$scope.surveyData = surveyData.data;
             $scope.surveyData =  [];
@@ -16,8 +16,9 @@ angular.module('survey')
 
 
 
-    .controller('prSelectedSurveyController', ['$rootScope', '$scope', 'homeService', 'growl','uiGmapGoogleMapApi','surveyData',
-        function($rootScope, $scope, homeService, growl, uiGmapGoogleMapApi, surveyData){
+    .controller('prSelectedSurveyController', ['$rootScope', '$scope', 'homeService', 'growl','uiGmapGoogleMapApi',
+        'questionData', 'submittedResponsesData',
+        function($rootScope, $scope, homeService, growl, uiGmapGoogleMapApi, questionData, submittedResponsesData){
 
             //$scope.surveyData = surveyData.data;
             //if (surveyData.data.questions_details.length) {
@@ -110,8 +111,9 @@ angular.module('survey')
             };
 
         }])
-    .controller('prSurveyRespondentsController', ['$rootScope', '$scope', 'homeService', 'growl','surveyData','surveyService',
-        function($rootScope, $scope, homeService, growl, surveyData, surveyService){
+    .controller('prSurveyRespondentsController', ['$rootScope', '$scope', 'homeService', 'surveyService', 'growl',
+        'questionData','submittedResponsesData',
+        function($rootScope, $scope, homeService,surveyService, growl, questionData, submittedResponsesData ){
 
             //get email address of logged in user from the backend
             var from = $('#user_logged_in_email').text();

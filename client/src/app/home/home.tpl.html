@@ -19,17 +19,17 @@
         <p ng-show="files.length" class="text-center col-lg-offset-4 col-lg-4 green_text"><em><i class="fa fa-file"></i>  Selected file : {{ files[files.length-1].name }}</em></p>
     </div>
 
-    <!--<div ng-show="files.length" class="row">-->
-        <!--<p class="text-center col-lg-offset-4 col-lg-4 green_text"><em><i class="fa fa-file"></i>  Selected filename : {{ files[files.length-1].name }}</em></p>-->
-        <!--<div  class="text-center" style="padding-bottom: 30px">-->
-            <!--<button id="ngJoyRide_2_upload" class="col-lg-offset-4 col-lg-4 btn-lg btn btn-warning" ng-click="uploadSheet()"><i class="fa fa-upload"></i>&nbsp;&nbsp;&nbsp;Send selected file's details</button>-->
-        <!--</div>-->
-    <!--</div>-->
-    <!--<div ng-show="files.length" class="row">-->
-        <!--<div  class="text-center" style="padding-bottom: 30px">-->
-            <!--<button class="col-lg-offset-4 col-lg-4 btn-lg btn btn-danger" ng-click="tabletop()"><i class="fa fa-upload"></i>&nbsp;&nbsp;&nbsp;Send selected file contents as JSON</button>-->
-        <!--</div>-->
-    <!--</div>-->
+    <div ng-show="files.length" class="row">
+        <p class="text-center col-lg-offset-4 col-lg-4 green_text"><em><i class="fa fa-file"></i>  Selected filename : {{ files[files.length-1].name }}</em></p>
+        <div  class="text-center" style="padding-bottom: 30px">
+            <button id="ngJoyRide_2_upload" class="col-lg-offset-4 col-lg-4 btn-lg btn btn-warning" ng-click="uploadSheet()"><i class="fa fa-upload"></i>&nbsp;&nbsp;&nbsp;Send selected file's details</button>
+        </div>
+    </div>
+    <div ng-show="files.length" class="row">
+        <div  class="text-center" style="padding-bottom: 30px">
+            <button class="col-lg-offset-4 col-lg-4 btn-lg btn btn-danger" ng-click="tabletop()"><i class="fa fa-upload"></i>&nbsp;&nbsp;&nbsp;Send selected file contents as JSON</button>
+        </div>
+    </div>
 </div>
 <!--ng-hide - first_timer ||-->
 <div class="container clear_both padding_fix" ng-hide="true">
@@ -194,8 +194,8 @@
 </div>
 
 
-<p ng-hide="first_timer" class="text-center h2" style="margin-top: 50px">Click the button go to the survey list page</p>
-<p ng-hide="first_timer" class="text-center" style="margin-top: 10px"><span ng-click="$state.go('surveys')"  class="btn btn-primary btn-lg"><i class="fa fa-list"></i>    Survey List </span></p>
+<!--<p ng-hide="first_timer" class="text-center h2" style="margin-top: 50px">Click the button go to the survey list page</p>-->
+<!--<p ng-hide="first_timer" class="text-center" style="margin-top: 10px"><span ng-click="$state.go('surveys')"  class="btn btn-primary btn-lg"><i class="fa fa-list"></i>    Survey List </span></p>-->
 
 
 <div class="btn btn-warning" ng-show="files.length" ng-click="getFile()"> Get file from Google </div>

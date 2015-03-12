@@ -243,15 +243,15 @@ angular.module('home', [])
             .state('home', {
                 url : '/',
                 templateUrl : 'home/home.tpl.html',
-                controller : 'prHomeController',
-                resolve : {
-                    surveyService : 'surveyService',
-
-                    surveyData : function(surveyService){
-                        return surveyService.getAllSubmissions()
-                    }
-
-                }
+                controller : 'prHomeController'
+                //resolve : {
+                //    surveyService : 'surveyService',
+                //
+                //    surveyData : function(surveyService){
+                //        return {}
+                //    }
+                //
+                //}
             })
     }]);
 /**
@@ -260,8 +260,8 @@ angular.module('home', [])
 
 angular.module('home')
     .controller('prHomeController', ['$rootScope', '$scope','$state', 'homeService','surveyService', 'growl',
-        'cfpLoadingBar', '$localStorage', '$sessionStorage', 'surveyData','$timeout',
-        function($rootScope, $scope, $state, homeService, surveyService, growl, cfpLoadingBar, $localStorage, $sessionStorage, surveyData, $timeout){
+        'cfpLoadingBar', '$localStorage', '$sessionStorage','$timeout',
+        function($rootScope, $scope, $state, homeService, surveyService, growl, cfpLoadingBar, $localStorage, $sessionStorage, $timeout){
             $scope.files = [];
 
             $scope.first_timer = $localStorage.first_timer;
@@ -291,6 +291,7 @@ angular.module('home')
                     Tabletop.init( {
                         key: $scope.files[ $scope.files.length - 1].id,
                         callback: function(data, tabletop) {
+                            console.dir(data);
                             angular.forEach(data, function(val, prop){
                                 $scope.surveyDataReturned [ prop ] = {
                                     column_names :  data[prop].column_names,
@@ -299,11 +300,12 @@ angular.module('home')
                                     original_columns : data[prop].original_columns,
                                     pretty_columns : data[prop].pretty_columns
                                 };
+                                $scope.surveyDataReturned.form_id = $scope.files[$scope.files.length-1].name;
                             });
                             if (data) {
                                 homeService.uploadGoogleSheetContentsAsJson($scope.surveyDataReturned)
                                     .success(function(data){
-                                        $localStorage.first_timer = false;
+                                        //$localStorage.first_timer = false;
                                         growl.success("Data was posted successfully", {});
                                     })
                                     .error(function(){
@@ -429,9 +431,13 @@ angular.module('survey', [])
                 resolve : {
                     surveyService : 'surveyService',
 
-                    surveyData : function(surveyService){
-                        //return surveyService.getAllSubmissions()
-                        return []
+                    questionData : function(surveyService){
+                        //return surveyService.getSurveyQuestionDetails()
+                        return {}
+                    },
+
+                    submittedResponsesData : function(surveyService){
+                        return {}
                     }
                 }
             })
@@ -448,16 +454,7 @@ angular.module('survey', [])
             .state('surveys.selected_survey', {
                 url : '/select/1',
                 templateUrl : 'survey/selected_survey.tpl.html',
-                controller : 'prSelectedSurveyController',
-                resolve : {
-                    surveyService : 'surveyService',
-
-                    surveyData : function(surveyService){
-                        //return surveyService.getAllSubmissions()
-                        return []
-                    }
-
-                }
+                controller : 'prSelectedSurveyController'
             })
     }]);
 /**
@@ -466,8 +463,8 @@ angular.module('survey', [])
 
 angular.module('survey')
 
-    .controller('prSurveyController', ['$rootScope', '$scope', 'homeService', 'growl','surveyData',
-        function($rootScope, $scope, homeService, growl, surveyData){
+    .controller('prSurveyController', ['$rootScope', '$scope', 'homeService', 'growl','questionData','submittedResponsesData',
+        function($rootScope, $scope, homeService, growl, questionData, submittedResponsesData){
 
             //$scope.surveyData = surveyData.data;
             $scope.surveyData =  [];
@@ -478,8 +475,9 @@ angular.module('survey')
 
 
 
-    .controller('prSelectedSurveyController', ['$rootScope', '$scope', 'homeService', 'growl','uiGmapGoogleMapApi','surveyData',
-        function($rootScope, $scope, homeService, growl, uiGmapGoogleMapApi, surveyData){
+    .controller('prSelectedSurveyController', ['$rootScope', '$scope', 'homeService', 'growl','uiGmapGoogleMapApi',
+        'questionData', 'submittedResponsesData',
+        function($rootScope, $scope, homeService, growl, uiGmapGoogleMapApi, questionData, submittedResponsesData){
 
             //$scope.surveyData = surveyData.data;
             //if (surveyData.data.questions_details.length) {
@@ -572,8 +570,9 @@ angular.module('survey')
             };
 
         }])
-    .controller('prSurveyRespondentsController', ['$rootScope', '$scope', 'homeService', 'growl','surveyData','surveyService',
-        function($rootScope, $scope, homeService, growl, surveyData, surveyService){
+    .controller('prSurveyRespondentsController', ['$rootScope', '$scope', 'homeService', 'surveyService', 'growl',
+        'questionData','submittedResponsesData',
+        function($rootScope, $scope, homeService,surveyService, growl, questionData, submittedResponsesData ){
 
             //get email address of logged in user from the backend
             var from = $('#user_logged_in_email').text();
@@ -632,8 +631,14 @@ angular.module('survey')
             return $http.get('all/surveys')
         };
 
-        surveyService.getAllSubmissions = function( ){
-            return $http.get('/pegasus/database/read')
+        surveyService.getSurveyQuestionDetails = function( ){
+            //return $http.get('/questions/properties/read')
+            return $http.get('dummyloader/questions.json')
+        };
+
+        surveyService.getAllResponses = function( ){
+            //return $http.get('/data/submissions/read')
+            return $http.get('dummyloader/submissions.json')
         };
 
         surveyService.sendRespondentEmail = function(data){

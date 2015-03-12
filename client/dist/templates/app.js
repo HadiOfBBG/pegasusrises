@@ -370,17 +370,17 @@ angular.module("home/home.tpl.html", []).run(["$templateCache", function($templa
     "        <p ng-show=\"files.length\" class=\"text-center col-lg-offset-4 col-lg-4 green_text\"><em><i class=\"fa fa-file\"></i>  Selected file : {{ files[files.length-1].name }}</em></p>\n" +
     "    </div>\n" +
     "\n" +
-    "    <!--<div ng-show=\"files.length\" class=\"row\">-->\n" +
-    "        <!--<p class=\"text-center col-lg-offset-4 col-lg-4 green_text\"><em><i class=\"fa fa-file\"></i>  Selected filename : {{ files[files.length-1].name }}</em></p>-->\n" +
-    "        <!--<div  class=\"text-center\" style=\"padding-bottom: 30px\">-->\n" +
-    "            <!--<button id=\"ngJoyRide_2_upload\" class=\"col-lg-offset-4 col-lg-4 btn-lg btn btn-warning\" ng-click=\"uploadSheet()\"><i class=\"fa fa-upload\"></i>&nbsp;&nbsp;&nbsp;Send selected file's details</button>-->\n" +
-    "        <!--</div>-->\n" +
-    "    <!--</div>-->\n" +
-    "    <!--<div ng-show=\"files.length\" class=\"row\">-->\n" +
-    "        <!--<div  class=\"text-center\" style=\"padding-bottom: 30px\">-->\n" +
-    "            <!--<button class=\"col-lg-offset-4 col-lg-4 btn-lg btn btn-danger\" ng-click=\"tabletop()\"><i class=\"fa fa-upload\"></i>&nbsp;&nbsp;&nbsp;Send selected file contents as JSON</button>-->\n" +
-    "        <!--</div>-->\n" +
-    "    <!--</div>-->\n" +
+    "    <div ng-show=\"files.length\" class=\"row\">\n" +
+    "        <p class=\"text-center col-lg-offset-4 col-lg-4 green_text\"><em><i class=\"fa fa-file\"></i>  Selected filename : {{ files[files.length-1].name }}</em></p>\n" +
+    "        <div  class=\"text-center\" style=\"padding-bottom: 30px\">\n" +
+    "            <button id=\"ngJoyRide_2_upload\" class=\"col-lg-offset-4 col-lg-4 btn-lg btn btn-warning\" ng-click=\"uploadSheet()\"><i class=\"fa fa-upload\"></i>&nbsp;&nbsp;&nbsp;Send selected file's details</button>\n" +
+    "        </div>\n" +
+    "    </div>\n" +
+    "    <div ng-show=\"files.length\" class=\"row\">\n" +
+    "        <div  class=\"text-center\" style=\"padding-bottom: 30px\">\n" +
+    "            <button class=\"col-lg-offset-4 col-lg-4 btn-lg btn btn-danger\" ng-click=\"tabletop()\"><i class=\"fa fa-upload\"></i>&nbsp;&nbsp;&nbsp;Send selected file contents as JSON</button>\n" +
+    "        </div>\n" +
+    "    </div>\n" +
     "</div>\n" +
     "<!--ng-hide - first_timer ||-->\n" +
     "<div class=\"container clear_both padding_fix\" ng-hide=\"true\">\n" +
@@ -545,8 +545,8 @@ angular.module("home/home.tpl.html", []).run(["$templateCache", function($templa
     "</div>\n" +
     "\n" +
     "\n" +
-    "<p ng-hide=\"first_timer\" class=\"text-center h2\" style=\"margin-top: 50px\">Click the button go to the survey list page</p>\n" +
-    "<p ng-hide=\"first_timer\" class=\"text-center\" style=\"margin-top: 10px\"><span ng-click=\"$state.go('surveys')\"  class=\"btn btn-primary btn-lg\"><i class=\"fa fa-list\"></i>    Survey List </span></p>\n" +
+    "<!--<p ng-hide=\"first_timer\" class=\"text-center h2\" style=\"margin-top: 50px\">Click the button go to the survey list page</p>-->\n" +
+    "<!--<p ng-hide=\"first_timer\" class=\"text-center\" style=\"margin-top: 10px\"><span ng-click=\"$state.go('surveys')\"  class=\"btn btn-primary btn-lg\"><i class=\"fa fa-list\"></i>    Survey List </span></p>-->\n" +
     "\n" +
     "\n" +
     "<div class=\"btn btn-warning\" ng-show=\"files.length\" ng-click=\"getFile()\"> Get file from Google </div>\n" +
