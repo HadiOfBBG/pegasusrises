@@ -13,7 +13,8 @@ angular.module('survey', [])
                     surveyService : 'surveyService',
 
                     surveyData : function(surveyService){
-                        return surveyService.getAllSubmissions()
+                        //return surveyService.getAllSubmissions()
+                        return []
                     }
                 }
             })
@@ -35,7 +36,8 @@ angular.module('survey', [])
                     surveyService : 'surveyService',
 
                     surveyData : function(surveyService){
-                        return surveyService.getAllSubmissions()
+                        //return surveyService.getAllSubmissions()
+                        return []
                     }
 
                 }
