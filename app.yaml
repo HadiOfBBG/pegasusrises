@@ -18,9 +18,9 @@ handlers:
 - url: /frontend
   static_dir: client/dist/static
 
- - url: /dummyloader
- static_dir: dummydata
- application_readable: true
+- url: /dummyloader
+  static_dir: dummydata
+  application_readable: true
 
 - url: /templates
   static_dir: client/dist/templates
