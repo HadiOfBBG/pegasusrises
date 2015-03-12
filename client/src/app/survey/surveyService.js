@@ -10,9 +10,18 @@ angular.module('survey')
             return $http.get('all/surveys')
         };
 
-        surveyService.getAllSubmissions = function( ){
-            return $http.get('/read/data/from/pegasus')
+        surveyService.getSurveyQuestionDetails = function( ){
+            //return $http.get('/questions/properties/read')
+            return $http.get('dummyloader/questions.json')
         };
 
+        surveyService.getAllResponses = function( ){
+            //return $http.get('/data/submissions/read')
+            return $http.get('dummyloader/submissions.json')
+        };
+
+        surveyService.sendRespondentEmail = function(data){
+            return $http.post('/sendmail', data)
+        };
         return surveyService;
     }]);

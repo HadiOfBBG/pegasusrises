@@ -33,30 +33,39 @@ class QuestionsDetailsFromGoogleSheet(JinjaTemplating):
         posted_json = json.loads(self.request.body)
         # posted_json = self.request.body
         form_id = posted_json['form_id']
+
+        survey_meta_details = posted_json['settings']['column_names']
+        survey_details = posted_json['settings']['elements']
+        # self.response.out.write(survey_name + '\n')
+        # return
+
+
+
+        survey_xls_columns = posted_json['survey']['column_names']
+        survey_questions_in_xls = posted_json['survey']['elements']
+
+        choices_xls_columns = posted_json['choices']['column_names']
+        possible_choices_xls = posted_json['choices']['elements']
+
+
         survey_name = survey_details[0]['form_title']
 
-        retrieve_user_surveys = db.Query(ListOfSurveys)
-        retrieve_user_surveys.filter("survey_name =", survey_name)
+        # retrieve_user_surveys = db.Query(ListOfSurveys)
+        retrieve_user_surveys = ListOfSurveys.all()
+
+        retrieve_user_surveys.filter('survey_name', survey_name)
         retrieve_user_surveys.filter("survey_aggregate_form_id =", form_id)
 
         if_survey_exist = retrieve_user_surveys.get()
 
+        # self.response.out.write("Checking to see list of surveys \n")
+
+        # self.response.out.write(if_survey_exist)
+
+        # return
+
+
         if if_survey_exist is None:
-
-            survey_meta_details = posted_json['settings']['column_names']
-            survey_details = posted_json['settings']['elements']
-            # self.response.out.write(survey_name + '\n')
-            # return
-
-
-
-            survey_xls_columns = posted_json['survey']['column_names']
-            survey_questions_in_xls = posted_json['survey']['elements']
-
-            choices_xls_columns = posted_json['choices']['column_names']
-            possible_choices_xls = posted_json['choices']['elements']
-
-
             # these are use to get the various columns in surveys worksheet as array indexes
             type_of_data = 0
             name_of_db_field = 1

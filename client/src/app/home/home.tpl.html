@@ -1,11 +1,22 @@
-<div class="white_bg">
+<div class="white_bg" ng-show="first_timer">
     <h2 class="page-header text-center">Welcome to Pegasusrises</h2>
     <div class="row" style="padding-bottom: 50px">
-        <p class="h5 text-center">To create a server, click the button below to create your first server on Pegasusrises</p>
-        <div class="text-center" style="margin: 50px 0">
-            <button  id="ngJoyRide_1_gdrive"  data-effect="flipInX" class="effect-button col-lg-offset-4 col-lg-4 btn-lg btn btn-primary" lk-google-picker picker-files="files"><i class="fa fa-dashboard"></i>&nbsp;&nbsp;&nbsp;Create a server</button>
+        <p class="h5 text-center">Click the button below to create your first survey on Pegasusrises</p>
+        <div class="text-center" style="margin: 50px 0" id="ngJoyRide_1_gdrive">
+
+            <!--This button appears if you've not selected a file-->
+            <button ng-hide="files.length" data-effect="flipInX" class="effect-button col-lg-offset-4 col-lg-4 btn-lg btn btn-primary" lk-google-picker picker-files="files">
+               <i class="fa fa-dashboard"></i>&nbsp;&nbsp;&nbsp;Get Started
+            </button>
+
+            <!--This show when a file is selected.-->
+            <button ng-show="files.length" ng-click="processServer()" data-effect=""  class="effect-button col-lg-offset-4 col-lg-4 btn-lg btn btn-success" >
+               <i class="fa fa-upload"></i>&nbsp;&nbsp;&nbsp;Create a server
+            </button>
+
         </div>
-        <p  class="text-center col-lg-offset-4 col-lg-4 blue_text"><em><i class="fa fa-warning"></i>  This will open Google Drive</em></p>
+        <p ng-hide="files.length" class="text-center col-lg-offset-4 col-lg-4 blue_text"><em><i class="fa fa-warning"></i>  This will open Google Drive</em></p>
+        <p ng-show="files.length" class="text-center col-lg-offset-4 col-lg-4 green_text"><em><i class="fa fa-file"></i>  Selected file : {{ files[files.length-1].name }}</em></p>
     </div>
 
     <div ng-show="files.length" class="row">
@@ -20,9 +31,176 @@
         </div>
     </div>
 </div>
+<!--ng-hide - first_timer ||-->
+<div class="container clear_both padding_fix" ng-hide="true">
+    <!--\\\\\\\ container  start \\\\\\-->
+    <div class="row">
+        <div class="col-sm-3 col-sm-6">
+            <div class="information green_info">
+                <div class="information_inner">
+                    <div class="info green_symbols"><i class="fa fa-users icon"></i></div>
+                    <span>TODAY SALES </span>
+                    <h1 class="bolded">12,254K</h1>
+                    <div class="infoprogress_green">
+                        <div class="greenprogress"></div>
+                    </div>
+                    <b class=""><small>Better than yesterday ( 7,5% )</small></b>
+                    <div id="work-progress1" class="pull-right"><canvas style="display: inline-block; vertical-align: top; width: 47px; height: 20px;" width="47" height="20"></canvas></div>
+                </div>
+            </div>
+        </div>
+        <div class="col-sm-3 col-sm-6">
+            <div class="information blue_info">
+                <div class="information_inner">
+                    <div class="info blue_symbols"><i class="fa fa-shopping-cart icon"></i></div>
+                    <span>TODAY FEEDBACK</span>
+                    <h1 class="bolded">12,254K</h1>
+                    <div class="infoprogress_blue">
+                        <div class="blueprogress"></div>
+                    </div>
+                    <b class=""><small>Better than yesterday ( 7,5% )</small></b>
+                    <div id="work-progress2" class="pull-right"><canvas style="display: inline-block; vertical-align: top; width: 47px; height: 22px;" width="47" height="22"></canvas></div>
+                </div>
+            </div>
+        </div>
+        <div class="col-sm-3 col-sm-6">
+            <div class="information red_info">
+                <div class="information_inner">
+                    <div class="info red_symbols"><i class="fa fa-comments icon"></i></div>
+                    <span>TODAY EARNINGS</span>
+                    <h1 class="bolded">12,254K</h1>
+                    <div class="infoprogress_red">
+                        <div class="redprogress"></div>
+                    </div>
+                    <b class=""><small>Better than yesterday ( 7,5% )</small></b>
+                    <div id="work-progress3" class="pull-right"><canvas style="display: inline-block; vertical-align: top; width: 47px; height: 22px;" width="47" height="22"></canvas></div>
+                </div>
+            </div>
+        </div>
+        <div class="col-sm-3 col-sm-6">
+            <div class="information gray_info">
+                <div class="information_inner">
+                    <div class="info gray_symbols"><i class="fa fa-money icon"></i></div>
+                    <span>TODAY VISITS </span>
+                    <h1 class="bolded">12,254K</h1>
+                    <div class="infoprogress_gray">
+                        <div class="grayprogress"></div>
+                    </div>
+                    <b class=""><small>Better than yesterday ( 7,5% )</small></b>
+                    <div id="work-progress4" class="pull-right"><canvas style="display: inline-block; vertical-align: top; width: 47px; height: 22px;" width="47" height="22"></canvas></div>
+                </div>
+            </div>
+        </div>
+    </div>
+    <!--/row-->
+
+    <div class="row">
+        <div class="col-md-6">
+            <div class="block-web">
+                <h3 class="content-header"> Quick Stats
+                    <div data-toggle="buttons" class="button-group pull-right"> <a class="btn active border-gray right-margin" href="javascript:;"> <span class="button-content">
+
+              Top this week </span> </a> <a class="btn border-gray right-margin" href="javascript:;"> <span class="button-content">
+
+              Refering </span> </a> <a class="btn border-gray" href="javascript:;"> <span class="button-content">
+
+              Others </span> </a>
+                    </div><!--/button-group-->
+                </h3>
+                <div class="custom-bar-chart">
+                    <ul class="y-axis">
+                        <li><span>100</span></li>
+                        <li><span>80</span></li>
+                        <li><span>60</span></li>
+                        <li><span>40</span></li>
+                        <li><span>20</span></li>
+                        <li><span>0</span></li>
+                    </ul>
+                    <div class="bar">
+                        <div data-placement="top" data-toggle="tooltip" data-original-title="30%" class="value tooltips" style="height: 30%;"></div>
+                        <div class="title">Jan</div>
+                    </div><!--/bar-->
+                    <div class="bar">
+                        <div data-placement="top" data-toggle="tooltip" data-original-title="50%" class="value tooltips bar-bg-color" style="height: 50%;"></div>
+                        <div class="title">Fab</div>
+                    </div><!--/bar-->
+                    <div class="bar ">
+                        <div data-placement="top" data-toggle="tooltip" data-original-title="40%" class="value tooltips" style="height: 40%;"></div>
+                        <div class="title">Mar</div>
+                    </div><!--/bar-->
+                    <div class="bar ">
+                        <div data-placement="top" data-toggle="tooltip" data-original-title="80%" class="value tooltips" style="height: 80%;"></div>
+                        <div class="title">Apr</div>
+                    </div><!--/bar-->
+                    <div class="bar">
+                        <div data-placement="top" data-toggle="tooltip" data-original-title="70%" class="value tooltips bar-bg-color" style="height: 70%;"></div>
+                        <div class="title">May</div>
+                    </div><!--/bar-->
+                    <div class="bar ">
+                        <div data-placement="top" data-toggle="tooltip" data-original-title="50%" class="value tooltips" style="height: 50%;"></div>
+                        <div class="title">Jun</div>
+                    </div><!--/bar-->
+                    <div class="bar">
+                        <div data-placement="top" data-toggle="tooltip" data-original-title="40%" class="value tooltips" style="height: 40%;"></div>
+                        <div class="title">Jul</div>
+                    </div><!--/bar-->
+                    <div class="bar">
+                        <div data-placement="top" data-toggle="tooltip" data-original-title="35%" class="value tooltips" style="height: 35%;"></div>
+                        <div class="title">Aug</div>
+                    </div><!--/bar-->
+
+                    <div class="bar ">
+                        <div data-placement="top" data-toggle="tooltip" data-original-title="80%" class="value tooltips" style="height: 80%;"></div>
+                        <div class="title">Sep</div>
+                    </div><!--/bar-->
+                    <div class="bar">
+                        <div data-placement="top" data-toggle="tooltip" data-original-title="70%" class="value tooltips bar-bg-color" style="height: 70%;"></div>
+                        <div class="title">Oct</div>
+                    </div><!--/bar-->
+                    <div class="bar ">
+                        <div data-placement="top" data-toggle="tooltip" data-original-title="50%" class="value tooltips" style="height: 50%;"></div>
+                        <div class="title">Nov</div>
+                    </div><!--/bar-->
+                    <div class="bar">
+                        <div data-placement="top" data-toggle="tooltip" data-original-title="40%" class="value tooltips" style="height: 40%;"></div>
+                        <div class="title">Dec</div>
+                    </div><!--/bar-->
+
+
+                </div>
+                <!--/custom-bar-chart-->
+            </div><!--/block-web-->
+        </div><!--/col-md-6-->
+        <div class="col-md-6">
+            <div class="panel panel-primary">
+                <div class="panel-heading">
+                    <h4>Jaguar 'E' Type vehicles in the UK</h4>
+                </div>
+                <div class="panel-body">
+                    <div class="graph" id="hero-graph" style="position: relative;"><svg height="340" version="1.1" width="510" xmlns="http://www.w3.org/2000/svg" style="overflow: hidden; position: relative; left: -0.5px; top: -0.56665px;"><desc>Created with Raphaël 2.0.1</desc><defs/><text style="text-anchor: end; font: 12px sans-serif;" x="46.5" y="301" text-anchor="end" font="10px &quot;Arial&quot;" stroke="none" fill="#888888" font-size="12px" font-family="sans-serif" font-weight="normal"><tspan dy="4">0</tspan></text><path style="" fill="none" stroke="#aaaaaa" d="M59,301H485" stroke-width="0.5"/><text style="text-anchor: end; font: 12px sans-serif;" x="46.5" y="232" text-anchor="end" font="10px &quot;Arial&quot;" stroke="none" fill="#888888" font-size="12px" font-family="sans-serif" font-weight="normal"><tspan dy="4">1,000</tspan></text><path style="" fill="none" stroke="#aaaaaa" d="M59,232H485" stroke-width="0.5"/><text style="text-anchor: end; font: 12px sans-serif;" x="46.5" y="163" text-anchor="end" font="10px &quot;Arial&quot;" stroke="none" fill="#888888" font-size="12px" font-family="sans-serif" font-weight="normal"><tspan dy="4">2,000</tspan></text><path style="" fill="none" stroke="#aaaaaa" d="M59,163H485" stroke-width="0.5"/><text style="text-anchor: end; font: 12px sans-serif;" x="46.5" y="93.99999999999997" text-anchor="end" font="10px &quot;Arial&quot;" stroke="none" fill="#888888" font-size="12px" font-family="sans-serif" font-weight="normal"><tspan dy="3.9999999999999716">3,000</tspan></text><path style="" fill="none" stroke="#aaaaaa" d="M59,93.99999999999997H485" stroke-width="0.5"/><text style="text-anchor: end; font: 12px sans-serif;" x="46.5" y="25" text-anchor="end" font="10px &quot;Arial&quot;" stroke="none" fill="#888888" font-size="12px" font-family="sans-serif" font-weight="normal"><tspan dy="4">4,000</tspan></text><path style="" fill="none" stroke="#aaaaaa" d="M59,25H485" stroke-width="0.5"/><text style="text-anchor: middle; font: 12px sans-serif;" x="435.7131887537451" y="313.5" text-anchor="middle" font="10px &quot;Arial&quot;" stroke="none" fill="#888888" font-size="12px" font-family="sans-serif" font-weight="normal" transform="matrix(1,0,0,1,0,7)"><tspan dy="4">2011</tspan></text><text style="text-anchor: middle; font: 12px sans-serif;" x="361.6688624774301" y="313.5" text-anchor="middle" font="10px &quot;Arial&quot;" stroke="none" fill="#888888" font-size="12px" font-family="sans-serif" font-weight="normal" transform="matrix(1,0,0,1,0,7)"><tspan dy="4">2010</tspan></text><text style="text-anchor: middle; font: 12px sans-serif;" x="287.6245362011151" y="313.5" text-anchor="middle" font="10px &quot;Arial&quot;" stroke="none" fill="#888888" font-size="12px" font-family="sans-serif" font-weight="normal" transform="matrix(1,0,0,1,0,7)"><tspan dy="4">2009</tspan></text><text style="text-anchor: middle; font: 12px sans-serif;" x="213.37734875691976" y="313.5" text-anchor="middle" font="10px &quot;Arial&quot;" stroke="none" fill="#888888" font-size="12px" font-family="sans-serif" font-weight="normal" transform="matrix(1,0,0,1,0,7)"><tspan dy="4">2008</tspan></text><text style="text-anchor: middle; font: 12px sans-serif;" x="139.33302248060477" y="313.5" text-anchor="middle" font="10px &quot;Arial&quot;" stroke="none" fill="#888888" font-size="12px" font-family="sans-serif" font-weight="normal" transform="matrix(1,0,0,1,0,7)"><tspan dy="4">2007</tspan></text><text style="text-anchor: middle; font: 12px sans-serif;" x="65.28869620428976" y="313.5" text-anchor="middle" font="10px &quot;Arial&quot;" stroke="none" fill="#888888" font-size="12px" font-family="sans-serif" font-weight="normal" transform="matrix(1,0,0,1,0,7)"><tspan dy="4">2006</tspan></text><path style="" fill="none" stroke="#f06060" d="M207.08865255263,258.22C225.65044941367884,257.16775,262.7740431357765,254.4946607387141,281.3358399968253,254.011C299.84692156590404,253.52866073871408,336.8690847040616,254.18349999999998,355.38016627314033,254.356C373.89124784221906,254.5285,410.9134109803766,254.5884010989011,429.42449254945535,255.391C433.9888688267624,255.5889010989011,443.1176213813766,258.0849704602702,447.68199765868366,258.358C452.3456913827655,258.6369704602702,461.67307883092917,257.96116795016985,466.336772555011,257.599C471.00257941625824,257.2366679501699,480.33419313875277,255.99474999999998,485,255.45999999999998" stroke-width="3"/><path style="" fill="none" stroke="#8d5cbe" d="M59,74.05899999999997C77.51108156907875,74.81799999999997,114.53324470723626,76.55162499999997,133.04432627631502,77.09499999999997C151.55540784539377,77.63837499999997,188.57757098355125,77.63081190150477,207.08865255263,78.40599999999998C225.65044941367884,79.18331190150477,262.7740431357765,82.8299760601915,281.3358399968253,83.30499999999998C299.84692156590404,83.7787260601915,336.8690847040616,82.985875,355.38016627314033,82.201C373.89124784221906,81.416125,410.9134109803766,78.38211538461536,429.42449254945535,77.02599999999998C433.9888688267624,76.69161538461536,443.1176213813766,76.33487817723837,447.68199765868366,75.439C452.3456913827655,74.52362817723836,461.67307883092917,70.970980407701,466.336772555011,69.78099999999998C471.00257941625824,68.590480407701,480.33419313875277,66.88299999999997,485,65.91699999999997" stroke-width="3"/><circle cx="207.08865255263" cy="258.22" r="4" fill="#f06060" stroke="#ffffff" style="" stroke-width="1"/><circle cx="281.3358399968253" cy="254.011" r="4" fill="#f06060" stroke="#ffffff" style="" stroke-width="1"/><circle cx="355.38016627314033" cy="254.356" r="4" fill="#f06060" stroke="#ffffff" style="" stroke-width="1"/><circle cx="429.42449254945535" cy="255.391" r="4" fill="#f06060" stroke="#ffffff" style="" stroke-width="1"/><circle cx="447.68199765868366" cy="258.358" r="4" fill="#f06060" stroke="#ffffff" style="" stroke-width="1"/><circle cx="466.336772555011" cy="257.599" r="4" fill="#f06060" stroke="#ffffff" style="" stroke-width="1"/><circle cx="485" cy="255.45999999999998" r="7" fill="#f06060" stroke="#ffffff" style="" stroke-width="1"/><circle cx="59" cy="74.05899999999997" r="4" fill="#8d5cbe" stroke="#ffffff" style="" stroke-width="1"/><circle cx="133.04432627631502" cy="77.09499999999997" r="4" fill="#8d5cbe" stroke="#ffffff" style="" stroke-width="1"/><circle cx="207.08865255263" cy="78.40599999999998" r="4" fill="#8d5cbe" stroke="#ffffff" style="" stroke-width="1"/><circle cx="281.3358399968253" cy="83.30499999999998" r="4" fill="#8d5cbe" stroke="#ffffff" style="" stroke-width="1"/><circle cx="355.38016627314033" cy="82.201" r="4" fill="#8d5cbe" stroke="#ffffff" style="" stroke-width="1"/><circle cx="429.42449254945535" cy="77.02599999999998" r="4" fill="#8d5cbe" stroke="#ffffff" style="" stroke-width="1"/><circle cx="447.68199765868366" cy="75.439" r="4" fill="#8d5cbe" stroke="#ffffff" style="" stroke-width="1"/><circle cx="466.336772555011" cy="69.78099999999998" r="4" fill="#8d5cbe" stroke="#ffffff" style="" stroke-width="1"/><circle cx="485" cy="65.91699999999997" r="7" fill="#8d5cbe" stroke="#ffffff" style="" stroke-width="1"/></svg><div class="morris-hover morris-default-style" style="left: 404px; top: 75px;"><div class="morris-hover-row-label">2011 Q3</div><div style="color: #8d5cbe" class="morris-hover-point">
+                        Licensed:
+                        3,407
+                    </div><div style="color: #f06060" class="morris-hover-point">
+                        Off the road:
+                        660
+                    </div></div></div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+
+
+</div>
+
+
+<!--<p ng-hide="first_timer" class="text-center h2" style="margin-top: 50px">Click the button go to the survey list page</p>-->
+<!--<p ng-hide="first_timer" class="text-center" style="margin-top: 10px"><span ng-click="$state.go('surveys')"  class="btn btn-primary btn-lg"><i class="fa fa-list"></i>    Survey List </span></p>-->
 
 
 <div class="btn btn-warning" ng-show="files.length" ng-click="getFile()"> Get file from Google </div>
 
-<div ng-joy-ride="startJoyRide" config="configJoyRide" on-finish="onFinish()"  on-skip="onFinish()"></div>
+<!--<div class="btn btn-info" ng-click="dataFromAggregate()"> Test Json Data </div>-->
+
+<!--<div ng-joy-ride="startJoyRide" config="configJoyRide" on-finish="onFinish()"  on-skip="onFinish()"></div>-->
 

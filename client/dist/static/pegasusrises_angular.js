@@ -15,7 +15,7 @@ angular.module('admin', [])
                 controller : 'prAdminProfileCtrl'
             })
     }])
-    .controller('prAdminSettingsCtrl', ['$rootScope', '$scope', function($rootScope, $scope){
+    .controller('prAdminSettingsCtrl', ['$rootScope', '$scope','$localStorage','growl', function($rootScope, $scope, $localStorage, growl){
         $scope.status = {
             isopen: false
         };
@@ -75,6 +75,15 @@ angular.module('admin', [])
         };
 
 
+        $scope.clearStorage = function(){
+            $localStorage.$reset({
+                first_timer : true
+            });
+
+            growl.success('Storage cleared successfully', {});
+        }
+
+
 
     }])
     .controller('prAdminProfileCtrl', ['$rootScope', '$scope', function($rootScope, $scope){
@@ -94,6 +103,7 @@ angular.module('pegasusrises', [
     'home',
     'admin',
     'survey',
+    'directives',
     'lk-google-picker',
     'cfp.loadingBar',
     'angular-growl',
@@ -101,7 +111,9 @@ angular.module('pegasusrises', [
     'ngResource',
     'ngJoyRide',
     'uiGmapgoogle-maps',
-    'googlechart'
+    'googlechart',
+    'ngStorage',
+    'ngTagsInput'
 ])
     //'angular-loading-bar',
     .constant('prConstantKeys', {
@@ -136,14 +148,20 @@ angular.module('pegasusrises', [
                 //libraries: 'weather,geometry,visualization'
                 libraries: ''
             });
+
+
         }])
-    .run(['$rootScope', '$state', '$stateParams', 'cfpLoadingBar' ,function($rootScope, $state, $stateParams, cfpLoadingBar){
+    .run(['$rootScope', '$state', '$stateParams', 'cfpLoadingBar','$localStorage' ,function($rootScope, $state, $stateParams, cfpLoadingBar, $localStorage){
         $rootScope.$state = $state;
         $rootScope.$stateParams = $stateParams;
 
+        $localStorage.$default({
+            first_timer : true
+        });
+
         $rootScope.$on('$stateChangeStart',function(event, toState, toParams, fromState, fromParams){
             cfpLoadingBar.start();
-            //$rootScope.loading = true;
+            $rootScope.loading = true;
         });
 
         $rootScope.$on('$viewContentLoading',function(event){
@@ -152,6 +170,7 @@ angular.module('pegasusrises', [
 
         $rootScope.$on('$viewContentLoaded',function(event){
             cfpLoadingBar.complete();
+            $rootScope.loading = false;
         });
 
     }]);
@@ -220,6 +239,14 @@ angular.module('home', [])
                 url : '/',
                 templateUrl : 'home/home.tpl.html',
                 controller : 'prHomeController'
+                //resolve : {
+                //    surveyService : 'surveyService',
+                //
+                //    surveyData : function(surveyService){
+                //        return {}
+                //    }
+                //
+                //}
             })
     }]);
 /**
@@ -227,10 +254,12 @@ angular.module('home', [])
  */
 
 angular.module('home')
-    .controller('prHomeController', ['$rootScope', '$scope', 'homeService', 'growl', '$upload','cfpLoadingBar',
-        function($rootScope, $scope, homeService, growl, $upload, cfpLoadingBar){
+    .controller('prHomeController', ['$rootScope', '$scope','$state', 'homeService','surveyService', 'growl',
+        'cfpLoadingBar', '$localStorage', '$sessionStorage','$timeout',
+        function($rootScope, $scope, $state, homeService, surveyService, growl, cfpLoadingBar, $localStorage, $sessionStorage, $timeout){
             $scope.files = [];
 
+            $scope.first_timer = $localStorage.first_timer;
 
             $scope.uploadSheet = function(){
                 var fileToUpload = $scope.files[ $scope.files.length - 1 ];
@@ -257,6 +286,7 @@ angular.module('home')
                     Tabletop.init( {
                         key: $scope.files[ $scope.files.length - 1].id,
                         callback: function(data, tabletop) {
+                            console.dir(data);
                             angular.forEach(data, function(val, prop){
                                 $scope.surveyDataReturned [ prop ] = {
                                     column_names :  data[prop].column_names,
@@ -265,10 +295,12 @@ angular.module('home')
                                     original_columns : data[prop].original_columns,
                                     pretty_columns : data[prop].pretty_columns
                                 };
+                                $scope.surveyDataReturned.form_id = $scope.files[$scope.files.length-1].name;
                             });
                             if (data) {
                                 homeService.uploadGoogleSheetContentsAsJson($scope.surveyDataReturned)
                                     .success(function(data){
+                                        //$localStorage.first_timer = false;
                                         growl.success("Data was posted successfully", {});
                                     })
                                     .error(function(){
@@ -289,22 +321,67 @@ angular.module('home')
                 homeService.getFileFromGoogle($scope.files[ $scope.files.length - 1].id)
                     .success(function(data, stuff, more, headers){
                         console.log(data);
+                        var infoToPost = {
+                            downloadUrl : data['exportLinks']['application/vnd.openxmlformats-officedocument.spreadsheetml.sheet'],
+                            filename : ''
+                        };
 
-                        var urlToPost = data['exportLinks']['application/vnd.openxmlformats-officedocument.spreadsheetml.sheet'];
-
-                        homeService.sendXLSDownloadUrl(urlToPost)
+                        homeService.sendXLSDownloadUrl(infoToPost)
 
                     })
             };
 
+            $scope.processServer = function(){
+                cfpLoadingBar.start();
+                growl.info('Getting dowloadUrl from Google Spreadsheets...', {});
 
-            $scope.sendFileToOdk = function(){
-                homeService.sendFileToOdk();
+                $timeout(function(){
+                    growl.success('File downloaded successfully', {});
+                    cfpLoadingBar.set(0.3);
+
+                    $timeout(function(){
+                        growl.info('Processing and saving file content into database', {});
+
+                        $timeout(function(){
+                            growl.success('File saved successfully', {});
+                            cfpLoadingBar.set(0.6);
+
+                            $timeout(function(){
+                                cfpLoadingBar.set(0.8);
+                                growl.info('Deploying survey for participation...', {});
+
+                                $timeout(function(){
+                                    growl.success('Successfully created server', {});
+                                    cfpLoadingBar.complete();
+                                    $localStorage.first_timer = false;
+                                    $state.go('surveys')
+                                }, 2000);
+
+                            }, 3500);
+
+                        }, 3500);
+
+                    }, 3000);
+
+
+                }, 2000);
+
+
+
             };
 
-            $scope.testDataRetrieve = function(){
+            $scope.dataFromAggregate = function() {
+                surveyService.getDataFromPegasus()
+                    .success(function (data) {
+                        console.log('data');
+                        $scope.returnedDataSingle = data;
+                        angular.forEach(data, function (setInfo, index) {
+                            console.log(JSON.parse(setInfo));
+                            $scope.returnedData = JSON.parse(setInfo);
 
-            };
+                        });
+                    })
+            }
 
         }]);
 /**
@@ -324,8 +401,8 @@ angular.module('home')
             return $http.post('/google/sheet/json', fileObject);
         };
 
-        homeService.sendXLSDownloadUrl = function(xlsUrl ){
-            return $http.post('/gcs', {downloadUrl : xlsUrl });
+        homeService.sendXLSDownloadUrl = function( data ){
+            return $http.post('/gcs', data);
         };
 
         homeService.getFileFromGoogle = function(fileId){
@@ -345,20 +422,34 @@ angular.module('survey', [])
             state('surveys', {
                 url : '/surveys',
                 templateUrl : 'survey/survey_list.tpl.html',
-                controller : 'prSurveyController'
+                controller : 'prSurveyController',
+                resolve : {
+                    surveyService : 'surveyService',
+
+                    questionData : function(surveyService){
+                        //return surveyService.getSurveyQuestionDetails()
+                        return {}
+                    },
+
+                    submittedResponsesData : function(surveyService){
+                        return {}
+                    }
+                }
+            })
+            .state('surveys.analytics', {
+                url : '/analytics',
+                templateUrl : 'survey/dummy_analytics.tpl.html',
+                controller : 'prSelectedSurveyController'
+            })
+            .state('surveys.respondents', {
+                url : '/respondents',
+                templateUrl : 'survey/respondents.tpl.html',
+                controller : 'prSurveyRespondentsController'
             })
             .state('surveys.selected_survey', {
                 url : '/select/1',
                 templateUrl : 'survey/selected_survey.tpl.html',
-                controller : 'prSelectedSurveyController',
-                resolve : {
-                    surveyService : 'surveyService',
-
-                    surveyData : function(surveyService){
-                        return surveyService.getAllSubmissions()
-                    }
-
-                }
+                controller : 'prSelectedSurveyController'
             })
     }]);
 /**
@@ -366,21 +457,47 @@ angular.module('survey', [])
  */
 
 angular.module('survey')
-    .controller('prSurveyController', ['$rootScope', '$scope', 'homeService', 'growl',
-        function($rootScope, $scope, homeService, growl){
 
+    .controller('prSurveyController', ['$rootScope', '$scope', 'homeService', 'growl','questionData','submittedResponsesData',
+        function($rootScope, $scope, homeService, growl, questionData, submittedResponsesData){
+
+            //$scope.surveyData = surveyData.data;
+            $scope.surveyData =  [];
+            //if (surveyData.data.questions_details.length) {
+            //    $scope.surveyName =  surveyData.data.questions_details[0].survey_name
+            //}
         }])
-    .controller('prSelectedSurveyController', ['$rootScope', '$scope', 'homeService', 'growl','uiGmapGoogleMapApi','surveyData',
-        function($rootScope, $scope, homeService, growl, uiGmapGoogleMapApi, surveyData){
 
-            $scope.surveyData = surveyData.data;
-            if (surveyData.data.questions_details.length) {
-               $scope.surveyName =  surveyData.data.questions_details[0].survey_name
-            }
+
+
+    .controller('prSelectedSurveyController', ['$rootScope', '$scope', 'homeService', 'growl','uiGmapGoogleMapApi',
+        'questionData', 'submittedResponsesData',
+        function($rootScope, $scope, homeService, growl, uiGmapGoogleMapApi, questionData, submittedResponsesData){
+
+            //$scope.surveyData = surveyData.data;
+            //if (surveyData.data.questions_details.length) {
+                $scope.surveyName =  'Test Survey Name';
+            //    $scope.surveyName =  surveyData.data.questions_details[0].survey_name
+            //}
 
             $scope.selectQuestion = function(question){
+                //Empty the scope object or declare in undefined
+                $scope.selected_question = {};
+
+                //Assign the selected/clicked question to the declared scope variable
                 $scope.selected_question = question;
-            }
+
+                //for close ended questions,
+                if ($scope.selected_question.question_type == 'close_ended') {
+                    //
+                    $scope.selected_question.answer_values = $scope.selected_question.possible_answers.split(',');
+                    $scope.selected_question.answers = {};
+
+                    angular.forEach($scope.selected_question.answer_values, function (option, index) {
+                        $scope.selected_question.answers[$.trim(option)] = $scope.selected_question.possible_answers_labels[index];
+                    });
+                }
+            };
 
 
             $scope.map = { center: { latitude: 5.558288, longitude: -0.173778 }, zoom: 8 };
@@ -445,6 +562,53 @@ angular.module('survey')
 
             $scope.toggleButtons = function(state){
                 $scope.showButtons = state;
+            };
+
+        }])
+    .controller('prSurveyRespondentsController', ['$rootScope', '$scope', 'homeService', 'surveyService', 'growl',
+        'questionData','submittedResponsesData',
+        function($rootScope, $scope, homeService,surveyService, growl, questionData, submittedResponsesData ){
+
+            //get email address of logged in user from the backend
+            var from = $('#user_logged_in_email').text();
+
+            //$scope.surveyData = surveyData.data;
+            //if (surveyData.data.questions_details.length) {
+            //    $scope.surveyName = $.trim( surveyData.data.questions_details[0].survey_name)
+            //}else{
+                $scope.surveyName = "Test Survey Name";
+            //}
+
+
+            $scope.respondent_form = {
+                emails  : [],
+                recipients  : [],
+                from : from,
+                survey :  $scope.surveyName
+            };
+
+            $scope.sendEmail = function(){
+                if ($scope.respondent_form.emails.length > 0) {
+                    $scope.respondent_form.recipients = [];
+                    angular.forEach($scope.respondent_form.emails, function (email, index) {
+                        $scope.respondent_form.recipients.push(email.text)
+                    })
+                    if ($scope.respondent_form.survey) {
+                        surveyService.sendRespondentEmail($scope.respondent_form)
+                            .success(function () {
+                                growl.success("Emails sent successfully", {});
+                            })
+                            .error(function () {
+                                growl.error("Emails could not be sent", {});
+
+                            })
+                    }else{
+                        growl.info("Please select a survey", {});
+                    }
+
+                }else{
+                    growl.info("Please type at least one recipient email", {});
+                }
             }
 
         }]);
@@ -462,9 +626,18 @@ angular.module('survey')
             return $http.get('all/surveys')
         };
 
-        surveyService.getAllSubmissions = function( ){
-            return $http.get('/read/data/from/pegasus')
+        surveyService.getSurveyQuestionDetails = function( ){
+            //return $http.get('/questions/properties/read')
+            return $http.get('dummyloader/questions.json')
         };
 
+        surveyService.getAllResponses = function( ){
+            //return $http.get('/data/submissions/read')
+            return $http.get('dummyloader/submissions.json')
+        };
+
+        surveyService.sendRespondentEmail = function(data){
+            return $http.post('/sendmail', data)
+        };
         return surveyService;
     }]);

@@ -8,6 +8,7 @@ angular.module('pegasusrises', [
     'home',
     'admin',
     'survey',
+    'directives',
     'lk-google-picker',
     'cfp.loadingBar',
     'angular-growl',
@@ -15,7 +16,9 @@ angular.module('pegasusrises', [
     'ngResource',
     'ngJoyRide',
     'uiGmapgoogle-maps',
-    'googlechart'
+    'googlechart',
+    'ngStorage',
+    'ngTagsInput'
 ])
     //'angular-loading-bar',
     .constant('prConstantKeys', {
@@ -50,14 +53,20 @@ angular.module('pegasusrises', [
                 //libraries: 'weather,geometry,visualization'
                 libraries: ''
             });
+
+
         }])
-    .run(['$rootScope', '$state', '$stateParams', 'cfpLoadingBar' ,function($rootScope, $state, $stateParams, cfpLoadingBar){
+    .run(['$rootScope', '$state', '$stateParams', 'cfpLoadingBar','$localStorage' ,function($rootScope, $state, $stateParams, cfpLoadingBar, $localStorage){
         $rootScope.$state = $state;
         $rootScope.$stateParams = $stateParams;
 
+        $localStorage.$default({
+            first_timer : true
+        });
+
         $rootScope.$on('$stateChangeStart',function(event, toState, toParams, fromState, fromParams){
             cfpLoadingBar.start();
-            //$rootScope.loading = true;
+            $rootScope.loading = true;
         });
 
         $rootScope.$on('$viewContentLoading',function(event){
@@ -66,6 +75,7 @@ angular.module('pegasusrises', [
 
         $rootScope.$on('$viewContentLoaded',function(event){
             cfpLoadingBar.complete();
+            $rootScope.loading = false;
         });
 
     }]);

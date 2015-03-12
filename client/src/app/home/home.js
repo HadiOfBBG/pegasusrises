@@ -11,5 +11,13 @@ angular.module('home', [])
                 url : '/',
                 templateUrl : 'home/home.tpl.html',
                 controller : 'prHomeController'
+                //resolve : {
+                //    surveyService : 'surveyService',
+                //
+                //    surveyData : function(surveyService){
+                //        return {}
+                //    }
+                //
+                //}
             })
     }]);

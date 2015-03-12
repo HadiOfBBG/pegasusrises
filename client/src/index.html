@@ -23,7 +23,7 @@
             <div class="top_left">
                 <div class="top_left_menu">
                     <ul>
-                        <li> <a href="javascript:void(0);"><i class="fa fa-refresh"></i></a> </li>
+                        <li> <a href="javascript:void(0);"><i class="fa fa-refresh fa-spin" ng-class="{'fa-spin' : loading == true }"></i></a> </li>
                     </ul>
                 </div>
             </div>
@@ -73,11 +73,11 @@
                 <div class="user_admin dropdown"> <a href="javascript:void(0);" data-toggle="dropdown" ng-controller="prBreadCrumbCtrl">
                     <img src="frontend/images/user.png" />
                      {% endraw %}
-                    <span class="user_adminname">{{ username }}</span> <b class="caret"></b> </a>
+                    <span class="user_adminname" id="user_logged_in_email">{{ username }}</span> <b class="caret"></b> </a>
                     {% raw %}
                     <ul class="dropdown-menu">
                         <div class="top_pointer"></div>
-                        <li> <a ui-sref="profile"><i class="fa fa-user"></i> Profile</a> </li>
+                        <li class="hidden"> <a ui-sref="profile"><i class="fa fa-user"></i> Profile</a> </li>
                         <li> <a ui-sref="settings"><i class="fa fa-cog"></i> Settings </a></li>
                         <li> <a href=""  ng-click="startJoyRide()"><i class="fa fa-question-circle"></i> Help</a> </li>
                         {% endraw %}
@@ -116,19 +116,19 @@
                     </a>
                 </li>
                 <li class="theme_border" ng-class="{'left_nav_active' : $state.includes('surveys')}">
-                    <a class="pointer"> <i class="fa fa-edit"></i> SURVEYS <span class="plus"><i class="fa fa-plus"></i></span></a>
+                    <a class="pointer"> <i class="fa fa-list"></i> SURVEYS <span class="plus"><i class="fa fa-plus"></i></span></a>
                     <ul>
                         <li> <a ui-sref="surveys"> <span>&nbsp;</span> <i class="fa fa-list"></i> <b>List Surveys</b> </a> </li>
-                        <li> <a href=""> <span>&nbsp;</span> <i class="fa fa-circle"></i> <b>Respondents</b> </a> </li>
-                        <li> <a href=""> <span>&nbsp;</span> <i class="fa fa-circle"></i> <b>Questionnaires</b> </a> </li>
-                        <li> <a href=""> <span>&nbsp;</span> <i class="fa fa-circle"></i> <b>Statistics</b> </a> </li>
+                        <li> <a ui-sref="surveys.respondents"> <span>&nbsp;</span> <i class="fa fa-users"></i> <b>Respondents</b> </a> </li>
+                        <li class="hidden"> <a href=""> <span>&nbsp;</span> <i class="fa fa-circle"></i> <b>Questionnaires</b> </a> </li>
+                        <li class="hidden"> <a href=""> <span>&nbsp;</span> <i class="fa fa-circle"></i> <b>Statistics</b> </a> </li>
                     </ul>
                 </li>
 
 
 
 
-                <li> <a href="javascript:void(0);"> <i class="fa fa-glass"></i> EXTRA <span class="plus"><i class="fa fa-plus"></i></span></a>
+                <li class="hidden"> <a href="javascript:void(0);"> <i class="fa fa-glass"></i> EXTRA <span class="plus"><i class="fa fa-plus"></i></span></a>
                     <ul>
                         <li> <a href=""> <span>&nbsp;</span> <i class="fa fa-circle"></i> <b>Timeline</b> </a> </li>
                         <li> <a href=""> <span>&nbsp;</span> <i class="fa fa-circle"></i> <b>Profile</b> </a> </li>
@@ -157,7 +157,7 @@
     <!--\\\\\\\ inner end\\\\\\-->
 </div>
 <!--\\\\\\\ wrapper end\\\\\\-->
-<div growl></div>
+<div growl limit-messages="1"></div>
 
 <script type="text/javascript" src="frontend/jquery.js"></script>
 <script type="text/javascript" src="frontend/bootstrap.js"></script>
@@ -166,6 +166,7 @@
 <!--<script type="text/javascript" src="frontend/<%= grunt.config.get('pkg.name') %>.js"></script>-->
 <script type="text/javascript" src="templates/app.js"></script>
 <script type="text/javascript" src="templates/common.js"></script>
+<script type="text/javascript" src="frontend/directives.js"></script>
 <script type="text/javascript" src="frontend/scripts.js"></script>
 
 <script src="http://apis.google.com/js/client.js"></script>

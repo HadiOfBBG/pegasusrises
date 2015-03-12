@@ -15,7 +15,7 @@ angular.module('admin', [])
                 controller : 'prAdminProfileCtrl'
             })
     }])
-    .controller('prAdminSettingsCtrl', ['$rootScope', '$scope', function($rootScope, $scope){
+    .controller('prAdminSettingsCtrl', ['$rootScope', '$scope','$localStorage','growl', function($rootScope, $scope, $localStorage, growl){
         $scope.status = {
             isopen: false
         };
@@ -73,6 +73,15 @@ angular.module('admin', [])
                 body.addClass('left_nav_fixed');
             }
         };
+
+
+        $scope.clearStorage = function(){
+            $localStorage.$reset({
+                first_timer : true
+            });
+
+            growl.success('Storage cleared successfully', {});
+        }
 
 
 

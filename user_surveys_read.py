@@ -49,7 +49,7 @@ class UserSurveysRead(ReadDataFromPegasus):
             return
         else:
             surveys_list = self.gql_json_parser(retrieve_user_surveys)
-            data = {'surveys': surveys}
+            data = {'surveys': surveys_list}
             data_returned_to_front_end = json.dumps(data)
             self.response.out.write(data_returned_to_front_end)
             return
