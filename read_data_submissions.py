@@ -23,28 +23,30 @@ from models.save_raw_aggregate_data import SaveAggregateRawPostedData
 
 class ReadDataSubmissions(ReadDataFromPegasus):
 
-    def get(self):
-        list_of_submissions_objects = []
-        data_submissions = SaveAggregateRawPostedData.query().fetch()
-        for submission in data_submissions:
-            list_of_submissions_objects.append(submission.posted_json_data)
-        # submissions_list = self.gql_json_parser(data_submissions)
-        data = {'submissions': list_of_submissions_objects}
-        data_returned_to_front_end = json.dumps(data)
-        self.response.out.write(data_returned_to_front_end)
-        return
+	def get(self):
+		self.querying_and_processing_survey_responses()
 
 
 
-    def post(self):
-        pass
-        # retrieve_questions_from_pegasus_db = db.Query(Questions)
-        # retrieve_questions_from_pegasus_db = list(retrieve_questions_from_pegasus_db)
-        # questions_list = self.gql_json_parser(retrieve_questions_from_pegasus_db)
-        # data = {'questions_details': questions_list}
-        # data_returned_to_front_end = json.dumps(data)
-        # self.response.out.write(data_returned_to_front_end)
 
-        # return
+
+	def post(self):
+		self.querying_and_processing_survey_responses()
+
+
+	def querying_and_processing_survey_responses(self):
+
+		list_of_submissions_objects = []
+		data_submissions = SaveAggregateRawPostedData.query().fetch()
+		for submission in data_submissions:
+			list_of_submissions_objects.append(submission.posted_json_data)
+		# submissions_list = self.gql_json_parser(data_submissions)
+
+		data = {'submissions': list_of_submissions_objects}
+
+		data_returned_to_front_end = json.dumps(data)
+		self.response.out.write(data_returned_to_front_end)
+		return
+
 
 
