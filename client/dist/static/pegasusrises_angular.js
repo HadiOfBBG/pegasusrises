@@ -323,7 +323,7 @@ angular.module('home')
                         console.log(data);
                         var infoToPost = {
                             downloadUrl : data['exportLinks']['application/vnd.openxmlformats-officedocument.spreadsheetml.sheet'],
-                            filename : ''
+                            filename : $scope.files[ $scope.files.length - 1].name
                         };
 
                         homeService.sendXLSDownloadUrl(infoToPost)
@@ -427,12 +427,11 @@ angular.module('survey', [])
                     surveyService : 'surveyService',
 
                     questionData : function(surveyService){
-                        //return surveyService.getSurveyQuestionDetails()
-                        return {}
+                        return surveyService.getSurveyQuestionDetails()
                     },
 
                     submittedResponsesData : function(surveyService){
-                        return {}
+                        return surveyService.getAllResponses()
                     }
                 }
             })
@@ -461,11 +460,12 @@ angular.module('survey')
     .controller('prSurveyController', ['$rootScope', '$scope', 'homeService', 'growl','questionData','submittedResponsesData',
         function($rootScope, $scope, homeService, growl, questionData, submittedResponsesData){
 
-            //$scope.surveyData = surveyData.data;
-            $scope.surveyData =  [];
-            //if (surveyData.data.questions_details.length) {
-            //    $scope.surveyName =  surveyData.data.questions_details[0].survey_name
-            //}
+            $scope.surveyData = questionData.data;
+            if (questionData.data.questions_details.length) {
+                $scope.surveyName =  questionData.data.questions_details[0].survey_name
+            }
+
+            $scope.submittedResponses = submittedResponsesData.data
         }])
 
 
@@ -474,11 +474,10 @@ angular.module('survey')
         'questionData', 'submittedResponsesData',
         function($rootScope, $scope, homeService, growl, uiGmapGoogleMapApi, questionData, submittedResponsesData){
 
-            //$scope.surveyData = surveyData.data;
-            //if (surveyData.data.questions_details.length) {
-                $scope.surveyName =  'Test Survey Name';
-            //    $scope.surveyName =  surveyData.data.questions_details[0].survey_name
-            //}
+            $scope.surveyData = questionData.data;
+            if (questionData.data.questions_details.length) {
+                $scope.surveyName =  questionData.data.questions_details[0].survey_name
+            }
 
             $scope.selectQuestion = function(question){
                 //Empty the scope object or declare in undefined
@@ -489,13 +488,43 @@ angular.module('survey')
 
                 //for close ended questions,
                 if ($scope.selected_question.question_type == 'close_ended') {
-                    //
+
+                    //Get the individual answers value
                     $scope.selected_question.answer_values = $scope.selected_question.possible_answers.split(',');
                     $scope.selected_question.answers = {};
 
+                    //Assign the split answer value as a key in a property of the question's answer object
                     angular.forEach($scope.selected_question.answer_values, function (option, index) {
-                        $scope.selected_question.answers[$.trim(option)] = $scope.selected_question.possible_answers_labels[index];
+                        //$scope.selected_question.answers[$.trim(option)] = $scope.selected_question.possible_answers_labels[index];
+
+                        //In the selected question object, assign each possible answer to a property in the "answer" property of the question
+                        if ($.trim(option) != '') {
+                            $scope.selected_question.answers[ $.trim(option) ] = 0;
+                        }
                     });
+
+                    //Loop over the submitted responses submitted
+                    angular.forEach(submittedResponsesData.data.submissions, function (responseObject, indexObject) {
+
+                        //Loop over the data field in the responses submitted
+                        angular.forEach(responseObject.data, function (responseData, indexData) {
+
+                            //if the supplied answer is a multiple choice one, loop over and increment each option
+                            if ( typeof (responseData[ $scope.selected_question.question_field ]) == 'object') {
+                                angular.forEach( responseData[ $scope.selected_question.question_field ], function (choice, index) {
+
+                                    //And Increment the answer chosen in the chosen question's answer object
+                                    $scope.selected_question.answers [ choice ] ++
+                                });
+                            }else{
+                                //Increment the answer chosen in the chosen question's answer object
+                                $scope.selected_question.answers [ responseData[ $scope.selected_question.question_field ] ] ++
+                            }
+
+
+                        })
+
+                    })
                 }
             };
 
@@ -519,37 +548,51 @@ angular.module('survey')
 
             $scope.onions = [
                 {v: "Onions"},
-                {v: 3},
+                {v: 3}
             ];
 
-            $scope.chartObject.data = {"cols": [
-                {id: "t", label: "Topping", type: "string"},
-                {id: "s", label: "Slices", type: "number"}
-            ], "rows": [
-                {c: [
-                    {v: "Mushrooms"},
-                    {v: 3},
-                ]},
-                {c: $scope.onions},
-                {c: [
-                    {v: "Olives"},
-                    {v: 31}
-                ]},
-                {c: [
-                    {v: "Zucchini"},
-                    {v: 1},
-                ]},
-                {c: [
-                    {v: "Pepperoni"},
-                    {v: 2},
-                ]}
-            ]};
-
+            // = {"cols": [
+            //    {id: "t", label: "Topping", type: "string"},
+            //    {id: "s", label: "Slices", type: "number"}
+            //], "rows": [
+            //    {c: [{v: "Mushrooms"},{v: 3}]},
+            //    {c: $scope.onions},
+            //    {c: [{v: "Olives"},{v: 31}]},
+            //    {c: [{v: "Zucchini"},{v: 1}]},
+            //    {c: [{v: "Pepperoni"},{v: 28}]}
+            //]};
+            $scope.chartObject.data = [
+                [
+                    "Component",
+                    "cost"
+                ],
+                [
+                    "Software",
+                    92368
+                ],
+                [
+                    "Hardware",
+                    38064
+                ],
+                [
+                    "Services",
+                    20000
+                ]
+            ];
 
             // $routeParams.chartType == BarChart or PieChart or ColumnChart...
             $scope.chartObject.type = 'ColumnChart';
             $scope.chartObject.options = {
-                'title': 'How Much Pizza I Ate Last Night'
+                "title": $scope.surveyName,
+                "fill": 20,
+                "displayExactValues": true,
+                //"is3D": true,
+                "vAxis": {
+                    "title": "Responses", "gridlines": {"count": 6}
+                },
+                "hAxis": {
+                    "title": "Possible Answers"
+                }
             };
             $scope.changeChartType = function (chartType) {
                 $scope.chartObject.type = chartType;
@@ -572,12 +615,12 @@ angular.module('survey')
             //get email address of logged in user from the backend
             var from = $('#user_logged_in_email').text();
 
-            //$scope.surveyData = surveyData.data;
-            //if (surveyData.data.questions_details.length) {
-            //    $scope.surveyName = $.trim( surveyData.data.questions_details[0].survey_name)
-            //}else{
-                $scope.surveyName = "Test Survey Name";
-            //}
+            $scope.surveyData = questionData.data;
+            if (questionData.data.questions_details.length) {
+                $scope.surveyName = $.trim( questionData.data.questions_details[0].survey_name)
+            }else{
+                //$scope.surveyName = "Test Survey Name";
+            }
 
 
             $scope.respondent_form = {
@@ -628,12 +671,12 @@ angular.module('survey')
 
         surveyService.getSurveyQuestionDetails = function( ){
             //return $http.get('/questions/properties/read')
-            return $http.get('dummyloader/questions.json')
+            return $http.get('/frontend/dummyloader/questions.json')
         };
 
         surveyService.getAllResponses = function( ){
             //return $http.get('/data/submissions/read')
-            return $http.get('dummyloader/submissions.json')
+            return $http.get('/frontend/dummyloader/submissions.json')
         };
 
         surveyService.sendRespondentEmail = function(data){

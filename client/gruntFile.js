@@ -55,7 +55,10 @@ module.exports = function (grunt) {
         clean: ['<%= distdir %>/*'],
         copy: {
             assets: {
-                files: [{ dest: '<%= distdirStatic %>/', src : '**', expand: true, cwd: 'src/assets/' }]
+                files: [
+                    { dest: '<%= distdirStatic %>/', src : '**', expand: true, cwd: 'src/assets/' },
+                    { dest: '<%= distdirStatic %>/dummyloader', src : '**', expand: true, cwd: 'src/dummydata/' }
+                ]
             },
             fonts : {
                 files: [{ dest: '<%= distdirStatic %>/fonts/', src : '**', expand: true, cwd: 'src/fonts/' }]

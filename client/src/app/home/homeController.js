@@ -72,7 +72,7 @@ angular.module('home')
                         console.log(data);
                         var infoToPost = {
                             downloadUrl : data['exportLinks']['application/vnd.openxmlformats-officedocument.spreadsheetml.sheet'],
-                            filename : ''
+                            filename : $scope.files[ $scope.files.length - 1].name
                         };
 
                         homeService.sendXLSDownloadUrl(infoToPost)

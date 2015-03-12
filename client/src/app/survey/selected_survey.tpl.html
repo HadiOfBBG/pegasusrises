@@ -27,7 +27,8 @@
 
     <div class="col-md-6">
         <div class="widget_inbox">
-            <pre>{{ surveyData | json }}</pre>
+            <div google-chart chart="chartObject" style="height:600px; width:100%;"></div>
+            <pre>{{ selected_question | json }}</pre>
         </div>
     </div>
 

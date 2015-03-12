@@ -13,12 +13,11 @@ angular.module('survey', [])
                     surveyService : 'surveyService',
 
                     questionData : function(surveyService){
-                        //return surveyService.getSurveyQuestionDetails()
-                        return {}
+                        return surveyService.getSurveyQuestionDetails()
                     },
 
                     submittedResponsesData : function(surveyService){
-                        return {}
+                        return surveyService.getAllResponses()
                     }
                 }
             })

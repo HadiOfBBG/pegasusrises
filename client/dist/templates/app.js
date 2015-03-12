@@ -695,7 +695,8 @@ angular.module("survey/selected_survey.tpl.html", []).run(["$templateCache", fun
     "\n" +
     "    <div class=\"col-md-6\">\n" +
     "        <div class=\"widget_inbox\">\n" +
-    "            <pre>{{ surveyData | json }}</pre>\n" +
+    "            <div google-chart chart=\"chartObject\" style=\"height:600px; width:100%;\"></div>\n" +
+    "            <pre>{{ selected_question | json }}</pre>\n" +
     "        </div>\n" +
     "    </div>\n" +
     "\n" +
@@ -733,7 +734,7 @@ angular.module("survey/survey_list.tpl.html", []).run(["$templateCache", functio
     "                    <div class=\"col-sm-9\">\n" +
     "                        <p><em>Description : &nbsp;</em>A Short survey to gather journalist feedback</p>\n" +
     "                        <p><em>Questions : &nbsp;</em>{{ surveyData.questions_details.length}} questions</p>\n" +
-    "                        <p><em>Total Responses : &nbsp;</em>{{ surveyData.survey_submissions.length }} submissions</p>\n" +
+    "                        <p><em>Total Responses : &nbsp;</em>{{ submittedResponses.submissions.length }} submissions</p>\n" +
     "                    </div>\n" +
     "                    <div class=\"col-sm-3\">\n" +
     "                        <!--<div class=\"pull-right\"><span>August  15, 2014</span></div>-->\n" +
