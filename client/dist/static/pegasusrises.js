@@ -1,4 +1,4 @@
-/*! pegasusrises - v0.0.1-A - 2015-03-11
+/*! pegasusrises - v0.0.1-A - 2015-03-12
  * pegasusrises.com
  * Copyright (c) 2015 BBG Digital Innovation Lab;
  * Licensed MIT
@@ -430,7 +430,8 @@ angular.module('survey', [])
                     surveyService : 'surveyService',
 
                     surveyData : function(surveyService){
-                        return surveyService.getAllSubmissions()
+                        //return surveyService.getAllSubmissions()
+                        return []
                     }
                 }
             })
@@ -452,7 +453,8 @@ angular.module('survey', [])
                     surveyService : 'surveyService',
 
                     surveyData : function(surveyService){
-                        return surveyService.getAllSubmissions()
+                        //return surveyService.getAllSubmissions()
+                        return []
                     }
 
                 }
@@ -467,10 +469,11 @@ angular.module('survey')
     .controller('prSurveyController', ['$rootScope', '$scope', 'homeService', 'growl','surveyData',
         function($rootScope, $scope, homeService, growl, surveyData){
 
-            $scope.surveyData = surveyData.data;
-            if (surveyData.data.questions_details.length) {
-                $scope.surveyName =  surveyData.data.questions_details[0].survey_name
-            }
+            //$scope.surveyData = surveyData.data;
+            $scope.surveyData =  [];
+            //if (surveyData.data.questions_details.length) {
+            //    $scope.surveyName =  surveyData.data.questions_details[0].survey_name
+            //}
         }])
 
 
@@ -478,10 +481,11 @@ angular.module('survey')
     .controller('prSelectedSurveyController', ['$rootScope', '$scope', 'homeService', 'growl','uiGmapGoogleMapApi','surveyData',
         function($rootScope, $scope, homeService, growl, uiGmapGoogleMapApi, surveyData){
 
-            $scope.surveyData = surveyData.data;
-            if (surveyData.data.questions_details.length) {
-                $scope.surveyName =  surveyData.data.questions_details[0].survey_name
-            }
+            //$scope.surveyData = surveyData.data;
+            //if (surveyData.data.questions_details.length) {
+                $scope.surveyName =  'Test Survey Name';
+            //    $scope.surveyName =  surveyData.data.questions_details[0].survey_name
+            //}
 
             $scope.selectQuestion = function(question){
                 //Empty the scope object or declare in undefined
@@ -574,10 +578,13 @@ angular.module('survey')
             //get email address of logged in user from the backend
             var from = $('#user_logged_in_email').text();
 
-            $scope.surveyData = surveyData.data;
-            if (surveyData.data.questions_details.length) {
-                $scope.surveyName = $.trim( surveyData.data.questions_details[0].survey_name)
-            }
+            //$scope.surveyData = surveyData.data;
+            //if (surveyData.data.questions_details.length) {
+            //    $scope.surveyName = $.trim( surveyData.data.questions_details[0].survey_name)
+            //}else{
+                $scope.surveyName = "Test Survey Name";
+            //}
+
 
             $scope.respondent_form = {
                 emails  : [],

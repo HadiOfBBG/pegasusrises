@@ -12,6 +12,8 @@ from pegasus_email import EmailHandler
 from send_sms import SendSMSViaVotoAPI
 from save_data_into_pegasus_db import SaveDataIntoPegasusDatabase
 from cron_read_data_from_aggregate import CronToReadDataFromAggregate
+from read_questions_details import ReadQuestionsDetails
+from read_data_submissions import ReadDataSubmissions
 
 
 
@@ -35,6 +37,10 @@ routes = [
     (r'/send/sms/via/votoapi', SendSMSViaVotoAPI),
     (r'/save/data/on/pegasus', SaveDataIntoPegasusDatabase),
     (r'/cron/aggregate/database/read', CronToReadDataFromAggregate),
+    (r'/questions/properties/read', ReadQuestionsDetails),
+    (r'/data/submissions/read', ReadDataSubmissions),
+
+
 
 
 
