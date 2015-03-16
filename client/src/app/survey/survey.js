@@ -13,19 +13,18 @@ angular.module('survey', [])
                     surveyService : 'surveyService',
 
                     questionData : function(surveyService){
-                        //return surveyService.getSurveyQuestionDetails()
-                        return {}
+                        return surveyService.getSurveyQuestionDetails()
                     },
 
                     submittedResponsesData : function(surveyService){
-                        return {}
+                        return surveyService.getAllResponses()
                     }
                 }
             })
             .state('surveys.analytics', {
-                url : '/analytics',
-                templateUrl : 'survey/dummy_analytics.tpl.html',
-                controller : 'prSelectedSurveyController'
+                url : '/analytics/:survey_name/:index',
+                templateUrl : 'survey/detailed_analytics.tpl.html',
+                controller : 'prDetailedAnalyticsSurveyController'
             })
             .state('surveys.respondents', {
                 url : '/respondents',

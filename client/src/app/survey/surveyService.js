@@ -12,16 +12,21 @@ angular.module('survey')
 
         surveyService.getSurveyQuestionDetails = function( ){
             //return $http.get('/questions/properties/read')
-            return $http.get('dummyloader/questions.json')
+            return $http.get('/frontend/dummyloader/questions.json')
         };
 
         surveyService.getAllResponses = function( ){
             //return $http.get('/data/submissions/read')
-            return $http.get('dummyloader/submissions.json')
+            return $http.get('/frontend/dummyloader/submissions.json')
         };
 
         surveyService.sendRespondentEmail = function(data){
             return $http.post('/sendmail', data)
         };
+
+        surveyService.sendRespondentSMS = function(data){
+            return $http.post('/send/sms', data)
+        };
+
         return surveyService;
     }]);

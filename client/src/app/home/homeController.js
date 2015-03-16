@@ -15,17 +15,9 @@ angular.module('home')
                 homeService.uploadGoogleSheet(fileToUpload).
                     success(function(data, status, headers, config) {
                         growl.success("Data was posted successfully", {});
-                        console.log(data);
-                        console.log(status);
-                        console.log(headers);
-                        console.log(config);
                     }).
                     error(function(data, status, headers, config) {
                         growl.error("Something went wrong on the server", {});
-                        console.log(data);
-                        console.log(status);
-                        console.log(headers);
-                        console.log(config);
                     });
             };
 
@@ -72,7 +64,7 @@ angular.module('home')
                         console.log(data);
                         var infoToPost = {
                             downloadUrl : data['exportLinks']['application/vnd.openxmlformats-officedocument.spreadsheetml.sheet'],
-                            filename : ''
+                            filename : $scope.files[ $scope.files.length - 1].name
                         };
 
                         homeService.sendXLSDownloadUrl(infoToPost)
