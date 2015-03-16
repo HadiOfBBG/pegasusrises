@@ -57,14 +57,30 @@ class CSVUploadHandler(JinjaTemplating,blobstore_handlers.BlobstoreUploadHandler
 
         # self.response.out.write(result.content)
         if "Successful form upload" in result.content:
-            return self.response.out.write("success")
+            form_result = {
+        "status":"Successful",
+        "content":result.content
+        }
+            return self.response.out.write(form_result)
 
         elif "File was not recognized" in result.content:
-            return self.response.out.write("File was not recognized")
+            form_result = {
+        "status":"failed",
+        "content":result.content
+        }
+            return self.response.out.write(form_result)
 
         elif "You must have a sheet named" in result.content:
-            return self.response.out.write("sheets should be named survey,choices,and settings")
+            form_result = {
+        "status":"failed",
+        "content":result.content
+        }
+            return self.response.out.write(form_result)
 
         else:
-            return self.response.out.write(result.content)
+            form_result = {
+        "status":"failed",
+        "content":result.content
+        }
+            return self.response.out.write(form_result)
         
