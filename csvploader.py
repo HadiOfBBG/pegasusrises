@@ -66,5 +66,5 @@ class CSVUploadHandler(JinjaTemplating,blobstore_handlers.BlobstoreUploadHandler
             return self.response.out.write("sheets should be named survey,choices,and settings")
 
         else:
-            return self.response.out.write("error")
+            return self.response.out.write(result.content)
         

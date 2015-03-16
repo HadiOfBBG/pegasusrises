@@ -18,7 +18,8 @@ angular.module('pegasusrises', [
     'uiGmapgoogle-maps',
     'googlechart',
     'ngStorage',
-    'ngTagsInput'
+    'ngTagsInput',
+    'sun.scrollable'
 ])
     //'angular-loading-bar',
     .constant('prConstantKeys', {

@@ -10,14 +10,14 @@ angular.module('home', [])
             .state('home', {
                 url : '/',
                 templateUrl : 'home/home.tpl.html',
-                controller : 'prHomeController',
-                resolve : {
-                    surveyService : 'surveyService',
-
-                    surveyData : function(surveyService){
-                        return surveyService.getAllSubmissions()
-                    }
-
-                }
+                controller : 'prHomeController'
+                //resolve : {
+                //    surveyService : 'surveyService',
+                //
+                //    surveyData : function(surveyService){
+                //        return {}
+                //    }
+                //
+                //}
             })
     }]);

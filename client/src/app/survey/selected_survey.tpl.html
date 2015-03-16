@@ -2,7 +2,7 @@
 
     <div class="col-lg-12 center">
         <section class="panel default blue_title h2">
-            <div class="panel-heading border">{{ surveyName || ' '}}</div>
+            <div class="panel-heading border">{{ surveyName || 'Demo Survey'}}</div>
         </section>
     </div>
 
@@ -14,7 +14,11 @@
                         <span class="pull-right" ng-click="$state.go('surveys.analytics')"><i class="fa fa-cog"></i></span>
                     </a>
                 </li>
-                <li ng-repeat="question_item in surveyData.questions_details"> <a href="" ng-class="{'active' : question_item.question_field == selected_question.question_field}" ng-click="selectQuestion(question_item)">
+            </ul>
+            <!--<scrollable  always-visible="true" slider-max-height="700">-->
+
+            <ul>
+                <li ng-repeat="question_item in surveyData.questions_details"> <a href="" ng-class="{'active' : question_item.question_field == selected_question.question_field}" ng-click="selectQuestion(question_item, $index)">
                     <div class="widget_inbox_header">
                         <span class="pull-left widget_inbox_time"><b>{{ $index + 1 }}</b></span>
                         <span class="pull-right widget_inbox_time" open-closed="" type="{{ question_item.question_type }}"></span>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;Question
@@ -22,12 +26,42 @@
                     {{ question_item.question }}</a></li>
 
             </ul>
+            <!--</scrollable>-->
         </div>
     </div>
 
     <div class="col-md-6">
-        <div class="widget_inbox">
-            <pre>{{ surveyData | json }}</pre>
+        <div class="widget_inbox" ng-show="chartObject.type">
+            <tabset justified="true">
+                <tab select="changeChartType('BarChart')">
+                    <tab-heading>
+                        <i class="fa fa-list-ul"></i> Bar Chart
+                    </tab-heading>
+                    <div google-chart chart="chartObject" style="height:600px; width:100%;"></div>
+                </tab>
+
+                <tab select="changeChartType('PieChart')">
+                    <tab-heading>
+                        <i class="fa fa-pie-chart"></i> Pie Chart
+                    </tab-heading>
+                    <div google-chart chart="chartObject" style="height:600px; width:100%;"></div>
+                </tab>
+
+                <tab select="changeChartType('ColumnChart')">
+                    <tab-heading>
+                        <i class="fa fa-bar-chart"></i> Column Chart
+                    </tab-heading>
+                    <div google-chart chart="chartObject" style="height:600px; width:100%;"></div>
+                </tab>
+            </tabset>
+
+            <!--<div google-chart chart="chartObject" style="height:600px; width:100%;"></div>-->
+            <!--<pre>{{ selected_question | json }}</pre>-->
+            <!--<pre>{{ chartObject | json }}</pre>-->
+        </div>
+        <div class="row" ng-show="selected_question">
+            <button class="text-center col-sm-6 col-sm-offset-3 btn btn-primary btn-lg" ng-click="$state.go('surveys.analytics', {survey_name : surveyName, index : selected_question.index })">
+                View More Details</button>
         </div>
     </div>
 

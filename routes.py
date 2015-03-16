@@ -14,6 +14,7 @@ from save_data_into_pegasus_db import SaveDataIntoPegasusDatabase
 from cron_read_data_from_aggregate import CronToReadDataFromAggregate
 from read_questions_details import ReadQuestionsDetails
 from read_data_submissions import ReadDataSubmissions
+from user_surveys_read import UserSurveysRead
 
 
 
@@ -34,11 +35,13 @@ routes = [
     (r'/gcs_old', MainPage),
     (r'/sendmail', EmailHandler),
     (r'/pegasus/database/read', ReadDataFromPegasus),
-    (r'/send/sms/via/votoapi', SendSMSViaVotoAPI),
+    (r'/send/sms', SendSMSViaVotoAPI),
     (r'/save/data/on/pegasus', SaveDataIntoPegasusDatabase),
     (r'/cron/aggregate/database/read', CronToReadDataFromAggregate),
     (r'/questions/properties/read', ReadQuestionsDetails),
     (r'/data/submissions/read', ReadDataSubmissions),
+    (r'/user/surveys/read', UserSurveysRead),
+
 
 
 

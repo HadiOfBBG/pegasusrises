@@ -50,12 +50,15 @@ module.exports = function (grunt) {
             },
             css : ['src/stylesheets/font*.css', 'src/stylesheets/boot*.css', 'src/stylesheets/animate.css','src/stylesheets/pegasus.css',
                 'src/stylesheets/*.css','src/vendor/angular-loading-bar/*.css', 'src/vendor/angular-growl-2/*.css', 'src/vendor/ng-joyride/*.css',
-                'src/vendor/ng-tags-input/*.css']
+                'src/vendor/ng-tags-input/*.css','src/vendor/nano-scroller/*.css']
         },
         clean: ['<%= distdir %>/*'],
         copy: {
             assets: {
-                files: [{ dest: '<%= distdirStatic %>/', src : '**', expand: true, cwd: 'src/assets/' }]
+                files: [
+                    { dest: '<%= distdirStatic %>/', src : '**', expand: true, cwd: 'src/assets/' },
+                    { dest: '<%= distdirStatic %>/dummyloader', src : '**', expand: true, cwd: 'src/dummydata/' }
+                ]
             },
             fonts : {
                 files: [{ dest: '<%= distdirStatic %>/fonts/', src : '**', expand: true, cwd: 'src/fonts/' }]
@@ -126,6 +129,7 @@ module.exports = function (grunt) {
             vendors: {
                 src:['src/scripts/common-script.js', 'src/vendor/google/*.js',
                     'src/vendor/tabletop/*.js','src/vendor/angular-loading-bar/*.js', 'src/vendor/angular-growl-2/*.js',
+                    'src/vendor/nano-scroller/*.js',
                     'src/vendor/angular-file-uploader/*.js','src/vendor/ng-joyride/*.js', 'src/vendor/ngStorage/*.js','src/vendor/ng-tags-input/*.js'],
                 dest: '<%= distdirStatic %>/scripts.js'
             }

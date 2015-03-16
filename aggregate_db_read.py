@@ -18,6 +18,7 @@ import jinja2
 from google.appengine.ext import ndb
 import urllib
 import logging
+from models.save_raw_aggregate_data import SaveAggregateRawPostedData
 
 
 class ReadDataFromAggragate(SaveDataIntoPegasusDatabase):
@@ -74,21 +75,22 @@ class ReadDataFromAggragate(SaveDataIntoPegasusDatabase):
 		unique_submission_id = data_object['instanceID']
 		logging.debug("Unique instance ID is %s", str(unique_submission_id))
 
-		save_posted_data_by_aggregate = SaveAggregateRawPostedData()
-		save_posted_data_by_aggregate.posted_json_data = posted_data_by_aggregate
-		save_posted_data_by_aggregate.survey_responses = data_object
-		save_posted_data_by_aggregate.form_id = form_id
-		save_posted_data_by_aggregate.submission_unique_identity = unique_submission_id
-		save_posted_data_by_aggregate.put()
+		submission_already_saved = SaveAggregateRawPostedData.query(SaveAggregateRawPostedData.submission_unique_identity == unique_submission_id).get()
 
-		logging.info('Data from aggregate saved')
+		if submission_already_saved is None:
 
-		return
+			save_posted_data_by_aggregate = SaveAggregateRawPostedData()
+			save_posted_data_by_aggregate.posted_json_data = posted_data_by_aggregate
+			save_posted_data_by_aggregate.survey_responses = data_object
+			save_posted_data_by_aggregate.form_id = form_id
+			save_posted_data_by_aggregate.submission_unique_identity = unique_submission_id
+			save_posted_data_by_aggregate.put()
 
-		# for each_data_submitted in posted_data_by_aggregate:
-			# self.response.out.write(posted_data_by_aggregate)
-			# save_posted_data_by_aggregate = SaveAggregateRawPostedData()
-			# save_posted_data_by_aggregate.posted_json_data = posted_data_by_aggregate
-			# save_posted_data_by_aggregate.put()
+			logging.info('Data from aggregate saved')
+
+			return
+		else:
+			# if this submission has already been saved, do nothing or pass it without saving
+			pass
 
 

@@ -12,16 +12,19 @@ angular.module('survey', [])
                 resolve : {
                     surveyService : 'surveyService',
 
-                    surveyData : function(surveyService){
-                        //return surveyService.getAllSubmissions()
-                        return []
+                    questionData : function(surveyService){
+                        return surveyService.getSurveyQuestionDetails()
+                    },
+
+                    submittedResponsesData : function(surveyService){
+                        return surveyService.getAllResponses()
                     }
                 }
             })
             .state('surveys.analytics', {
-                url : '/analytics',
-                templateUrl : 'survey/dummy_analytics.tpl.html',
-                controller : 'prSelectedSurveyController'
+                url : '/analytics/:survey_name/:index',
+                templateUrl : 'survey/detailed_analytics.tpl.html',
+                controller : 'prDetailedAnalyticsSurveyController'
             })
             .state('surveys.respondents', {
                 url : '/respondents',
@@ -31,15 +34,6 @@ angular.module('survey', [])
             .state('surveys.selected_survey', {
                 url : '/select/1',
                 templateUrl : 'survey/selected_survey.tpl.html',
-                controller : 'prSelectedSurveyController',
-                resolve : {
-                    surveyService : 'surveyService',
-
-                    surveyData : function(surveyService){
-                        //return surveyService.getAllSubmissions()
-                        return []
-                    }
-
-                }
+                controller : 'prSelectedSurveyController'
             })
     }]);
