@@ -33,6 +33,13 @@ class SendSMSViaVotoAPI(JinjaTemplating):
 
 
 	def post(self):
+
+		# phone_numbers = json.loads(self.request.body)
+		# for number in phone_numbers['recipients']:
+		# 	self.response.out.write(number)
+		# return
+
+
 		send_from = 'Pegasusrises App'
 		to = '+233207361609'
 		content = 'Sending test sms on pegasus rises using sms gh api'
