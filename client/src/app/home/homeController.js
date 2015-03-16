@@ -15,17 +15,9 @@ angular.module('home')
                 homeService.uploadGoogleSheet(fileToUpload).
                     success(function(data, status, headers, config) {
                         growl.success("Data was posted successfully", {});
-                        console.log(data);
-                        console.log(status);
-                        console.log(headers);
-                        console.log(config);
                     }).
                     error(function(data, status, headers, config) {
                         growl.error("Something went wrong on the server", {});
-                        console.log(data);
-                        console.log(status);
-                        console.log(headers);
-                        console.log(config);
                     });
             };
 

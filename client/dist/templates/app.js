@@ -1,4 +1,4 @@
-angular.module('templates.app', ['admin/profile.tpl.html', 'admin/settings.tpl.html', 'home/home.tpl.html', 'survey/dummy_analytics.tpl.html', 'survey/respondents.tpl.html', 'survey/selected_survey.tpl.html', 'survey/survey_list.tpl.html']);
+angular.module('templates.app', ['admin/profile.tpl.html', 'admin/settings.tpl.html', 'home/home.tpl.html', 'survey/detailed_analytics.tpl.html', 'survey/respondents.tpl.html', 'survey/selected_survey.tpl.html', 'survey/survey_list.tpl.html']);
 
 angular.module("admin/profile.tpl.html", []).run(["$templateCache", function($templateCache) {
   $templateCache.put("admin/profile.tpl.html",
@@ -558,8 +558,8 @@ angular.module("home/home.tpl.html", []).run(["$templateCache", function($templa
     "");
 }]);
 
-angular.module("survey/dummy_analytics.tpl.html", []).run(["$templateCache", function($templateCache) {
-  $templateCache.put("survey/dummy_analytics.tpl.html",
+angular.module("survey/detailed_analytics.tpl.html", []).run(["$templateCache", function($templateCache) {
+  $templateCache.put("survey/detailed_analytics.tpl.html",
     "<div class=\"row\">\n" +
     "\n" +
     "    <div class=\"col-lg-12 center\">\n" +
@@ -567,37 +567,15 @@ angular.module("survey/dummy_analytics.tpl.html", []).run(["$templateCache", fun
     "            <div class=\"panel-heading border\">{{ surveyName || ' '}}</div>\n" +
     "        </section>\n" +
     "    </div>\n" +
-    "    <div class=\"col-lg-12\" ng-init=\"showButtons = false\" ng-show=\"showButtons\">\n" +
-    "        <div class=\"btn-group\">\n" +
-    "            <button class=\"btn btn-primary\" ng-class=\"{'active' :   $scope.chartObject.type == 'BarChart' }\" ng-click=\"changeChartType('BarChart')\"> BarChart</button>\n" +
-    "            <button class=\"btn btn-warning\" ng-class=\"{'active' :   $scope.chartObject.type == 'PieChart' }\" ng-click=\"changeChartType('PieChart')\">PieChart</button>\n" +
-    "            <button class=\"btn btn-success\" ng-class=\"{'active' :   $scope.chartObject.type == 'ColumnChart' }\" ng-click=\"changeChartType('ColumnChart')\">ColumnChart</button>\n" +
-    "        </div>\n" +
+    "\n" +
+    "\n" +
+    "    <div class=\"col-sm-3\">\n" +
+    "        {{ selected_question.question }}\n" +
     "    </div>\n" +
-    "    <tabset>\n" +
-    "        <tab heading=\"Google Map with Markers\" select=\"toggleButtons(false)\">\n" +
-    "            <ui-gmap-google-map center='map.center' zoom='map.zoom'>\n" +
     "\n" +
-    "                <ui-gmap-markers\n" +
-    "                        models=\"markers\"\n" +
-    "                        idkey=\"'id'\"\n" +
-    "                        coords=\"'points'\">\n" +
-    "                </ui-gmap-markers>\n" +
-    "\n" +
-    "            </ui-gmap-google-map>\n" +
-    "        </tab>\n" +
-    "        <!--<tab ng-repeat=\"tab in tabs\" heading=\"{{tab.title}}\" active=\"tab.active\" disabled=\"tab.disabled\">-->\n" +
-    "        <!--{{tab.content}}-->\n" +
-    "        <!--</tab>-->\n" +
-    "        <tab select=\"toggleButtons(true)\">\n" +
-    "            <tab-heading>\n" +
-    "                <i class=\"glyphicon glyphicon-bell\"></i> Google Charts\n" +
-    "            </tab-heading>\n" +
-    "            <div google-chart chart=\"chartObject\" style=\"height:600px; width:100%;\"></div>\n" +
-    "        </tab>\n" +
-    "    </tabset>\n" +
-    "\n" +
-    "\n" +
+    "    <div class=\"col-sm-9\">\n" +
+    "        <pre>{{ selected_question | json }}</pre>\n" +
+    "    </div>\n" +
     "</div>\n" +
     "\n" +
     "");
@@ -613,55 +591,132 @@ angular.module("survey/respondents.tpl.html", []).run(["$templateCache", functio
     "                <a href=\"#\" class=\"close-down\"><i class=\"fa fa-times\"></i></a> </div>\n" +
     "            <h3 class=\"content-header\">Survey Respondents</h3>\n" +
     "        </div>\n" +
-    "        <div class=\"porlets-content\">\n" +
-    "            <form role=\"form\" class=\"form-horizontal\" ng-submit=\"sendEmail()\">\n" +
-    "                <div class=\"form-group\">\n" +
-    "                    <label class=\"col-sm-2 control-label \" for=\"from\">From</label>\n" +
-    "                    <div class=\"col-sm-9\">\n" +
-    "                        <input type=\"email\" ng-disabled=\"true\" ng-model=\"respondent_form.from\" id=\"from\" class=\" form-control\" >\n" +
-    "                    </div>\n" +
-    "                </div><!--/form-group-->\n" +
-    "                <div class=\"form-group\">\n" +
-    "                    <label class=\"col-sm-2 control-label\">Survey</label>\n" +
-    "                    <div class=\"col-sm-9\">\n" +
-    "                        <select id=\"source\" data-ng-model=\"respondent_form.survey\" class=\" form-control\">\n" +
-    "                                <!--<option value=\"\">Select a survey</option>-->\n" +
-    "                                <option value=\"{{ surveyName}}\">{{surveyName}}</option>\n" +
-    "                        </select>\n" +
-    "                    </div><!--/col-sm-9-->\n" +
-    "                </div><!--/form-group-->\n" +
-    "                <div class=\"form-group\">\n" +
-    "                    <label class=\"col-sm-2 control-label\" for=\"emails\">Recipients</label>\n" +
-    "                    <div class=\"col-sm-9\">\n" +
-    "                        <tags-input\n" +
-    "                                ng-model=\"respondent_form.emails\"\n" +
-    "                                displayProperty=\"email\"\n" +
-    "                                type=\"email\"\n" +
-    "                                placeholder=\"Add recipient email\"\n" +
-    "                                add-on-enter=\"true\"\n" +
-    "                                add-on-space=\"true\"\n" +
-    "                                add-on-comma=\"true\"\n" +
-    "                                add-on-blur=\"true\"\n" +
-    "                                add-on-paste=\"true\"\n" +
-    "                                allowed-tags-pattern=\"^([\\w\\-\\.]+)@((\\[([0-9]{1,3}\\.){3}[0-9]{1,3}\\])|(([\\w\\-]+\\.)+)([a-zA-Z]{2,4}))$\"\n" +
-    "                                id=\"emails\" class=\"\"></tags-input>\n" +
-    "                        <span class=\"help-block\">Separate multiple email addresses with [COMMA] or [SPACE] or [TAB]</span>\n" +
-    "                    </div>\n" +
+    "        <tabset justified=\"true\" type=\"pills\">\n" +
+    "            <tab>\n" +
+    "                <tab-heading>\n" +
+    "                    <i class=\"fa fa-envelope\"></i>  Email\n" +
+    "                </tab-heading>\n" +
+    "                <div class=\"porlets-content\">\n" +
+    "                    <h3 class=\"page-header\" style=\"margin-top: 3px !important;\">Email Respondents</h3>\n" +
+    "                    <form role=\"form\" class=\"form-horizontal\" ng-submit=\"sendEmail()\">\n" +
+    "                        <div class=\"form-group\">\n" +
+    "                            <label class=\"col-sm-2 control-label \" for=\"from\">From</label>\n" +
+    "                            <div class=\"col-sm-9\">\n" +
+    "                                <input type=\"email\" ng-disabled=\"true\" ng-model=\"respondent_form.from\" id=\"from\" class=\" form-control\" >\n" +
+    "                            </div>\n" +
+    "                        </div><!--/form-group-->\n" +
+    "                        <br>\n" +
+    "                        <br>\n" +
+    "                        <br>\n" +
+    "                        <div class=\"form-group\">\n" +
+    "                            <label class=\"col-sm-2 control-label\">Survey</label>\n" +
+    "                            <div class=\"col-sm-9\">\n" +
+    "                                <select id=\"source\" data-ng-model=\"respondent_form.survey\" class=\" form-control\">\n" +
+    "                                    <!--<option value=\"\">Select a survey</option>-->\n" +
+    "                                    <option value=\"{{ surveyName}}\">{{surveyName}}</option>\n" +
+    "                                </select>\n" +
+    "                            </div><!--/col-sm-9-->\n" +
+    "                        </div><!--/form-group-->\n" +
+    "                        <br>\n" +
+    "                        <br>\n" +
+    "                        <br>\n" +
+    "                        <div class=\"form-group\">\n" +
+    "                            <label class=\"col-sm-2 control-label\" for=\"emails\">Recipients</label>\n" +
+    "                            <div class=\"col-sm-9\">\n" +
+    "                                <tags-input\n" +
+    "                                        ng-model=\"respondent_form.emails\"\n" +
+    "                                        displayProperty=\"email\"\n" +
+    "                                        type=\"email\"\n" +
+    "                                        placeholder=\"Add recipient email\"\n" +
+    "                                        add-on-enter=\"true\"\n" +
+    "                                        add-on-space=\"true\"\n" +
+    "                                        add-on-comma=\"true\"\n" +
+    "                                        add-on-blur=\"true\"\n" +
+    "                                        add-on-paste=\"true\"\n" +
+    "                                        allowed-tags-pattern=\"^([\\w\\-\\.]+)@((\\[([0-9]{1,3}\\.){3}[0-9]{1,3}\\])|(([\\w\\-]+\\.)+)([a-zA-Z]{2,4}))$\"\n" +
+    "                                        id=\"emails\" class=\"\"></tags-input>\n" +
+    "                                <span class=\"help-block text-primary\" style=\"font-style: italic\">Separate multiple email addresses with [COMMA] or [SPACE] or [TAB]</span>\n" +
+    "                            </div>\n" +
     "\n" +
     "\n" +
-    "                </div><!--/form-group-->\n" +
+    "                        </div><!--/form-group-->\n" +
     "\n" +
     "\n" +
-    "                <div class=\"form-group\">\n" +
-    "                    <div class=\" col-sm-2 pull-right\">\n" +
-    "                        <button class=\"hidden btn btn-default\" type=\"reset\" ng-click=\"resetRespondentForm()\">Cancel</button>\n" +
-    "                        <button class=\"btn btn-primary\" type=\"submit\">Send</button>\n" +
-    "                    </div>\n" +
-    "                </div><!--/form-group-->\n" +
-    "            </form>\n" +
-    "        </div><!--/porlets-content-->\n" +
+    "                        <div class=\"form-group\">\n" +
+    "                            <div class=\" col-sm-2 pull-right\">\n" +
+    "                                <button class=\"hidden btn btn-default\" type=\"reset\" ng-click=\"resetRespondentForm()\">Cancel</button>\n" +
+    "                                <button class=\"btn btn-primary\" type=\"submit\">Send</button>\n" +
+    "                            </div>\n" +
+    "                        </div><!--/form-group-->\n" +
+    "                    </form>\n" +
+    "                </div><!--/porlets-content-->\n" +
+    "            </tab>\n" +
+    "\n" +
+    "            <tab>\n" +
+    "                <tab-heading>\n" +
+    "                    <i class=\"fa fa-comments\"></i> SMS\n" +
+    "                </tab-heading>\n" +
+    "                <div class=\"porlets-content\">\n" +
+    "                    <h3 class=\"page-header\" style=\"margin-top: 3px !important;\">SMS Respondents</h3>\n" +
+    "                    <form role=\"form\" class=\"form-horizontal\" ng-submit=\"sendSMS()\">\n" +
+    "                        <div class=\"form-group\">\n" +
+    "                            <label class=\"col-sm-2 control-label \" for=\"sms_from\">From</label>\n" +
+    "                            <div class=\"col-sm-9\">\n" +
+    "                                <input type=\"text\" ng-disabled=\"true\" ng-model=\"sms_respondent_form.from\" id=\"sms_from\" class=\" form-control\" >\n" +
+    "                            </div>\n" +
+    "                        </div><!--/form-group-->\n" +
+    "                        <br>\n" +
+    "                        <br>\n" +
+    "                        <br>\n" +
+    "                        <div class=\"form-group\">\n" +
+    "                            <label class=\"col-sm-2 control-label\">Survey</label>\n" +
+    "                            <div class=\"col-sm-9\">\n" +
+    "                                <select data-ng-model=\"sms_respondent_form.survey\" class=\" form-control\">\n" +
+    "                                    <!--<option value=\"\">Select a survey</option>-->\n" +
+    "                                    <option value=\"{{ surveyName}}\">{{surveyName}}</option>\n" +
+    "                                </select>\n" +
+    "                            </div><!--/col-sm-9-->\n" +
+    "                        </div><!--/form-group-->\n" +
+    "                        <br>\n" +
+    "                        <br>\n" +
+    "                        <br>\n" +
+    "                        <div class=\"form-group\">\n" +
+    "                            <label class=\"col-sm-2 control-label\" for=\"phone_numbers\">Recipients</label>\n" +
+    "                            <div class=\"col-sm-9\">\n" +
+    "                                <tags-input\n" +
+    "                                        ng-model=\"sms_respondent_form.phone_numbers\"\n" +
+    "                                        displayProperty=\"number\"\n" +
+    "                                        type=\"text\"\n" +
+    "                                        placeholder=\"Add phone number\"\n" +
+    "                                        add-on-enter=\"true\"\n" +
+    "                                        add-on-space=\"true\"\n" +
+    "                                        add-on-comma=\"true\"\n" +
+    "                                        add-on-blur=\"true\"\n" +
+    "                                        add-on-paste=\"true\"\n" +
+    "                                        allowed-tags-pattern=\"^\\+(?:[0-9]●?){6,14}[0-9]$\"\n" +
+    "                                        id=\"phone_numbers\" class=\"\"></tags-input>\n" +
+    "                                <span class=\"help-block text-primary\" style=\"font-style: italic\"><b>Numbers should start with a plus sign(+), followed by the country code and national number</b></span><br>\n" +
+    "                                <span class=\"help-block text-primary\" style=\"font-style: italic\">Separate multiple phone numbers with [COMMA] or [SPACE] or [TAB]</span>\n" +
+    "                            </div>\n" +
+    "\n" +
+    "\n" +
+    "                        </div><!--/form-group-->\n" +
+    "\n" +
+    "\n" +
+    "                        <div class=\"form-group\">\n" +
+    "                            <div class=\" col-sm-2 pull-right\">\n" +
+    "                                <button class=\"hidden btn btn-default\" type=\"reset\" ng-click=\"resetRespondentForm()\">Cancel</button>\n" +
+    "                                <button class=\"btn btn-primary\" type=\"submit\">Send</button>\n" +
+    "                            </div>\n" +
+    "                        </div><!--/form-group-->\n" +
+    "                    </form>\n" +
+    "                </div><!--/porlets-content-->\n" +
+    "            </tab>\n" +
+    "        </tabset>\n" +
     "    </div><!--/block-web-->\n" +
-    "</div>");
+    "</div>\n" +
+    "\n" +
+    "<!--<pre>{{ sms_respondent_form | json }}</pre>-->");
 }]);
 
 angular.module("survey/selected_survey.tpl.html", []).run(["$templateCache", function($templateCache) {
@@ -670,7 +725,7 @@ angular.module("survey/selected_survey.tpl.html", []).run(["$templateCache", fun
     "\n" +
     "    <div class=\"col-lg-12 center\">\n" +
     "        <section class=\"panel default blue_title h2\">\n" +
-    "            <div class=\"panel-heading border\">{{ surveyName || ' '}}</div>\n" +
+    "            <div class=\"panel-heading border\">{{ surveyName || 'Demo Survey'}}</div>\n" +
     "        </section>\n" +
     "    </div>\n" +
     "\n" +
@@ -682,7 +737,11 @@ angular.module("survey/selected_survey.tpl.html", []).run(["$templateCache", fun
     "                        <span class=\"pull-right\" ng-click=\"$state.go('surveys.analytics')\"><i class=\"fa fa-cog\"></i></span>\n" +
     "                    </a>\n" +
     "                </li>\n" +
-    "                <li ng-repeat=\"question_item in surveyData.questions_details\"> <a href=\"\" ng-class=\"{'active' : question_item.question_field == selected_question.question_field}\" ng-click=\"selectQuestion(question_item)\">\n" +
+    "            </ul>\n" +
+    "            <!--<scrollable  always-visible=\"true\" slider-max-height=\"700\">-->\n" +
+    "\n" +
+    "            <ul>\n" +
+    "                <li ng-repeat=\"question_item in surveyData.questions_details\"> <a href=\"\" ng-class=\"{'active' : question_item.question_field == selected_question.question_field}\" ng-click=\"selectQuestion(question_item, $index)\">\n" +
     "                    <div class=\"widget_inbox_header\">\n" +
     "                        <span class=\"pull-left widget_inbox_time\"><b>{{ $index + 1 }}</b></span>\n" +
     "                        <span class=\"pull-right widget_inbox_time\" open-closed=\"\" type=\"{{ question_item.question_type }}\"></span>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;Question\n" +
@@ -690,13 +749,42 @@ angular.module("survey/selected_survey.tpl.html", []).run(["$templateCache", fun
     "                    {{ question_item.question }}</a></li>\n" +
     "\n" +
     "            </ul>\n" +
+    "            <!--</scrollable>-->\n" +
     "        </div>\n" +
     "    </div>\n" +
     "\n" +
     "    <div class=\"col-md-6\">\n" +
-    "        <div class=\"widget_inbox\">\n" +
-    "            <div google-chart chart=\"chartObject\" style=\"height:600px; width:100%;\"></div>\n" +
-    "            <pre>{{ selected_question | json }}</pre>\n" +
+    "        <div class=\"widget_inbox\" ng-show=\"chartObject.type\">\n" +
+    "            <tabset justified=\"true\">\n" +
+    "                <tab select=\"changeChartType('BarChart')\">\n" +
+    "                    <tab-heading>\n" +
+    "                        <i class=\"fa fa-list-ul\"></i> Bar Chart\n" +
+    "                    </tab-heading>\n" +
+    "                    <div google-chart chart=\"chartObject\" style=\"height:600px; width:100%;\"></div>\n" +
+    "                </tab>\n" +
+    "\n" +
+    "                <tab select=\"changeChartType('PieChart')\">\n" +
+    "                    <tab-heading>\n" +
+    "                        <i class=\"fa fa-pie-chart\"></i> Pie Chart\n" +
+    "                    </tab-heading>\n" +
+    "                    <div google-chart chart=\"chartObject\" style=\"height:600px; width:100%;\"></div>\n" +
+    "                </tab>\n" +
+    "\n" +
+    "                <tab select=\"changeChartType('ColumnChart')\">\n" +
+    "                    <tab-heading>\n" +
+    "                        <i class=\"fa fa-bar-chart\"></i> Column Chart\n" +
+    "                    </tab-heading>\n" +
+    "                    <div google-chart chart=\"chartObject\" style=\"height:600px; width:100%;\"></div>\n" +
+    "                </tab>\n" +
+    "            </tabset>\n" +
+    "\n" +
+    "            <!--<div google-chart chart=\"chartObject\" style=\"height:600px; width:100%;\"></div>-->\n" +
+    "            <!--<pre>{{ selected_question | json }}</pre>-->\n" +
+    "            <!--<pre>{{ chartObject | json }}</pre>-->\n" +
+    "        </div>\n" +
+    "        <div class=\"row\" ng-show=\"selected_question\">\n" +
+    "            <button class=\"text-center col-sm-6 col-sm-offset-3 btn btn-primary btn-lg\" ng-click=\"$state.go('surveys.analytics', {survey_name : surveyName, index : selected_question.index })\">\n" +
+    "                View More Details</button>\n" +
     "        </div>\n" +
     "    </div>\n" +
     "\n" +

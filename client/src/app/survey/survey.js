@@ -22,9 +22,9 @@ angular.module('survey', [])
                 }
             })
             .state('surveys.analytics', {
-                url : '/analytics',
-                templateUrl : 'survey/dummy_analytics.tpl.html',
-                controller : 'prSelectedSurveyController'
+                url : '/analytics/:survey_name/:index',
+                templateUrl : 'survey/detailed_analytics.tpl.html',
+                controller : 'prDetailedAnalyticsSurveyController'
             })
             .state('surveys.respondents', {
                 url : '/respondents',

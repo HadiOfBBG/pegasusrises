@@ -113,7 +113,8 @@ angular.module('pegasusrises', [
     'uiGmapgoogle-maps',
     'googlechart',
     'ngStorage',
-    'ngTagsInput'
+    'ngTagsInput',
+    'sun.scrollable'
 ])
     //'angular-loading-bar',
     .constant('prConstantKeys', {
@@ -436,9 +437,9 @@ angular.module('survey', [])
                 }
             })
             .state('surveys.analytics', {
-                url : '/analytics',
-                templateUrl : 'survey/dummy_analytics.tpl.html',
-                controller : 'prSelectedSurveyController'
+                url : '/analytics/:survey_name/:index',
+                templateUrl : 'survey/detailed_analytics.tpl.html',
+                controller : 'prDetailedAnalyticsSurveyController'
             })
             .state('surveys.respondents', {
                 url : '/respondents',
@@ -479,27 +480,45 @@ angular.module('survey')
                 $scope.surveyName =  questionData.data.questions_details[0].survey_name
             }
 
-            $scope.selectQuestion = function(question){
-                //Empty the scope object or declare in undefined
+            //This is the object to be sent to google charts
+            $scope.chartObject = {
+                data : {
+                    cols : [],
+                    rows : []
+                }
+            };
+
+            $scope.selectQuestion = function(question, index){
+                //Empty the scope object or declare if undefined
                 $scope.selected_question = {};
 
                 //Assign the selected/clicked question to the declared scope variable
                 $scope.selected_question = question;
+
+                //Assign the index too for detailed analytics view
+                $scope.selected_question.index = index;
 
                 //for close ended questions,
                 if ($scope.selected_question.question_type == 'close_ended') {
 
                     //Get the individual answers value
                     $scope.selected_question.answer_values = $scope.selected_question.possible_answers.split(',');
+                    $scope.selected_question.answer_labels = $scope.selected_question.possible_answers_labels.split(',');
                     $scope.selected_question.answers = {};
-
-                    //Assign the split answer value as a key in a property of the question's answer object
+                    $scope.chartObject.data= {
+                        cols: [
+                            {id: 'A', label: 'question_field', type: 'string'},
+                            {id: 'B', label: 'Responses', type: 'number'}
+                        ],
+                        rows : []
+                    };
+                    //Assign the split answer value as a key in a property of the selected question's answer object
                     angular.forEach($scope.selected_question.answer_values, function (option, index) {
-                        //$scope.selected_question.answers[$.trim(option)] = $scope.selected_question.possible_answers_labels[index];
 
                         //In the selected question object, assign each possible answer to a property in the "answer" property of the question
                         if ($.trim(option) != '') {
                             $scope.selected_question.answers[ $.trim(option) ] = 0;
+
                         }
                     });
 
@@ -525,8 +544,77 @@ angular.module('survey')
                         })
 
                     })
+
+                    //Assign answer count to chart rows for chart display
+                    angular.forEach($scope.selected_question.answer_values, function (option, indexOption) {
+                        if ($.trim(option) != '') {
+
+                            $scope.chartObject.data.rows.push({
+                                c : [ {v: $scope.selected_question.answer_labels[indexOption]},
+                                    {v : $scope.selected_question.answers[option],   f: $scope.selected_question.answers[option] }]
+                            });
+                        }
+
+                    });
+
+
+
+                    // $routeParams.chartType == BarChart or PieChart or ColumnChart...
+                    $scope.chartObject.type = 'BarChart';
+                    $scope.chartObject.options = {
+                        "title": $scope.selected_question.question,
+                        "fill": 20,
+                        "displayExactValues": true
+                        //"is3D": true,
+
+                    };
+                }else{
+                    $scope.chartObject = {
+                        data : {
+                            cols : [],
+                            rows : []
+                        }
+                    };
+                }
+
+
+
+            };
+
+
+
+
+
+            $scope.changeChartType = function (chartType) {
+                $scope.chartObject.type = chartType;
+
+                if (chartType != 'BarChart') {
+                    $scope.chartObject.options.vAxis =  {
+                        "title": "Responses"
+                        //"gridlines": {"count": 6}
+                    };
+                    $scope.chartObject.options.hAxis =  {
+                        "title": "Possible Answers"
+                    }
+                }else{
+                    $scope.chartObject.options.vAxis =  {
+                        "title": "Possible Answers"
+                        //"gridlines": {"count": 6}
+                    };
+                    $scope.chartObject.options.hAxis =  {
+                        "title": "Responses"
+                    }
                 }
             };
+
+
+        }])
+
+    .controller('prDetailedAnalyticsSurveyController', ['$rootScope', '$scope', 'homeService', 'surveyService', 'growl',
+        'questionData','submittedResponsesData','$stateParams','uiGmapGoogleMapApi',
+        function($rootScope, $scope, homeService, surveyService, growl, questionData, submittedResponsesData, $stateParams, uiGmapGoogleMapApi ){
+
+            $scope.selected_question = questionData.data.questions_details[ $stateParams.index ];
 
 
             $scope.map = { center: { latitude: 5.558288, longitude: -0.173778 }, zoom: 8 };
@@ -544,70 +632,8 @@ angular.module('survey')
 
             });
 
-            $scope.chartObject = {};
-
-            $scope.onions = [
-                {v: "Onions"},
-                {v: 3}
-            ];
-
-            // = {"cols": [
-            //    {id: "t", label: "Topping", type: "string"},
-            //    {id: "s", label: "Slices", type: "number"}
-            //], "rows": [
-            //    {c: [{v: "Mushrooms"},{v: 3}]},
-            //    {c: $scope.onions},
-            //    {c: [{v: "Olives"},{v: 31}]},
-            //    {c: [{v: "Zucchini"},{v: 1}]},
-            //    {c: [{v: "Pepperoni"},{v: 28}]}
-            //]};
-            $scope.chartObject.data = [
-                [
-                    "Component",
-                    "cost"
-                ],
-                [
-                    "Software",
-                    92368
-                ],
-                [
-                    "Hardware",
-                    38064
-                ],
-                [
-                    "Services",
-                    20000
-                ]
-            ];
-
-            // $routeParams.chartType == BarChart or PieChart or ColumnChart...
-            $scope.chartObject.type = 'ColumnChart';
-            $scope.chartObject.options = {
-                "title": $scope.surveyName,
-                "fill": 20,
-                "displayExactValues": true,
-                //"is3D": true,
-                "vAxis": {
-                    "title": "Responses", "gridlines": {"count": 6}
-                },
-                "hAxis": {
-                    "title": "Possible Answers"
-                }
-            };
-            $scope.changeChartType = function (chartType) {
-                $scope.chartObject.type = chartType;
-            };
-
-            $scope.tabs = [
-                { title:'Dynamic Title 1', content:'Dynamic content 1' },
-                { title:'Dynamic Title 2', content:'Dynamic content 2', disabled: true }
-            ];
-
-            $scope.toggleButtons = function(state){
-                $scope.showButtons = state;
-            };
-
         }])
+
     .controller('prSurveyRespondentsController', ['$rootScope', '$scope', 'homeService', 'surveyService', 'growl',
         'questionData','submittedResponsesData',
         function($rootScope, $scope, homeService,surveyService, growl, questionData, submittedResponsesData ){
@@ -622,7 +648,9 @@ angular.module('survey')
                 //$scope.surveyName = "Test Survey Name";
             }
 
-
+            /*
+             *Email Respondent Section
+             * */
             $scope.respondent_form = {
                 emails  : [],
                 recipients  : [],
@@ -635,7 +663,7 @@ angular.module('survey')
                     $scope.respondent_form.recipients = [];
                     angular.forEach($scope.respondent_form.emails, function (email, index) {
                         $scope.respondent_form.recipients.push(email.text)
-                    })
+                    });
                     if ($scope.respondent_form.survey) {
                         surveyService.sendRespondentEmail($scope.respondent_form)
                             .success(function () {
@@ -652,9 +680,52 @@ angular.module('survey')
                 }else{
                     growl.info("Please type at least one recipient email", {});
                 }
-            }
+            };
 
-        }]);
+            /*
+             * End email section
+             * */
+
+
+            /*
+            * SMS Send Section
+            * */
+            $scope.sms_respondent_form = {
+                phone_numbers  : [],
+                recipients  : [],
+                from : "PegasusRises",
+                survey :  $scope.surveyName
+            };
+
+            $scope.sendSMS = function(){
+                if ($scope.sms_respondent_form.phone_numbers.length > 0) {
+                    $scope.respondent_form.recipients = [];
+                    angular.forEach($scope.sms_respondent_form.phone_numbers, function (number, index) {
+                        $scope.sms_respondent_form.recipients.push(number.text)
+                    });
+                    if ($scope.sms_respondent_form.survey) {
+                        surveyService.sendRespondentSMS($scope.sms_respondent_form)
+                            .success(function () {
+                                growl.success("SMS sent successfully", {});
+                            })
+                            .error(function () {
+                                growl.error("SMS could not be sent", {});
+
+                            })
+                    }else{
+                        growl.info("Please select a survey", {});
+                    }
+
+                }else{
+                    growl.info("Please type at least one recipient phone number", {});
+                }
+            };
+
+            /*
+            * Send SMS end
+            * */
+
+         }]);
 
 
 /**
@@ -682,5 +753,10 @@ angular.module('survey')
         surveyService.sendRespondentEmail = function(data){
             return $http.post('/sendmail', data)
         };
+
+        surveyService.sendRespondentSMS = function(data){
+            return $http.post('/send/sms', data)
+        };
+
         return surveyService;
     }]);

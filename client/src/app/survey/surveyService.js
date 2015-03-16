@@ -23,5 +23,10 @@ angular.module('survey')
         surveyService.sendRespondentEmail = function(data){
             return $http.post('/sendmail', data)
         };
+
+        surveyService.sendRespondentSMS = function(data){
+            return $http.post('/send/sms', data)
+        };
+
         return surveyService;
     }]);
