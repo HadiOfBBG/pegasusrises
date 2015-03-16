@@ -35,7 +35,7 @@ routes = [
     (r'/gcs_old', MainPage),
     (r'/sendmail', EmailHandler),
     (r'/pegasus/database/read', ReadDataFromPegasus),
-    (r'/send/sms/via/votoapi', SendSMSViaVotoAPI),
+    (r'/send/sms', SendSMSViaVotoAPI),
     (r'/save/data/on/pegasus', SaveDataIntoPegasusDatabase),
     (r'/cron/aggregate/database/read', CronToReadDataFromAggregate),
     (r'/questions/properties/read', ReadQuestionsDetails),
