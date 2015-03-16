@@ -6,14 +6,19 @@ import smtplib
 import logging
 from jinja_template import JinjaTemplating
 import wsgiref
+import json
 
 
 class EmailHandler(JinjaTemplating):
-	def get(self):
+	def post(self):
+		email_details = json.loads(self.request.body)
+		object_details = email_details['recipients']
+		object_details_test = email_details['from']
+		logging.error(object_details)		
 		platform_detected = wsgiref.util.request_uri(self.request.environ)
 		onGAE_ = (platform_detected != None) and ('localhost:' not in platform_detected)
 		if onGAE_:
-			self.sendEmail()
+			self.sendEmail(object_details)
 
 		else:
 			self.response.out.write("Email sending in pegasusrises is done only on a hosted version of Pegasus.")
@@ -21,7 +26,7 @@ class EmailHandler(JinjaTemplating):
 
 
 
-	def sendEmail(self):	
+	def sendEmail(self,email_list):	
 		
 		user_list = ['henrik@pegasusrises.com','hadi@pegasusrises.com','francis@pegasusrises.com','samuel@pegasusrises.com','aliu@pegasusrises.com']
 		
@@ -33,9 +38,9 @@ class EmailHandler(JinjaTemplating):
 		if user:
 			
 			message = mail.EmailMessage(sender=user.email(),
-		                            subject="Pegasus Survey Notification")
+									subject="Pegasus Survey Notification")
 
-			message.to = user_list
+			message.to = email_list
 			
 			message.body = """
 			
@@ -62,4 +67,4 @@ class EmailHandler(JinjaTemplating):
 
 	
 
-                
+				
