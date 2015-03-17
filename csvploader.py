@@ -23,6 +23,7 @@ import time
 
 
 
+
 retry_params = gcs.RetryParams(initial_delay=0.2,
                                           max_delay=5.0,
                                           backoff_factor=2,
@@ -41,46 +42,53 @@ class CSVUploadHandler(JinjaTemplating,blobstore_handlers.BlobstoreUploadHandler
     
     def post(self):
         # EmailHandler.sendEmail()
-        content_from_server = json.loads(self.request.body)
-        url = content_from_server['downloadUrl']
+        try:
+            content_from_server = json.loads(self.request.body)
+            url = content_from_server['downloadUrl']
 
-        form_fields = {
-        "filename":"guess",
-        "url":url
-        }
+            form_fields = {
+            "filename":"guess",
+            "url":url
+            }
 
-        form_data = urllib.urlencode(form_fields)
-        result = urlfetch.fetch(url=pegasusrise_converter_api,
-        payload=form_data,
-        method=urlfetch.POST,
-        headers={'Content-Type': 'application/x-www-form-urlencoded'})
+            form_data = urllib.urlencode(form_fields)
+            result = urlfetch.fetch(url=pegasusrise_converter_api,
+            payload=form_data,
+            method=urlfetch.POST,
+            headers={'Content-Type': 'application/x-www-form-urlencoded'})
 
-        # self.response.out.write(result.content)
-        if "Successful form upload" in result.content:
+            # self.response.out.write(result.content)
+            if "Successful form upload" in result.content:
+                form_result = {
+            "status":"success",
+            "content":result.content
+            }
+                return self.response.out.write(form_result)
+
+            elif "File was not recognized" in result.content:
+                form_result = {
+            "status":"failed",
+            "content":result.content
+            }
+                return self.response.out.write(form_result)
+
+            elif "You must have a sheet named" in result.content:
+                form_result = {
+            "status":"failed",
+            "content":result.content
+            }
+                return self.response.out.write(form_result)
+
+            else:
+                form_result = {
+            "status":"failed",
+            "content":result.content
+            }
+                return self.response.out.write(form_result)
+            
+        except Exception,e :
             form_result = {
-        "status":"Successful",
-        "content":result.content
-        }
-            return self.response.out.write(form_result)
-
-        elif "File was not recognized" in result.content:
-            form_result = {
-        "status":"failed",
-        "content":result.content
-        }
-            return self.response.out.write(form_result)
-
-        elif "You must have a sheet named" in result.content:
-            form_result = {
-        "status":"failed",
-        "content":result.content
-        }
-            return self.response.out.write(form_result)
-
-        else:
-            form_result = {
-        "status":"failed",
-        "content":result.content
-        }
-            return self.response.out.write(form_result)
-        
+            "status":"failed",
+            "content":"timeout exception"
+            }
+            self.response.out.write(form_result)
