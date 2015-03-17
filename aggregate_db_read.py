@@ -26,11 +26,6 @@ class ReadDataFromAggragate(SaveDataIntoPegasusDatabase):
 	"""docstring for ReadDataFromPegasus"""
 
 	def get(self):
-		# sample_json_object = ['foo', {'bar': ('baz', None, 1.0, 2)}]
-		# save_posted_data_by_aggregate = SaveAggregateRawPostedData()
-		# save_posted_data_by_aggregate.posted_json_data = sample_json_object
-		# save_posted_data_by_aggregate.put()
-		# return
 
 		# read_raw_data_posted_by_aggregate = ndb.Query(SaveAggregateRawPostedData)
 		read_raw_data_posted_by_aggregate = SaveAggregateRawPostedData.query()
@@ -41,14 +36,9 @@ class ReadDataFromAggragate(SaveDataIntoPegasusDatabase):
 		else:
 			self.response.out.write('The biginining  of the loop over the data\n')
 			for each_raw_data in read_raw_data_posted_by_aggregate:
-				# data_list
-				# removing_quotes_around_data = urllib.unquote(each_raw_data.posted_json_data)
-				# converting_data_to_json = json.dumps(removing_quotes_around_data)
 				converting_data_to_json = json.dumps(each_raw_data.posted_json_data)
-				# self.response.out.write('Data Below \n')
 				self.response.out.write(converting_data_to_json)
 			return
-			# self.response.out.write('The end \n')
 
 
 

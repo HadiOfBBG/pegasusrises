@@ -9,7 +9,7 @@ from questions_details_from_google_sheets import QuestionsDetailsFromGoogleSheet
 from pegasus_db_read import ReadDataFromPegasus
 from gcs_client import MainPage
 from pegasus_email import EmailHandler
-from send_sms import SendSMSViaVotoAPI
+from send_sms import SendSMS
 from save_data_into_pegasus_db import SaveDataIntoPegasusDatabase
 from cron_read_data_from_aggregate import CronToReadDataFromAggregate
 from read_questions_details import ReadQuestionsDetails
@@ -35,7 +35,7 @@ routes = [
     (r'/gcs_old', MainPage),
     (r'/sendmail', EmailHandler),
     (r'/pegasus/database/read', ReadDataFromPegasus),
-    (r'/send/sms', SendSMSViaVotoAPI),
+    (r'/send/sms', SendSMS),
     (r'/save/data/on/pegasus', SaveDataIntoPegasusDatabase),
     (r'/cron/aggregate/database/read', CronToReadDataFromAggregate),
     (r'/questions/properties/read', ReadQuestionsDetails),
