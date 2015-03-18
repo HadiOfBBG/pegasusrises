@@ -63,28 +63,28 @@ class CSVUploadHandler(JinjaTemplating,blobstore_handlers.BlobstoreUploadHandler
             "status":"success",
             "content":"successful"
             }
-                return self.response.out.write(form_result)
+                return self.response.out.write(json.dumps(form_result))
 
             elif "File was not recognized" in result.content:
                 form_result = {
             "status":"failed",
             "content":"file_recognized"
             }
-                return self.response.out.write(form_result)
+                return self.response.out.write(json.dumps(form_result))
 
             elif "survey" or "choices" or "setting" in result.content:
                 form_result = {
             "status":"failed",
             "content":"There should be a survey, choices, and sheet in this xlsform. Please ensure that the  sheet names are all in small caps."
             }
-                return self.response.out.write(form_result)
+                return self.response.out.write(json.dumps(form_result))
 
             elif "application may have exceeded its per-minute or daily usage quotas" in result.content:
                 form_result = {
             "status":"failed",
             "content":"daily_quota_exceeded"
             }
-                return self.response.out.write(form_result)
+                return self.response.out.write(json.dumps(form_result))
 
 
             elif " Form Already Exists for this Namespace" in result.content:
@@ -92,7 +92,7 @@ class CSVUploadHandler(JinjaTemplating,blobstore_handlers.BlobstoreUploadHandler
             "status":"failed",
             "content":"form_already_exist"
             }
-                return self.response.out.write(form_result)
+                return self.response.out.write(json.dumps(form_result))
 
 
             else:
@@ -100,11 +100,11 @@ class CSVUploadHandler(JinjaTemplating,blobstore_handlers.BlobstoreUploadHandler
             "status":"failed",
             "content":result.content
             }
-                return self.response.out.write(form_result)
+                return self.response.out.write(json.dumps(form_result))
             
         except Exception,e :
             form_result = {
             "status":"failed",
             "content":"timeout_exception"
             }
-            self.response.out.write(form_result)
+            return self.response.out.write(json.dumps(form_result))
