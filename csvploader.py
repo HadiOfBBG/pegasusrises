@@ -79,6 +79,22 @@ class CSVUploadHandler(JinjaTemplating,blobstore_handlers.BlobstoreUploadHandler
             }
                 return self.response.out.write(form_result)
 
+            elif "application may have exceeded its per-minute or daily usage quotas" in result.content:
+                form_result = {
+            "status":"failed",
+            "content":"daily_quota_exceeded"
+            }
+                return self.response.out.write(form_result)
+
+
+            elif " Form Already Exists for this Namespace" in result.content:
+                form_result = {
+            "status":"failed",
+            "content":"form_already_exist"
+            }
+                return self.response.out.write(form_result)
+
+
             else:
                 form_result = {
             "status":"failed",
@@ -89,6 +105,6 @@ class CSVUploadHandler(JinjaTemplating,blobstore_handlers.BlobstoreUploadHandler
         except Exception,e :
             form_result = {
             "status":"failed",
-            "content":"timeout exception"
+            "content":"timeout_exception"
             }
             self.response.out.write(form_result)
