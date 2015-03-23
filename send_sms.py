@@ -29,24 +29,29 @@ class SendSMS(JinjaTemplating):
 	"""docstring for ReadDataFromPegasus"""
 	def get(self):
 		sender = 'Pegasusrises'
-		to = '+233243510497'
-		# content = 'Sending test sms on pegasus rises using sms gh api'
-		content = 'TestingApp'
+		# number = '+233243510497'
+		number = '+233277482171'
 		# self.sendSMS(sender,to,content)
-		self.send_message_via_voto()
+		self.send_message_via_voto(number)
 
 
 
 	def post(self):
 
 		status = {}
+
 		phone_numbers = json.loads(self.request.body)
+
 		for number in phone_numbers['recipients']:
-			save_subscriber = self.send_message_via_voto(number)
-		if save_subscriber == 200:
-			return "success"
-		else:
-			return "failed"
+			message_sent = self.send_message_via_voto(number)
+
+		converting_data_to_json = json.dumps(message_sent)
+		self.response.out.write(converting_data_to_json)
+		return
+		# if save_subscriber == 200:
+		# 	return "success"
+		# else:
+		# 	return "failed"
 
 
 
@@ -69,29 +74,29 @@ class SendSMS(JinjaTemplating):
 
 
 
-	def add_subscribers_on_voto(self,number):
-		bbg_demo_group_id_on_voto = 205947
-		request_parameters = {}
-		request_parameters['api_key'] = '9933226581419a3c2cab9df8a'
-		request_parameters['phone'] = number
-		request_parameters['groups'] = bbg_demo_group_id_on_voto
-		url_values = urllib.urlencode(request_parameters)
-		url = 'https://go.votomobile.org/api/v1/subscribers'
-		full_url = url + '?' + url_values
-		try:
-			# request_sent = urllib2.Request(url, url_values)
-			response = urllib2.urlopen(request_sent)
-			data_returned = json.load(response)
-			self.response.out.write(data_returned['data'])
-			if data_returned['status'] == 200:
-				return "success"
-			else:
-				return "failed"
+	# def add_subscribers_on_voto(self,number):
+	# 	bbg_demo_group_id_on_voto = 205947
+	# 	request_parameters = {}
+	# 	request_parameters['api_key'] = '9933226581419a3c2cab9df8a'
+	# 	request_parameters['phone'] = number
+	# 	request_parameters['groups'] = bbg_demo_group_id_on_voto
+	# 	url_values = urllib.urlencode(request_parameters)
+	# 	url = 'https://go.votomobile.org/api/v1/subscribers'
+	# 	full_url = url + '?' + url_values
+	# 	try:
+	# 		# request_sent = urllib2.Request(url, url_values)
+	# 		response = urllib2.urlopen(request_sent)
+	# 		data_returned = json.load(response)
+	# 		self.response.out.write(data_returned['data'])
+	# 		if data_returned['status'] == 200:
+	# 			return "success"
+	# 		else:
+	# 			return "failed"
 
-		except URLError, e:
-			print(e)
-			self.response.out.write(e)
-			return
+	# 	except URLError, e:
+	# 		print(e)
+	# 		self.response.out.write(e)
+	# 		return
 
 
 
@@ -104,7 +109,7 @@ class SendSMS(JinjaTemplating):
 		request_parameters['message_id'] = message_id_on_voto
 		# request_parameters['groups'] = bbg_demo_group_id_on_voto
 		request_parameters['send_to_phones'] = number
-		request_parameters['sms_sender_id'] = 'Pegasus'
+		request_parameters['sms_sender_id'] = 'Pegasusrises App'
 		request_parameters['voice_sender_id'] = '+233207361609'
 		request_parameters['schedule_type'] = 'now'
 		url_values = urllib.urlencode(request_parameters)
@@ -115,8 +120,9 @@ class SendSMS(JinjaTemplating):
 			method = urlfetch.POST,
 			headers={'Content-Type': 'application/x-www-form-urlencoded'})
 
-			# return returned_object = json.dumps(result.content)
+			returned_object = json.dumps(result.content)
 			# return result.status_code
+			print("response content : ", returned_object)
 			return "success"
 
 
