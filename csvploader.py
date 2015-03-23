@@ -72,7 +72,7 @@ class CSVUploadHandler(JinjaTemplating,blobstore_handlers.BlobstoreUploadHandler
             }
                 return self.response.out.write(json.dumps(form_result))
 
-            elif "sheet named " or "choices sheet"  in result.content:
+            elif "You must have a sheet named (case-sensitive): survey " or " There should be a choices sheet in this xlsform"  in result.content:
                 form_result = {
             "status":"failed",
             "content":"There should be a survey, choices, and settings in this xlsform. Please ensure that the  sheet names are all in small caps."
